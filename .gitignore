@@ -1,0 +1,5 @@
+bin/*.exe
+bin/*.out
+bin/*.dll
+obj/*.o
+**/imgui.ini
