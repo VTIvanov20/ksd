@@ -9,6 +9,8 @@
 #include "ObjectManager.hpp"
 #include "Entity.hpp"
 
+#include "util/graphics.hpp"
+
 class Scene
 {
 public:
