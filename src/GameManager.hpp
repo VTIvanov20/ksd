@@ -9,6 +9,7 @@
 #include "ObjectManager.hpp"
 #include "Entity.hpp"
 
+#include "components/MainMenu.hpp"
 #include "util/graphics.hpp"
 
 class Scene
