@@ -131,8 +131,8 @@ void Graphics::BeginDrawing()
     SDL_Event e;
     while (SDL_PollEvent(&e))
     {
-        // if (imguiInitialized)
-            // ImGui_ImplSDL2_ProcessEvent(&e);
+        if (imguiInitialized)
+            ImGui_ImplSDL2_ProcessEvent(&e);
         
         switch(e.type)
         {
@@ -282,42 +282,42 @@ bool Input::IsMouseButtonUp(uint8_t button)
     return !IsMouseButtonDown(button);
 }
 
-// bool SDLImGui::InitImGui()
-// {
-//     bool success = true;
+bool SDLImGui::InitImGui()
+{
+    bool success = true;
 
-//     IMGUI_CHECKVERSION();
-//     ImGui::CreateContext();
-//     ImGui::StyleColorsDark();
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGui::StyleColorsDark();
 
-//     ImGuiIO &io = ImGui::GetIO();
-//     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    ImGuiIO &io = ImGui::GetIO();
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-//     success = ImGui_ImplSDL2_InitForSDLRenderer(winHandle, winRenderer);
-//     success = ImGui_ImplSDLRenderer_Init(winRenderer);
+    success = ImGui_ImplSDL2_InitForSDLRenderer(winHandle, winRenderer);
+    success = ImGui_ImplSDLRenderer_Init(winRenderer);
 
-//     if (success) imguiInitialized = true;
+    if (success) imguiInitialized = true;
 
-//     return success;
-// }
+    return success;
+}
 
-// void SDLImGui::CloseImGui()
-// {
-//     ImGui_ImplSDLRenderer_Shutdown();
-//     ImGui_ImplSDL2_Shutdown();
+void SDLImGui::CloseImGui()
+{
+    ImGui_ImplSDLRenderer_Shutdown();
+    ImGui_ImplSDL2_Shutdown();
 
-//     imguiInitialized = false;
-// }
+    imguiInitialized = false;
+}
 
-// void SDLImGui::BeginImGuiDrawing()
-// {
-//     ImGui_ImplSDLRenderer_NewFrame();
-//     ImGui_ImplSDL2_NewFrame();
-//     ImGui::NewFrame();
-// }
+void SDLImGui::BeginImGuiDrawing()
+{
+    ImGui_ImplSDLRenderer_NewFrame();
+    ImGui_ImplSDL2_NewFrame();
+    ImGui::NewFrame();
+}
 
-// void SDLImGui::EndImGuiDrawing()
-// {
-//     ImGui::Render();
-//     ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
-// }
+void SDLImGui::EndImGuiDrawing()
+{
+    ImGui::Render();
+    ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
+}

@@ -5,9 +5,9 @@
 #include <cassert>
 #include <memory>
 #include <map>
-// #include "./imgui/imgui.h"
-// #include "./imgui/backends/imgui_impl_sdl.h"
-// #include "./imgui/backends/imgui_impl_sdlrenderer.h"
+#include "./imgui/imgui.h"
+#include "./imgui/backends/imgui_impl_sdl.h"
+#include "./imgui/backends/imgui_impl_sdlrenderer.h"
 #include "../ObjectManager.hpp"
 #include "./la.hpp"
 
@@ -75,13 +75,13 @@ namespace Input
     // float GetMouseWheelMove();
 };
 
-// namespace SDLImGui
-// {
-//     bool InitImGui();
+namespace SDLImGui
+{
+    bool InitImGui();
 
-//     void CloseImGui();
+    void CloseImGui();
 
-//     void BeginImGuiDrawing();
+    void BeginImGuiDrawing();
 
-//     void EndImGuiDrawing();
-// }
+    void EndImGuiDrawing();
+}

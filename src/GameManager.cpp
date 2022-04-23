@@ -28,8 +28,8 @@ void GameManager::Initialize()
         static_cast<SDL_WindowFlags>(0), static_cast<SDL_RendererFlags>(0))) /* a very annoying fpermissive warning */
         exit(1);
 
-    // if(!SDLImGui::InitImGui())
-        // exit(1);
+    if(!SDLImGui::InitImGui())
+        exit(1);
 
     ReinitializeScene();
 }
@@ -71,7 +71,7 @@ void GameManager::Deinitialize()
     // Destroy any leftover drawables to prevent memory leaking
     ObjectManager::GetInstance()->DestroyAllEntities();
 
-    // SDLImGui::CloseImGui();
+    SDLImGui::CloseImGui();
     Graphics::CloseWindow();
 
     std::cout << "INFO: Goodbye!" << std::endl;
