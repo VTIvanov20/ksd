@@ -9,6 +9,8 @@ public:
     DEFINE_COMPONENT(UIComponent)
 
     void OnUpdate() override;
+    virtual void OnCreate() override {};
+    virtual void OnDestroy() override {};
 
     virtual void OnUI() {};
 };
