@@ -1,6 +1,7 @@
 #pragma once
 
-#include "UIComponent.hpp"
+#include "./Component.hpp"
+#include "../util/imgui/imgui.h"
 #include "../GameManager.hpp"
 
 enum class MainMenuState {
@@ -11,10 +12,10 @@ enum class MainMenuState {
     MULTIPLAYER_JOIN,
 };
 
-class MainMenu : public UIComponent
+class MainMenu : public Component
 {
 public:
-    DEFINE_DERIVED_COMPONENT(MainMenu, UIComponent)
+    DEFINE_COMPONENT(MainMenu)
     void OnUI() override;
     void OnCreate() override;
     void OnDestroy() override;

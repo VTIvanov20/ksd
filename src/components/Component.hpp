@@ -19,15 +19,14 @@ public:
     virtual void OnCreate() {}
     virtual void OnDestroy() {}
     virtual void OnUpdate() {}
+    virtual void OnUI() {}
 
-    inline bool WantsUpdate() { return wantsUpdate; }
     void BindToEntity(std::weak_ptr<Object> object);
     void BindToEntity(uint64_t id);
     std::weak_ptr<Component> GetComponent(std::string);
 
 protected:
     std::weak_ptr<Object> boundEntity;
-    bool wantsUpdate = false;
 };
 
 #define DEFINE_COMPONENT(TYPE) \

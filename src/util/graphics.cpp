@@ -6,10 +6,10 @@
 
 static SDL_Window *winHandle = nullptr;
 static SDL_Renderer *winRenderer = nullptr;
-static std::map<SDL_Keycode, uint8_t> keyStates;
-static std::map<uint8_t, uint8_t> mouseBtnStates;
+static std::unordered_map<SDL_Keycode, uint8_t> keyStates;
+static std::unordered_map<uint8_t, uint8_t> mouseBtnStates;
 
-bool imguiInitialized = false;
+static bool imguiInitialized = false;
 
 bool Graphics::InitWindow(
     Vec2f winDimensions, const char* title,

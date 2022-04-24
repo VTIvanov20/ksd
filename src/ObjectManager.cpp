@@ -1,4 +1,5 @@
 #include "ObjectManager.hpp"
+#include "./util/graphics.hpp"
 #include "./Entity.hpp"
 #include "./components/Component.hpp"
 
@@ -106,4 +107,14 @@ void ObjectManager::TriggerUpdateEvents()
             std::static_pointer_cast<Entity>(obj.second)->OnUpdateComponents();
         }
     }
+
+    SDLImGui::BeginImGuiDrawing();
+    for (auto obj : objectTable)
+    {
+        if (CheckBaseName(obj.second, "Entity"))
+        {
+            std::static_pointer_cast<Entity>(obj.second)->OnUpdateUIComponents();
+        }
+    }
+    SDLImGui::EndImGuiDrawing();
 }

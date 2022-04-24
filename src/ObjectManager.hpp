@@ -1,7 +1,7 @@
 #pragma once
 
 #include <list>
-#include <map>
+#include <unordered_map>
 #include <memory>
 #include <cstring>
 #include <cassert>
@@ -31,7 +31,7 @@ public:
 class ObjectManager
 {
 private:
-    std::map<uint64_t, std::shared_ptr<Object>> objectTable;
+    std::unordered_map<uint64_t, std::shared_ptr<Object>> objectTable;
 
     static uint64_t currentId;
     static ObjectManager* instance;

@@ -14,8 +14,20 @@ void Entity::OnUpdateComponents()
     for (auto component : boundComponents)
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
-        if (component.second.lock()->Active || component.second.lock()->WantsUpdate())
-            component.second.lock()->OnUpdate();
+        auto sharedComponent = component.second.lock();
+        if (sharedComponent->Active)
+            sharedComponent->OnUpdate();
+    }
+}
+
+void Entity::OnUpdateUIComponents()
+{
+    for (auto component : boundComponents)
+    {
+        assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
+        auto sharedComponent = component.second.lock();
+        if (sharedComponent->Active)
+            sharedComponent->OnUI();
     }
 }
 
@@ -24,8 +36,9 @@ void Entity::OnEntityDestroy()
     for (auto component : boundComponents)
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
-        component.second.lock()->OnDestroy();
-        component.second.lock()->IsUsed = false;
+        auto sharedComponent = component.second.lock();
+        sharedComponent->OnDestroy();
+        sharedComponent->IsUsed = false;
     }
 }
 
@@ -35,10 +48,12 @@ void Entity::BindComponent(std::weak_ptr<Component> component)
     assert(component.lock()->ComponentName() != nullptr && "An attempt was made to bind an instance of the base Component class");
     assert(!component.lock()->IsUsed && "An attempt was made to bind a used Component");
 
-    std::string componentName = component.lock()->ComponentName();
+    auto sharedComponent = component.lock();
+
+    std::string componentName = sharedComponent->ComponentName();
     assert(boundComponents.find(componentName) == boundComponents.end() && "An attempt was made to bind an already existing component type");
     
-    component.lock()->BindToEntity(this->GetID());
+    sharedComponent->BindToEntity(this->GetID());
     boundComponents[componentName] = component;
 }
 

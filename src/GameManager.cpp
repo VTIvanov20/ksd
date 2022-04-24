@@ -17,9 +17,12 @@ void GameManager::ReinitializeScene()
 {
     // Destroy any leftover drawables to prevent memory leaking
     ObjectManager::GetInstance()->DestroyAllEntities();
-    auto entity = ECS::CreateEntity();
-    auto menuComponent = ECS::CreateComponent<MainMenu>();
-    entity.lock()->BindComponent(menuComponent);
+
+    {    
+        auto entity = ECS::CreateEntity();
+        entity.lock()->BindComponent(ECS::CreateComponent<MainMenu>());
+    }
+
     ObjectManager::GetInstance()->TriggerCreateEvents();
 }
 
