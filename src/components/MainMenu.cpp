@@ -74,7 +74,13 @@ void MainMenu::OnUI()
             }
             break;
         case MainMenuState::MULTIPLAYER_JOIN:
-            if(ImGui::InputText("Enter game code", textBuf, 9))
+            ImGui::Text("Enter game code:");
+            if(ImGui::InputText(" ", textBuf, 9))
+            {
+                // GameManager::GetInstance()->JoinMultiplayerGame();
+            }
+            ImGui::SameLine();
+            if(ImGui::Button("Join", ImVec2(100, 0)))
             {
                 // GameManager::GetInstance()->JoinMultiplayerGame();
             }
