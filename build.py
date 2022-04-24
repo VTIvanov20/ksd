@@ -2,6 +2,7 @@ import os
 import subprocess
 import re
 import platform
+import threading
 
 def call_shell(*args):
     try:
@@ -31,18 +32,28 @@ else:
     out_ext = "out"
 
 compiled_objects = []
+thread_pool = []
 
 def compile_file(file):
     if not re.search(compile_pattern, file) == None:
         compile_path = os.path.join(dir, file)
         out_path = os.path.join(object_dir, file.split('.')[0]) + '.o'
-        print(f"INFO: Compiling {compile_path}...")
         call_shell(f"{compiler} {cflags} {err_flags} -c {compile_path} -o {out_path} {libs}")
+        print(f"INFO: Compiled {compile_path}!")
         compiled_objects.append(out_path)
 
 for [dir, subDirs, files] in os.walk(source_dir):
     for file in files:
-        compile_file(file)
+        t = threading.Thread(target=compile_file, args=(file,))
+        t.start()
+        thread_pool.append(t)
+
+        if len(thread_pool) == 4:
+            for thread in thread_pool:
+                thread.join()
+
+for thread in thread_pool:
+    thread.join()
 
 print("INFO: Linking...")
 call_shell(f'{compiler} {cflags} {err_flags} -o bin/main.{out_ext} {" ".join(compiled_objects)} {libs}')
