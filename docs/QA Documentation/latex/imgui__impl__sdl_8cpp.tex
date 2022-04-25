@@ -1,0 +1,177 @@
+\hypertarget{imgui__impl__sdl_8cpp}{}\doxysection{util/imgui/backends/imgui\+\_\+impl\+\_\+sdl.cpp File Reference}
+\label{imgui__impl__sdl_8cpp}\index{util/imgui/backends/imgui\_impl\_sdl.cpp@{util/imgui/backends/imgui\_impl\_sdl.cpp}}
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui\+\_\+impl\+\_\+sdl.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+syswm.\+h$>$}\newline
+Include dependency graph for imgui\+\_\+impl\+\_\+sdl.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__sdl_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_im_gui___impl_s_d_l2___data}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_im_gui___impl_s_d_l2___viewport_data}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Viewport\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_a313b5bc58c0de4eb53710ddc720e094d}{SDL\+\_\+\+HAS\+\_\+\+CAPTURE\+\_\+\+AND\+\_\+\+GLOBAL\+\_\+\+MOUSE}}~0
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_a0abd40a62e21e48ecc6b8143a76a7cf4}{SDL\+\_\+\+HAS\+\_\+\+MOUSE\+\_\+\+FOCUS\+\_\+\+CLICKTHROUGH}}~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_a9874dfd196522ba18571a993f3dfe843}{SDL\+\_\+\+HAS\+\_\+\+WINDOW\+\_\+\+ALPHA}}~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_ac1a35c4eee8bee7e3df73b7831248d8b}{SDL\+\_\+\+HAS\+\_\+\+ALWAYS\+\_\+\+ON\+\_\+\+TOP}}~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_ad0ae23e2c9d00a932c6116ca1bb19956}{SDL\+\_\+\+HAS\+\_\+\+USABLE\+\_\+\+DISPLAY\+\_\+\+BOUNDS}}~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_a9edf138c0164f6bc6b711d4824631615}{SDL\+\_\+\+HAS\+\_\+\+PER\+\_\+\+MONITOR\+\_\+\+DPI}}~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,4)
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_aea2eeaab96a591241a01aa9cda35be47}{SDL\+\_\+\+HAS\+\_\+\+VULKAN}}~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,6)
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_abfc205127accf0adc131007017a20442}{IM\+\_\+\+SATURATE}}(V)~(V $<$ 0.\+0f ? 0.\+0f \+: V $>$ 1.\+0f ? 1.\+0f \+: V)
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_afccc1d030b08655c5875bc5179e21618}{MAP\+\_\+\+BUTTON}}(KEY\+\_\+\+NO,  BUTTON\+\_\+\+NO)~\{ io.\+Add\+Key\+Event(KEY\+\_\+\+NO, SDL\+\_\+\+Game\+Controller\+Get\+Button(game\+\_\+controller, BUTTON\+\_\+\+NO) != 0); \}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__sdl_8cpp_afa7c4cef68c0de2b660dcb759c8f1b57}{MAP\+\_\+\+ANALOG}}(KEY\+\_\+\+NO,  AXIS\+\_\+\+NO,  V0,  V1)~\{ float vn = (float)(SDL\+\_\+\+Game\+Controller\+Get\+Axis(game\+\_\+controller, AXIS\+\_\+\+NO) -\/ V0) / (float)(V1 -\/ V0); vn = \mbox{\hyperlink{imgui__impl__sdl_8cpp_abfc205127accf0adc131007017a20442}{IM\+\_\+\+SATURATE}}(vn); io.\+Add\+Key\+Analog\+Event(KEY\+\_\+\+NO, vn $>$ 0.\+1f, vn); \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{imgui__impl__sdl_8cpp_af02f4ad765d4f65b334eb14a4065f8eb}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Process\+Event}} (const \mbox{\hyperlink{imgui__impl__sdl_8h_a33fcc6aa445cb781bfca881e39e5333e}{SDL\+\_\+\+Event}} $\ast$event)
+\item 
+bool \mbox{\hyperlink{imgui__impl__sdl_8cpp_a64942ba4101d9d607f601a381ce40d95}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+Open\+GL}} (SDL\+\_\+\+Window $\ast$window, void $\ast$sdl\+\_\+gl\+\_\+context)
+\item 
+bool \mbox{\hyperlink{imgui__impl__sdl_8cpp_a37fa767ee8df754bd923b1d1e4de55a7}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+Vulkan}} (SDL\+\_\+\+Window $\ast$window)
+\item 
+bool \mbox{\hyperlink{imgui__impl__sdl_8cpp_ae7d148dd2c382c50e59d125907530838}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+D3D}} (SDL\+\_\+\+Window $\ast$window)
+\item 
+bool \mbox{\hyperlink{imgui__impl__sdl_8cpp_a890ac8639fb6eb52d06d11b9d157e035}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+Metal}} (SDL\+\_\+\+Window $\ast$window)
+\item 
+bool \mbox{\hyperlink{imgui__impl__sdl_8cpp_a3fdc9531f8ca3cdc5f70364aab324b21}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+SDLRenderer}} (SDL\+\_\+\+Window $\ast$window, SDL\+\_\+\+Renderer $\ast$renderer)
+\item 
+void \mbox{\hyperlink{imgui__impl__sdl_8cpp_af32b62f3df7cef2d1b3a88b8fb96d811}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Shutdown}} ()
+\item 
+void \mbox{\hyperlink{imgui__impl__sdl_8cpp_ade7f27ebdb4261e5e9184379677e0bac}{Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+New\+Frame}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_abfc205127accf0adc131007017a20442}\label{imgui__impl__sdl_8cpp_abfc205127accf0adc131007017a20442}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!IM\_SATURATE@{IM\_SATURATE}}
+\index{IM\_SATURATE@{IM\_SATURATE}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{IM\_SATURATE}{IM\_SATURATE}}
+{\footnotesize\ttfamily \#define IM\+\_\+\+SATURATE(\begin{DoxyParamCaption}\item[{}]{V }\end{DoxyParamCaption})~(V $<$ 0.\+0f ? 0.\+0f \+: V $>$ 1.\+0f ? 1.\+0f \+: V)}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_afa7c4cef68c0de2b660dcb759c8f1b57}\label{imgui__impl__sdl_8cpp_afa7c4cef68c0de2b660dcb759c8f1b57}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!MAP\_ANALOG@{MAP\_ANALOG}}
+\index{MAP\_ANALOG@{MAP\_ANALOG}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{MAP\_ANALOG}{MAP\_ANALOG}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+ANALOG(\begin{DoxyParamCaption}\item[{}]{KEY\+\_\+\+NO,  }\item[{}]{AXIS\+\_\+\+NO,  }\item[{}]{V0,  }\item[{}]{V1 }\end{DoxyParamCaption})~\{ float vn = (float)(SDL\+\_\+\+Game\+Controller\+Get\+Axis(game\+\_\+controller, AXIS\+\_\+\+NO) -\/ V0) / (float)(V1 -\/ V0); vn = \mbox{\hyperlink{imgui__impl__sdl_8cpp_abfc205127accf0adc131007017a20442}{IM\+\_\+\+SATURATE}}(vn); io.\+Add\+Key\+Analog\+Event(KEY\+\_\+\+NO, vn $>$ 0.\+1f, vn); \}}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_afccc1d030b08655c5875bc5179e21618}\label{imgui__impl__sdl_8cpp_afccc1d030b08655c5875bc5179e21618}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!MAP\_BUTTON@{MAP\_BUTTON}}
+\index{MAP\_BUTTON@{MAP\_BUTTON}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{MAP\_BUTTON}{MAP\_BUTTON}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+BUTTON(\begin{DoxyParamCaption}\item[{}]{KEY\+\_\+\+NO,  }\item[{}]{BUTTON\+\_\+\+NO }\end{DoxyParamCaption})~\{ io.\+Add\+Key\+Event(KEY\+\_\+\+NO, SDL\+\_\+\+Game\+Controller\+Get\+Button(game\+\_\+controller, BUTTON\+\_\+\+NO) != 0); \}}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_ac1a35c4eee8bee7e3df73b7831248d8b}\label{imgui__impl__sdl_8cpp_ac1a35c4eee8bee7e3df73b7831248d8b}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!SDL\_HAS\_ALWAYS\_ON\_TOP@{SDL\_HAS\_ALWAYS\_ON\_TOP}}
+\index{SDL\_HAS\_ALWAYS\_ON\_TOP@{SDL\_HAS\_ALWAYS\_ON\_TOP}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{SDL\_HAS\_ALWAYS\_ON\_TOP}{SDL\_HAS\_ALWAYS\_ON\_TOP}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+HAS\+\_\+\+ALWAYS\+\_\+\+ON\+\_\+\+TOP~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a313b5bc58c0de4eb53710ddc720e094d}\label{imgui__impl__sdl_8cpp_a313b5bc58c0de4eb53710ddc720e094d}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!SDL\_HAS\_CAPTURE\_AND\_GLOBAL\_MOUSE@{SDL\_HAS\_CAPTURE\_AND\_GLOBAL\_MOUSE}}
+\index{SDL\_HAS\_CAPTURE\_AND\_GLOBAL\_MOUSE@{SDL\_HAS\_CAPTURE\_AND\_GLOBAL\_MOUSE}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{SDL\_HAS\_CAPTURE\_AND\_GLOBAL\_MOUSE}{SDL\_HAS\_CAPTURE\_AND\_GLOBAL\_MOUSE}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+HAS\+\_\+\+CAPTURE\+\_\+\+AND\+\_\+\+GLOBAL\+\_\+\+MOUSE~0}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a0abd40a62e21e48ecc6b8143a76a7cf4}\label{imgui__impl__sdl_8cpp_a0abd40a62e21e48ecc6b8143a76a7cf4}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!SDL\_HAS\_MOUSE\_FOCUS\_CLICKTHROUGH@{SDL\_HAS\_MOUSE\_FOCUS\_CLICKTHROUGH}}
+\index{SDL\_HAS\_MOUSE\_FOCUS\_CLICKTHROUGH@{SDL\_HAS\_MOUSE\_FOCUS\_CLICKTHROUGH}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{SDL\_HAS\_MOUSE\_FOCUS\_CLICKTHROUGH}{SDL\_HAS\_MOUSE\_FOCUS\_CLICKTHROUGH}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+HAS\+\_\+\+MOUSE\+\_\+\+FOCUS\+\_\+\+CLICKTHROUGH~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a9edf138c0164f6bc6b711d4824631615}\label{imgui__impl__sdl_8cpp_a9edf138c0164f6bc6b711d4824631615}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!SDL\_HAS\_PER\_MONITOR\_DPI@{SDL\_HAS\_PER\_MONITOR\_DPI}}
+\index{SDL\_HAS\_PER\_MONITOR\_DPI@{SDL\_HAS\_PER\_MONITOR\_DPI}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{SDL\_HAS\_PER\_MONITOR\_DPI}{SDL\_HAS\_PER\_MONITOR\_DPI}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+HAS\+\_\+\+PER\+\_\+\+MONITOR\+\_\+\+DPI~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,4)}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_ad0ae23e2c9d00a932c6116ca1bb19956}\label{imgui__impl__sdl_8cpp_ad0ae23e2c9d00a932c6116ca1bb19956}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!SDL\_HAS\_USABLE\_DISPLAY\_BOUNDS@{SDL\_HAS\_USABLE\_DISPLAY\_BOUNDS}}
+\index{SDL\_HAS\_USABLE\_DISPLAY\_BOUNDS@{SDL\_HAS\_USABLE\_DISPLAY\_BOUNDS}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{SDL\_HAS\_USABLE\_DISPLAY\_BOUNDS}{SDL\_HAS\_USABLE\_DISPLAY\_BOUNDS}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+HAS\+\_\+\+USABLE\+\_\+\+DISPLAY\+\_\+\+BOUNDS~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_aea2eeaab96a591241a01aa9cda35be47}\label{imgui__impl__sdl_8cpp_aea2eeaab96a591241a01aa9cda35be47}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!SDL\_HAS\_VULKAN@{SDL\_HAS\_VULKAN}}
+\index{SDL\_HAS\_VULKAN@{SDL\_HAS\_VULKAN}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{SDL\_HAS\_VULKAN}{SDL\_HAS\_VULKAN}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+HAS\+\_\+\+VULKAN~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,6)}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a9874dfd196522ba18571a993f3dfe843}\label{imgui__impl__sdl_8cpp_a9874dfd196522ba18571a993f3dfe843}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!SDL\_HAS\_WINDOW\_ALPHA@{SDL\_HAS\_WINDOW\_ALPHA}}
+\index{SDL\_HAS\_WINDOW\_ALPHA@{SDL\_HAS\_WINDOW\_ALPHA}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{SDL\_HAS\_WINDOW\_ALPHA}{SDL\_HAS\_WINDOW\_ALPHA}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+HAS\+\_\+\+WINDOW\+\_\+\+ALPHA~SDL\+\_\+\+VERSION\+\_\+\+ATLEAST(2,0,5)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_ae7d148dd2c382c50e59d125907530838}\label{imgui__impl__sdl_8cpp_ae7d148dd2c382c50e59d125907530838}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_InitForD3D@{ImGui\_ImplSDL2\_InitForD3D}}
+\index{ImGui\_ImplSDL2\_InitForD3D@{ImGui\_ImplSDL2\_InitForD3D}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_InitForD3D()}{ImGui\_ImplSDL2\_InitForD3D()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+D3D (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a890ac8639fb6eb52d06d11b9d157e035}\label{imgui__impl__sdl_8cpp_a890ac8639fb6eb52d06d11b9d157e035}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_InitForMetal@{ImGui\_ImplSDL2\_InitForMetal}}
+\index{ImGui\_ImplSDL2\_InitForMetal@{ImGui\_ImplSDL2\_InitForMetal}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_InitForMetal()}{ImGui\_ImplSDL2\_InitForMetal()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+Metal (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a64942ba4101d9d607f601a381ce40d95}\label{imgui__impl__sdl_8cpp_a64942ba4101d9d607f601a381ce40d95}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_InitForOpenGL@{ImGui\_ImplSDL2\_InitForOpenGL}}
+\index{ImGui\_ImplSDL2\_InitForOpenGL@{ImGui\_ImplSDL2\_InitForOpenGL}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_InitForOpenGL()}{ImGui\_ImplSDL2\_InitForOpenGL()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+Open\+GL (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window,  }\item[{void $\ast$}]{sdl\+\_\+gl\+\_\+context }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a3fdc9531f8ca3cdc5f70364aab324b21}\label{imgui__impl__sdl_8cpp_a3fdc9531f8ca3cdc5f70364aab324b21}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_InitForSDLRenderer@{ImGui\_ImplSDL2\_InitForSDLRenderer}}
+\index{ImGui\_ImplSDL2\_InitForSDLRenderer@{ImGui\_ImplSDL2\_InitForSDLRenderer}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_InitForSDLRenderer()}{ImGui\_ImplSDL2\_InitForSDLRenderer()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+SDLRenderer (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_a37fa767ee8df754bd923b1d1e4de55a7}\label{imgui__impl__sdl_8cpp_a37fa767ee8df754bd923b1d1e4de55a7}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_InitForVulkan@{ImGui\_ImplSDL2\_InitForVulkan}}
+\index{ImGui\_ImplSDL2\_InitForVulkan@{ImGui\_ImplSDL2\_InitForVulkan}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_InitForVulkan()}{ImGui\_ImplSDL2\_InitForVulkan()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Init\+For\+Vulkan (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_ade7f27ebdb4261e5e9184379677e0bac}\label{imgui__impl__sdl_8cpp_ade7f27ebdb4261e5e9184379677e0bac}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_NewFrame@{ImGui\_ImplSDL2\_NewFrame}}
+\index{ImGui\_ImplSDL2\_NewFrame@{ImGui\_ImplSDL2\_NewFrame}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_NewFrame()}{ImGui\_ImplSDL2\_NewFrame()}}
+{\footnotesize\ttfamily void Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+New\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_af02f4ad765d4f65b334eb14a4065f8eb}\label{imgui__impl__sdl_8cpp_af02f4ad765d4f65b334eb14a4065f8eb}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_ProcessEvent@{ImGui\_ImplSDL2\_ProcessEvent}}
+\index{ImGui\_ImplSDL2\_ProcessEvent@{ImGui\_ImplSDL2\_ProcessEvent}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_ProcessEvent()}{ImGui\_ImplSDL2\_ProcessEvent()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Process\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{imgui__impl__sdl_8h_a33fcc6aa445cb781bfca881e39e5333e}{SDL\+\_\+\+Event}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imgui__impl__sdl_8cpp_af32b62f3df7cef2d1b3a88b8fb96d811}\label{imgui__impl__sdl_8cpp_af32b62f3df7cef2d1b3a88b8fb96d811}} 
+\index{imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}!ImGui\_ImplSDL2\_Shutdown@{ImGui\_ImplSDL2\_Shutdown}}
+\index{ImGui\_ImplSDL2\_Shutdown@{ImGui\_ImplSDL2\_Shutdown}!imgui\_impl\_sdl.cpp@{imgui\_impl\_sdl.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplSDL2\_Shutdown()}{ImGui\_ImplSDL2\_Shutdown()}}
+{\footnotesize\ttfamily void Im\+Gui\+\_\+\+Impl\+SDL2\+\_\+\+Shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

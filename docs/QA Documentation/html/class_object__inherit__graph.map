@@ -1,0 +1,7 @@
+<map id="Object" name="Object">
+<area shape="rect" id="node1" title=" " alt="" coords="115,5,175,32"/>
+<area shape="rect" id="node2" href="$class_component.html" title=" " alt="" coords="5,80,93,107"/>
+<area shape="rect" id="node4" href="$class_entity.html" title=" " alt="" coords="117,80,173,107"/>
+<area shape="rect" id="node5" href="$class_texture.html" title=" " alt="" coords="198,80,263,107"/>
+<area shape="rect" id="node3" href="$class_main_menu.html" title=" " alt="" coords="8,155,91,181"/>
+</map>

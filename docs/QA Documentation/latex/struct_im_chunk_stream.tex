@@ -1,0 +1,141 @@
+\hypertarget{struct_im_chunk_stream}{}\doxysection{Im\+Chunk\+Stream\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{struct_im_chunk_stream}\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+
+
+{\ttfamily \#include $<$imgui\+\_\+internal.\+h$>$}
+
+
+
+Collaboration diagram for Im\+Chunk\+Stream\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{struct_im_chunk_stream__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_im_chunk_stream_a3bf3babbba7a8edafce99be0589379a3}{clear}} ()
+\item 
+bool \mbox{\hyperlink{struct_im_chunk_stream_aef1d3eeb4c1aa2980da6a14ae96d2499}{empty}} () const
+\item 
+int \mbox{\hyperlink{struct_im_chunk_stream_a0454c7345104dad27a52828584765edb}{size}} () const
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream_a29ced7ee3e9a2ae8123a92b110b4b0bd}{alloc\+\_\+chunk}} (size\+\_\+t sz)
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream_a10a9b29c856b3f84ce8811ebfaf2cfe8}{begin}} ()
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream_a3a99f21ce1867d694104d740ac7ab133}{next\+\_\+chunk}} (T $\ast$p)
+\item 
+int \mbox{\hyperlink{struct_im_chunk_stream_a1a83609aaee47cf8b59a8ae09a04a06b}{chunk\+\_\+size}} (const T $\ast$p)
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream_a5c7faa90ac7fa02140a3298dbfdd5cad}{end}} ()
+\item 
+int \mbox{\hyperlink{struct_im_chunk_stream_ab3dccb857d0b35ae295d14ff7f9dd0ac}{offset\+\_\+from\+\_\+ptr}} (const T $\ast$p)
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream_a385c84c0a5eca2d402f3550530af587e}{ptr\+\_\+from\+\_\+offset}} (int off)
+\item 
+void \mbox{\hyperlink{struct_im_chunk_stream_adbd734ea08939c0bce519e90b26c9d28}{swap}} (\mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$ \&rhs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ char $>$ \mbox{\hyperlink{struct_im_chunk_stream_ac6036044bd7eae552342b430527cc620}{Buf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_im_chunk_stream_a29ced7ee3e9a2ae8123a92b110b4b0bd}\label{struct_im_chunk_stream_a29ced7ee3e9a2ae8123a92b110b4b0bd}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!alloc\_chunk@{alloc\_chunk}}
+\index{alloc\_chunk@{alloc\_chunk}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{alloc\_chunk()}{alloc\_chunk()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::alloc\+\_\+chunk (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{sz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_a10a9b29c856b3f84ce8811ebfaf2cfe8}\label{struct_im_chunk_stream_a10a9b29c856b3f84ce8811ebfaf2cfe8}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_a1a83609aaee47cf8b59a8ae09a04a06b}\label{struct_im_chunk_stream_a1a83609aaee47cf8b59a8ae09a04a06b}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!chunk\_size@{chunk\_size}}
+\index{chunk\_size@{chunk\_size}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{chunk\_size()}{chunk\_size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::chunk\+\_\+size (\begin{DoxyParamCaption}\item[{const T $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_a3bf3babbba7a8edafce99be0589379a3}\label{struct_im_chunk_stream_a3bf3babbba7a8edafce99be0589379a3}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_aef1d3eeb4c1aa2980da6a14ae96d2499}\label{struct_im_chunk_stream_aef1d3eeb4c1aa2980da6a14ae96d2499}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_a5c7faa90ac7fa02140a3298dbfdd5cad}\label{struct_im_chunk_stream_a5c7faa90ac7fa02140a3298dbfdd5cad}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!end@{end}}
+\index{end@{end}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_a3a99f21ce1867d694104d740ac7ab133}\label{struct_im_chunk_stream_a3a99f21ce1867d694104d740ac7ab133}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!next\_chunk@{next\_chunk}}
+\index{next\_chunk@{next\_chunk}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{next\_chunk()}{next\_chunk()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::next\+\_\+chunk (\begin{DoxyParamCaption}\item[{T $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_ab3dccb857d0b35ae295d14ff7f9dd0ac}\label{struct_im_chunk_stream_ab3dccb857d0b35ae295d14ff7f9dd0ac}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!offset\_from\_ptr@{offset\_from\_ptr}}
+\index{offset\_from\_ptr@{offset\_from\_ptr}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{offset\_from\_ptr()}{offset\_from\_ptr()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::offset\+\_\+from\+\_\+ptr (\begin{DoxyParamCaption}\item[{const T $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_a385c84c0a5eca2d402f3550530af587e}\label{struct_im_chunk_stream_a385c84c0a5eca2d402f3550530af587e}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!ptr\_from\_offset@{ptr\_from\_offset}}
+\index{ptr\_from\_offset@{ptr\_from\_offset}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ptr\_from\_offset()}{ptr\_from\_offset()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::ptr\+\_\+from\+\_\+offset (\begin{DoxyParamCaption}\item[{int}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_a0454c7345104dad27a52828584765edb}\label{struct_im_chunk_stream_a0454c7345104dad27a52828584765edb}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!size@{size}}
+\index{size@{size}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_chunk_stream_adbd734ea08939c0bce519e90b26c9d28}\label{struct_im_chunk_stream_adbd734ea08939c0bce519e90b26c9d28}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!swap@{swap}}
+\index{swap@{swap}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_im_chunk_stream_ac6036044bd7eae552342b430527cc620}\label{struct_im_chunk_stream_ac6036044bd7eae552342b430527cc620}} 
+\index{ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}!Buf@{Buf}}
+\index{Buf@{Buf}!ImChunkStream$<$ T $>$@{ImChunkStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Buf}{Buf}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$char$>$ \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ T $>$\+::\+Buf}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+util/imgui/\mbox{\hyperlink{imgui__internal_8h}{imgui\+\_\+internal.\+h}}\end{DoxyCompactItemize}

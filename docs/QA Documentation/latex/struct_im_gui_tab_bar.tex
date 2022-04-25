@@ -1,0 +1,309 @@
+\hypertarget{struct_im_gui_tab_bar}{}\doxysection{Im\+Gui\+Tab\+Bar Struct Reference}
+\label{struct_im_gui_tab_bar}\index{ImGuiTabBar@{ImGuiTabBar}}
+
+
+{\ttfamily \#include $<$imgui\+\_\+internal.\+h$>$}
+
+
+
+Collaboration diagram for Im\+Gui\+Tab\+Bar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_im_gui_tab_bar__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_im_gui_tab_bar_a7d04467b887730a184365fdb3cb5bb17}{Im\+Gui\+Tab\+Bar}} ()
+\item 
+int \mbox{\hyperlink{struct_im_gui_tab_bar_aced33dc6164509331b3430239bd7dcbd}{Get\+Tab\+Order}} (const \mbox{\hyperlink{struct_im_gui_tab_item}{Im\+Gui\+Tab\+Item}} $\ast$tab) const
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_im_gui_tab_bar_ac21e79994c67e46c06e3ffcdf50cbd87}{Get\+Tab\+Name}} (const \mbox{\hyperlink{struct_im_gui_tab_item}{Im\+Gui\+Tab\+Item}} $\ast$tab) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_tab_item}{Im\+Gui\+Tab\+Item}} $>$ \mbox{\hyperlink{struct_im_gui_tab_bar_a4d6d0ae42c1189fcdcec50c1e1e9b057}{Tabs}}
+\item 
+\mbox{\hyperlink{imgui_8h_a60ced774e9c7a4f73c41ef4feb91a30a}{Im\+Gui\+Tab\+Bar\+Flags}} \mbox{\hyperlink{struct_im_gui_tab_bar_aa528c4c6a2b733caf8f4d83828077d87}{Flags}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_tab_bar_a05b16eabc366d306e18d433ae9a741cc}{ID}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_tab_bar_a42fa6a88e4533103420edf6095d6c2aa}{Selected\+Tab\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_tab_bar_aba7b1f0157f85df2acc09bc107d6dfa0}{Next\+Selected\+Tab\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_tab_bar_a1716495ecb746feb37f0b736edb50c89}{Visible\+Tab\+Id}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_tab_bar_a78e5cbb7a8a793e964397f85fca07432}{Curr\+Frame\+Visible}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_tab_bar_ac95b0b476d7545e74adc6a6472dc1f14}{Prev\+Frame\+Visible}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_tab_bar_a6cfe603b0077e3ae0dfeec093acce320}{Bar\+Rect}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_ab95ee8e47a23b1a837d8db6d84bb174f}{Curr\+Tabs\+Contents\+Height}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_a00abffebf4f6b8e025cf1dc910a13674}{Prev\+Tabs\+Contents\+Height}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_a399daf37a3468ef8311a2093a575e263}{Width\+All\+Tabs}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_ad096f5f78c82eed61281b41c6d065f0a}{Width\+All\+Tabs\+Ideal}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_a0f8c0995a150b9f9439e2f02afc3936f}{Scrolling\+Anim}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_a1b7c74460402870d7ba50a798ba66365}{Scrolling\+Target}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_abc96e776c9f9d14b3f1fb6bdb8b5e5ac}{Scrolling\+Target\+Dist\+To\+Visibility}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_a402f9de25e4323587d9f289678896fca}{Scrolling\+Speed}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_acce137ab8e247117d97cf10e3d1df9ae}{Scrolling\+Rect\+MinX}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_a0d1248e9b1c325c590084e119e3268a0}{Scrolling\+Rect\+MaxX}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_tab_bar_a63b10062043a569efbb55462602d7b27}{Reorder\+Request\+Tab\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} \mbox{\hyperlink{struct_im_gui_tab_bar_af719bc9df71e0472f4ce4fb11615b53f}{Reorder\+Request\+Offset}}
+\item 
+\mbox{\hyperlink{imgui_8h_a33644f626f44716357624c2755a9b9d1}{Im\+S8}} \mbox{\hyperlink{struct_im_gui_tab_bar_ae8ab845e23ad911c3a4c45880acfb64f}{Begin\+Count}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_tab_bar_acf92c2132df97eae310b391d894d261d}{Want\+Layout}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_tab_bar_a9112067953a14bc707d2660dc1cf93b0}{Visible\+Tab\+Was\+Submitted}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_tab_bar_a616acfd5a38deb934c5a079b458ca5a9}{Tabs\+Added\+New}}
+\item 
+\mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} \mbox{\hyperlink{struct_im_gui_tab_bar_a577cacc6ee39195b59a48f347549c4e2}{Tabs\+Active\+Count}}
+\item 
+\mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} \mbox{\hyperlink{struct_im_gui_tab_bar_a552e9e99f0e46873b43db1859a5df452}{Last\+Tab\+Item\+Idx}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_tab_bar_afaa62d532c31dded8f5102e8c504ab7e}{Item\+SpacingY}}
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{struct_im_gui_tab_bar_aa0319aebb5c59e026486f60b68642ee6}{Frame\+Padding}}
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{struct_im_gui_tab_bar_a075db95c9c1e0cb223c4ed050b47e9ab}{Backup\+Cursor\+Pos}}
+\item 
+\mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} \mbox{\hyperlink{struct_im_gui_tab_bar_afe5bda8cfea073a5d51a1d2bc023ef74}{Tabs\+Names}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a7d04467b887730a184365fdb3cb5bb17}\label{struct_im_gui_tab_bar_a7d04467b887730a184365fdb3cb5bb17}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ImGuiTabBar@{ImGuiTabBar}}
+\index{ImGuiTabBar@{ImGuiTabBar}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ImGuiTabBar()}{ImGuiTabBar()}}
+{\footnotesize\ttfamily Im\+Gui\+Tab\+Bar\+::\+Im\+Gui\+Tab\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_im_gui_tab_bar_ac21e79994c67e46c06e3ffcdf50cbd87}\label{struct_im_gui_tab_bar_ac21e79994c67e46c06e3ffcdf50cbd87}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!GetTabName@{GetTabName}}
+\index{GetTabName@{GetTabName}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{GetTabName()}{GetTabName()}}
+{\footnotesize\ttfamily const char $\ast$ Im\+Gui\+Tab\+Bar\+::\+Get\+Tab\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_im_gui_tab_item}{Im\+Gui\+Tab\+Item}} $\ast$}]{tab }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_aced33dc6164509331b3430239bd7dcbd}\label{struct_im_gui_tab_bar_aced33dc6164509331b3430239bd7dcbd}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!GetTabOrder@{GetTabOrder}}
+\index{GetTabOrder@{GetTabOrder}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{GetTabOrder()}{GetTabOrder()}}
+{\footnotesize\ttfamily int Im\+Gui\+Tab\+Bar\+::\+Get\+Tab\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_im_gui_tab_item}{Im\+Gui\+Tab\+Item}} $\ast$}]{tab }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a075db95c9c1e0cb223c4ed050b47e9ab}\label{struct_im_gui_tab_bar_a075db95c9c1e0cb223c4ed050b47e9ab}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!BackupCursorPos@{BackupCursorPos}}
+\index{BackupCursorPos@{BackupCursorPos}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{BackupCursorPos}{BackupCursorPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Gui\+Tab\+Bar\+::\+Backup\+Cursor\+Pos}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a6cfe603b0077e3ae0dfeec093acce320}\label{struct_im_gui_tab_bar_a6cfe603b0077e3ae0dfeec093acce320}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!BarRect@{BarRect}}
+\index{BarRect@{BarRect}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{BarRect}{BarRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Tab\+Bar\+::\+Bar\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_ae8ab845e23ad911c3a4c45880acfb64f}\label{struct_im_gui_tab_bar_ae8ab845e23ad911c3a4c45880acfb64f}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!BeginCount@{BeginCount}}
+\index{BeginCount@{BeginCount}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{BeginCount}{BeginCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a33644f626f44716357624c2755a9b9d1}{Im\+S8}} Im\+Gui\+Tab\+Bar\+::\+Begin\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a78e5cbb7a8a793e964397f85fca07432}\label{struct_im_gui_tab_bar_a78e5cbb7a8a793e964397f85fca07432}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!CurrFrameVisible@{CurrFrameVisible}}
+\index{CurrFrameVisible@{CurrFrameVisible}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{CurrFrameVisible}{CurrFrameVisible}}
+{\footnotesize\ttfamily int Im\+Gui\+Tab\+Bar\+::\+Curr\+Frame\+Visible}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_ab95ee8e47a23b1a837d8db6d84bb174f}\label{struct_im_gui_tab_bar_ab95ee8e47a23b1a837d8db6d84bb174f}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!CurrTabsContentsHeight@{CurrTabsContentsHeight}}
+\index{CurrTabsContentsHeight@{CurrTabsContentsHeight}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{CurrTabsContentsHeight}{CurrTabsContentsHeight}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Curr\+Tabs\+Contents\+Height}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_aa528c4c6a2b733caf8f4d83828077d87}\label{struct_im_gui_tab_bar_aa528c4c6a2b733caf8f4d83828077d87}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!Flags@{Flags}}
+\index{Flags@{Flags}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{Flags}{Flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a60ced774e9c7a4f73c41ef4feb91a30a}{Im\+Gui\+Tab\+Bar\+Flags}} Im\+Gui\+Tab\+Bar\+::\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_aa0319aebb5c59e026486f60b68642ee6}\label{struct_im_gui_tab_bar_aa0319aebb5c59e026486f60b68642ee6}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!FramePadding@{FramePadding}}
+\index{FramePadding@{FramePadding}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{FramePadding}{FramePadding}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Gui\+Tab\+Bar\+::\+Frame\+Padding}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a05b16eabc366d306e18d433ae9a741cc}\label{struct_im_gui_tab_bar_a05b16eabc366d306e18d433ae9a741cc}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ID@{ID}}
+\index{ID@{ID}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Tab\+Bar\+::\+ID}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_afaa62d532c31dded8f5102e8c504ab7e}\label{struct_im_gui_tab_bar_afaa62d532c31dded8f5102e8c504ab7e}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ItemSpacingY@{ItemSpacingY}}
+\index{ItemSpacingY@{ItemSpacingY}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ItemSpacingY}{ItemSpacingY}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Item\+SpacingY}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a552e9e99f0e46873b43db1859a5df452}\label{struct_im_gui_tab_bar_a552e9e99f0e46873b43db1859a5df452}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!LastTabItemIdx@{LastTabItemIdx}}
+\index{LastTabItemIdx@{LastTabItemIdx}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{LastTabItemIdx}{LastTabItemIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} Im\+Gui\+Tab\+Bar\+::\+Last\+Tab\+Item\+Idx}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_aba7b1f0157f85df2acc09bc107d6dfa0}\label{struct_im_gui_tab_bar_aba7b1f0157f85df2acc09bc107d6dfa0}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!NextSelectedTabId@{NextSelectedTabId}}
+\index{NextSelectedTabId@{NextSelectedTabId}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{NextSelectedTabId}{NextSelectedTabId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Tab\+Bar\+::\+Next\+Selected\+Tab\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_ac95b0b476d7545e74adc6a6472dc1f14}\label{struct_im_gui_tab_bar_ac95b0b476d7545e74adc6a6472dc1f14}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!PrevFrameVisible@{PrevFrameVisible}}
+\index{PrevFrameVisible@{PrevFrameVisible}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{PrevFrameVisible}{PrevFrameVisible}}
+{\footnotesize\ttfamily int Im\+Gui\+Tab\+Bar\+::\+Prev\+Frame\+Visible}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a00abffebf4f6b8e025cf1dc910a13674}\label{struct_im_gui_tab_bar_a00abffebf4f6b8e025cf1dc910a13674}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!PrevTabsContentsHeight@{PrevTabsContentsHeight}}
+\index{PrevTabsContentsHeight@{PrevTabsContentsHeight}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{PrevTabsContentsHeight}{PrevTabsContentsHeight}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Prev\+Tabs\+Contents\+Height}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_af719bc9df71e0472f4ce4fb11615b53f}\label{struct_im_gui_tab_bar_af719bc9df71e0472f4ce4fb11615b53f}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ReorderRequestOffset@{ReorderRequestOffset}}
+\index{ReorderRequestOffset@{ReorderRequestOffset}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ReorderRequestOffset}{ReorderRequestOffset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} Im\+Gui\+Tab\+Bar\+::\+Reorder\+Request\+Offset}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a63b10062043a569efbb55462602d7b27}\label{struct_im_gui_tab_bar_a63b10062043a569efbb55462602d7b27}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ReorderRequestTabId@{ReorderRequestTabId}}
+\index{ReorderRequestTabId@{ReorderRequestTabId}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ReorderRequestTabId}{ReorderRequestTabId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Tab\+Bar\+::\+Reorder\+Request\+Tab\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a0f8c0995a150b9f9439e2f02afc3936f}\label{struct_im_gui_tab_bar_a0f8c0995a150b9f9439e2f02afc3936f}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ScrollingAnim@{ScrollingAnim}}
+\index{ScrollingAnim@{ScrollingAnim}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ScrollingAnim}{ScrollingAnim}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Scrolling\+Anim}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a0d1248e9b1c325c590084e119e3268a0}\label{struct_im_gui_tab_bar_a0d1248e9b1c325c590084e119e3268a0}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ScrollingRectMaxX@{ScrollingRectMaxX}}
+\index{ScrollingRectMaxX@{ScrollingRectMaxX}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ScrollingRectMaxX}{ScrollingRectMaxX}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Scrolling\+Rect\+MaxX}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_acce137ab8e247117d97cf10e3d1df9ae}\label{struct_im_gui_tab_bar_acce137ab8e247117d97cf10e3d1df9ae}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ScrollingRectMinX@{ScrollingRectMinX}}
+\index{ScrollingRectMinX@{ScrollingRectMinX}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ScrollingRectMinX}{ScrollingRectMinX}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Scrolling\+Rect\+MinX}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a402f9de25e4323587d9f289678896fca}\label{struct_im_gui_tab_bar_a402f9de25e4323587d9f289678896fca}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ScrollingSpeed@{ScrollingSpeed}}
+\index{ScrollingSpeed@{ScrollingSpeed}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ScrollingSpeed}{ScrollingSpeed}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Scrolling\+Speed}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a1b7c74460402870d7ba50a798ba66365}\label{struct_im_gui_tab_bar_a1b7c74460402870d7ba50a798ba66365}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ScrollingTarget@{ScrollingTarget}}
+\index{ScrollingTarget@{ScrollingTarget}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ScrollingTarget}{ScrollingTarget}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Scrolling\+Target}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_abc96e776c9f9d14b3f1fb6bdb8b5e5ac}\label{struct_im_gui_tab_bar_abc96e776c9f9d14b3f1fb6bdb8b5e5ac}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!ScrollingTargetDistToVisibility@{ScrollingTargetDistToVisibility}}
+\index{ScrollingTargetDistToVisibility@{ScrollingTargetDistToVisibility}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{ScrollingTargetDistToVisibility}{ScrollingTargetDistToVisibility}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Scrolling\+Target\+Dist\+To\+Visibility}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a42fa6a88e4533103420edf6095d6c2aa}\label{struct_im_gui_tab_bar_a42fa6a88e4533103420edf6095d6c2aa}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!SelectedTabId@{SelectedTabId}}
+\index{SelectedTabId@{SelectedTabId}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{SelectedTabId}{SelectedTabId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Tab\+Bar\+::\+Selected\+Tab\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a4d6d0ae42c1189fcdcec50c1e1e9b057}\label{struct_im_gui_tab_bar_a4d6d0ae42c1189fcdcec50c1e1e9b057}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!Tabs@{Tabs}}
+\index{Tabs@{Tabs}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{Tabs}{Tabs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_tab_item}{Im\+Gui\+Tab\+Item}}$>$ Im\+Gui\+Tab\+Bar\+::\+Tabs}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a577cacc6ee39195b59a48f347549c4e2}\label{struct_im_gui_tab_bar_a577cacc6ee39195b59a48f347549c4e2}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!TabsActiveCount@{TabsActiveCount}}
+\index{TabsActiveCount@{TabsActiveCount}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{TabsActiveCount}{TabsActiveCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} Im\+Gui\+Tab\+Bar\+::\+Tabs\+Active\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a616acfd5a38deb934c5a079b458ca5a9}\label{struct_im_gui_tab_bar_a616acfd5a38deb934c5a079b458ca5a9}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!TabsAddedNew@{TabsAddedNew}}
+\index{TabsAddedNew@{TabsAddedNew}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{TabsAddedNew}{TabsAddedNew}}
+{\footnotesize\ttfamily bool Im\+Gui\+Tab\+Bar\+::\+Tabs\+Added\+New}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_afe5bda8cfea073a5d51a1d2bc023ef74}\label{struct_im_gui_tab_bar_afe5bda8cfea073a5d51a1d2bc023ef74}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!TabsNames@{TabsNames}}
+\index{TabsNames@{TabsNames}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{TabsNames}{TabsNames}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} Im\+Gui\+Tab\+Bar\+::\+Tabs\+Names}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a1716495ecb746feb37f0b736edb50c89}\label{struct_im_gui_tab_bar_a1716495ecb746feb37f0b736edb50c89}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!VisibleTabId@{VisibleTabId}}
+\index{VisibleTabId@{VisibleTabId}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{VisibleTabId}{VisibleTabId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Tab\+Bar\+::\+Visible\+Tab\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a9112067953a14bc707d2660dc1cf93b0}\label{struct_im_gui_tab_bar_a9112067953a14bc707d2660dc1cf93b0}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!VisibleTabWasSubmitted@{VisibleTabWasSubmitted}}
+\index{VisibleTabWasSubmitted@{VisibleTabWasSubmitted}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{VisibleTabWasSubmitted}{VisibleTabWasSubmitted}}
+{\footnotesize\ttfamily bool Im\+Gui\+Tab\+Bar\+::\+Visible\+Tab\+Was\+Submitted}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_acf92c2132df97eae310b391d894d261d}\label{struct_im_gui_tab_bar_acf92c2132df97eae310b391d894d261d}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!WantLayout@{WantLayout}}
+\index{WantLayout@{WantLayout}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{WantLayout}{WantLayout}}
+{\footnotesize\ttfamily bool Im\+Gui\+Tab\+Bar\+::\+Want\+Layout}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_a399daf37a3468ef8311a2093a575e263}\label{struct_im_gui_tab_bar_a399daf37a3468ef8311a2093a575e263}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!WidthAllTabs@{WidthAllTabs}}
+\index{WidthAllTabs@{WidthAllTabs}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{WidthAllTabs}{WidthAllTabs}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Width\+All\+Tabs}
+
+\mbox{\Hypertarget{struct_im_gui_tab_bar_ad096f5f78c82eed61281b41c6d065f0a}\label{struct_im_gui_tab_bar_ad096f5f78c82eed61281b41c6d065f0a}} 
+\index{ImGuiTabBar@{ImGuiTabBar}!WidthAllTabsIdeal@{WidthAllTabsIdeal}}
+\index{WidthAllTabsIdeal@{WidthAllTabsIdeal}!ImGuiTabBar@{ImGuiTabBar}}
+\doxysubsubsection{\texorpdfstring{WidthAllTabsIdeal}{WidthAllTabsIdeal}}
+{\footnotesize\ttfamily float Im\+Gui\+Tab\+Bar\+::\+Width\+All\+Tabs\+Ideal}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+util/imgui/\mbox{\hyperlink{imgui__internal_8h}{imgui\+\_\+internal.\+h}}\item 
+util/imgui/\mbox{\hyperlink{imgui__widgets_8cpp}{imgui\+\_\+widgets.\+cpp}}\end{DoxyCompactItemize}

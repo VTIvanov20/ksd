@@ -1,0 +1,37 @@
+\hypertarget{imgui__impl__sdlrenderer_8h_source}{}\doxysection{imgui\+\_\+impl\+\_\+sdlrenderer.\+h}
+\label{imgui__impl__sdlrenderer_8h_source}\index{util/imgui/backends/imgui\_impl\_sdlrenderer.h@{util/imgui/backends/imgui\_impl\_sdlrenderer.h}}
+\mbox{\hyperlink{imgui__impl__sdlrenderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// dear imgui: Renderer Backend for SDL\_Renderer}}
+\DoxyCodeLine{2 \textcolor{comment}{// (Requires: SDL 2.0.17+)}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// Important to understand: SDL\_Renderer is an \_optional\_ component of SDL.}}
+\DoxyCodeLine{5 \textcolor{comment}{// For a multi-\/platform app consider using e.g. SDL+DirectX on Windows and SDL+OpenGL on Linux/OSX.}}
+\DoxyCodeLine{6 \textcolor{comment}{// If your application will want to render any non trivial amount of graphics other than UI,}}
+\DoxyCodeLine{7 \textcolor{comment}{// please be aware that SDL\_Renderer offers a limited graphic API to the end-\/user and it might}}
+\DoxyCodeLine{8 \textcolor{comment}{// be difficult to step out of those boundaries.}}
+\DoxyCodeLine{9 \textcolor{comment}{// However, we understand it is a convenient choice to get an app started easily.}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// Implemented features:}}
+\DoxyCodeLine{12 \textcolor{comment}{//  [X] Renderer: User texture binding. Use 'SDL\_Texture*' as ImTextureID. Read the FAQ about ImTextureID!}}
+\DoxyCodeLine{13 \textcolor{comment}{//  [X] Renderer: Support for large meshes (64k+ vertices) with 16-\/bit indices.}}
+\DoxyCodeLine{14 \textcolor{comment}{// Missing features:}}
+\DoxyCodeLine{15 \textcolor{comment}{//  [ ] Renderer: Multi-\/viewport support (multiple windows).}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{imgui_8h}{imgui.h}}"{}}      \textcolor{comment}{// IMGUI\_IMPL\_API}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{struct }SDL\_Renderer;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{bool}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_a89735c864607db2bd1e43a60c95d0ac3}{ImGui\_ImplSDLRenderer\_Init}}(SDL\_Renderer* renderer);}
+\DoxyCodeLine{23 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{void}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_a08b0b9daff2caf4ef9cfbf4cc9c0829f}{ImGui\_ImplSDLRenderer\_Shutdown}}();}
+\DoxyCodeLine{24 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{void}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_a80f6ac36617befe863bf51dfa51b1acb}{ImGui\_ImplSDLRenderer\_NewFrame}}();}
+\DoxyCodeLine{25 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{void}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_ac848f85d8f04004defa6b9e41f877552}{ImGui\_ImplSDLRenderer\_RenderDrawData}}(\mbox{\hyperlink{struct_im_draw_data}{ImDrawData}}* draw\_data);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{// Called by Init/NewFrame/Shutdown}}
+\DoxyCodeLine{28 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{bool}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_a3403f3acd383c90d35f52ce8fb74f9e7}{ImGui\_ImplSDLRenderer\_CreateFontsTexture}}();}
+\DoxyCodeLine{29 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{void}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_a3a5f0169ea034e793437909f5898183c}{ImGui\_ImplSDLRenderer\_DestroyFontsTexture}}();}
+\DoxyCodeLine{30 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{bool}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_a0c2cddbb1fe05d3ba11f1cf523ce9b43}{ImGui\_ImplSDLRenderer\_CreateDeviceObjects}}();}
+\DoxyCodeLine{31 \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\_IMPL\_API}} \textcolor{keywordtype}{void}     \mbox{\hyperlink{imgui__impl__sdlrenderer_8h_a0a25c39bcef78eadf653a0f013f930ae}{ImGui\_ImplSDLRenderer\_DestroyDeviceObjects}}();}
+
+\end{DoxyCode}

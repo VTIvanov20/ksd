@@ -1,0 +1,79 @@
+\hypertarget{_object_manager_8hpp_source}{}\doxysection{Object\+Manager.\+hpp}
+\mbox{\hyperlink{_object_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     uint64\_t id;}
+\DoxyCodeLine{15     }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_object_aedf1fd590ccdcd9bef6b253dd5c21577}{Object}}(uint64\_t \textcolor{keywordtype}{id}) : id(id) \{\};}
+\DoxyCodeLine{18     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_object_aa3e791419d84c4c346ef9499513b8e00}{\string~Object}}()}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         printf(\textcolor{stringliteral}{"{}Destroyed Object with id \%lld\(\backslash\)n"{}}, \textcolor{keywordtype}{id});}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_object_a2e8c52f09b9e2ac07f43ca4b6519455c}{ObjectBaseName}}() \{ \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr}; \}}
+\DoxyCodeLine{24     \textcolor{keyword}{inline} uint64\_t \mbox{\hyperlink{class_object_a88aada864b05c4acc7cbb9f89f01cfde}{GetID}}() \{ \textcolor{keywordflow}{return} id; \}}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define DEFINE\_OBJECT(TYPE) \(\backslash\)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{    TYPE(uint64\_t id) : Object(id) \{\}; \(\backslash\)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{    const char* ObjectBaseName() override \{ return \#TYPE; \};}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{class_object_manager}{ObjectManager}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{private}:}
+\DoxyCodeLine{34     std::unordered\_map<uint64\_t, std::shared\_ptr<Object>> objectTable;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{static} uint64\_t currentId;}
+\DoxyCodeLine{37     \textcolor{keyword}{static} \mbox{\hyperlink{class_object_manager}{ObjectManager}}* instance;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} CleanUnusedComponents();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \mbox{\hyperlink{class_object_manager}{ObjectManager}}() : objectTable() \{\};}
+\DoxyCodeLine{42     \mbox{\hyperlink{class_object_manager}{\string~ObjectManager}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45     \textcolor{comment}{// disallow cloning singleton}}
+\DoxyCodeLine{46     \mbox{\hyperlink{class_object_manager_a1bc207d7c9bf274adb684c7f29bedae8}{ObjectManager}}(\mbox{\hyperlink{class_object_manager}{ObjectManager}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{// disallow assignments to singleton}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_aeea540bac9eb6d3cf9f03045fdd73c56}{operator=}}(\mbox{\hyperlink{class_object_manager}{ObjectManager}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{static} \mbox{\hyperlink{class_object_manager}{ObjectManager}}* \mbox{\hyperlink{class_object_manager_ad2782406e7482eeddffd1941a810d6e6}{GetInstance}}();}
+\DoxyCodeLine{52     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_object_manager_a6988df7fc38d0b14de823a57edf23417}{CheckBaseName}}(std::weak\_ptr<Object> \textcolor{keywordtype}{object}, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keyword}{template} <\textcolor{keyword}{typename} ObjectType>}
+\DoxyCodeLine{55     std::shared\_ptr<ObjectType> \mbox{\hyperlink{class_object_manager_a928109b56f35053ee336b096647bb477}{CreateObject}}()}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         \textcolor{keyword}{static\_assert}(std::is\_base\_of<Object, ObjectType>::value, \textcolor{stringliteral}{"{}ObjectType must inherit from Object"{}});}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         std::shared\_ptr<ObjectType> current = std::make\_shared<ObjectType>(currentId);}
+\DoxyCodeLine{60         objectTable[currentId] = std::static\_pointer\_cast<Object>(current);}
+\DoxyCodeLine{61         currentId++;}
+\DoxyCodeLine{62         \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a508a301ffa217a18cc634304312fe847}{DestroyAllEntities}}();}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_adc40ed35186d755cea34049bab7aa32e}{DestroyEntityFromID}}(uint64\_t \textcolor{keywordtype}{id});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_af1210a68c7ef8f958e795c9c78724c2d}{DestroyAllObjects}}();}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a97d227bb9d7adfa18fb1e175c1cc4758}{DestroyObjectFromID}}(uint64\_t \textcolor{keywordtype}{id});}
+\DoxyCodeLine{70     std::weak\_ptr<Object> \mbox{\hyperlink{class_object_manager_a9fd73a0125d2abb8524a4da62c7547e2}{GetObjectFromID}}(uint64\_t \textcolor{keywordtype}{id});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a9e5b1eb3a3541ea57c7147f96713e89b}{TriggerCreateEvents}}();}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a6c56ae1ef669f4b986eadda651d040d5}{TriggerUpdateEvents}}();}
+\DoxyCodeLine{74 \};}
+
+\end{DoxyCode}

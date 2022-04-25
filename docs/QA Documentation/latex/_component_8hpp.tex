@@ -1,0 +1,68 @@
+\hypertarget{_component_8hpp}{}\doxysection{components/\+Component.hpp File Reference}
+\label{_component_8hpp}\index{components/Component.hpp@{components/Component.hpp}}
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Object\+Manager.\+hpp\char`\"{}}\newline
+Include dependency graph for Component.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_component_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_component_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_component}{Component}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_component_8hpp_a5d2553eaea52dfb023f6252434911f86}{DEFINE\+\_\+\+COMPONENT}}(TYPE)
+\item 
+\#define \mbox{\hyperlink{_component_8hpp_a5d610aba5951bbda6623e164ba143126}{DEFINE\+\_\+\+DERIVED\+\_\+\+COMPONENT}}(TYPE,  BASETYPE)
+\item 
+\#define \mbox{\hyperlink{_component_8hpp_a2a84abb28b9df46966f661cd0bf025d7}{MGet\+Component}}(Component\+Type)~std\+::static\+\_\+pointer\+\_\+cast$<$Component\+Type$>$(Get\+Component(\#Component\+Type).lock())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_component_8hpp_a5d2553eaea52dfb023f6252434911f86}\label{_component_8hpp_a5d2553eaea52dfb023f6252434911f86}} 
+\index{Component.hpp@{Component.hpp}!DEFINE\_COMPONENT@{DEFINE\_COMPONENT}}
+\index{DEFINE\_COMPONENT@{DEFINE\_COMPONENT}!Component.hpp@{Component.hpp}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_COMPONENT}{DEFINE\_COMPONENT}}
+{\footnotesize\ttfamily \#define DEFINE\+\_\+\+COMPONENT(\begin{DoxyParamCaption}\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TYPE(uint64\_t \textcolor{keywordtype}{id}) : \mbox{\hyperlink{class_component}{Component}}(id) \{\}; \(\backslash\)}
+\DoxyCodeLine{    const \textcolor{keywordtype}{char}* ComponentName()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \#TYPE; \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_component_8hpp_a5d610aba5951bbda6623e164ba143126}\label{_component_8hpp_a5d610aba5951bbda6623e164ba143126}} 
+\index{Component.hpp@{Component.hpp}!DEFINE\_DERIVED\_COMPONENT@{DEFINE\_DERIVED\_COMPONENT}}
+\index{DEFINE\_DERIVED\_COMPONENT@{DEFINE\_DERIVED\_COMPONENT}!Component.hpp@{Component.hpp}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_DERIVED\_COMPONENT}{DEFINE\_DERIVED\_COMPONENT}}
+{\footnotesize\ttfamily \#define DEFINE\+\_\+\+DERIVED\+\_\+\+COMPONENT(\begin{DoxyParamCaption}\item[{}]{TYPE,  }\item[{}]{BASETYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TYPE(uint64\_t \textcolor{keywordtype}{id}) : BASETYPE(id) \{\}; \(\backslash\)}
+\DoxyCodeLine{    const \textcolor{keywordtype}{char}* ComponentName()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \#TYPE; \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_component_8hpp_a2a84abb28b9df46966f661cd0bf025d7}\label{_component_8hpp_a2a84abb28b9df46966f661cd0bf025d7}} 
+\index{Component.hpp@{Component.hpp}!MGetComponent@{MGetComponent}}
+\index{MGetComponent@{MGetComponent}!Component.hpp@{Component.hpp}}
+\doxysubsubsection{\texorpdfstring{MGetComponent}{MGetComponent}}
+{\footnotesize\ttfamily \#define MGet\+Component(\begin{DoxyParamCaption}\item[{}]{Component\+Type }\end{DoxyParamCaption})~std\+::static\+\_\+pointer\+\_\+cast$<$Component\+Type$>$(Get\+Component(\#Component\+Type).lock())}
+

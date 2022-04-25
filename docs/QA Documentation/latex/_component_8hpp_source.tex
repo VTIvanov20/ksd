@@ -1,0 +1,46 @@
+\hypertarget{_component_8hpp_source}{}\doxysection{Component.\+hpp}
+\label{_component_8hpp_source}\index{components/Component.hpp@{components/Component.hpp}}
+\mbox{\hyperlink{_component_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../ObjectManager.hpp"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \mbox{\hyperlink{_object_manager_8hpp_ad59c6ad42b13f552e6a61f0001769587}{DEFINE\_OBJECT}}(\mbox{\hyperlink{class_component}{Component}})}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     virtual \string~\mbox{\hyperlink{class_component}{Component}}() = default;}
+\DoxyCodeLine{14     virtual const \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_component_a85422d8d86fc4896db26c95d692e54e9}{ComponentName}}() \{ \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr}; \}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_component_a8b331e43f500dc19a704b317b1d647f9}{Active}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{17     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_component_a2cc25210196777d9aea0cb89d3b757ac}{IsUsed}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a4ae4e1c9c3a76cf7a56806728a1c83e5}{OnCreate}}() \{\}}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a22f2e8fae0024c1f000c08e82188b72c}{OnDestroy}}() \{\}}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a706e9681ec78cc0a863e5184ba4abe49}{OnUpdate}}() \{\}}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_aad3e233540541cfc355523c6c5b41359}{OnUI}}() \{\}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_ab7fdd3f66adda9a9f9e96b8369919617}{BindToEntity}}(std::weak\_ptr<Object> \textcolor{keywordtype}{object});}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_ab7fdd3f66adda9a9f9e96b8369919617}{BindToEntity}}(uint64\_t \textcolor{keywordtype}{id});}
+\DoxyCodeLine{26     std::weak\_ptr<Component> \mbox{\hyperlink{class_component_a3ad1298f0c501919bcf7eabadd59e069}{GetComponent}}(std::string);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{29     std::weak\_ptr<Object> \mbox{\hyperlink{class_component_a05fc36e628d9fc3f0ef0b86d9d2547ca}{boundEntity}};}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define DEFINE\_COMPONENT(TYPE) \(\backslash\)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    TYPE(uint64\_t id) : Component(id) \{\}; \(\backslash\)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    const char* ComponentName() override \{ return \#TYPE; \};}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define DEFINE\_DERIVED\_COMPONENT(TYPE, BASETYPE) \(\backslash\)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{    TYPE(uint64\_t id) : BASETYPE(id) \{\}; \(\backslash\)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{    const char* ComponentName() override \{ return \#TYPE; \};}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define MGetComponent(ComponentType) std::static\_pointer\_cast<ComponentType>(GetComponent(\#ComponentType).lock())}}
+
+\end{DoxyCode}

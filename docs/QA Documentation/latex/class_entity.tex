@@ -1,0 +1,105 @@
+\hypertarget{class_entity}{}\doxysection{Entity Class Reference}
+\label{class_entity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_entity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_entity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_ae03322caa5a63a34c7e1b54bb0f61453}{DEFINE\+\_\+\+OBJECT}} (\mbox{\hyperlink{class_entity}{Entity}})
+\item 
+virtual \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{$\sim$\+Entity}} ()=default
+\item 
+void \mbox{\hyperlink{class_entity_ad2f398ea0331cea0f5ddfe0bfb903343}{On\+Entity\+Create}} ()
+\item 
+void \mbox{\hyperlink{class_entity_aa748d2ae63aea78cf0f7cd5dfd648fb2}{On\+Update\+Components}} ()
+\item 
+void \mbox{\hyperlink{class_entity_aa6b853ded3f9a70889c1e66d0b7a82e2}{On\+Update\+UIComponents}} ()
+\item 
+void \mbox{\hyperlink{class_entity_a80993c0bb7aec06729e607b895adfe17}{On\+Entity\+Destroy}} ()
+\item 
+void \mbox{\hyperlink{class_entity_a08e7e7f8a75e8f86f8a9c4a2fea109ad}{Bind\+Component}} (std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ component)
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ \mbox{\hyperlink{class_entity_acf55f93e2fb63c5dfdeff076c2b9ec62}{Get\+Component}} (std\+::string component\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entity_ac479d009ddde62dfb378ca0a70d81307}\label{class_entity_ac479d009ddde62dfb378ca0a70d81307}} 
+\index{Entity@{Entity}!````~Entity@{$\sim$Entity}}
+\index{````~Entity@{$\sim$Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{$\sim$Entity()}{~Entity()}}
+{\footnotesize\ttfamily virtual Entity\+::$\sim$\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entity_a08e7e7f8a75e8f86f8a9c4a2fea109ad}\label{class_entity_a08e7e7f8a75e8f86f8a9c4a2fea109ad}} 
+\index{Entity@{Entity}!BindComponent@{BindComponent}}
+\index{BindComponent@{BindComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{BindComponent()}{BindComponent()}}
+{\footnotesize\ttfamily void Entity\+::\+Bind\+Component (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$}]{component }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_ae03322caa5a63a34c7e1b54bb0f61453}\label{class_entity_ae03322caa5a63a34c7e1b54bb0f61453}} 
+\index{Entity@{Entity}!DEFINE\_OBJECT@{DEFINE\_OBJECT}}
+\index{DEFINE\_OBJECT@{DEFINE\_OBJECT}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_OBJECT()}{DEFINE\_OBJECT()}}
+{\footnotesize\ttfamily Entity\+::\+DEFINE\+\_\+\+OBJECT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity}{Entity}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_acf55f93e2fb63c5dfdeff076c2b9ec62}\label{class_entity_acf55f93e2fb63c5dfdeff076c2b9ec62}} 
+\index{Entity@{Entity}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ Entity\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{std\+::string}]{component\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_ad2f398ea0331cea0f5ddfe0bfb903343}\label{class_entity_ad2f398ea0331cea0f5ddfe0bfb903343}} 
+\index{Entity@{Entity}!OnEntityCreate@{OnEntityCreate}}
+\index{OnEntityCreate@{OnEntityCreate}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnEntityCreate()}{OnEntityCreate()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+Entity\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_a80993c0bb7aec06729e607b895adfe17}\label{class_entity_a80993c0bb7aec06729e607b895adfe17}} 
+\index{Entity@{Entity}!OnEntityDestroy@{OnEntityDestroy}}
+\index{OnEntityDestroy@{OnEntityDestroy}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnEntityDestroy()}{OnEntityDestroy()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+Entity\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_aa748d2ae63aea78cf0f7cd5dfd648fb2}\label{class_entity_aa748d2ae63aea78cf0f7cd5dfd648fb2}} 
+\index{Entity@{Entity}!OnUpdateComponents@{OnUpdateComponents}}
+\index{OnUpdateComponents@{OnUpdateComponents}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnUpdateComponents()}{OnUpdateComponents()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+Update\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_aa6b853ded3f9a70889c1e66d0b7a82e2}\label{class_entity_aa6b853ded3f9a70889c1e66d0b7a82e2}} 
+\index{Entity@{Entity}!OnUpdateUIComponents@{OnUpdateUIComponents}}
+\index{OnUpdateUIComponents@{OnUpdateUIComponents}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnUpdateUIComponents()}{OnUpdateUIComponents()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+Update\+UIComponents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entity_8hpp}{Entity.\+hpp}}\item 
+\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

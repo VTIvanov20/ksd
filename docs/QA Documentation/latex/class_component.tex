@@ -1,0 +1,158 @@
+\hypertarget{class_component}{}\doxysection{Component Class Reference}
+\label{class_component}\index{Component@{Component}}
+
+
+{\ttfamily \#include $<$Component.\+hpp$>$}
+
+
+
+Inheritance diagram for Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_component_ad82d7393e339c1b19cc17a0d55b5674d}{$\sim$\+Component}} ()=default
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_component_a85422d8d86fc4896db26c95d692e54e9}{Component\+Name}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_a4ae4e1c9c3a76cf7a56806728a1c83e5}{On\+Create}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_a22f2e8fae0024c1f000c08e82188b72c}{On\+Destroy}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_a706e9681ec78cc0a863e5184ba4abe49}{On\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_aad3e233540541cfc355523c6c5b41359}{On\+UI}} ()
+\item 
+void \mbox{\hyperlink{class_component_ab7fdd3f66adda9a9f9e96b8369919617}{Bind\+To\+Entity}} (std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_object}{Object}} $>$ object)
+\item 
+void \mbox{\hyperlink{class_component_ab47deb8a5d237acc11037279e0e5fe7d}{Bind\+To\+Entity}} (uint64\+\_\+t id)
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ \mbox{\hyperlink{class_component_a3ad1298f0c501919bcf7eabadd59e069}{Get\+Component}} (std\+::string)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_component_a8b331e43f500dc19a704b317b1d647f9}{Active}} = true
+\item 
+bool \mbox{\hyperlink{class_component_a2cc25210196777d9aea0cb89d3b757ac}{Is\+Used}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_object}{Object}} $>$ \mbox{\hyperlink{class_component_a05fc36e628d9fc3f0ef0b86d9d2547ca}{bound\+Entity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_component_ad82d7393e339c1b19cc17a0d55b5674d}\label{class_component_ad82d7393e339c1b19cc17a0d55b5674d}} 
+\index{Component@{Component}!````~Component@{$\sim$Component}}
+\index{````~Component@{$\sim$Component}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{$\sim$Component()}{~Component()}}
+{\footnotesize\ttfamily virtual Component\+::$\sim$\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_component_ab7fdd3f66adda9a9f9e96b8369919617}\label{class_component_ab7fdd3f66adda9a9f9e96b8369919617}} 
+\index{Component@{Component}!BindToEntity@{BindToEntity}}
+\index{BindToEntity@{BindToEntity}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{BindToEntity()}{BindToEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Component\+::\+Bind\+To\+Entity (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_object}{Object}} $>$}]{object }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_component_ab47deb8a5d237acc11037279e0e5fe7d}\label{class_component_ab47deb8a5d237acc11037279e0e5fe7d}} 
+\index{Component@{Component}!BindToEntity@{BindToEntity}}
+\index{BindToEntity@{BindToEntity}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{BindToEntity()}{BindToEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Component\+::\+Bind\+To\+Entity (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_component_a85422d8d86fc4896db26c95d692e54e9}\label{class_component_a85422d8d86fc4896db26c95d692e54e9}} 
+\index{Component@{Component}!ComponentName@{ComponentName}}
+\index{ComponentName@{ComponentName}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{ComponentName()}{ComponentName()}}
+{\footnotesize\ttfamily virtual const char $\ast$ Component\+::\+Component\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_component_a3ad1298f0c501919bcf7eabadd59e069}\label{class_component_a3ad1298f0c501919bcf7eabadd59e069}} 
+\index{Component@{Component}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ Component\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{std\+::string}]{component\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_component_a4ae4e1c9c3a76cf7a56806728a1c83e5}\label{class_component_a4ae4e1c9c3a76cf7a56806728a1c83e5}} 
+\index{Component@{Component}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily virtual void Component\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_main_menu_a46b9bdd6be99545d1404ad96681e4687}{Main\+Menu}}.
+
+\mbox{\Hypertarget{class_component_a22f2e8fae0024c1f000c08e82188b72c}\label{class_component_a22f2e8fae0024c1f000c08e82188b72c}} 
+\index{Component@{Component}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily virtual void Component\+::\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_main_menu_a54a02378db96cd2eb929db7e99679c6a}{Main\+Menu}}.
+
+\mbox{\Hypertarget{class_component_aad3e233540541cfc355523c6c5b41359}\label{class_component_aad3e233540541cfc355523c6c5b41359}} 
+\index{Component@{Component}!OnUI@{OnUI}}
+\index{OnUI@{OnUI}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{OnUI()}{OnUI()}}
+{\footnotesize\ttfamily virtual void Component\+::\+On\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_main_menu_aee5564d783ee4acd8f8e48664c83bc94}{Main\+Menu}}.
+
+\mbox{\Hypertarget{class_component_a706e9681ec78cc0a863e5184ba4abe49}\label{class_component_a706e9681ec78cc0a863e5184ba4abe49}} 
+\index{Component@{Component}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void Component\+::\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_component_a8b331e43f500dc19a704b317b1d647f9}\label{class_component_a8b331e43f500dc19a704b317b1d647f9}} 
+\index{Component@{Component}!Active@{Active}}
+\index{Active@{Active}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Active}{Active}}
+{\footnotesize\ttfamily bool Component\+::\+Active = true}
+
+\mbox{\Hypertarget{class_component_a05fc36e628d9fc3f0ef0b86d9d2547ca}\label{class_component_a05fc36e628d9fc3f0ef0b86d9d2547ca}} 
+\index{Component@{Component}!boundEntity@{boundEntity}}
+\index{boundEntity@{boundEntity}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{boundEntity}{boundEntity}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{class_object}{Object}}$>$ Component\+::bound\+Entity\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_component_a2cc25210196777d9aea0cb89d3b757ac}\label{class_component_a2cc25210196777d9aea0cb89d3b757ac}} 
+\index{Component@{Component}!IsUsed@{IsUsed}}
+\index{IsUsed@{IsUsed}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{IsUsed}{IsUsed}}
+{\footnotesize\ttfamily bool Component\+::\+Is\+Used = false}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+components/\mbox{\hyperlink{_component_8hpp}{Component.\+hpp}}\item 
+components/\mbox{\hyperlink{_component_8cpp}{Component.\+cpp}}\end{DoxyCompactItemize}

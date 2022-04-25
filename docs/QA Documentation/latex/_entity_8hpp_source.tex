@@ -1,0 +1,34 @@
+\hypertarget{_entity_8hpp_source}{}\doxysection{Entity.\+hpp}
+\mbox{\hyperlink{_entity_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8hpp}{./components/Component.hpp}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_object_manager_8hpp}{./ObjectManager.hpp}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_entity}{Entity}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     std::unordered\_map<std::string, std::weak\_ptr<Component>> boundComponents;}
+\DoxyCodeLine{16     }
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_entity_ae03322caa5a63a34c7e1b54bb0f61453}{DEFINE\_OBJECT}}(\mbox{\hyperlink{class_entity}{Entity}});}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{\string~Entity}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_ad2f398ea0331cea0f5ddfe0bfb903343}{OnEntityCreate}}(); \textcolor{comment}{// Gets called once whenever the program is initializing itself}}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aa748d2ae63aea78cf0f7cd5dfd648fb2}{OnUpdateComponents}}(); \textcolor{comment}{// Gets called once per frame}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aa6b853ded3f9a70889c1e66d0b7a82e2}{OnUpdateUIComponents}}(); \textcolor{comment}{// Gets called once per frame}}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a80993c0bb7aec06729e607b895adfe17}{OnEntityDestroy}}(); \textcolor{comment}{// Gets called when destroyed}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a08e7e7f8a75e8f86f8a9c4a2fea109ad}{BindComponent}}(std::weak\_ptr<Component> component);}
+\DoxyCodeLine{28     std::weak\_ptr<Component> \mbox{\hyperlink{class_entity_acf55f93e2fb63c5dfdeff076c2b9ec62}{GetComponent}}(std::string componentName);}
+\DoxyCodeLine{29 \};}
+
+\end{DoxyCode}

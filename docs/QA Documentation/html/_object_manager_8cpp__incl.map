@@ -1,0 +1,28 @@
+<map id="ObjectManager.cpp" name="ObjectManager.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="879,5,1013,32"/>
+<area shape="rect" id="node2" href="$_object_manager_8hpp.html" title=" " alt="" coords="851,237,985,263"/>
+<area shape="rect" id="node10" href="$graphics_8hpp.html" title=" " alt="" coords="614,155,739,181"/>
+<area shape="rect" id="node23" href="$_entity_8hpp.html" title=" " alt="" coords="1156,80,1245,107"/>
+<area shape="rect" id="node26" href="$_component_8hpp.html" title=" " alt="" coords="941,155,1137,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="1244,319,1283,345"/>
+<area shape="rect" id="node4" title=" " alt="" coords="640,319,751,345"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1049,319,1118,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="857,319,918,345"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1143,319,1208,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="775,319,832,345"/>
+<area shape="rect" id="node9" title=" " alt="" coords="942,319,1025,345"/>
+<area shape="rect" id="node11" title=" " alt="" coords="521,319,616,345"/>
+<area shape="rect" id="node12" title=" " alt="" coords="35,237,171,263"/>
+<area shape="rect" id="node13" href="$imgui_8h.html" title=" " alt="" coords="221,319,327,345"/>
+<area shape="rect" id="node20" href="$imgui__impl__sdl_8h.html" title=" " alt="" coords="196,229,352,271"/>
+<area shape="rect" id="node21" href="$imgui__impl__sdlrenderer_8h.html" title=" " alt="" coords="376,229,532,271"/>
+<area shape="rect" id="node22" href="$la_8hpp.html" title=" " alt="" coords="608,237,673,263"/>
+<area shape="rect" id="node14" href="$imconfig_8h.html" title=" " alt="" coords="5,393,87,420"/>
+<area shape="rect" id="node15" title=" " alt="" coords="111,393,168,420"/>
+<area shape="rect" id="node16" title=" " alt="" coords="193,393,262,420"/>
+<area shape="rect" id="node17" title=" " alt="" coords="287,393,355,420"/>
+<area shape="rect" id="node18" title=" " alt="" coords="379,393,444,420"/>
+<area shape="rect" id="node19" title=" " alt="" coords="469,393,538,420"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1314,155,1386,181"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1411,155,1465,181"/>
+</map>

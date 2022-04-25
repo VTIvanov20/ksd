@@ -1,0 +1,67 @@
+\hypertarget{_game_manager_8hpp_source}{}\doxysection{Game\+Manager.\+hpp}
+\mbox{\hyperlink{_game_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{config_8h}{config.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_object_manager_8hpp}{ObjectManager.hpp}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_entity_8hpp}{Entity.hpp}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_main_menu_8hpp}{components/MainMenu.hpp}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{graphics_8hpp}{util/graphics.hpp}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_scene_ad10176d75a9cc0da56626f682d083507}{Scene}}() \{\};}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{\string~Scene}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a4aa30bd33a5bd56a26e224318579f60c}{Initialize}}() \{\};}
+\DoxyCodeLine{22 \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_manager}{GameManager}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27     \textcolor{keyword}{struct }GameState}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keywordtype}{bool} scene\_update;}
+\DoxyCodeLine{30         \textcolor{keywordtype}{bool} should\_quit;}
+\DoxyCodeLine{31         \mbox{\hyperlink{class_scene}{Scene}} scene;}
+\DoxyCodeLine{32     \} state;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} ReinitializeScene();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{static} \mbox{\hyperlink{class_game_manager}{GameManager}}* instance;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{private}:}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_game_manager}{GameManager}}() : state \{ \textcolor{keyword}{false}, \textcolor{keyword}{false}, \{\} \} \{\};}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_game_manager}{\string~GameManager}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43     \textcolor{comment}{// disallow cloning singleton}}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_game_manager_ab7c62cfd77c09cf96304441c5bec4bd1}{GameManager}}(\mbox{\hyperlink{class_game_manager}{GameManager}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{// disallow assignments to singleton}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_afa50df8538dc2bd47884cd366c0edb5d}{operator=}}(\mbox{\hyperlink{class_game_manager}{GameManager}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keyword}{static} \mbox{\hyperlink{class_game_manager}{GameManager}}* \mbox{\hyperlink{class_game_manager_a4df51ae1561c024f2fdea3d9852b228a}{GetInstance}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a2a66831cced0140a4267f4b9ba1e99b3}{Initialize}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a70c2fe047206a881a4a4e5282f30d1c0}{Deinitialize}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_af3bb4452ac262ec8a68dcc3eea2f0124}{Update}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_manager_ae7ad2817ee14592c22f2f6b8a4ad6962}{ShouldQuit}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_aaca6e9654ec38718f46b71a6f9ab3c40}{Quit}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a02e4c71015d826172bc3a82f6c42c3ea}{ChangeScene}}(\mbox{\hyperlink{class_scene}{Scene}} scene);}
+\DoxyCodeLine{96 \};}
+
+\end{DoxyCode}

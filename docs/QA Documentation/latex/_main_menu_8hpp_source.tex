@@ -1,0 +1,32 @@
+\hypertarget{_main_menu_8hpp_source}{}\doxysection{Main\+Menu.\+hpp}
+\label{_main_menu_8hpp_source}\index{components/MainMenu.hpp@{components/MainMenu.hpp}}
+\mbox{\hyperlink{_main_menu_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8hpp}{./Component.hpp}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../util/imgui/imgui.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}../GameManager.hpp"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{enum class} \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5}{MainMenuState}} \{}
+\DoxyCodeLine{8     \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5aa16d505f03a4b6f35486f65f6a61317e}{MAIN\_MENU}},}
+\DoxyCodeLine{9     \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5a00effbd0bfe3d38228ca3ef98eea06d1}{SINGLEPLAYER}},}
+\DoxyCodeLine{10     \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5adcbd80ad82106501fb44c489dc73617f}{MULTIPLAYER}},}
+\DoxyCodeLine{11     \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5aff295b6f5652d66edf586644a65f1647}{MULTIPLAYER\_HOST}},}
+\DoxyCodeLine{12     \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5a34a88e7821d81855e89633c9feedd510}{MULTIPLAYER\_JOIN}},}
+\DoxyCodeLine{13 \};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_menu}{MainMenu}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{_component_8hpp_a5d2553eaea52dfb023f6252434911f86}{DEFINE\_COMPONENT}}(\mbox{\hyperlink{class_main_menu}{MainMenu}})}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_aee5564d783ee4acd8f8e48664c83bc94}{OnUI}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_a46b9bdd6be99545d1404ad96681e4687}{OnCreate}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_a54a02378db96cd2eb929db7e99679c6a}{OnDestroy}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5}{MainMenuState}} \mbox{\hyperlink{class_main_menu_a36318984c228d726d5ca5c94c2ff8a82}{state}} = \mbox{\hyperlink{_main_menu_8hpp_a18a725024ae7d7d2e40fc2a1ce9d1bf5aa16d505f03a4b6f35486f65f6a61317e}{MainMenuState::MAIN\_MENU}};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_main_menu_a8b7ad0e102449830bdcade6d2cfe2da4}{textBuf}};}
+\DoxyCodeLine{26 \};}
+
+\end{DoxyCode}

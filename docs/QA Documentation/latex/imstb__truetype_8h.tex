@@ -1,0 +1,955 @@
+\hypertarget{imstb__truetype_8h}{}\doxysection{util/imgui/imstb\+\_\+truetype.h File Reference}
+\label{imstb__truetype_8h}\index{util/imgui/imstb\_truetype.h@{util/imgui/imstb\_truetype.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{imstb__truetype_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstbtt____buf}{stbtt\+\_\+\+\_\+buf}}
+\item 
+struct \mbox{\hyperlink{structstbtt__bakedchar}{stbtt\+\_\+bakedchar}}
+\item 
+struct \mbox{\hyperlink{structstbtt__aligned__quad}{stbtt\+\_\+aligned\+\_\+quad}}
+\item 
+struct \mbox{\hyperlink{structstbtt__packedchar}{stbtt\+\_\+packedchar}}
+\item 
+struct \mbox{\hyperlink{structstbtt__pack__range}{stbtt\+\_\+pack\+\_\+range}}
+\item 
+struct \mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}}
+\item 
+struct \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}}
+\item 
+struct \mbox{\hyperlink{structstbtt__kerningentry}{stbtt\+\_\+kerningentry}}
+\item 
+struct \mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}}
+\item 
+struct \mbox{\hyperlink{structstbtt____bitmap}{stbtt\+\_\+\+\_\+bitmap}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_a793c93dc8e39787cf5966bec548730d5}{\+\_\+\+\_\+\+STB\+\_\+\+INCLUDE\+\_\+\+STB\+\_\+\+TRUETYPE\+\_\+\+H\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}}~extern
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_a42c4058f71988e703efdf4703d5dfe31}{STBTT\+\_\+\+POINT\+\_\+\+SIZE}}(x)~(-\/(x))
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_ab8fd8e5e0b82b0f7da54532035e47b22}{stbtt\+\_\+vertex\+\_\+type}}~short
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_ac914b70667c9abbe432dcc4c048e6542}{STBTT\+\_\+\+MACSTYLE\+\_\+\+DONTCARE}}~0
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_a3856cc4fbab4c126c2c438c6f567525d}{STBTT\+\_\+\+MACSTYLE\+\_\+\+BOLD}}~1
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_a95e8d57e767119c978652397df54afef}{STBTT\+\_\+\+MACSTYLE\+\_\+\+ITALIC}}~2
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_a9064e582d96dcbaf2f573896cccd5ef7}{STBTT\+\_\+\+MACSTYLE\+\_\+\+UNDERSCORE}}~4
+\item 
+\#define \mbox{\hyperlink{imstb__truetype_8h_accb2ecf3e0d840362ebba3fe3da192da}{STBTT\+\_\+\+MACSTYLE\+\_\+\+NONE}}~8
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} \mbox{\hyperlink{imstb__truetype_8h_a37d613643adacbed24c22718faf6afc7}{stbtt\+\_\+pack\+\_\+context}}
+\item 
+typedef struct \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} \mbox{\hyperlink{imstb__truetype_8h_a82ca6622f6983cc08eca850280126daf}{stbtt\+\_\+fontinfo}}
+\item 
+typedef struct \mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} \mbox{\hyperlink{imstb__truetype_8h_a7c4a99b31ea2207a0b2bbcbdab8f3840}{stbrp\+\_\+rect}}
+\item 
+typedef struct \mbox{\hyperlink{structstbtt__kerningentry}{stbtt\+\_\+kerningentry}} \mbox{\hyperlink{imstb__truetype_8h_a988d6ec9ddb583b248cc96f17449dd6b}{stbtt\+\_\+kerningentry}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab335ba97e1798b621313de85a9a6e69d}{STBTT\+\_\+vmove}} =1
+, \mbox{\hyperlink{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dade4bb6465c32e56588f35e5120769e2e}{STBTT\+\_\+vline}}
+, \mbox{\hyperlink{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab9ac3e527ce18873abeab556f6768ce4}{STBTT\+\_\+vcurve}}
+, \mbox{\hyperlink{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab6cd2670234c731eafba404d3a2470fd}{STBTT\+\_\+vcubic}}
+ \}
+\item 
+enum \{ \mbox{\hyperlink{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600a7df9cd0e95e0b375d03348661b399b69}{STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+UNICODE}} =0
+, \mbox{\hyperlink{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600adc1a3ed4f2abe63dd4e91d789136db3f}{STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+MAC}} =1
+, \mbox{\hyperlink{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600acd63703eafd91118387dfb70b384132d}{STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+ISO}} =2
+, \mbox{\hyperlink{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600a86f00e4c49cfec574b34090faa47f878}{STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+MICROSOFT}} =3
+ \}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57aeec1111b4adcd61a20a461138726fc46}{STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+1\+\_\+0}} =0
+, \mbox{\hyperlink{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57aa13de23938974ed5ed2039ad0c623901}{STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+1\+\_\+1}} =1
+, \mbox{\hyperlink{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a2803b7d7150216b6e67cdd2ef9e734b0}{STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+ISO\+\_\+10646}} =2
+, \mbox{\hyperlink{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a4ead513507e004e256fb772d7ee91f60}{STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+2\+\_\+0\+\_\+\+BMP}} =3
+, \newline
+\mbox{\hyperlink{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a95f85f02ffe39539e6b4032a3db58eed}{STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+2\+\_\+0\+\_\+\+FULL}} =4
+ \}
+\item 
+enum \{ \mbox{\hyperlink{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388a87372d512b2e4be1dce36fe0153b8cc0}{STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+SYMBOL}} =0
+, \mbox{\hyperlink{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388af3b7a17fc226e7540f025d241f36f17d}{STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+UNICODE\+\_\+\+BMP}} =1
+, \mbox{\hyperlink{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388aaaab3da7b4e39433ac3db32fd9a83808}{STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+SHIFTJIS}} =2
+, \mbox{\hyperlink{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388a08224d2a200bd947c6513926290f4640}{STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+UNICODE\+\_\+\+FULL}} =10
+ \}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da11789a74295482059768d7ed21ddc1ae}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+ROMAN}} =0
+, \mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daedbd64dd9fc105aabbbae72bae09be1f}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+ARABIC}} =4
+, \mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daa1cd5f4622dd634ffafe0487a2135524}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+JAPANESE}} =1
+, \mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da4f4920b5c91733bd8bb176d5425bd106}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+HEBREW}} =5
+, \newline
+\mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da808bbaa74269579caa945ffdae31c62a}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+CHINESE\+\_\+\+TRAD}} =2
+, \mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035dac3c0a50ac37d4b5a68e0ea22824bee75}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+GREEK}} =6
+, \mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da0b8da1ad3177e0c9b1564c780fc11f0b}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+KOREAN}} =3
+, \mbox{\hyperlink{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daba7e217cc8f987ce69ab91180bd15a7f}{STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+RUSSIAN}} =7
+ \}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a73e1e353a8727baf20ce85ee329b310b}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+ENGLISH}} =0x0409
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a9d1b0af23f2f76cd1789e0cd638b935d}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+ITALIAN}} =0x0410
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a6092851487f2d9708532ee955d4a75bd}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+CHINESE}} =0x0804
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a0e44b54e59bcc095ff9fe786850cbf74}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+JAPANESE}} =0x0411
+, \newline
+\mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a0b5f77089567369488e03917d99ddbe5}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+DUTCH}} =0x0413
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8adc4f5bbc60ef97f1418902574fd9b418}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+KOREAN}} =0x0412
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b89fa08e6376c8314c330bd1e9837b5}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+FRENCH}} =0x040c
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a7930264450b0313e58f7590550520786}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+RUSSIAN}} =0x0419
+, \newline
+\mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8aebb69f5af1155d26a280778c5ab72580}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+GERMAN}} =0x0407
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a541da99c0255bb044006cc32c2ae50a2}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+SPANISH}} =0x0409
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8aed7119e1e991009f49065071f4df39c6}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+HEBREW}} =0x040d
+, \mbox{\hyperlink{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a126d5bcdbb6e42a9799873b4ffde6c34}{STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+SWEDISH}} =0x041D
+ \}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea845b632475daa7639bb3438785ca3fc9}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+ENGLISH}} =0
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea988de1366d401829c919b481c5c3c8e2}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+JAPANESE}} =11
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eae6f91a195abd217070ca9cee63849420}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+ARABIC}} =12
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea236502e69e2e07df089168e80dc1330d}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+KOREAN}} =23
+, \newline
+\mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf2757f8c4078dfb9fe9ad9dc32e801ee}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+DUTCH}} =4
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf99640bf65945428bcb19f3b9e6e287f}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+RUSSIAN}} =32
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea9a8ae7b8dca3b2902eb69ece32b817a3}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+FRENCH}} =1
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea5399db7b554ed772c935f1b5d9d67852}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+SPANISH}} =6
+, \newline
+\mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eae3360f5396032fdf22ebb35f3d30e849}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+GERMAN}} =2
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea0315abafecf696110de133e4d54ade8c}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+SWEDISH}} =5
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ead60d41526c1e9ee9ec50e8fd8950b9a4}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+HEBREW}} =10
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea552ed7fe17ee850f3883344b3424e26b}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+CHINESE\+\_\+\+SIMPLIFIED}} =33
+, \newline
+\mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea50fb98b75fe8bc23d2bc963e45ea8d96}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+ITALIAN}} =3
+, \mbox{\hyperlink{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf7d2b171e725e29ef4fbfbff7c3b5926}{STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+CHINESE\+\_\+\+TRAD}} =19
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a9f906556cc09c60d136cb9af18305ef3}{stbtt\+\_\+\+Bake\+Font\+Bitmap}} (const unsigned char $\ast$data, int offset, float pixel\+\_\+height, unsigned char $\ast$pixels, int pw, int ph, int first\+\_\+char, int num\+\_\+chars, \mbox{\hyperlink{structstbtt__bakedchar}{stbtt\+\_\+bakedchar}} $\ast$chardata)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_ab7f7e3a2bc7ae72720057b07a13c400f}{stbtt\+\_\+\+Get\+Baked\+Quad}} (const \mbox{\hyperlink{structstbtt__bakedchar}{stbtt\+\_\+bakedchar}} $\ast$chardata, int pw, int ph, int char\+\_\+index, float $\ast$xpos, float $\ast$ypos, \mbox{\hyperlink{structstbtt__aligned__quad}{stbtt\+\_\+aligned\+\_\+quad}} $\ast$q, int opengl\+\_\+fillrule)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_ae402c69747eee588a5fc18d8ea506b42}{stbtt\+\_\+\+Get\+Scaled\+Font\+VMetrics}} (const unsigned char $\ast$fontdata, int index, float size, float $\ast$ascent, float $\ast$descent, float $\ast$line\+Gap)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_adfc8faff4ebfbad1ce0bff9b4ebc691c}{stbtt\+\_\+\+Pack\+Begin}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, unsigned char $\ast$pixels, int width, int height, int stride\+\_\+in\+\_\+bytes, int padding, void $\ast$alloc\+\_\+context)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_ab51e492c4b320b8af6ef557ad3388140}{stbtt\+\_\+\+Pack\+End}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a344fc3b0ff7829d993ca8db3eadd321f}{stbtt\+\_\+\+Pack\+Font\+Range}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, const unsigned char $\ast$fontdata, int font\+\_\+index, float font\+\_\+size, int first\+\_\+unicode\+\_\+char\+\_\+in\+\_\+range, int num\+\_\+chars\+\_\+in\+\_\+range, \mbox{\hyperlink{structstbtt__packedchar}{stbtt\+\_\+packedchar}} $\ast$chardata\+\_\+for\+\_\+range)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a051bbf0eddd73f253c1b1050a9e47157}{stbtt\+\_\+\+Pack\+Font\+Ranges}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, const unsigned char $\ast$fontdata, int font\+\_\+index, \mbox{\hyperlink{structstbtt__pack__range}{stbtt\+\_\+pack\+\_\+range}} $\ast$ranges, int num\+\_\+ranges)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a4c55e174efbacaf82a8ddb9d1956717e}{stbtt\+\_\+\+Pack\+Set\+Oversampling}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, unsigned int h\+\_\+oversample, unsigned int v\+\_\+oversample)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a0549774d30f6c64b85b88acc2329e89e}{stbtt\+\_\+\+Pack\+Set\+Skip\+Missing\+Codepoints}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, int skip)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_abbca8f4e5de8209200a7be6c1c57661e}{stbtt\+\_\+\+Get\+Packed\+Quad}} (const \mbox{\hyperlink{structstbtt__packedchar}{stbtt\+\_\+packedchar}} $\ast$chardata, int pw, int ph, int char\+\_\+index, float $\ast$xpos, float $\ast$ypos, \mbox{\hyperlink{structstbtt__aligned__quad}{stbtt\+\_\+aligned\+\_\+quad}} $\ast$q, int align\+\_\+to\+\_\+integer)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a8cf20362ceefc78d4df2e1703de3da50}{stbtt\+\_\+\+Pack\+Font\+Ranges\+Gather\+Rects}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, \mbox{\hyperlink{structstbtt__pack__range}{stbtt\+\_\+pack\+\_\+range}} $\ast$ranges, int num\+\_\+ranges, \mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} $\ast$rects)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_aeec3933fdb14884b7c2919e6ddc44259}{stbtt\+\_\+\+Pack\+Font\+Ranges\+Pack\+Rects}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, \mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} $\ast$rects, int num\+\_\+rects)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_ab6eca9e0104838ca2483dea24dd9e631}{stbtt\+\_\+\+Pack\+Font\+Ranges\+Render\+Into\+Rects}} (\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$spc, const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, \mbox{\hyperlink{structstbtt__pack__range}{stbtt\+\_\+pack\+\_\+range}} $\ast$ranges, int num\+\_\+ranges, \mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} $\ast$rects)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_af7ee37667bd84fee4c1fcf640fe8a672}{stbtt\+\_\+\+Get\+Number\+Of\+Fonts}} (const unsigned char $\ast$data)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a5ba17159df62ca39649e6f2231ac6e89}{stbtt\+\_\+\+Get\+Font\+Offset\+For\+Index}} (const unsigned char $\ast$data, int index)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_ac3b6bda1851d0b1a4fd53f5f353668e5}{stbtt\+\_\+\+Init\+Font}} (\mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, const unsigned char $\ast$data, int offset)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a213d5628c6b2e5c107b99378eefc6e3a}{stbtt\+\_\+\+Find\+Glyph\+Index}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int unicode\+\_\+codepoint)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} float \mbox{\hyperlink{imstb__truetype_8h_aad275d7211530a3d817fcd8647690b7b}{stbtt\+\_\+\+Scale\+For\+Pixel\+Height}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float pixels)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} float \mbox{\hyperlink{imstb__truetype_8h_a76da72e13355eae763c567ffde0b4607}{stbtt\+\_\+\+Scale\+For\+Mapping\+Em\+To\+Pixels}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float pixels)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a2784e0e55678a5980e950b1c9fbc75f0}{stbtt\+\_\+\+Get\+Font\+VMetrics}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int $\ast$ascent, int $\ast$descent, int $\ast$line\+Gap)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a12154e222685026a3cf315a1b5720f24}{stbtt\+\_\+\+Get\+Font\+VMetrics\+OS2}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int $\ast$typo\+Ascent, int $\ast$typo\+Descent, int $\ast$typo\+Line\+Gap)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a4dd4ca3bff4e304b2c8d952f87fbb639}{stbtt\+\_\+\+Get\+Font\+Bounding\+Box}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int $\ast$x0, int $\ast$y0, int $\ast$x1, int $\ast$y1)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a015fbd6e96df8ee58bd41bb4211b64e7}{stbtt\+\_\+\+Get\+Codepoint\+HMetrics}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int codepoint, int $\ast$advance\+Width, int $\ast$left\+Side\+Bearing)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a83703ede616bacefc0312ef2803774a1}{stbtt\+\_\+\+Get\+Codepoint\+Kern\+Advance}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int ch1, int ch2)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_abbfa26d9cbfeae7e224f2f62ef6c096d}{stbtt\+\_\+\+Get\+Codepoint\+Box}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int codepoint, int $\ast$x0, int $\ast$y0, int $\ast$x1, int $\ast$y1)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_ab593f3066f2a8a7e33e7b7011d1b1f9a}{stbtt\+\_\+\+Get\+Glyph\+HMetrics}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int glyph\+\_\+index, int $\ast$advance\+Width, int $\ast$left\+Side\+Bearing)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_acf0b09547b1c2002ad0266802224552d}{stbtt\+\_\+\+Get\+Glyph\+Kern\+Advance}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int glyph1, int glyph2)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_accf148d2d285fd55178d9a401734ba92}{stbtt\+\_\+\+Get\+Glyph\+Box}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int glyph\+\_\+index, int $\ast$x0, int $\ast$y0, int $\ast$x1, int $\ast$y1)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_ab638ddcf9ae1b15ea18b2de58443136e}{stbtt\+\_\+\+Get\+Kerning\+Table\+Length}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a190bffe156cdb32ac891e835248c90e3}{stbtt\+\_\+\+Get\+Kerning\+Table}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, \mbox{\hyperlink{structstbtt__kerningentry}{stbtt\+\_\+kerningentry}} $\ast$table, int table\+\_\+length)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a3378c5794e9ab2a16492ab7e3c3c9485}{stbtt\+\_\+\+Is\+Glyph\+Empty}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int glyph\+\_\+index)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a073c07bd3c08775d2528a0a602be1795}{stbtt\+\_\+\+Get\+Codepoint\+Shape}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int unicode\+\_\+codepoint, \mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$$\ast$vertices)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a695c82840a7d4eaa1d5be00131c9718b}{stbtt\+\_\+\+Get\+Glyph\+Shape}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int glyph\+\_\+index, \mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$$\ast$vertices)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a8aa85852fbc25667bf0438e29e128c93}{stbtt\+\_\+\+Free\+Shape}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, \mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$vertices)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_ab0896826867ac841bba5b6060b3dab09}{stbtt\+\_\+\+Find\+SVGDoc}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int gl)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a5d290c4aa81bf0f7b933ea290d123a3a}{stbtt\+\_\+\+Get\+Codepoint\+SVG}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int unicode\+\_\+codepoint, const char $\ast$$\ast$svg)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a6233237aecda00cf9ccd2c2d50dd6b17}{stbtt\+\_\+\+Get\+Glyph\+SVG}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, int gl, const char $\ast$$\ast$svg)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a8254e6763560645597c44e00024b58fa}{stbtt\+\_\+\+Free\+Bitmap}} (unsigned char $\ast$bitmap, void $\ast$userdata)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_a6206e92bc06993ba26b8e7c7671f8aaa}{stbtt\+\_\+\+Get\+Codepoint\+Bitmap}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float scale\+\_\+x, float scale\+\_\+y, int codepoint, int $\ast$width, int $\ast$height, int $\ast$xoff, int $\ast$yoff)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_a99855a21c1021bd51d03ae337a0d49be}{stbtt\+\_\+\+Get\+Codepoint\+Bitmap\+Subpixel}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int codepoint, int $\ast$width, int $\ast$height, int $\ast$xoff, int $\ast$yoff)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a4416bb8395a4d2e717f613bb4903c7eb}{stbtt\+\_\+\+Make\+Codepoint\+Bitmap}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, unsigned char $\ast$output, int out\+\_\+w, int out\+\_\+h, int out\+\_\+stride, float scale\+\_\+x, float scale\+\_\+y, int codepoint)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a51bd3fc45817d8606c749e585241fa71}{stbtt\+\_\+\+Make\+Codepoint\+Bitmap\+Subpixel}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, unsigned char $\ast$output, int out\+\_\+w, int out\+\_\+h, int out\+\_\+stride, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int codepoint)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a4b3487c748701f5b89b7be56625df1be}{stbtt\+\_\+\+Make\+Codepoint\+Bitmap\+Subpixel\+Prefilter}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, unsigned char $\ast$output, int out\+\_\+w, int out\+\_\+h, int out\+\_\+stride, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int oversample\+\_\+x, int oversample\+\_\+y, float $\ast$sub\+\_\+x, float $\ast$sub\+\_\+y, int codepoint)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a2e607ba774cee7f2425917105dabd16f}{stbtt\+\_\+\+Get\+Codepoint\+Bitmap\+Box}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$font, int codepoint, float scale\+\_\+x, float scale\+\_\+y, int $\ast$ix0, int $\ast$iy0, int $\ast$ix1, int $\ast$iy1)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a18fae014dd2261e554248ca737d05578}{stbtt\+\_\+\+Get\+Codepoint\+Bitmap\+Box\+Subpixel}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$font, int codepoint, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int $\ast$ix0, int $\ast$iy0, int $\ast$ix1, int $\ast$iy1)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_adba6ae7b9f05604eb366a828836b62a9}{stbtt\+\_\+\+Get\+Glyph\+Bitmap}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float scale\+\_\+x, float scale\+\_\+y, int glyph, int $\ast$width, int $\ast$height, int $\ast$xoff, int $\ast$yoff)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_a7a9824b918bd24da2c0193e61bc9ff24}{stbtt\+\_\+\+Get\+Glyph\+Bitmap\+Subpixel}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int glyph, int $\ast$width, int $\ast$height, int $\ast$xoff, int $\ast$yoff)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a915acab7676b20098f4d480376c5b589}{stbtt\+\_\+\+Make\+Glyph\+Bitmap}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, unsigned char $\ast$output, int out\+\_\+w, int out\+\_\+h, int out\+\_\+stride, float scale\+\_\+x, float scale\+\_\+y, int glyph)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_aa82d35f758bc70bd675c48da381e7ea7}{stbtt\+\_\+\+Make\+Glyph\+Bitmap\+Subpixel}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, unsigned char $\ast$output, int out\+\_\+w, int out\+\_\+h, int out\+\_\+stride, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int glyph)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a006159e27c5c733ea11c688211e47c25}{stbtt\+\_\+\+Make\+Glyph\+Bitmap\+Subpixel\+Prefilter}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, unsigned char $\ast$output, int out\+\_\+w, int out\+\_\+h, int out\+\_\+stride, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int oversample\+\_\+x, int oversample\+\_\+y, float $\ast$sub\+\_\+x, float $\ast$sub\+\_\+y, int glyph)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a7bba8bb63f534246ccd3ed5b9390cc53}{stbtt\+\_\+\+Get\+Glyph\+Bitmap\+Box}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$font, int glyph, float scale\+\_\+x, float scale\+\_\+y, int $\ast$ix0, int $\ast$iy0, int $\ast$ix1, int $\ast$iy1)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a597ef6b92ab0b5800c74478548b4782f}{stbtt\+\_\+\+Get\+Glyph\+Bitmap\+Box\+Subpixel}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$font, int glyph, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int $\ast$ix0, int $\ast$iy0, int $\ast$ix1, int $\ast$iy1)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a5b868ef9a9f92e0cc8b6bc0dd52087db}{stbtt\+\_\+\+Rasterize}} (\mbox{\hyperlink{structstbtt____bitmap}{stbtt\+\_\+\+\_\+bitmap}} $\ast$result, float flatness\+\_\+in\+\_\+pixels, \mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$vertices, int num\+\_\+verts, float scale\+\_\+x, float scale\+\_\+y, float shift\+\_\+x, float shift\+\_\+y, int x\+\_\+off, int y\+\_\+off, int invert, void $\ast$userdata)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void \mbox{\hyperlink{imstb__truetype_8h_a1254dc807df81931ab070c6e80370489}{stbtt\+\_\+\+Free\+SDF}} (unsigned char $\ast$bitmap, void $\ast$userdata)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_a86f324094c416b920f5a4df75b3abe97}{stbtt\+\_\+\+Get\+Glyph\+SDF}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float scale, int glyph, int padding, unsigned char onedge\+\_\+value, float pixel\+\_\+dist\+\_\+scale, int $\ast$width, int $\ast$height, int $\ast$xoff, int $\ast$yoff)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_ae70e9e09a74359133d5f282e032d5aa7}{stbtt\+\_\+\+Get\+Codepoint\+SDF}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$info, float scale, int codepoint, int padding, unsigned char onedge\+\_\+value, float pixel\+\_\+dist\+\_\+scale, int $\ast$width, int $\ast$height, int $\ast$xoff, int $\ast$yoff)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_a76ec14e5c7e57981dc5a409d89b5e92f}{stbtt\+\_\+\+Find\+Matching\+Font}} (const unsigned char $\ast$fontdata, const char $\ast$name, int flags)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int \mbox{\hyperlink{imstb__truetype_8h_aafc4974ee424f18246f47b0926a1cd31}{stbtt\+\_\+\+Compare\+UTF8to\+UTF16\+\_\+bigendian}} (const char $\ast$s1, int len1, const char $\ast$s2, int len2)
+\item 
+\mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} const char $\ast$ \mbox{\hyperlink{imstb__truetype_8h_a404d8b8c23a01c8cdf71f02d6d47d185}{stbtt\+\_\+\+Get\+Font\+Name\+String}} (const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$font, int $\ast$length, int platform\+ID, int encoding\+ID, int language\+ID, int name\+ID)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{imstb__truetype_8h_a793c93dc8e39787cf5966bec548730d5}\label{imstb__truetype_8h_a793c93dc8e39787cf5966bec548730d5}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!\_\_STB\_INCLUDE\_STB\_TRUETYPE\_H\_\_@{\_\_STB\_INCLUDE\_STB\_TRUETYPE\_H\_\_}}
+\index{\_\_STB\_INCLUDE\_STB\_TRUETYPE\_H\_\_@{\_\_STB\_INCLUDE\_STB\_TRUETYPE\_H\_\_}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{\_\_STB\_INCLUDE\_STB\_TRUETYPE\_H\_\_}{\_\_STB\_INCLUDE\_STB\_TRUETYPE\_H\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STB\+\_\+\+INCLUDE\+\_\+\+STB\+\_\+\+TRUETYPE\+\_\+\+H\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}\label{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_DEF@{STBTT\_DEF}}
+\index{STBTT\_DEF@{STBTT\_DEF}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{STBTT\_DEF}{STBTT\_DEF}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+DEF~extern}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a3856cc4fbab4c126c2c438c6f567525d}\label{imstb__truetype_8h_a3856cc4fbab4c126c2c438c6f567525d}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MACSTYLE\_BOLD@{STBTT\_MACSTYLE\_BOLD}}
+\index{STBTT\_MACSTYLE\_BOLD@{STBTT\_MACSTYLE\_BOLD}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{STBTT\_MACSTYLE\_BOLD}{STBTT\_MACSTYLE\_BOLD}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+MACSTYLE\+\_\+\+BOLD~1}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ac914b70667c9abbe432dcc4c048e6542}\label{imstb__truetype_8h_ac914b70667c9abbe432dcc4c048e6542}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MACSTYLE\_DONTCARE@{STBTT\_MACSTYLE\_DONTCARE}}
+\index{STBTT\_MACSTYLE\_DONTCARE@{STBTT\_MACSTYLE\_DONTCARE}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{STBTT\_MACSTYLE\_DONTCARE}{STBTT\_MACSTYLE\_DONTCARE}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+MACSTYLE\+\_\+\+DONTCARE~0}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a95e8d57e767119c978652397df54afef}\label{imstb__truetype_8h_a95e8d57e767119c978652397df54afef}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MACSTYLE\_ITALIC@{STBTT\_MACSTYLE\_ITALIC}}
+\index{STBTT\_MACSTYLE\_ITALIC@{STBTT\_MACSTYLE\_ITALIC}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{STBTT\_MACSTYLE\_ITALIC}{STBTT\_MACSTYLE\_ITALIC}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+MACSTYLE\+\_\+\+ITALIC~2}
+
+\mbox{\Hypertarget{imstb__truetype_8h_accb2ecf3e0d840362ebba3fe3da192da}\label{imstb__truetype_8h_accb2ecf3e0d840362ebba3fe3da192da}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MACSTYLE\_NONE@{STBTT\_MACSTYLE\_NONE}}
+\index{STBTT\_MACSTYLE\_NONE@{STBTT\_MACSTYLE\_NONE}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{STBTT\_MACSTYLE\_NONE}{STBTT\_MACSTYLE\_NONE}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+MACSTYLE\+\_\+\+NONE~8}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a9064e582d96dcbaf2f573896cccd5ef7}\label{imstb__truetype_8h_a9064e582d96dcbaf2f573896cccd5ef7}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MACSTYLE\_UNDERSCORE@{STBTT\_MACSTYLE\_UNDERSCORE}}
+\index{STBTT\_MACSTYLE\_UNDERSCORE@{STBTT\_MACSTYLE\_UNDERSCORE}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{STBTT\_MACSTYLE\_UNDERSCORE}{STBTT\_MACSTYLE\_UNDERSCORE}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+MACSTYLE\+\_\+\+UNDERSCORE~4}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a42c4058f71988e703efdf4703d5dfe31}\label{imstb__truetype_8h_a42c4058f71988e703efdf4703d5dfe31}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_POINT\_SIZE@{STBTT\_POINT\_SIZE}}
+\index{STBTT\_POINT\_SIZE@{STBTT\_POINT\_SIZE}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{STBTT\_POINT\_SIZE}{STBTT\_POINT\_SIZE}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+POINT\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(-\/(x))}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab8fd8e5e0b82b0f7da54532035e47b22}\label{imstb__truetype_8h_ab8fd8e5e0b82b0f7da54532035e47b22}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_vertex\_type@{stbtt\_vertex\_type}}
+\index{stbtt\_vertex\_type@{stbtt\_vertex\_type}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_vertex\_type}{stbtt\_vertex\_type}}
+{\footnotesize\ttfamily \#define stbtt\+\_\+vertex\+\_\+type~short}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{imstb__truetype_8h_a7c4a99b31ea2207a0b2bbcbdab8f3840}\label{imstb__truetype_8h_a7c4a99b31ea2207a0b2bbcbdab8f3840}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbrp\_rect@{stbrp\_rect}}
+\index{stbrp\_rect@{stbrp\_rect}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbrp\_rect}{stbrp\_rect}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} \mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}}}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a82ca6622f6983cc08eca850280126daf}\label{imstb__truetype_8h_a82ca6622f6983cc08eca850280126daf}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_fontinfo@{stbtt\_fontinfo}}
+\index{stbtt\_fontinfo@{stbtt\_fontinfo}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_fontinfo}{stbtt\_fontinfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}}}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a988d6ec9ddb583b248cc96f17449dd6b}\label{imstb__truetype_8h_a988d6ec9ddb583b248cc96f17449dd6b}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_kerningentry@{stbtt\_kerningentry}}
+\index{stbtt\_kerningentry@{stbtt\_kerningentry}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_kerningentry}{stbtt\_kerningentry}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structstbtt__kerningentry}{stbtt\+\_\+kerningentry}} \mbox{\hyperlink{structstbtt__kerningentry}{stbtt\+\_\+kerningentry}}}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a37d613643adacbed24c22718faf6afc7}\label{imstb__truetype_8h_a37d613643adacbed24c22718faf6afc7}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_pack\_context@{stbtt\_pack\_context}}
+\index{stbtt\_pack\_context@{stbtt\_pack\_context}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_pack\_context}{stbtt\_pack\_context}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} \mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388}\label{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_EID\_SYMBOL@{STBTT\_MS\_EID\_SYMBOL}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_EID\_SYMBOL@{STBTT\_MS\_EID\_SYMBOL}}}\mbox{\Hypertarget{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388a87372d512b2e4be1dce36fe0153b8cc0}\label{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388a87372d512b2e4be1dce36fe0153b8cc0}} 
+STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+SYMBOL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_EID\_UNICODE\_BMP@{STBTT\_MS\_EID\_UNICODE\_BMP}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_EID\_UNICODE\_BMP@{STBTT\_MS\_EID\_UNICODE\_BMP}}}\mbox{\Hypertarget{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388af3b7a17fc226e7540f025d241f36f17d}\label{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388af3b7a17fc226e7540f025d241f36f17d}} 
+STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+UNICODE\+\_\+\+BMP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_EID\_SHIFTJIS@{STBTT\_MS\_EID\_SHIFTJIS}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_EID\_SHIFTJIS@{STBTT\_MS\_EID\_SHIFTJIS}}}\mbox{\Hypertarget{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388aaaab3da7b4e39433ac3db32fd9a83808}\label{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388aaaab3da7b4e39433ac3db32fd9a83808}} 
+STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+SHIFTJIS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_EID\_UNICODE\_FULL@{STBTT\_MS\_EID\_UNICODE\_FULL}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_EID\_UNICODE\_FULL@{STBTT\_MS\_EID\_UNICODE\_FULL}}}\mbox{\Hypertarget{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388a08224d2a200bd947c6513926290f4640}\label{imstb__truetype_8h_a385c44f6fb256e5716a2302a5b940388a08224d2a200bd947c6513926290f4640}} 
+STBTT\+\_\+\+MS\+\_\+\+EID\+\_\+\+UNICODE\+\_\+\+FULL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035d}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035d}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_ROMAN@{STBTT\_MAC\_EID\_ROMAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_ROMAN@{STBTT\_MAC\_EID\_ROMAN}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da11789a74295482059768d7ed21ddc1ae}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da11789a74295482059768d7ed21ddc1ae}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+ROMAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_ARABIC@{STBTT\_MAC\_EID\_ARABIC}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_ARABIC@{STBTT\_MAC\_EID\_ARABIC}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daedbd64dd9fc105aabbbae72bae09be1f}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daedbd64dd9fc105aabbbae72bae09be1f}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+ARABIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_JAPANESE@{STBTT\_MAC\_EID\_JAPANESE}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_JAPANESE@{STBTT\_MAC\_EID\_JAPANESE}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daa1cd5f4622dd634ffafe0487a2135524}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daa1cd5f4622dd634ffafe0487a2135524}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+JAPANESE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_HEBREW@{STBTT\_MAC\_EID\_HEBREW}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_HEBREW@{STBTT\_MAC\_EID\_HEBREW}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da4f4920b5c91733bd8bb176d5425bd106}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da4f4920b5c91733bd8bb176d5425bd106}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+HEBREW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_CHINESE\_TRAD@{STBTT\_MAC\_EID\_CHINESE\_TRAD}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_CHINESE\_TRAD@{STBTT\_MAC\_EID\_CHINESE\_TRAD}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da808bbaa74269579caa945ffdae31c62a}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da808bbaa74269579caa945ffdae31c62a}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+CHINESE\+\_\+\+TRAD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_GREEK@{STBTT\_MAC\_EID\_GREEK}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_GREEK@{STBTT\_MAC\_EID\_GREEK}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035dac3c0a50ac37d4b5a68e0ea22824bee75}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035dac3c0a50ac37d4b5a68e0ea22824bee75}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+GREEK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_KOREAN@{STBTT\_MAC\_EID\_KOREAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_KOREAN@{STBTT\_MAC\_EID\_KOREAN}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da0b8da1ad3177e0c9b1564c780fc11f0b}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035da0b8da1ad3177e0c9b1564c780fc11f0b}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+KOREAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_EID\_RUSSIAN@{STBTT\_MAC\_EID\_RUSSIAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_EID\_RUSSIAN@{STBTT\_MAC\_EID\_RUSSIAN}}}\mbox{\Hypertarget{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daba7e217cc8f987ce69ab91180bd15a7f}\label{imstb__truetype_8h_abc5c98fcc1211af2b80116dd6e0a035daba7e217cc8f987ce69ab91180bd15a7f}} 
+STBTT\+\_\+\+MAC\+\_\+\+EID\+\_\+\+RUSSIAN&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_ENGLISH@{STBTT\_MS\_LANG\_ENGLISH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_ENGLISH@{STBTT\_MS\_LANG\_ENGLISH}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a73e1e353a8727baf20ce85ee329b310b}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a73e1e353a8727baf20ce85ee329b310b}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+ENGLISH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_ITALIAN@{STBTT\_MS\_LANG\_ITALIAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_ITALIAN@{STBTT\_MS\_LANG\_ITALIAN}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a9d1b0af23f2f76cd1789e0cd638b935d}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a9d1b0af23f2f76cd1789e0cd638b935d}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+ITALIAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_CHINESE@{STBTT\_MS\_LANG\_CHINESE}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_CHINESE@{STBTT\_MS\_LANG\_CHINESE}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a6092851487f2d9708532ee955d4a75bd}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a6092851487f2d9708532ee955d4a75bd}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+CHINESE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_JAPANESE@{STBTT\_MS\_LANG\_JAPANESE}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_JAPANESE@{STBTT\_MS\_LANG\_JAPANESE}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a0e44b54e59bcc095ff9fe786850cbf74}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a0e44b54e59bcc095ff9fe786850cbf74}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+JAPANESE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_DUTCH@{STBTT\_MS\_LANG\_DUTCH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_DUTCH@{STBTT\_MS\_LANG\_DUTCH}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a0b5f77089567369488e03917d99ddbe5}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a0b5f77089567369488e03917d99ddbe5}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+DUTCH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_KOREAN@{STBTT\_MS\_LANG\_KOREAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_KOREAN@{STBTT\_MS\_LANG\_KOREAN}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8adc4f5bbc60ef97f1418902574fd9b418}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8adc4f5bbc60ef97f1418902574fd9b418}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+KOREAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_FRENCH@{STBTT\_MS\_LANG\_FRENCH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_FRENCH@{STBTT\_MS\_LANG\_FRENCH}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b89fa08e6376c8314c330bd1e9837b5}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b89fa08e6376c8314c330bd1e9837b5}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+FRENCH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_RUSSIAN@{STBTT\_MS\_LANG\_RUSSIAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_RUSSIAN@{STBTT\_MS\_LANG\_RUSSIAN}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a7930264450b0313e58f7590550520786}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a7930264450b0313e58f7590550520786}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+RUSSIAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_GERMAN@{STBTT\_MS\_LANG\_GERMAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_GERMAN@{STBTT\_MS\_LANG\_GERMAN}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8aebb69f5af1155d26a280778c5ab72580}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8aebb69f5af1155d26a280778c5ab72580}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+GERMAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_SPANISH@{STBTT\_MS\_LANG\_SPANISH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_SPANISH@{STBTT\_MS\_LANG\_SPANISH}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a541da99c0255bb044006cc32c2ae50a2}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a541da99c0255bb044006cc32c2ae50a2}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+SPANISH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_HEBREW@{STBTT\_MS\_LANG\_HEBREW}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_HEBREW@{STBTT\_MS\_LANG\_HEBREW}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8aed7119e1e991009f49065071f4df39c6}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8aed7119e1e991009f49065071f4df39c6}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+HEBREW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MS\_LANG\_SWEDISH@{STBTT\_MS\_LANG\_SWEDISH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MS\_LANG\_SWEDISH@{STBTT\_MS\_LANG\_SWEDISH}}}\mbox{\Hypertarget{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a126d5bcdbb6e42a9799873b4ffde6c34}\label{imstb__truetype_8h_ac36f475ca5b446f4fde4c9b90bec77c8a126d5bcdbb6e42a9799873b4ffde6c34}} 
+STBTT\+\_\+\+MS\+\_\+\+LANG\+\_\+\+SWEDISH&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9e}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_ENGLISH@{STBTT\_MAC\_LANG\_ENGLISH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_ENGLISH@{STBTT\_MAC\_LANG\_ENGLISH}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea845b632475daa7639bb3438785ca3fc9}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea845b632475daa7639bb3438785ca3fc9}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+ENGLISH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_JAPANESE@{STBTT\_MAC\_LANG\_JAPANESE}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_JAPANESE@{STBTT\_MAC\_LANG\_JAPANESE}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea988de1366d401829c919b481c5c3c8e2}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea988de1366d401829c919b481c5c3c8e2}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+JAPANESE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_ARABIC@{STBTT\_MAC\_LANG\_ARABIC}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_ARABIC@{STBTT\_MAC\_LANG\_ARABIC}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eae6f91a195abd217070ca9cee63849420}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eae6f91a195abd217070ca9cee63849420}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+ARABIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_KOREAN@{STBTT\_MAC\_LANG\_KOREAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_KOREAN@{STBTT\_MAC\_LANG\_KOREAN}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea236502e69e2e07df089168e80dc1330d}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea236502e69e2e07df089168e80dc1330d}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+KOREAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_DUTCH@{STBTT\_MAC\_LANG\_DUTCH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_DUTCH@{STBTT\_MAC\_LANG\_DUTCH}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf2757f8c4078dfb9fe9ad9dc32e801ee}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf2757f8c4078dfb9fe9ad9dc32e801ee}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+DUTCH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_RUSSIAN@{STBTT\_MAC\_LANG\_RUSSIAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_RUSSIAN@{STBTT\_MAC\_LANG\_RUSSIAN}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf99640bf65945428bcb19f3b9e6e287f}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf99640bf65945428bcb19f3b9e6e287f}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+RUSSIAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_FRENCH@{STBTT\_MAC\_LANG\_FRENCH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_FRENCH@{STBTT\_MAC\_LANG\_FRENCH}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea9a8ae7b8dca3b2902eb69ece32b817a3}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea9a8ae7b8dca3b2902eb69ece32b817a3}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+FRENCH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_SPANISH@{STBTT\_MAC\_LANG\_SPANISH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_SPANISH@{STBTT\_MAC\_LANG\_SPANISH}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea5399db7b554ed772c935f1b5d9d67852}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea5399db7b554ed772c935f1b5d9d67852}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+SPANISH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_GERMAN@{STBTT\_MAC\_LANG\_GERMAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_GERMAN@{STBTT\_MAC\_LANG\_GERMAN}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eae3360f5396032fdf22ebb35f3d30e849}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eae3360f5396032fdf22ebb35f3d30e849}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+GERMAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_SWEDISH@{STBTT\_MAC\_LANG\_SWEDISH}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_SWEDISH@{STBTT\_MAC\_LANG\_SWEDISH}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea0315abafecf696110de133e4d54ade8c}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea0315abafecf696110de133e4d54ade8c}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+SWEDISH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_HEBREW@{STBTT\_MAC\_LANG\_HEBREW}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_HEBREW@{STBTT\_MAC\_LANG\_HEBREW}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ead60d41526c1e9ee9ec50e8fd8950b9a4}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ead60d41526c1e9ee9ec50e8fd8950b9a4}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+HEBREW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_CHINESE\_SIMPLIFIED@{STBTT\_MAC\_LANG\_CHINESE\_SIMPLIFIED}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_CHINESE\_SIMPLIFIED@{STBTT\_MAC\_LANG\_CHINESE\_SIMPLIFIED}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea552ed7fe17ee850f3883344b3424e26b}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea552ed7fe17ee850f3883344b3424e26b}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+CHINESE\+\_\+\+SIMPLIFIED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_ITALIAN@{STBTT\_MAC\_LANG\_ITALIAN}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_ITALIAN@{STBTT\_MAC\_LANG\_ITALIAN}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea50fb98b75fe8bc23d2bc963e45ea8d96}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9ea50fb98b75fe8bc23d2bc963e45ea8d96}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+ITALIAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_MAC\_LANG\_CHINESE\_TRAD@{STBTT\_MAC\_LANG\_CHINESE\_TRAD}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_MAC\_LANG\_CHINESE\_TRAD@{STBTT\_MAC\_LANG\_CHINESE\_TRAD}}}\mbox{\Hypertarget{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf7d2b171e725e29ef4fbfbff7c3b5926}\label{imstb__truetype_8h_a05589fbab0657f08285ebdfe93f5ec9eaf7d2b171e725e29ef4fbfbff7c3b5926}} 
+STBTT\+\_\+\+MAC\+\_\+\+LANG\+\_\+\+CHINESE\+\_\+\+TRAD&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2d}\label{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2d}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_vmove@{STBTT\_vmove}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_vmove@{STBTT\_vmove}}}\mbox{\Hypertarget{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab335ba97e1798b621313de85a9a6e69d}\label{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab335ba97e1798b621313de85a9a6e69d}} 
+STBTT\+\_\+vmove&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_vline@{STBTT\_vline}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_vline@{STBTT\_vline}}}\mbox{\Hypertarget{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dade4bb6465c32e56588f35e5120769e2e}\label{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dade4bb6465c32e56588f35e5120769e2e}} 
+STBTT\+\_\+vline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_vcurve@{STBTT\_vcurve}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_vcurve@{STBTT\_vcurve}}}\mbox{\Hypertarget{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab9ac3e527ce18873abeab556f6768ce4}\label{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab9ac3e527ce18873abeab556f6768ce4}} 
+STBTT\+\_\+vcurve&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_vcubic@{STBTT\_vcubic}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_vcubic@{STBTT\_vcubic}}}\mbox{\Hypertarget{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab6cd2670234c731eafba404d3a2470fd}\label{imstb__truetype_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab6cd2670234c731eafba404d3a2470fd}} 
+STBTT\+\_\+vcubic&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600}\label{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_PLATFORM\_ID\_UNICODE@{STBTT\_PLATFORM\_ID\_UNICODE}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_PLATFORM\_ID\_UNICODE@{STBTT\_PLATFORM\_ID\_UNICODE}}}\mbox{\Hypertarget{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600a7df9cd0e95e0b375d03348661b399b69}\label{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600a7df9cd0e95e0b375d03348661b399b69}} 
+STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+UNICODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_PLATFORM\_ID\_MAC@{STBTT\_PLATFORM\_ID\_MAC}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_PLATFORM\_ID\_MAC@{STBTT\_PLATFORM\_ID\_MAC}}}\mbox{\Hypertarget{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600adc1a3ed4f2abe63dd4e91d789136db3f}\label{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600adc1a3ed4f2abe63dd4e91d789136db3f}} 
+STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+MAC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_PLATFORM\_ID\_ISO@{STBTT\_PLATFORM\_ID\_ISO}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_PLATFORM\_ID\_ISO@{STBTT\_PLATFORM\_ID\_ISO}}}\mbox{\Hypertarget{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600acd63703eafd91118387dfb70b384132d}\label{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600acd63703eafd91118387dfb70b384132d}} 
+STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+ISO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_PLATFORM\_ID\_MICROSOFT@{STBTT\_PLATFORM\_ID\_MICROSOFT}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_PLATFORM\_ID\_MICROSOFT@{STBTT\_PLATFORM\_ID\_MICROSOFT}}}\mbox{\Hypertarget{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600a86f00e4c49cfec574b34090faa47f878}\label{imstb__truetype_8h_abed82baf7f470b522273a3e37c24c600a86f00e4c49cfec574b34090faa47f878}} 
+STBTT\+\_\+\+PLATFORM\+\_\+\+ID\+\_\+\+MICROSOFT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57}\label{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_UNICODE\_EID\_UNICODE\_1\_0@{STBTT\_UNICODE\_EID\_UNICODE\_1\_0}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_UNICODE\_EID\_UNICODE\_1\_0@{STBTT\_UNICODE\_EID\_UNICODE\_1\_0}}}\mbox{\Hypertarget{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57aeec1111b4adcd61a20a461138726fc46}\label{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57aeec1111b4adcd61a20a461138726fc46}} 
+STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+1\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_UNICODE\_EID\_UNICODE\_1\_1@{STBTT\_UNICODE\_EID\_UNICODE\_1\_1}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_UNICODE\_EID\_UNICODE\_1\_1@{STBTT\_UNICODE\_EID\_UNICODE\_1\_1}}}\mbox{\Hypertarget{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57aa13de23938974ed5ed2039ad0c623901}\label{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57aa13de23938974ed5ed2039ad0c623901}} 
+STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+1\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_UNICODE\_EID\_ISO\_10646@{STBTT\_UNICODE\_EID\_ISO\_10646}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_UNICODE\_EID\_ISO\_10646@{STBTT\_UNICODE\_EID\_ISO\_10646}}}\mbox{\Hypertarget{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a2803b7d7150216b6e67cdd2ef9e734b0}\label{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a2803b7d7150216b6e67cdd2ef9e734b0}} 
+STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+ISO\+\_\+10646&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_BMP@{STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_BMP}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_BMP@{STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_BMP}}}\mbox{\Hypertarget{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a4ead513507e004e256fb772d7ee91f60}\label{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a4ead513507e004e256fb772d7ee91f60}} 
+STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+2\+\_\+0\+\_\+\+BMP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_FULL@{STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_FULL}!imstb\_truetype.h@{imstb\_truetype.h}}\index{imstb\_truetype.h@{imstb\_truetype.h}!STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_FULL@{STBTT\_UNICODE\_EID\_UNICODE\_2\_0\_FULL}}}\mbox{\Hypertarget{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a95f85f02ffe39539e6b4032a3db58eed}\label{imstb__truetype_8h_ab04a0655cd1e3bcac5e8f48c18df1a57a95f85f02ffe39539e6b4032a3db58eed}} 
+STBTT\+\_\+\+UNICODE\+\_\+\+EID\+\_\+\+UNICODE\+\_\+2\+\_\+0\+\_\+\+FULL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{imstb__truetype_8h_a9f906556cc09c60d136cb9af18305ef3}\label{imstb__truetype_8h_a9f906556cc09c60d136cb9af18305ef3}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_BakeFontBitmap@{stbtt\_BakeFontBitmap}}
+\index{stbtt\_BakeFontBitmap@{stbtt\_BakeFontBitmap}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_BakeFontBitmap()}{stbtt\_BakeFontBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Bake\+Font\+Bitmap (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data,  }\item[{int}]{offset,  }\item[{float}]{pixel\+\_\+height,  }\item[{unsigned char $\ast$}]{pixels,  }\item[{int}]{pw,  }\item[{int}]{ph,  }\item[{int}]{first\+\_\+char,  }\item[{int}]{num\+\_\+chars,  }\item[{\mbox{\hyperlink{structstbtt__bakedchar}{stbtt\+\_\+bakedchar}} $\ast$}]{chardata }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_aafc4974ee424f18246f47b0926a1cd31}\label{imstb__truetype_8h_aafc4974ee424f18246f47b0926a1cd31}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_CompareUTF8toUTF16\_bigendian@{stbtt\_CompareUTF8toUTF16\_bigendian}}
+\index{stbtt\_CompareUTF8toUTF16\_bigendian@{stbtt\_CompareUTF8toUTF16\_bigendian}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_CompareUTF8toUTF16\_bigendian()}{stbtt\_CompareUTF8toUTF16\_bigendian()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Compare\+UTF8to\+UTF16\+\_\+bigendian (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s1,  }\item[{int}]{len1,  }\item[{const char $\ast$}]{s2,  }\item[{int}]{len2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a213d5628c6b2e5c107b99378eefc6e3a}\label{imstb__truetype_8h_a213d5628c6b2e5c107b99378eefc6e3a}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_FindGlyphIndex@{stbtt\_FindGlyphIndex}}
+\index{stbtt\_FindGlyphIndex@{stbtt\_FindGlyphIndex}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_FindGlyphIndex()}{stbtt\_FindGlyphIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Find\+Glyph\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{unicode\+\_\+codepoint }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a76ec14e5c7e57981dc5a409d89b5e92f}\label{imstb__truetype_8h_a76ec14e5c7e57981dc5a409d89b5e92f}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_FindMatchingFont@{stbtt\_FindMatchingFont}}
+\index{stbtt\_FindMatchingFont@{stbtt\_FindMatchingFont}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_FindMatchingFont()}{stbtt\_FindMatchingFont()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Find\+Matching\+Font (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{fontdata,  }\item[{const char $\ast$}]{name,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab0896826867ac841bba5b6060b3dab09}\label{imstb__truetype_8h_ab0896826867ac841bba5b6060b3dab09}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_FindSVGDoc@{stbtt\_FindSVGDoc}}
+\index{stbtt\_FindSVGDoc@{stbtt\_FindSVGDoc}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_FindSVGDoc()}{stbtt\_FindSVGDoc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ stbtt\+\_\+\+Find\+SVGDoc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{gl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a8254e6763560645597c44e00024b58fa}\label{imstb__truetype_8h_a8254e6763560645597c44e00024b58fa}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_FreeBitmap@{stbtt\_FreeBitmap}}
+\index{stbtt\_FreeBitmap@{stbtt\_FreeBitmap}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_FreeBitmap()}{stbtt\_FreeBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Free\+Bitmap (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{bitmap,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a1254dc807df81931ab070c6e80370489}\label{imstb__truetype_8h_a1254dc807df81931ab070c6e80370489}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_FreeSDF@{stbtt\_FreeSDF}}
+\index{stbtt\_FreeSDF@{stbtt\_FreeSDF}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_FreeSDF()}{stbtt\_FreeSDF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Free\+SDF (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{bitmap,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a8aa85852fbc25667bf0438e29e128c93}\label{imstb__truetype_8h_a8aa85852fbc25667bf0438e29e128c93}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_FreeShape@{stbtt\_FreeShape}}
+\index{stbtt\_FreeShape@{stbtt\_FreeShape}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_FreeShape()}{stbtt\_FreeShape()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Free\+Shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{\mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$}]{vertices }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab7f7e3a2bc7ae72720057b07a13c400f}\label{imstb__truetype_8h_ab7f7e3a2bc7ae72720057b07a13c400f}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetBakedQuad@{stbtt\_GetBakedQuad}}
+\index{stbtt\_GetBakedQuad@{stbtt\_GetBakedQuad}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetBakedQuad()}{stbtt\_GetBakedQuad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Baked\+Quad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__bakedchar}{stbtt\+\_\+bakedchar}} $\ast$}]{chardata,  }\item[{int}]{pw,  }\item[{int}]{ph,  }\item[{int}]{char\+\_\+index,  }\item[{float $\ast$}]{xpos,  }\item[{float $\ast$}]{ypos,  }\item[{\mbox{\hyperlink{structstbtt__aligned__quad}{stbtt\+\_\+aligned\+\_\+quad}} $\ast$}]{q,  }\item[{int}]{opengl\+\_\+fillrule }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a6206e92bc06993ba26b8e7c7671f8aaa}\label{imstb__truetype_8h_a6206e92bc06993ba26b8e7c7671f8aaa}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointBitmap@{stbtt\_GetCodepointBitmap}}
+\index{stbtt\_GetCodepointBitmap@{stbtt\_GetCodepointBitmap}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointBitmap()}{stbtt\_GetCodepointBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ stbtt\+\_\+\+Get\+Codepoint\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{int}]{codepoint,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height,  }\item[{int $\ast$}]{xoff,  }\item[{int $\ast$}]{yoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a2e607ba774cee7f2425917105dabd16f}\label{imstb__truetype_8h_a2e607ba774cee7f2425917105dabd16f}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointBitmapBox@{stbtt\_GetCodepointBitmapBox}}
+\index{stbtt\_GetCodepointBitmapBox@{stbtt\_GetCodepointBitmapBox}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointBitmapBox()}{stbtt\_GetCodepointBitmapBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Codepoint\+Bitmap\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{font,  }\item[{int}]{codepoint,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{int $\ast$}]{ix0,  }\item[{int $\ast$}]{iy0,  }\item[{int $\ast$}]{ix1,  }\item[{int $\ast$}]{iy1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a18fae014dd2261e554248ca737d05578}\label{imstb__truetype_8h_a18fae014dd2261e554248ca737d05578}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointBitmapBoxSubpixel@{stbtt\_GetCodepointBitmapBoxSubpixel}}
+\index{stbtt\_GetCodepointBitmapBoxSubpixel@{stbtt\_GetCodepointBitmapBoxSubpixel}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointBitmapBoxSubpixel()}{stbtt\_GetCodepointBitmapBoxSubpixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Codepoint\+Bitmap\+Box\+Subpixel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{font,  }\item[{int}]{codepoint,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int $\ast$}]{ix0,  }\item[{int $\ast$}]{iy0,  }\item[{int $\ast$}]{ix1,  }\item[{int $\ast$}]{iy1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a99855a21c1021bd51d03ae337a0d49be}\label{imstb__truetype_8h_a99855a21c1021bd51d03ae337a0d49be}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointBitmapSubpixel@{stbtt\_GetCodepointBitmapSubpixel}}
+\index{stbtt\_GetCodepointBitmapSubpixel@{stbtt\_GetCodepointBitmapSubpixel}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointBitmapSubpixel()}{stbtt\_GetCodepointBitmapSubpixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ stbtt\+\_\+\+Get\+Codepoint\+Bitmap\+Subpixel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int}]{codepoint,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height,  }\item[{int $\ast$}]{xoff,  }\item[{int $\ast$}]{yoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_abbfa26d9cbfeae7e224f2f62ef6c096d}\label{imstb__truetype_8h_abbfa26d9cbfeae7e224f2f62ef6c096d}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointBox@{stbtt\_GetCodepointBox}}
+\index{stbtt\_GetCodepointBox@{stbtt\_GetCodepointBox}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointBox()}{stbtt\_GetCodepointBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Codepoint\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{codepoint,  }\item[{int $\ast$}]{x0,  }\item[{int $\ast$}]{y0,  }\item[{int $\ast$}]{x1,  }\item[{int $\ast$}]{y1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a015fbd6e96df8ee58bd41bb4211b64e7}\label{imstb__truetype_8h_a015fbd6e96df8ee58bd41bb4211b64e7}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointHMetrics@{stbtt\_GetCodepointHMetrics}}
+\index{stbtt\_GetCodepointHMetrics@{stbtt\_GetCodepointHMetrics}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointHMetrics()}{stbtt\_GetCodepointHMetrics()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Codepoint\+HMetrics (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{codepoint,  }\item[{int $\ast$}]{advance\+Width,  }\item[{int $\ast$}]{left\+Side\+Bearing }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a83703ede616bacefc0312ef2803774a1}\label{imstb__truetype_8h_a83703ede616bacefc0312ef2803774a1}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointKernAdvance@{stbtt\_GetCodepointKernAdvance}}
+\index{stbtt\_GetCodepointKernAdvance@{stbtt\_GetCodepointKernAdvance}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointKernAdvance()}{stbtt\_GetCodepointKernAdvance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Codepoint\+Kern\+Advance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{ch1,  }\item[{int}]{ch2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ae70e9e09a74359133d5f282e032d5aa7}\label{imstb__truetype_8h_ae70e9e09a74359133d5f282e032d5aa7}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointSDF@{stbtt\_GetCodepointSDF}}
+\index{stbtt\_GetCodepointSDF@{stbtt\_GetCodepointSDF}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointSDF()}{stbtt\_GetCodepointSDF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ stbtt\+\_\+\+Get\+Codepoint\+SDF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{scale,  }\item[{int}]{codepoint,  }\item[{int}]{padding,  }\item[{unsigned char}]{onedge\+\_\+value,  }\item[{float}]{pixel\+\_\+dist\+\_\+scale,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height,  }\item[{int $\ast$}]{xoff,  }\item[{int $\ast$}]{yoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a073c07bd3c08775d2528a0a602be1795}\label{imstb__truetype_8h_a073c07bd3c08775d2528a0a602be1795}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointShape@{stbtt\_GetCodepointShape}}
+\index{stbtt\_GetCodepointShape@{stbtt\_GetCodepointShape}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointShape()}{stbtt\_GetCodepointShape()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Codepoint\+Shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{unicode\+\_\+codepoint,  }\item[{\mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$$\ast$}]{vertices }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a5d290c4aa81bf0f7b933ea290d123a3a}\label{imstb__truetype_8h_a5d290c4aa81bf0f7b933ea290d123a3a}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetCodepointSVG@{stbtt\_GetCodepointSVG}}
+\index{stbtt\_GetCodepointSVG@{stbtt\_GetCodepointSVG}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetCodepointSVG()}{stbtt\_GetCodepointSVG()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Codepoint\+SVG (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{unicode\+\_\+codepoint,  }\item[{const char $\ast$$\ast$}]{svg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a4dd4ca3bff4e304b2c8d952f87fbb639}\label{imstb__truetype_8h_a4dd4ca3bff4e304b2c8d952f87fbb639}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetFontBoundingBox@{stbtt\_GetFontBoundingBox}}
+\index{stbtt\_GetFontBoundingBox@{stbtt\_GetFontBoundingBox}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetFontBoundingBox()}{stbtt\_GetFontBoundingBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Font\+Bounding\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int $\ast$}]{x0,  }\item[{int $\ast$}]{y0,  }\item[{int $\ast$}]{x1,  }\item[{int $\ast$}]{y1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a404d8b8c23a01c8cdf71f02d6d47d185}\label{imstb__truetype_8h_a404d8b8c23a01c8cdf71f02d6d47d185}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetFontNameString@{stbtt\_GetFontNameString}}
+\index{stbtt\_GetFontNameString@{stbtt\_GetFontNameString}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetFontNameString()}{stbtt\_GetFontNameString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} const char $\ast$ stbtt\+\_\+\+Get\+Font\+Name\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{font,  }\item[{int $\ast$}]{length,  }\item[{int}]{platform\+ID,  }\item[{int}]{encoding\+ID,  }\item[{int}]{language\+ID,  }\item[{int}]{name\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a5ba17159df62ca39649e6f2231ac6e89}\label{imstb__truetype_8h_a5ba17159df62ca39649e6f2231ac6e89}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetFontOffsetForIndex@{stbtt\_GetFontOffsetForIndex}}
+\index{stbtt\_GetFontOffsetForIndex@{stbtt\_GetFontOffsetForIndex}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetFontOffsetForIndex()}{stbtt\_GetFontOffsetForIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Font\+Offset\+For\+Index (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a2784e0e55678a5980e950b1c9fbc75f0}\label{imstb__truetype_8h_a2784e0e55678a5980e950b1c9fbc75f0}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetFontVMetrics@{stbtt\_GetFontVMetrics}}
+\index{stbtt\_GetFontVMetrics@{stbtt\_GetFontVMetrics}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetFontVMetrics()}{stbtt\_GetFontVMetrics()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Font\+VMetrics (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int $\ast$}]{ascent,  }\item[{int $\ast$}]{descent,  }\item[{int $\ast$}]{line\+Gap }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a12154e222685026a3cf315a1b5720f24}\label{imstb__truetype_8h_a12154e222685026a3cf315a1b5720f24}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetFontVMetricsOS2@{stbtt\_GetFontVMetricsOS2}}
+\index{stbtt\_GetFontVMetricsOS2@{stbtt\_GetFontVMetricsOS2}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetFontVMetricsOS2()}{stbtt\_GetFontVMetricsOS2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Font\+VMetrics\+OS2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int $\ast$}]{typo\+Ascent,  }\item[{int $\ast$}]{typo\+Descent,  }\item[{int $\ast$}]{typo\+Line\+Gap }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_adba6ae7b9f05604eb366a828836b62a9}\label{imstb__truetype_8h_adba6ae7b9f05604eb366a828836b62a9}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphBitmap@{stbtt\_GetGlyphBitmap}}
+\index{stbtt\_GetGlyphBitmap@{stbtt\_GetGlyphBitmap}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphBitmap()}{stbtt\_GetGlyphBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ stbtt\+\_\+\+Get\+Glyph\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{int}]{glyph,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height,  }\item[{int $\ast$}]{xoff,  }\item[{int $\ast$}]{yoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a7bba8bb63f534246ccd3ed5b9390cc53}\label{imstb__truetype_8h_a7bba8bb63f534246ccd3ed5b9390cc53}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphBitmapBox@{stbtt\_GetGlyphBitmapBox}}
+\index{stbtt\_GetGlyphBitmapBox@{stbtt\_GetGlyphBitmapBox}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphBitmapBox()}{stbtt\_GetGlyphBitmapBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Glyph\+Bitmap\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{font,  }\item[{int}]{glyph,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{int $\ast$}]{ix0,  }\item[{int $\ast$}]{iy0,  }\item[{int $\ast$}]{ix1,  }\item[{int $\ast$}]{iy1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a597ef6b92ab0b5800c74478548b4782f}\label{imstb__truetype_8h_a597ef6b92ab0b5800c74478548b4782f}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphBitmapBoxSubpixel@{stbtt\_GetGlyphBitmapBoxSubpixel}}
+\index{stbtt\_GetGlyphBitmapBoxSubpixel@{stbtt\_GetGlyphBitmapBoxSubpixel}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphBitmapBoxSubpixel()}{stbtt\_GetGlyphBitmapBoxSubpixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Glyph\+Bitmap\+Box\+Subpixel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{font,  }\item[{int}]{glyph,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int $\ast$}]{ix0,  }\item[{int $\ast$}]{iy0,  }\item[{int $\ast$}]{ix1,  }\item[{int $\ast$}]{iy1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a7a9824b918bd24da2c0193e61bc9ff24}\label{imstb__truetype_8h_a7a9824b918bd24da2c0193e61bc9ff24}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphBitmapSubpixel@{stbtt\_GetGlyphBitmapSubpixel}}
+\index{stbtt\_GetGlyphBitmapSubpixel@{stbtt\_GetGlyphBitmapSubpixel}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphBitmapSubpixel()}{stbtt\_GetGlyphBitmapSubpixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ stbtt\+\_\+\+Get\+Glyph\+Bitmap\+Subpixel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int}]{glyph,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height,  }\item[{int $\ast$}]{xoff,  }\item[{int $\ast$}]{yoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_accf148d2d285fd55178d9a401734ba92}\label{imstb__truetype_8h_accf148d2d285fd55178d9a401734ba92}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphBox@{stbtt\_GetGlyphBox}}
+\index{stbtt\_GetGlyphBox@{stbtt\_GetGlyphBox}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphBox()}{stbtt\_GetGlyphBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Glyph\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{glyph\+\_\+index,  }\item[{int $\ast$}]{x0,  }\item[{int $\ast$}]{y0,  }\item[{int $\ast$}]{x1,  }\item[{int $\ast$}]{y1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab593f3066f2a8a7e33e7b7011d1b1f9a}\label{imstb__truetype_8h_ab593f3066f2a8a7e33e7b7011d1b1f9a}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphHMetrics@{stbtt\_GetGlyphHMetrics}}
+\index{stbtt\_GetGlyphHMetrics@{stbtt\_GetGlyphHMetrics}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphHMetrics()}{stbtt\_GetGlyphHMetrics()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Glyph\+HMetrics (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{glyph\+\_\+index,  }\item[{int $\ast$}]{advance\+Width,  }\item[{int $\ast$}]{left\+Side\+Bearing }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_acf0b09547b1c2002ad0266802224552d}\label{imstb__truetype_8h_acf0b09547b1c2002ad0266802224552d}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphKernAdvance@{stbtt\_GetGlyphKernAdvance}}
+\index{stbtt\_GetGlyphKernAdvance@{stbtt\_GetGlyphKernAdvance}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphKernAdvance()}{stbtt\_GetGlyphKernAdvance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Glyph\+Kern\+Advance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{glyph1,  }\item[{int}]{glyph2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a86f324094c416b920f5a4df75b3abe97}\label{imstb__truetype_8h_a86f324094c416b920f5a4df75b3abe97}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphSDF@{stbtt\_GetGlyphSDF}}
+\index{stbtt\_GetGlyphSDF@{stbtt\_GetGlyphSDF}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphSDF()}{stbtt\_GetGlyphSDF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} unsigned char $\ast$ stbtt\+\_\+\+Get\+Glyph\+SDF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{scale,  }\item[{int}]{glyph,  }\item[{int}]{padding,  }\item[{unsigned char}]{onedge\+\_\+value,  }\item[{float}]{pixel\+\_\+dist\+\_\+scale,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height,  }\item[{int $\ast$}]{xoff,  }\item[{int $\ast$}]{yoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a695c82840a7d4eaa1d5be00131c9718b}\label{imstb__truetype_8h_a695c82840a7d4eaa1d5be00131c9718b}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphShape@{stbtt\_GetGlyphShape}}
+\index{stbtt\_GetGlyphShape@{stbtt\_GetGlyphShape}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphShape()}{stbtt\_GetGlyphShape()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Glyph\+Shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{glyph\+\_\+index,  }\item[{\mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$$\ast$}]{vertices }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a6233237aecda00cf9ccd2c2d50dd6b17}\label{imstb__truetype_8h_a6233237aecda00cf9ccd2c2d50dd6b17}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetGlyphSVG@{stbtt\_GetGlyphSVG}}
+\index{stbtt\_GetGlyphSVG@{stbtt\_GetGlyphSVG}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetGlyphSVG()}{stbtt\_GetGlyphSVG()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Glyph\+SVG (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{gl,  }\item[{const char $\ast$$\ast$}]{svg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a190bffe156cdb32ac891e835248c90e3}\label{imstb__truetype_8h_a190bffe156cdb32ac891e835248c90e3}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetKerningTable@{stbtt\_GetKerningTable}}
+\index{stbtt\_GetKerningTable@{stbtt\_GetKerningTable}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetKerningTable()}{stbtt\_GetKerningTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Kerning\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{\mbox{\hyperlink{structstbtt__kerningentry}{stbtt\+\_\+kerningentry}} $\ast$}]{table,  }\item[{int}]{table\+\_\+length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab638ddcf9ae1b15ea18b2de58443136e}\label{imstb__truetype_8h_ab638ddcf9ae1b15ea18b2de58443136e}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetKerningTableLength@{stbtt\_GetKerningTableLength}}
+\index{stbtt\_GetKerningTableLength@{stbtt\_GetKerningTableLength}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetKerningTableLength()}{stbtt\_GetKerningTableLength()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Kerning\+Table\+Length (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_af7ee37667bd84fee4c1fcf640fe8a672}\label{imstb__truetype_8h_af7ee37667bd84fee4c1fcf640fe8a672}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetNumberOfFonts@{stbtt\_GetNumberOfFonts}}
+\index{stbtt\_GetNumberOfFonts@{stbtt\_GetNumberOfFonts}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetNumberOfFonts()}{stbtt\_GetNumberOfFonts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Get\+Number\+Of\+Fonts (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_abbca8f4e5de8209200a7be6c1c57661e}\label{imstb__truetype_8h_abbca8f4e5de8209200a7be6c1c57661e}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetPackedQuad@{stbtt\_GetPackedQuad}}
+\index{stbtt\_GetPackedQuad@{stbtt\_GetPackedQuad}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetPackedQuad()}{stbtt\_GetPackedQuad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Packed\+Quad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__packedchar}{stbtt\+\_\+packedchar}} $\ast$}]{chardata,  }\item[{int}]{pw,  }\item[{int}]{ph,  }\item[{int}]{char\+\_\+index,  }\item[{float $\ast$}]{xpos,  }\item[{float $\ast$}]{ypos,  }\item[{\mbox{\hyperlink{structstbtt__aligned__quad}{stbtt\+\_\+aligned\+\_\+quad}} $\ast$}]{q,  }\item[{int}]{align\+\_\+to\+\_\+integer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ae402c69747eee588a5fc18d8ea506b42}\label{imstb__truetype_8h_ae402c69747eee588a5fc18d8ea506b42}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_GetScaledFontVMetrics@{stbtt\_GetScaledFontVMetrics}}
+\index{stbtt\_GetScaledFontVMetrics@{stbtt\_GetScaledFontVMetrics}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_GetScaledFontVMetrics()}{stbtt\_GetScaledFontVMetrics()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Get\+Scaled\+Font\+VMetrics (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{fontdata,  }\item[{int}]{index,  }\item[{float}]{size,  }\item[{float $\ast$}]{ascent,  }\item[{float $\ast$}]{descent,  }\item[{float $\ast$}]{line\+Gap }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ac3b6bda1851d0b1a4fd53f5f353668e5}\label{imstb__truetype_8h_ac3b6bda1851d0b1a4fd53f5f353668e5}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_InitFont@{stbtt\_InitFont}}
+\index{stbtt\_InitFont@{stbtt\_InitFont}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_InitFont()}{stbtt\_InitFont()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Init\+Font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{const unsigned char $\ast$}]{data,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a3378c5794e9ab2a16492ab7e3c3c9485}\label{imstb__truetype_8h_a3378c5794e9ab2a16492ab7e3c3c9485}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_IsGlyphEmpty@{stbtt\_IsGlyphEmpty}}
+\index{stbtt\_IsGlyphEmpty@{stbtt\_IsGlyphEmpty}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_IsGlyphEmpty()}{stbtt\_IsGlyphEmpty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Is\+Glyph\+Empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{int}]{glyph\+\_\+index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a4416bb8395a4d2e717f613bb4903c7eb}\label{imstb__truetype_8h_a4416bb8395a4d2e717f613bb4903c7eb}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_MakeCodepointBitmap@{stbtt\_MakeCodepointBitmap}}
+\index{stbtt\_MakeCodepointBitmap@{stbtt\_MakeCodepointBitmap}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_MakeCodepointBitmap()}{stbtt\_MakeCodepointBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Make\+Codepoint\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{unsigned char $\ast$}]{output,  }\item[{int}]{out\+\_\+w,  }\item[{int}]{out\+\_\+h,  }\item[{int}]{out\+\_\+stride,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{int}]{codepoint }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a51bd3fc45817d8606c749e585241fa71}\label{imstb__truetype_8h_a51bd3fc45817d8606c749e585241fa71}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_MakeCodepointBitmapSubpixel@{stbtt\_MakeCodepointBitmapSubpixel}}
+\index{stbtt\_MakeCodepointBitmapSubpixel@{stbtt\_MakeCodepointBitmapSubpixel}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_MakeCodepointBitmapSubpixel()}{stbtt\_MakeCodepointBitmapSubpixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Make\+Codepoint\+Bitmap\+Subpixel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{unsigned char $\ast$}]{output,  }\item[{int}]{out\+\_\+w,  }\item[{int}]{out\+\_\+h,  }\item[{int}]{out\+\_\+stride,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int}]{codepoint }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a4b3487c748701f5b89b7be56625df1be}\label{imstb__truetype_8h_a4b3487c748701f5b89b7be56625df1be}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_MakeCodepointBitmapSubpixelPrefilter@{stbtt\_MakeCodepointBitmapSubpixelPrefilter}}
+\index{stbtt\_MakeCodepointBitmapSubpixelPrefilter@{stbtt\_MakeCodepointBitmapSubpixelPrefilter}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_MakeCodepointBitmapSubpixelPrefilter()}{stbtt\_MakeCodepointBitmapSubpixelPrefilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Make\+Codepoint\+Bitmap\+Subpixel\+Prefilter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{unsigned char $\ast$}]{output,  }\item[{int}]{out\+\_\+w,  }\item[{int}]{out\+\_\+h,  }\item[{int}]{out\+\_\+stride,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int}]{oversample\+\_\+x,  }\item[{int}]{oversample\+\_\+y,  }\item[{float $\ast$}]{sub\+\_\+x,  }\item[{float $\ast$}]{sub\+\_\+y,  }\item[{int}]{codepoint }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a915acab7676b20098f4d480376c5b589}\label{imstb__truetype_8h_a915acab7676b20098f4d480376c5b589}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_MakeGlyphBitmap@{stbtt\_MakeGlyphBitmap}}
+\index{stbtt\_MakeGlyphBitmap@{stbtt\_MakeGlyphBitmap}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_MakeGlyphBitmap()}{stbtt\_MakeGlyphBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Make\+Glyph\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{unsigned char $\ast$}]{output,  }\item[{int}]{out\+\_\+w,  }\item[{int}]{out\+\_\+h,  }\item[{int}]{out\+\_\+stride,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{int}]{glyph }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_aa82d35f758bc70bd675c48da381e7ea7}\label{imstb__truetype_8h_aa82d35f758bc70bd675c48da381e7ea7}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_MakeGlyphBitmapSubpixel@{stbtt\_MakeGlyphBitmapSubpixel}}
+\index{stbtt\_MakeGlyphBitmapSubpixel@{stbtt\_MakeGlyphBitmapSubpixel}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_MakeGlyphBitmapSubpixel()}{stbtt\_MakeGlyphBitmapSubpixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Make\+Glyph\+Bitmap\+Subpixel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{unsigned char $\ast$}]{output,  }\item[{int}]{out\+\_\+w,  }\item[{int}]{out\+\_\+h,  }\item[{int}]{out\+\_\+stride,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int}]{glyph }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a006159e27c5c733ea11c688211e47c25}\label{imstb__truetype_8h_a006159e27c5c733ea11c688211e47c25}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_MakeGlyphBitmapSubpixelPrefilter@{stbtt\_MakeGlyphBitmapSubpixelPrefilter}}
+\index{stbtt\_MakeGlyphBitmapSubpixelPrefilter@{stbtt\_MakeGlyphBitmapSubpixelPrefilter}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_MakeGlyphBitmapSubpixelPrefilter()}{stbtt\_MakeGlyphBitmapSubpixelPrefilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Make\+Glyph\+Bitmap\+Subpixel\+Prefilter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{unsigned char $\ast$}]{output,  }\item[{int}]{out\+\_\+w,  }\item[{int}]{out\+\_\+h,  }\item[{int}]{out\+\_\+stride,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int}]{oversample\+\_\+x,  }\item[{int}]{oversample\+\_\+y,  }\item[{float $\ast$}]{sub\+\_\+x,  }\item[{float $\ast$}]{sub\+\_\+y,  }\item[{int}]{glyph }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_adfc8faff4ebfbad1ce0bff9b4ebc691c}\label{imstb__truetype_8h_adfc8faff4ebfbad1ce0bff9b4ebc691c}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackBegin@{stbtt\_PackBegin}}
+\index{stbtt\_PackBegin@{stbtt\_PackBegin}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackBegin()}{stbtt\_PackBegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Pack\+Begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{unsigned char $\ast$}]{pixels,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{stride\+\_\+in\+\_\+bytes,  }\item[{int}]{padding,  }\item[{void $\ast$}]{alloc\+\_\+context }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab51e492c4b320b8af6ef557ad3388140}\label{imstb__truetype_8h_ab51e492c4b320b8af6ef557ad3388140}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackEnd@{stbtt\_PackEnd}}
+\index{stbtt\_PackEnd@{stbtt\_PackEnd}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackEnd()}{stbtt\_PackEnd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Pack\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a344fc3b0ff7829d993ca8db3eadd321f}\label{imstb__truetype_8h_a344fc3b0ff7829d993ca8db3eadd321f}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackFontRange@{stbtt\_PackFontRange}}
+\index{stbtt\_PackFontRange@{stbtt\_PackFontRange}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackFontRange()}{stbtt\_PackFontRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Pack\+Font\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{const unsigned char $\ast$}]{fontdata,  }\item[{int}]{font\+\_\+index,  }\item[{float}]{font\+\_\+size,  }\item[{int}]{first\+\_\+unicode\+\_\+char\+\_\+in\+\_\+range,  }\item[{int}]{num\+\_\+chars\+\_\+in\+\_\+range,  }\item[{\mbox{\hyperlink{structstbtt__packedchar}{stbtt\+\_\+packedchar}} $\ast$}]{chardata\+\_\+for\+\_\+range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a051bbf0eddd73f253c1b1050a9e47157}\label{imstb__truetype_8h_a051bbf0eddd73f253c1b1050a9e47157}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackFontRanges@{stbtt\_PackFontRanges}}
+\index{stbtt\_PackFontRanges@{stbtt\_PackFontRanges}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackFontRanges()}{stbtt\_PackFontRanges()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Pack\+Font\+Ranges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{const unsigned char $\ast$}]{fontdata,  }\item[{int}]{font\+\_\+index,  }\item[{\mbox{\hyperlink{structstbtt__pack__range}{stbtt\+\_\+pack\+\_\+range}} $\ast$}]{ranges,  }\item[{int}]{num\+\_\+ranges }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a8cf20362ceefc78d4df2e1703de3da50}\label{imstb__truetype_8h_a8cf20362ceefc78d4df2e1703de3da50}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackFontRangesGatherRects@{stbtt\_PackFontRangesGatherRects}}
+\index{stbtt\_PackFontRangesGatherRects@{stbtt\_PackFontRangesGatherRects}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackFontRangesGatherRects()}{stbtt\_PackFontRangesGatherRects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Pack\+Font\+Ranges\+Gather\+Rects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{\mbox{\hyperlink{structstbtt__pack__range}{stbtt\+\_\+pack\+\_\+range}} $\ast$}]{ranges,  }\item[{int}]{num\+\_\+ranges,  }\item[{\mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} $\ast$}]{rects }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_aeec3933fdb14884b7c2919e6ddc44259}\label{imstb__truetype_8h_aeec3933fdb14884b7c2919e6ddc44259}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackFontRangesPackRects@{stbtt\_PackFontRangesPackRects}}
+\index{stbtt\_PackFontRangesPackRects@{stbtt\_PackFontRangesPackRects}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackFontRangesPackRects()}{stbtt\_PackFontRangesPackRects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Pack\+Font\+Ranges\+Pack\+Rects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{\mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} $\ast$}]{rects,  }\item[{int}]{num\+\_\+rects }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_ab6eca9e0104838ca2483dea24dd9e631}\label{imstb__truetype_8h_ab6eca9e0104838ca2483dea24dd9e631}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackFontRangesRenderIntoRects@{stbtt\_PackFontRangesRenderIntoRects}}
+\index{stbtt\_PackFontRangesRenderIntoRects@{stbtt\_PackFontRangesRenderIntoRects}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackFontRangesRenderIntoRects()}{stbtt\_PackFontRangesRenderIntoRects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} int stbtt\+\_\+\+Pack\+Font\+Ranges\+Render\+Into\+Rects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{\mbox{\hyperlink{structstbtt__pack__range}{stbtt\+\_\+pack\+\_\+range}} $\ast$}]{ranges,  }\item[{int}]{num\+\_\+ranges,  }\item[{\mbox{\hyperlink{structstbrp__rect}{stbrp\+\_\+rect}} $\ast$}]{rects }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a4c55e174efbacaf82a8ddb9d1956717e}\label{imstb__truetype_8h_a4c55e174efbacaf82a8ddb9d1956717e}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackSetOversampling@{stbtt\_PackSetOversampling}}
+\index{stbtt\_PackSetOversampling@{stbtt\_PackSetOversampling}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackSetOversampling()}{stbtt\_PackSetOversampling()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Pack\+Set\+Oversampling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{unsigned int}]{h\+\_\+oversample,  }\item[{unsigned int}]{v\+\_\+oversample }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a0549774d30f6c64b85b88acc2329e89e}\label{imstb__truetype_8h_a0549774d30f6c64b85b88acc2329e89e}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_PackSetSkipMissingCodepoints@{stbtt\_PackSetSkipMissingCodepoints}}
+\index{stbtt\_PackSetSkipMissingCodepoints@{stbtt\_PackSetSkipMissingCodepoints}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_PackSetSkipMissingCodepoints()}{stbtt\_PackSetSkipMissingCodepoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Pack\+Set\+Skip\+Missing\+Codepoints (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt__pack__context}{stbtt\+\_\+pack\+\_\+context}} $\ast$}]{spc,  }\item[{int}]{skip }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a5b868ef9a9f92e0cc8b6bc0dd52087db}\label{imstb__truetype_8h_a5b868ef9a9f92e0cc8b6bc0dd52087db}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_Rasterize@{stbtt\_Rasterize}}
+\index{stbtt\_Rasterize@{stbtt\_Rasterize}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_Rasterize()}{stbtt\_Rasterize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} void stbtt\+\_\+\+Rasterize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstbtt____bitmap}{stbtt\+\_\+\+\_\+bitmap}} $\ast$}]{result,  }\item[{float}]{flatness\+\_\+in\+\_\+pixels,  }\item[{\mbox{\hyperlink{structstbtt__vertex}{stbtt\+\_\+vertex}} $\ast$}]{vertices,  }\item[{int}]{num\+\_\+verts,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{shift\+\_\+x,  }\item[{float}]{shift\+\_\+y,  }\item[{int}]{x\+\_\+off,  }\item[{int}]{y\+\_\+off,  }\item[{int}]{invert,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_a76da72e13355eae763c567ffde0b4607}\label{imstb__truetype_8h_a76da72e13355eae763c567ffde0b4607}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_ScaleForMappingEmToPixels@{stbtt\_ScaleForMappingEmToPixels}}
+\index{stbtt\_ScaleForMappingEmToPixels@{stbtt\_ScaleForMappingEmToPixels}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_ScaleForMappingEmToPixels()}{stbtt\_ScaleForMappingEmToPixels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} float stbtt\+\_\+\+Scale\+For\+Mapping\+Em\+To\+Pixels (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{pixels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{imstb__truetype_8h_aad275d7211530a3d817fcd8647690b7b}\label{imstb__truetype_8h_aad275d7211530a3d817fcd8647690b7b}} 
+\index{imstb\_truetype.h@{imstb\_truetype.h}!stbtt\_ScaleForPixelHeight@{stbtt\_ScaleForPixelHeight}}
+\index{stbtt\_ScaleForPixelHeight@{stbtt\_ScaleForPixelHeight}!imstb\_truetype.h@{imstb\_truetype.h}}
+\doxysubsubsection{\texorpdfstring{stbtt\_ScaleForPixelHeight()}{stbtt\_ScaleForPixelHeight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imstb__truetype_8h_ab459250c5579b1d942e0d8eb23936827}{STBTT\+\_\+\+DEF}} float stbtt\+\_\+\+Scale\+For\+Pixel\+Height (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structstbtt__fontinfo}{stbtt\+\_\+fontinfo}} $\ast$}]{info,  }\item[{float}]{pixels }\end{DoxyParamCaption})}
+

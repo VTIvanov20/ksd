@@ -1,0 +1,1873 @@
+\hypertarget{struct_im_gui_context}{}\doxysection{Im\+Gui\+Context Struct Reference}
+\label{struct_im_gui_context}\index{ImGuiContext@{ImGuiContext}}
+
+
+{\ttfamily \#include $<$imgui\+\_\+internal.\+h$>$}
+
+
+
+Collaboration diagram for Im\+Gui\+Context\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_im_gui_context__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_im_gui_context_a5842ccae7b18271370b6d5f7f698d8bd}{Im\+Gui\+Context}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$shared\+\_\+font\+\_\+atlas)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a71b32432f5c4658b4772b293640a66c0}{Initialized}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a06996a09451ec85ef2a34c4de4280441}{Font\+Atlas\+Owned\+By\+Context}}
+\item 
+\mbox{\hyperlink{struct_im_gui_i_o}{Im\+Gui\+IO}} \mbox{\hyperlink{struct_im_gui_context_add4fdcc8c6a437d8f8e7c837418be83c}{IO}}
+\item 
+\mbox{\hyperlink{struct_im_gui_platform_i_o}{Im\+Gui\+Platform\+IO}} \mbox{\hyperlink{struct_im_gui_context_a7f234cee51193f9e36fd6b0313c67cd0}{Platform\+IO}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_input_event}{Im\+Gui\+Input\+Event}} $>$ \mbox{\hyperlink{struct_im_gui_context_ae6d16d6a5d17963c289c2403f8857399}{Input\+Events\+Queue}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_input_event}{Im\+Gui\+Input\+Event}} $>$ \mbox{\hyperlink{struct_im_gui_context_aea1526d4c9879d8a70f1f11ea84d4339}{Input\+Events\+Trail}}
+\item 
+\mbox{\hyperlink{struct_im_gui_style}{Im\+Gui\+Style}} \mbox{\hyperlink{struct_im_gui_context_a2e682502e1a3d2c399171dd3c4fc969d}{Style}}
+\item 
+\mbox{\hyperlink{imgui_8h_a91442880bed105ca5fe1be683b91d9a0}{Im\+Gui\+Config\+Flags}} \mbox{\hyperlink{struct_im_gui_context_ad927ca653d001680b8f0d86c71131f7c}{Config\+Flags\+Curr\+Frame}}
+\item 
+\mbox{\hyperlink{imgui_8h_a91442880bed105ca5fe1be683b91d9a0}{Im\+Gui\+Config\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a0078d34685fe7223676d56b46cb38f64}{Config\+Flags\+Last\+Frame}}
+\item 
+\mbox{\hyperlink{struct_im_font}{Im\+Font}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_aec64e774018a7d74515baeb9e06fb4e3}{Font}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_af4022d1866887cdc400131fc6a65b200}{Font\+Size}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a0fcbda57d25b80111283ed7305ee3ee8}{Font\+Base\+Size}}
+\item 
+\mbox{\hyperlink{struct_im_draw_list_shared_data}{Im\+Draw\+List\+Shared\+Data}} \mbox{\hyperlink{struct_im_gui_context_a71045e6879ff2d074836273ba00674e6}{Draw\+List\+Shared\+Data}}
+\item 
+double \mbox{\hyperlink{struct_im_gui_context_a2b4eb26da74e5b80bdc7efa34d267570}{Time}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_ab9a1f3b3f15f0a6c5f29aef85f1a8ea2}{Frame\+Count}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_aa4cc3099c789be981d665c617b6d78a9}{Frame\+Count\+Ended}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a2c3a2e7a0952453f68bf0d8cd675db32}{Frame\+Count\+Platform\+Ended}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a64a96ecd43f4b10c1fec8eb3fc9bff89}{Frame\+Count\+Rendered}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a76ea955f2691b0c034e78127e6788c44}{Within\+Frame\+Scope}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_aad225e155364262380ea2e6ea306381a}{Within\+Frame\+Scope\+With\+Implicit\+Window}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a87f71757a5e647648ad9417cb21091d6}{Within\+End\+Child}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a76187b6c38ef1c4024852baae5bb26d9}{Gc\+Compact\+All}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_ae2909a189f72609068a9f1ef429f9540}{Test\+Engine\+Hook\+Items}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_im_gui_context_a41245f5433674e8e818058692e68c27f}{Test\+Engine}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ $>$ \mbox{\hyperlink{struct_im_gui_context_a0f59a9a861d097be066c6cc106e40f3e}{Windows}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ $>$ \mbox{\hyperlink{struct_im_gui_context_a1fd9e62737932c069dce5f137a4a4fab}{Windows\+Focus\+Order}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ $>$ \mbox{\hyperlink{struct_im_gui_context_a21665657dd462ee265755c99fe7b94e2}{Windows\+Temp\+Sort\+Buffer}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_window_stack_data}{Im\+Gui\+Window\+Stack\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_context_a9ab54092f94cbf9b8e8b9bc3bdbc0759}{Current\+Window\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_gui_storage}{Im\+Gui\+Storage}} \mbox{\hyperlink{struct_im_gui_context_adc1e46e1c1582a0f0eb74d957efedf98}{Windows\+By\+Id}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a95237c5f9eb869da0f1947c54a521489}{Windows\+Active\+Count}}
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{struct_im_gui_context_a21d3704971b7f7fc8454828bf8747c2b}{Windows\+Hover\+Padding}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_aa923044f396241668aef5ed2f4c4d847}{Current\+Window}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a6dd89693704216a036d2676b8c6610f8}{Hovered\+Window}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_ace3d84fd6e57f608eb90d7bc0b928cf5}{Hovered\+Window\+Under\+Moving\+Window}}
+\item 
+\mbox{\hyperlink{struct_im_gui_dock_node}{Im\+Gui\+Dock\+Node}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a963b93b6ee1bbb4dc978d4fd4af2a6a5}{Hovered\+Dock\+Node}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a28078cc22f615213fd8544016cd6ae20}{Moving\+Window}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a30c249bb99dd335b71b437e9240cfcb2}{Wheeling\+Window}}
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{struct_im_gui_context_ae9d2a8e67d3518f7170495fa2eef9f08}{Wheeling\+Window\+Ref\+Mouse\+Pos}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_ac4edb09cdef0590e8dc265a8265417c9}{Wheeling\+Window\+Timer}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a07b7e4db124eaf368cf52dedee426fe1}{Debug\+Hook\+Id\+Info}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a32bef5a7740179ad8076643b001f15e4}{Hovered\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a08742c14087e26304ff47fb9212d8eb6}{Hovered\+Id\+Previous\+Frame}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a171f67ac705994d413a0bccf491aa4e1}{Hovered\+Id\+Allow\+Overlap}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a6eef87012f6162b74eba1adfb3b3bc12}{Hovered\+Id\+Using\+Mouse\+Wheel}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a82fd6bea3b303ee8aa341040759750dd}{Hovered\+Id\+Previous\+Frame\+Using\+Mouse\+Wheel}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a5d969e8f2ff39c038893e15e3e4f216f}{Hovered\+Id\+Disabled}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a07a6bd929503077394ea0f80965470f9}{Hovered\+Id\+Timer}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_ac2d1b0663e1ece41f9347fb299789b32}{Hovered\+Id\+Not\+Active\+Timer}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a11c874eb6cf74ba9162bd1d01c4ccbcc}{Active\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a91563e660064da31449958c97f70ceb0}{Active\+Id\+Is\+Alive}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a9deb2b22abfb5a4fd306371b19e2b9c4}{Active\+Id\+Timer}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_aa539096bf2b0ab28e0dbf73d595c64d8}{Active\+Id\+Is\+Just\+Activated}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_ab3234556023eabcfed157b79ba4c5869}{Active\+Id\+Allow\+Overlap}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_aea817da782a375aa3911f35521a9090a}{Active\+Id\+No\+Clear\+On\+Focus\+Loss}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_aa2767e20ba942d8e962d02c9cb533a3f}{Active\+Id\+Has\+Been\+Pressed\+Before}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_acf057448394a0ecf0ac84e2ea166cfe5}{Active\+Id\+Has\+Been\+Edited\+Before}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_ae7b64858c8ca5a15d62173401ca07c50}{Active\+Id\+Has\+Been\+Edited\+This\+Frame}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a78aab84d514c4cf45216785b32396a89}{Active\+Id\+Using\+Mouse\+Wheel}}
+\item 
+\mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} \mbox{\hyperlink{struct_im_gui_context_a6b69393a8ff5153f6c5adac6eff7f130}{Active\+Id\+Using\+Nav\+Dir\+Mask}}
+\item 
+\mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} \mbox{\hyperlink{struct_im_gui_context_ac5c2b9d6a845be44a96d22ca24d4ffc3}{Active\+Id\+Using\+Nav\+Input\+Mask}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_a35d93a6af4467a5b0762da6bd3bd1bd6}{Im\+Bit\+Array\+For\+Named\+Keys}} \mbox{\hyperlink{struct_im_gui_context_ad1d1dc1f7d29ce091b12d3d37b3ccdb0}{Active\+Id\+Using\+Key\+Input\+Mask}}
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{struct_im_gui_context_a28afb4e9b4ac155825f4b4c94cdc516c}{Active\+Id\+Click\+Offset}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a95a35b5d82d3fdea28b71580dc6a9618}{Active\+Id\+Window}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_a8ee603a145a3a4f4ab5c93c8c8333b78}{Im\+Gui\+Input\+Source}} \mbox{\hyperlink{struct_im_gui_context_a315c9fa88996fa84c260c93322941bf1}{Active\+Id\+Source}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a106b9339c22785c0f707edd87b46566e}{Active\+Id\+Mouse\+Button}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_af58aa479f6c97819694f1709b62c70d8}{Active\+Id\+Previous\+Frame}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_aaaf25ebc4878ed8b203106accfc6b896}{Active\+Id\+Previous\+Frame\+Is\+Alive}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a47f47219d46552ceb11dc1eea8415cbb}{Active\+Id\+Previous\+Frame\+Has\+Been\+Edited\+Before}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_ac164cf439dcb5d37f0e572f5e27eea25}{Active\+Id\+Previous\+Frame\+Window}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a8609dbb667eced2b9f1eb1f0c0aff838}{Last\+Active\+Id}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a7296c8f2a4794c561cfb4ad0af563928}{Last\+Active\+Id\+Timer}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abcf9eafab4557e911b2c0d8fe2feeb38}{Im\+Gui\+Item\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a2b9e83b70baf004df8bd1ccf2a640ed4}{Current\+Item\+Flags}}
+\item 
+\mbox{\hyperlink{struct_im_gui_next_item_data}{Im\+Gui\+Next\+Item\+Data}} \mbox{\hyperlink{struct_im_gui_context_a3c05fda47e3d35e3279387a2524ac6cb}{Next\+Item\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_gui_last_item_data}{Im\+Gui\+Last\+Item\+Data}} \mbox{\hyperlink{struct_im_gui_context_a47a03a88886e1700f40be15d9fd9329e}{Last\+Item\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_gui_next_window_data}{Im\+Gui\+Next\+Window\+Data}} \mbox{\hyperlink{struct_im_gui_context_a1220ef65a7464ef2dc4a6020cd1b9c47}{Next\+Window\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_color_mod}{Im\+Gui\+Color\+Mod}} $>$ \mbox{\hyperlink{struct_im_gui_context_ae3c32dfddf77ff73f122b8ed644176ca}{Color\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_style_mod}{Im\+Gui\+Style\+Mod}} $>$ \mbox{\hyperlink{struct_im_gui_context_abc0ca120e14467083bee0400d9abbabe}{Style\+Var\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_font}{Im\+Font}} $\ast$ $>$ \mbox{\hyperlink{struct_im_gui_context_a8a6a9f23604fe0d0b51c78e45e4432b0}{Font\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} $>$ \mbox{\hyperlink{struct_im_gui_context_a56ca0a9debefb6f4e96b03602b8cb551}{Focus\+Scope\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{imgui__internal_8h_abcf9eafab4557e911b2c0d8fe2feeb38}{Im\+Gui\+Item\+Flags}} $>$ \mbox{\hyperlink{struct_im_gui_context_a85e81a50ff68aaf925faab072b710edd}{Item\+Flags\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_group_data}{Im\+Gui\+Group\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_context_a77874099397573e207c03405508e3637}{Group\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_popup_data}{Im\+Gui\+Popup\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_context_a0f175fa6d802c77e1c3bda0555bffaef}{Open\+Popup\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_popup_data}{Im\+Gui\+Popup\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_context_a4f9f576391ae6d84f32ad57ff9ba43ed}{Begin\+Popup\+Stack}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a24ba56fe96b392fa230a8f901697f5df}{Begin\+Menu\+Count}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}} $\ast$ $>$ \mbox{\hyperlink{struct_im_gui_context_aa8958dc7c05b83d00ad6439f3d539c44}{Viewports}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a2c207eee4f861cd2f338bf26352f0631}{Current\+Dpi\+Scale}}
+\item 
+\mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a1075f13f0204526469ef40cf1317f794}{Current\+Viewport}}
+\item 
+\mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a7fde14aa6ffc4c4fa6b7715c534c4f79}{Mouse\+Viewport}}
+\item 
+\mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_ad1f91a764097437815ed9e316090750a}{Mouse\+Last\+Hovered\+Viewport}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_ab71c34c2b8c073bcafd74fc929a10705}{Platform\+Last\+Focused\+Viewport\+Id}}
+\item 
+\mbox{\hyperlink{struct_im_gui_platform_monitor}{Im\+Gui\+Platform\+Monitor}} \mbox{\hyperlink{struct_im_gui_context_a6d47f2c0021ce0e60df093c560bd8160}{Fallback\+Monitor}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_ac1bb91dda5688f85b36b8fd05b0b955b}{Viewport\+Front\+Most\+Stamp\+Count}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_ae06077e45c894488b28baaf2d7ff8e41}{Nav\+Window}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a0416d655ac426f9923dab220d95a4b6b}{Nav\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_ac286ff64f5d18ec35bb8214825107557}{Nav\+Focus\+Scope\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a809b5fc440a6198e4266b36150dc3396}{Nav\+Activate\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a07e49e172b0aad8b1ff2ac3df71b788b}{Nav\+Activate\+Down\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a24929a88fa69cfb49cfd41c8cb4225d0}{Nav\+Activate\+Pressed\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a0f8907e7a87f3199f9f07ed41c90e810}{Nav\+Activate\+Input\+Id}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_a69818e5784f8f39375ee58059c449ab2}{Im\+Gui\+Activate\+Flags}} \mbox{\hyperlink{struct_im_gui_context_ae0b1af7b04d34fd89806da19c15e3ca9}{Nav\+Activate\+Flags}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a1ad32892bff3773daf74bf39f525e2c0}{Nav\+Just\+Moved\+To\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_aec90740a5c2a6ab58738e54333ec05cd}{Nav\+Just\+Moved\+To\+Focus\+Scope\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a5e8631cd16b6c616f78112766b3e16fb}{Im\+Gui\+Mod\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a9b5edcf4987c71c88e885e3b61d1a7ef}{Nav\+Just\+Moved\+To\+Key\+Mods}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_abc1fa0d9750d44d4595905a0ce178ded}{Nav\+Next\+Activate\+Id}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_a69818e5784f8f39375ee58059c449ab2}{Im\+Gui\+Activate\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a498c30d93a56d5cc173687ab25d86f85}{Nav\+Next\+Activate\+Flags}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_a8ee603a145a3a4f4ab5c93c8c8333b78}{Im\+Gui\+Input\+Source}} \mbox{\hyperlink{struct_im_gui_context_a3054bc5ed01af6c56159cd8de77e7b44}{Nav\+Input\+Source}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_afb412215b8327dc2c6af2c19fdca64c6}{Im\+Gui\+Nav\+Layer}} \mbox{\hyperlink{struct_im_gui_context_a19072bf282ae59f30d55478d74195d45}{Nav\+Layer}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_aabd1e23f5be55f6331281f2c2ea9e411}{Nav\+Id\+Is\+Alive}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a45d87c28d8ea54ea82cb5d26c12c13db}{Nav\+Mouse\+Pos\+Dirty}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a15bae5126d0c9f911ff5eacda9e6958f}{Nav\+Disable\+Highlight}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_aee7132fe5dfc3afdecf13c319da7dbf6}{Nav\+Disable\+Mouse\+Hover}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a2bb94ad4b29cd6359f5e2a6d0f24e617}{Nav\+Any\+Request}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_ac1e37ea3392df255f52f8cc53bf8180a}{Nav\+Init\+Request}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a92dbda9104ae60cea64926e9e7d98702}{Nav\+Init\+Request\+From\+Move}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a1a4e4062115647df8cfc566e595fe3e1}{Nav\+Init\+Result\+Id}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_context_a4d59fe60fd93303628212a3d52f6c9e0}{Nav\+Init\+Result\+Rect\+Rel}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a64c70fc7feea0cbc0aac843d2bf32b6e}{Nav\+Move\+Submitted}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_ae6b106c2ed61604aea063be16fc60408}{Nav\+Move\+Scoring\+Items}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_ad11b07c5a723bfe0aae33849719d41c8}{Nav\+Move\+Forward\+To\+Next\+Frame}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_aff7a453b89555bb074f2fe46a159ac25}{Im\+Gui\+Nav\+Move\+Flags}} \mbox{\hyperlink{struct_im_gui_context_ae43522d6c3e4615fdc2d78a43870b33b}{Nav\+Move\+Flags}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_a3c23ec9366e4bede0fedb065a79dcbc1}{Im\+Gui\+Scroll\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a5153d4b5c4ffcfb34cb3d1c45b3506bf}{Nav\+Move\+Scroll\+Flags}}
+\item 
+\mbox{\hyperlink{imgui_8h_a5e8631cd16b6c616f78112766b3e16fb}{Im\+Gui\+Mod\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a075fddc0c0db81df2f4ffd6af86de51b}{Nav\+Move\+Key\+Mods}}
+\item 
+\mbox{\hyperlink{imgui_8h_a874086389bc27cc9647118d22a806403}{Im\+Gui\+Dir}} \mbox{\hyperlink{struct_im_gui_context_a20208736529ff4a1067d8d15ef17400b}{Nav\+Move\+Dir}}
+\item 
+\mbox{\hyperlink{imgui_8h_a874086389bc27cc9647118d22a806403}{Im\+Gui\+Dir}} \mbox{\hyperlink{struct_im_gui_context_a955774256450d53d8466e28495741ac8}{Nav\+Move\+Dir\+For\+Debug}}
+\item 
+\mbox{\hyperlink{imgui_8h_a874086389bc27cc9647118d22a806403}{Im\+Gui\+Dir}} \mbox{\hyperlink{struct_im_gui_context_a445c588479dbf5122c062ba8bcdb99e2}{Nav\+Move\+Clip\+Dir}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_context_a39fb4271af9f1e60e3e5d4c3707e2773}{Nav\+Scoring\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_context_adfc19aa2d5bf8c7e7bb8944946cfd6ba}{Nav\+Scoring\+No\+Clip\+Rect}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_aad0534754076c6f8d877bd19c5760a6a}{Nav\+Scoring\+Debug\+Count}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_acb60e5e6a41146db87fea98a4c3332f2}{Nav\+Tabbing\+Dir}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_af1fa9ff1a1315592ff9ddf1802579411}{Nav\+Tabbing\+Counter}}
+\item 
+\mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} \mbox{\hyperlink{struct_im_gui_context_a59df70904cc425fd2bba56b20655bb9b}{Nav\+Move\+Result\+Local}}
+\item 
+\mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} \mbox{\hyperlink{struct_im_gui_context_ae408e3ce0610927e94f065aeb32869ac}{Nav\+Move\+Result\+Local\+Visible}}
+\item 
+\mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} \mbox{\hyperlink{struct_im_gui_context_a68660b4bf8e33143cd8b490dc8bb2ebb}{Nav\+Move\+Result\+Other}}
+\item 
+\mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} \mbox{\hyperlink{struct_im_gui_context_a7eb64dfe2b4ae995bbbe8afbd53c8fce}{Nav\+Tabbing\+Result\+First}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_a90cb834d237027d39e0d2efbe3d90d04}{Nav\+Windowing\+Target}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_aaaf83b57ad918ef20a653bc8f5dbcde7}{Nav\+Windowing\+Target\+Anim}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_aa9d5283b6d3fc1d02d8dd75debe735f7}{Nav\+Windowing\+List\+Window}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a412d61294f8c686db6ecc366c845bd08}{Nav\+Windowing\+Timer}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a58906b21765f83b753e33b4733fa596c}{Nav\+Windowing\+Highlight\+Alpha}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a324b59dc38e7121a1aef959218d3563a}{Nav\+Windowing\+Toggle\+Layer}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_af5761a79ad40a0b0fbdb1376ce0af4a1}{Dim\+Bg\+Ratio}}
+\item 
+\mbox{\hyperlink{imgui_8h_a9223d6c82bb5d12c2eab5f829ca520ef}{Im\+Gui\+Mouse\+Cursor}} \mbox{\hyperlink{struct_im_gui_context_ab60730c7f9f601fd0b22dac060a822e3}{Mouse\+Cursor}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a2de4fe755e10ccfee6b06aa84b3d9c0d}{Drag\+Drop\+Active}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a5e6e55130cd0bdf76fd716b767e15046}{Drag\+Drop\+Within\+Source}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_abb22625c9c2f9b3b339c2ea696def2bb}{Drag\+Drop\+Within\+Target}}
+\item 
+\mbox{\hyperlink{imgui_8h_a4e54f95ded29d2584125d116df22e430}{Im\+Gui\+Drag\+Drop\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a61d6d8dbd670e2f4e70d50248caac012}{Drag\+Drop\+Source\+Flags}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a03bca20dc62ae39fb6c7eb047babf12c}{Drag\+Drop\+Source\+Frame\+Count}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a0efbd88ee7334cb922fccb1487ba496c}{Drag\+Drop\+Mouse\+Button}}
+\item 
+\mbox{\hyperlink{struct_im_gui_payload}{Im\+Gui\+Payload}} \mbox{\hyperlink{struct_im_gui_context_a35f39762769e30c083758c21fbde3e78}{Drag\+Drop\+Payload}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_context_a9c0b11750492d186c9b96b75d824e91b}{Drag\+Drop\+Target\+Rect}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_af8641ca16b62736c6af16364e65666ab}{Drag\+Drop\+Target\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a4e54f95ded29d2584125d116df22e430}{Im\+Gui\+Drag\+Drop\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a7342ae93b69ed2c9d3ba08d184df2827}{Drag\+Drop\+Accept\+Flags}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a4a3aa38a5b88e2be8fd73b29e39e3fbc}{Drag\+Drop\+Accept\+Id\+Curr\+Rect\+Surface}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_af0ac51e2f6bd98443fe5f135f3e2ecac}{Drag\+Drop\+Accept\+Id\+Curr}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_ab835f6cb1536a4e91b6d589a100612f9}{Drag\+Drop\+Accept\+Id\+Prev}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a8163ed15c1f157390a3215dcb28feb9e}{Drag\+Drop\+Accept\+Frame\+Count}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a8367a60f9f9e1584bfb4e1352c70dcff}{Drag\+Drop\+Hold\+Just\+Pressed\+Id}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ unsigned char $>$ \mbox{\hyperlink{struct_im_gui_context_af4797d5b38c5c659d1aa0160d46549d8}{Drag\+Drop\+Payload\+Buf\+Heap}}
+\item 
+unsigned char \mbox{\hyperlink{struct_im_gui_context_ac209d61ab1857e5e060a3b9d18254685}{Drag\+Drop\+Payload\+Buf\+Local}} \mbox{[}16\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a87984176b7d56f1ff9968dbc2503974e}{Clipper\+Temp\+Data\+Stacked}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_list_clipper_data}{Im\+Gui\+List\+Clipper\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_context_aa96236b841852cd5b6609d40dc19095b}{Clipper\+Temp\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_gui_table}{Im\+Gui\+Table}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_adbba564ef36512258c8e63b55c41c77e}{Current\+Table}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_abc9df715f3ce4d380ac9687e11d2c9d3}{Tables\+Temp\+Data\+Stacked}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_table_temp_data}{Im\+Gui\+Table\+Temp\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_context_a63e5713a11fb1dd32218a5185b4ee920}{Tables\+Temp\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_pool}{Im\+Pool}}$<$ \mbox{\hyperlink{struct_im_gui_table}{Im\+Gui\+Table}} $>$ \mbox{\hyperlink{struct_im_gui_context_af98791565876933c63b1db9df4118116}{Tables}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ float $>$ \mbox{\hyperlink{struct_im_gui_context_aa98196e3c920ef448851d1da5922305e}{Tables\+Last\+Time\+Active}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_draw_channel}{Im\+Draw\+Channel}} $>$ \mbox{\hyperlink{struct_im_gui_context_abdd495b0ffbf1fd1b0a8cf7656bf4d5a}{Draw\+Channels\+Temp\+Merge\+Buffer}}
+\item 
+\mbox{\hyperlink{struct_im_gui_tab_bar}{Im\+Gui\+Tab\+Bar}} $\ast$ \mbox{\hyperlink{struct_im_gui_context_ae0289628e3d91b5e56ed46369c55ef47}{Current\+Tab\+Bar}}
+\item 
+\mbox{\hyperlink{struct_im_pool}{Im\+Pool}}$<$ \mbox{\hyperlink{struct_im_gui_tab_bar}{Im\+Gui\+Tab\+Bar}} $>$ \mbox{\hyperlink{struct_im_gui_context_a8ed1e9dd2d6cf69e7aaded9a70c5c712}{Tab\+Bars}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_ptr_or_index}{Im\+Gui\+Ptr\+Or\+Index}} $>$ \mbox{\hyperlink{struct_im_gui_context_a50e1ec3f51a0a362b770b6e4630b085c}{Current\+Tab\+Bar\+Stack}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_shrink_width_item}{Im\+Gui\+Shrink\+Width\+Item}} $>$ \mbox{\hyperlink{struct_im_gui_context_a835de1c6d4630fbe87831dcc1db80715}{Shrink\+Width\+Buffer}}
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{struct_im_gui_context_abb075f88a3d5919045be0746a128f7fc}{Mouse\+Last\+Valid\+Pos}}
+\item 
+\mbox{\hyperlink{struct_im_gui_input_text_state}{Im\+Gui\+Input\+Text\+State}} \mbox{\hyperlink{struct_im_gui_context_ab6f5d3daaa248a26bdbcb098d73640c1}{Input\+Text\+State}}
+\item 
+\mbox{\hyperlink{struct_im_font}{Im\+Font}} \mbox{\hyperlink{struct_im_gui_context_a6aa67b9b778bd741d9866ec34cc8ee8b}{Input\+Text\+Password\+Font}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_aecd3835b2891bcdb78d14d7005daf4c0}{Temp\+Input\+Id}}
+\item 
+\mbox{\hyperlink{imgui_8h_a6b2d5e95adc38f22c021252189f669c6}{Im\+Gui\+Color\+Edit\+Flags}} \mbox{\hyperlink{struct_im_gui_context_a122394766b40cdb6cbd8a40fbe6ac680}{Color\+Edit\+Options}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_ade0cf1b5cc1f4f0ff3c9b11d6d7891d3}{Color\+Edit\+Last\+Hue}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_ad0086b7953d297b854643c51bfaa5fd1}{Color\+Edit\+Last\+Sat}}
+\item 
+\mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} \mbox{\hyperlink{struct_im_gui_context_ace0c2c7f35f8526148179465b1c87adb}{Color\+Edit\+Last\+Color}}
+\item 
+\mbox{\hyperlink{struct_im_vec4}{Im\+Vec4}} \mbox{\hyperlink{struct_im_gui_context_ae3a119a9a71b31ede7ccc87447627b68}{Color\+Picker\+Ref}}
+\item 
+\mbox{\hyperlink{struct_im_gui_combo_preview_data}{Im\+Gui\+Combo\+Preview\+Data}} \mbox{\hyperlink{struct_im_gui_context_a9df05c31c613ac0093ed4171c0ac8f0e}{Combo\+Preview\+Data}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a44af675b4e2e615fe768cd5ce677c34e}{Slider\+Current\+Accum}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a5e31703c42698a572be557ec57c5cbe7}{Slider\+Current\+Accum\+Dirty}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a2a465bca097a53eba66b613d01765636}{Drag\+Current\+Accum\+Dirty}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a524267e65a0b5c3c96a2b629902b4db2}{Drag\+Current\+Accum}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_aea2d961c03a1d0879088385d8cf602dd}{Drag\+Speed\+Default\+Ratio}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a2922e36c1eed77cc0ec707e9771cf07a}{Scrollbar\+Click\+Delta\+To\+Grab\+Center}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a3fcd07940c700bf8b106e414d28db79c}{Disabled\+Alpha\+Backup}}
+\item 
+short \mbox{\hyperlink{struct_im_gui_context_a4d61d8b3551b138a415455d74a44521b}{Disabled\+Stack\+Size}}
+\item 
+short \mbox{\hyperlink{struct_im_gui_context_ae73720b1df3224bb90d0c860dc090f01}{Tooltip\+Override\+Count}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_ab2753ea2a0c1df4a4a6399dc0e036217}{Tooltip\+Slow\+Delay}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ char $>$ \mbox{\hyperlink{struct_im_gui_context_aadf9cd99ab2805e433e09214742fcbc5}{Clipboard\+Handler\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} $>$ \mbox{\hyperlink{struct_im_gui_context_a2e6135b1a52d2dcf7ef18c301caa943b}{Menus\+Id\+Submitted\+This\+Frame}}
+\item 
+\mbox{\hyperlink{struct_im_gui_platform_ime_data}{Im\+Gui\+Platform\+Ime\+Data}} \mbox{\hyperlink{struct_im_gui_context_a084e716b3a64cf2ad9de9a5f7cb32c31}{Platform\+Ime\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_gui_platform_ime_data}{Im\+Gui\+Platform\+Ime\+Data}} \mbox{\hyperlink{struct_im_gui_context_ad2719ffa6b669a551932a6c4b2fd43f0}{Platform\+Ime\+Data\+Prev}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_aba13379b1a72f70c988dd97543d72b16}{Platform\+Ime\+Viewport}}
+\item 
+char \mbox{\hyperlink{struct_im_gui_context_a5d5fd7d993ebbec34ca233ee3846a548}{Platform\+Locale\+Decimal\+Point}}
+\item 
+\mbox{\hyperlink{struct_im_gui_dock_context}{Im\+Gui\+Dock\+Context}} \mbox{\hyperlink{struct_im_gui_context_add5bb7fc35d87cbd653c2975e56bcc6b}{Dock\+Context}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a1043af3ac30119c12c2e85923e1ec20b}{Settings\+Loaded}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a7e0dd3aef4a4f0fd85ed39e13824f2ab}{Settings\+Dirty\+Timer}}
+\item 
+\mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} \mbox{\hyperlink{struct_im_gui_context_a5b4bad72af7065aa7e57b32fedd5ea0e}{Settings\+Ini\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_settings_handler}{Im\+Gui\+Settings\+Handler}} $>$ \mbox{\hyperlink{struct_im_gui_context_aded9a2cb80c805407734b8bf7d0ef515}{Settings\+Handlers}}
+\item 
+\mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ \mbox{\hyperlink{struct_im_gui_window_settings}{Im\+Gui\+Window\+Settings}} $>$ \mbox{\hyperlink{struct_im_gui_context_a17f0de5b1060388d02bec8ee2cb164ae}{Settings\+Windows}}
+\item 
+\mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$ \mbox{\hyperlink{struct_im_gui_table_settings}{Im\+Gui\+Table\+Settings}} $>$ \mbox{\hyperlink{struct_im_gui_context_ad2ede9b6bf347485792dbd3c9ec4f5eb}{Settings\+Tables}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_context_hook}{Im\+Gui\+Context\+Hook}} $>$ \mbox{\hyperlink{struct_im_gui_context_a68184290b56a87584f085608790caef5}{Hooks}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a4c1de2c1a15e1dda468035b774b84ee1}{Hook\+Id\+Next}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a2508bec1862aa4477eca2c79d6924b82}{Log\+Enabled}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_ac65915203eef19cd87f2ff1cde435c1e}{Im\+Gui\+Log\+Type}} \mbox{\hyperlink{struct_im_gui_context_a832ec584c0e3558c15b342ac077515d5}{Log\+Type}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_a5c58fe70d0547f85609b2b99ab451efe}{Im\+File\+Handle}} \mbox{\hyperlink{struct_im_gui_context_af533c63d15c334b863f9e95f11aca78a}{Log\+File}}
+\item 
+\mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} \mbox{\hyperlink{struct_im_gui_context_a7ee6cc4eb7d913073f7f65245f74b44b}{Log\+Buffer}}
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_im_gui_context_a48d9613d2debdc972cf22f98c241faa9}{Log\+Next\+Prefix}}
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_im_gui_context_a877334cd40755e94cad5549f30774767}{Log\+Next\+Suffix}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_a8da8ba7ae9201ae085630a396d226244}{Log\+Line\+PosY}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_ab011a2f260e200403d6177bdccc3b20b}{Log\+Line\+First\+Item}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a56710f298126b4a30a9d45c433ec66be}{Log\+Depth\+Ref}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a03a52c2f6ed034934140180049e1ad93}{Log\+Depth\+To\+Expand}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a48b837ab4012447dde42bab75406abdd}{Log\+Depth\+To\+Expand\+Default}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_context_a166e3b48f51fc46f01145dbaf695ef4f}{Debug\+Item\+Picker\+Active}}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_context_a87f10f1e5b4c2a3550cf9bc1ca57bac5}{Debug\+Item\+Picker\+Break\+Id}}
+\item 
+\mbox{\hyperlink{struct_im_gui_metrics_config}{Im\+Gui\+Metrics\+Config}} \mbox{\hyperlink{struct_im_gui_context_a31e8817483f05c9b790788636190ee47}{Debug\+Metrics\+Config}}
+\item 
+\mbox{\hyperlink{struct_im_gui_stack_tool}{Im\+Gui\+Stack\+Tool}} \mbox{\hyperlink{struct_im_gui_context_a4b26a74f8ba51543730fb526c2c2c663}{Debug\+Stack\+Tool}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_aca772ab262c0094e8bbe7eae215fc23b}{Framerate\+Sec\+Per\+Frame}} \mbox{[}120\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a64a96ad72dd7009dba134f6214a4936e}{Framerate\+Sec\+Per\+Frame\+Idx}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a65a399070bea994471e5d935fa419651}{Framerate\+Sec\+Per\+Frame\+Count}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_context_abcd18f2f8fedf0f45c3148b3e956e653}{Framerate\+Sec\+Per\+Frame\+Accum}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a7e7a9bbeaac9519abe29818ce6c2cc3b}{Want\+Capture\+Mouse\+Next\+Frame}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_a0372056c72eac8b3e6de06c404caa5b3}{Want\+Capture\+Keyboard\+Next\+Frame}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_context_abe551d35ea5c1aa61a4d5c785c8e0d9d}{Want\+Text\+Input\+Next\+Frame}}
+\item 
+char \mbox{\hyperlink{struct_im_gui_context_a875033fc5c10bc1e050f8701055ae93b}{Temp\+Buffer}} \mbox{[}1024 $\ast$3+1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_im_gui_context_a5842ccae7b18271370b6d5f7f698d8bd}\label{struct_im_gui_context_a5842ccae7b18271370b6d5f7f698d8bd}} 
+\index{ImGuiContext@{ImGuiContext}!ImGuiContext@{ImGuiContext}}
+\index{ImGuiContext@{ImGuiContext}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ImGuiContext()}{ImGuiContext()}}
+{\footnotesize\ttfamily Im\+Gui\+Context\+::\+Im\+Gui\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{shared\+\_\+font\+\_\+atlas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_im_gui_context_a11c874eb6cf74ba9162bd1d01c4ccbcc}\label{struct_im_gui_context_a11c874eb6cf74ba9162bd1d01c4ccbcc}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveId@{ActiveId}}
+\index{ActiveId@{ActiveId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveId}{ActiveId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Active\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab3234556023eabcfed157b79ba4c5869}\label{struct_im_gui_context_ab3234556023eabcfed157b79ba4c5869}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdAllowOverlap@{ActiveIdAllowOverlap}}
+\index{ActiveIdAllowOverlap@{ActiveIdAllowOverlap}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdAllowOverlap}{ActiveIdAllowOverlap}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Allow\+Overlap}
+
+\mbox{\Hypertarget{struct_im_gui_context_a28afb4e9b4ac155825f4b4c94cdc516c}\label{struct_im_gui_context_a28afb4e9b4ac155825f4b4c94cdc516c}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdClickOffset@{ActiveIdClickOffset}}
+\index{ActiveIdClickOffset@{ActiveIdClickOffset}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdClickOffset}{ActiveIdClickOffset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Gui\+Context\+::\+Active\+Id\+Click\+Offset}
+
+\mbox{\Hypertarget{struct_im_gui_context_acf057448394a0ecf0ac84e2ea166cfe5}\label{struct_im_gui_context_acf057448394a0ecf0ac84e2ea166cfe5}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdHasBeenEditedBefore@{ActiveIdHasBeenEditedBefore}}
+\index{ActiveIdHasBeenEditedBefore@{ActiveIdHasBeenEditedBefore}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdHasBeenEditedBefore}{ActiveIdHasBeenEditedBefore}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Has\+Been\+Edited\+Before}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae7b64858c8ca5a15d62173401ca07c50}\label{struct_im_gui_context_ae7b64858c8ca5a15d62173401ca07c50}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdHasBeenEditedThisFrame@{ActiveIdHasBeenEditedThisFrame}}
+\index{ActiveIdHasBeenEditedThisFrame@{ActiveIdHasBeenEditedThisFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdHasBeenEditedThisFrame}{ActiveIdHasBeenEditedThisFrame}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Has\+Been\+Edited\+This\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa2767e20ba942d8e962d02c9cb533a3f}\label{struct_im_gui_context_aa2767e20ba942d8e962d02c9cb533a3f}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdHasBeenPressedBefore@{ActiveIdHasBeenPressedBefore}}
+\index{ActiveIdHasBeenPressedBefore@{ActiveIdHasBeenPressedBefore}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdHasBeenPressedBefore}{ActiveIdHasBeenPressedBefore}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Has\+Been\+Pressed\+Before}
+
+\mbox{\Hypertarget{struct_im_gui_context_a91563e660064da31449958c97f70ceb0}\label{struct_im_gui_context_a91563e660064da31449958c97f70ceb0}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdIsAlive@{ActiveIdIsAlive}}
+\index{ActiveIdIsAlive@{ActiveIdIsAlive}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdIsAlive}{ActiveIdIsAlive}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Active\+Id\+Is\+Alive}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa539096bf2b0ab28e0dbf73d595c64d8}\label{struct_im_gui_context_aa539096bf2b0ab28e0dbf73d595c64d8}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdIsJustActivated@{ActiveIdIsJustActivated}}
+\index{ActiveIdIsJustActivated@{ActiveIdIsJustActivated}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdIsJustActivated}{ActiveIdIsJustActivated}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Is\+Just\+Activated}
+
+\mbox{\Hypertarget{struct_im_gui_context_a106b9339c22785c0f707edd87b46566e}\label{struct_im_gui_context_a106b9339c22785c0f707edd87b46566e}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdMouseButton@{ActiveIdMouseButton}}
+\index{ActiveIdMouseButton@{ActiveIdMouseButton}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdMouseButton}{ActiveIdMouseButton}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Active\+Id\+Mouse\+Button}
+
+\mbox{\Hypertarget{struct_im_gui_context_aea817da782a375aa3911f35521a9090a}\label{struct_im_gui_context_aea817da782a375aa3911f35521a9090a}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdNoClearOnFocusLoss@{ActiveIdNoClearOnFocusLoss}}
+\index{ActiveIdNoClearOnFocusLoss@{ActiveIdNoClearOnFocusLoss}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdNoClearOnFocusLoss}{ActiveIdNoClearOnFocusLoss}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+No\+Clear\+On\+Focus\+Loss}
+
+\mbox{\Hypertarget{struct_im_gui_context_af58aa479f6c97819694f1709b62c70d8}\label{struct_im_gui_context_af58aa479f6c97819694f1709b62c70d8}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdPreviousFrame@{ActiveIdPreviousFrame}}
+\index{ActiveIdPreviousFrame@{ActiveIdPreviousFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdPreviousFrame}{ActiveIdPreviousFrame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Active\+Id\+Previous\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_a47f47219d46552ceb11dc1eea8415cbb}\label{struct_im_gui_context_a47f47219d46552ceb11dc1eea8415cbb}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdPreviousFrameHasBeenEditedBefore@{ActiveIdPreviousFrameHasBeenEditedBefore}}
+\index{ActiveIdPreviousFrameHasBeenEditedBefore@{ActiveIdPreviousFrameHasBeenEditedBefore}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdPreviousFrameHasBeenEditedBefore}{ActiveIdPreviousFrameHasBeenEditedBefore}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Previous\+Frame\+Has\+Been\+Edited\+Before}
+
+\mbox{\Hypertarget{struct_im_gui_context_aaaf25ebc4878ed8b203106accfc6b896}\label{struct_im_gui_context_aaaf25ebc4878ed8b203106accfc6b896}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdPreviousFrameIsAlive@{ActiveIdPreviousFrameIsAlive}}
+\index{ActiveIdPreviousFrameIsAlive@{ActiveIdPreviousFrameIsAlive}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdPreviousFrameIsAlive}{ActiveIdPreviousFrameIsAlive}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Previous\+Frame\+Is\+Alive}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac164cf439dcb5d37f0e572f5e27eea25}\label{struct_im_gui_context_ac164cf439dcb5d37f0e572f5e27eea25}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdPreviousFrameWindow@{ActiveIdPreviousFrameWindow}}
+\index{ActiveIdPreviousFrameWindow@{ActiveIdPreviousFrameWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdPreviousFrameWindow}{ActiveIdPreviousFrameWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Active\+Id\+Previous\+Frame\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_a315c9fa88996fa84c260c93322941bf1}\label{struct_im_gui_context_a315c9fa88996fa84c260c93322941bf1}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdSource@{ActiveIdSource}}
+\index{ActiveIdSource@{ActiveIdSource}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdSource}{ActiveIdSource}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_a8ee603a145a3a4f4ab5c93c8c8333b78}{Im\+Gui\+Input\+Source}} Im\+Gui\+Context\+::\+Active\+Id\+Source}
+
+\mbox{\Hypertarget{struct_im_gui_context_a9deb2b22abfb5a4fd306371b19e2b9c4}\label{struct_im_gui_context_a9deb2b22abfb5a4fd306371b19e2b9c4}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdTimer@{ActiveIdTimer}}
+\index{ActiveIdTimer@{ActiveIdTimer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdTimer}{ActiveIdTimer}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Active\+Id\+Timer}
+
+\mbox{\Hypertarget{struct_im_gui_context_ad1d1dc1f7d29ce091b12d3d37b3ccdb0}\label{struct_im_gui_context_ad1d1dc1f7d29ce091b12d3d37b3ccdb0}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdUsingKeyInputMask@{ActiveIdUsingKeyInputMask}}
+\index{ActiveIdUsingKeyInputMask@{ActiveIdUsingKeyInputMask}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdUsingKeyInputMask}{ActiveIdUsingKeyInputMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_a35d93a6af4467a5b0762da6bd3bd1bd6}{Im\+Bit\+Array\+For\+Named\+Keys}} Im\+Gui\+Context\+::\+Active\+Id\+Using\+Key\+Input\+Mask}
+
+\mbox{\Hypertarget{struct_im_gui_context_a78aab84d514c4cf45216785b32396a89}\label{struct_im_gui_context_a78aab84d514c4cf45216785b32396a89}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdUsingMouseWheel@{ActiveIdUsingMouseWheel}}
+\index{ActiveIdUsingMouseWheel@{ActiveIdUsingMouseWheel}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdUsingMouseWheel}{ActiveIdUsingMouseWheel}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Active\+Id\+Using\+Mouse\+Wheel}
+
+\mbox{\Hypertarget{struct_im_gui_context_a6b69393a8ff5153f6c5adac6eff7f130}\label{struct_im_gui_context_a6b69393a8ff5153f6c5adac6eff7f130}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdUsingNavDirMask@{ActiveIdUsingNavDirMask}}
+\index{ActiveIdUsingNavDirMask@{ActiveIdUsingNavDirMask}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdUsingNavDirMask}{ActiveIdUsingNavDirMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} Im\+Gui\+Context\+::\+Active\+Id\+Using\+Nav\+Dir\+Mask}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac5c2b9d6a845be44a96d22ca24d4ffc3}\label{struct_im_gui_context_ac5c2b9d6a845be44a96d22ca24d4ffc3}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdUsingNavInputMask@{ActiveIdUsingNavInputMask}}
+\index{ActiveIdUsingNavInputMask@{ActiveIdUsingNavInputMask}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdUsingNavInputMask}{ActiveIdUsingNavInputMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} Im\+Gui\+Context\+::\+Active\+Id\+Using\+Nav\+Input\+Mask}
+
+\mbox{\Hypertarget{struct_im_gui_context_a95a35b5d82d3fdea28b71580dc6a9618}\label{struct_im_gui_context_a95a35b5d82d3fdea28b71580dc6a9618}} 
+\index{ImGuiContext@{ImGuiContext}!ActiveIdWindow@{ActiveIdWindow}}
+\index{ActiveIdWindow@{ActiveIdWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ActiveIdWindow}{ActiveIdWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Active\+Id\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_a24ba56fe96b392fa230a8f901697f5df}\label{struct_im_gui_context_a24ba56fe96b392fa230a8f901697f5df}} 
+\index{ImGuiContext@{ImGuiContext}!BeginMenuCount@{BeginMenuCount}}
+\index{BeginMenuCount@{BeginMenuCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{BeginMenuCount}{BeginMenuCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Begin\+Menu\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_a4f9f576391ae6d84f32ad57ff9ba43ed}\label{struct_im_gui_context_a4f9f576391ae6d84f32ad57ff9ba43ed}} 
+\index{ImGuiContext@{ImGuiContext}!BeginPopupStack@{BeginPopupStack}}
+\index{BeginPopupStack@{BeginPopupStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{BeginPopupStack}{BeginPopupStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_popup_data}{Im\+Gui\+Popup\+Data}}$>$ Im\+Gui\+Context\+::\+Begin\+Popup\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_aadf9cd99ab2805e433e09214742fcbc5}\label{struct_im_gui_context_aadf9cd99ab2805e433e09214742fcbc5}} 
+\index{ImGuiContext@{ImGuiContext}!ClipboardHandlerData@{ClipboardHandlerData}}
+\index{ClipboardHandlerData@{ClipboardHandlerData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ClipboardHandlerData}{ClipboardHandlerData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$char$>$ Im\+Gui\+Context\+::\+Clipboard\+Handler\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa96236b841852cd5b6609d40dc19095b}\label{struct_im_gui_context_aa96236b841852cd5b6609d40dc19095b}} 
+\index{ImGuiContext@{ImGuiContext}!ClipperTempData@{ClipperTempData}}
+\index{ClipperTempData@{ClipperTempData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ClipperTempData}{ClipperTempData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_list_clipper_data}{Im\+Gui\+List\+Clipper\+Data}}$>$ Im\+Gui\+Context\+::\+Clipper\+Temp\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_a87984176b7d56f1ff9968dbc2503974e}\label{struct_im_gui_context_a87984176b7d56f1ff9968dbc2503974e}} 
+\index{ImGuiContext@{ImGuiContext}!ClipperTempDataStacked@{ClipperTempDataStacked}}
+\index{ClipperTempDataStacked@{ClipperTempDataStacked}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ClipperTempDataStacked}{ClipperTempDataStacked}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Clipper\+Temp\+Data\+Stacked}
+
+\mbox{\Hypertarget{struct_im_gui_context_ace0c2c7f35f8526148179465b1c87adb}\label{struct_im_gui_context_ace0c2c7f35f8526148179465b1c87adb}} 
+\index{ImGuiContext@{ImGuiContext}!ColorEditLastColor@{ColorEditLastColor}}
+\index{ColorEditLastColor@{ColorEditLastColor}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ColorEditLastColor}{ColorEditLastColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} Im\+Gui\+Context\+::\+Color\+Edit\+Last\+Color}
+
+\mbox{\Hypertarget{struct_im_gui_context_ade0cf1b5cc1f4f0ff3c9b11d6d7891d3}\label{struct_im_gui_context_ade0cf1b5cc1f4f0ff3c9b11d6d7891d3}} 
+\index{ImGuiContext@{ImGuiContext}!ColorEditLastHue@{ColorEditLastHue}}
+\index{ColorEditLastHue@{ColorEditLastHue}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ColorEditLastHue}{ColorEditLastHue}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Color\+Edit\+Last\+Hue}
+
+\mbox{\Hypertarget{struct_im_gui_context_ad0086b7953d297b854643c51bfaa5fd1}\label{struct_im_gui_context_ad0086b7953d297b854643c51bfaa5fd1}} 
+\index{ImGuiContext@{ImGuiContext}!ColorEditLastSat@{ColorEditLastSat}}
+\index{ColorEditLastSat@{ColorEditLastSat}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ColorEditLastSat}{ColorEditLastSat}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Color\+Edit\+Last\+Sat}
+
+\mbox{\Hypertarget{struct_im_gui_context_a122394766b40cdb6cbd8a40fbe6ac680}\label{struct_im_gui_context_a122394766b40cdb6cbd8a40fbe6ac680}} 
+\index{ImGuiContext@{ImGuiContext}!ColorEditOptions@{ColorEditOptions}}
+\index{ColorEditOptions@{ColorEditOptions}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ColorEditOptions}{ColorEditOptions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a6b2d5e95adc38f22c021252189f669c6}{Im\+Gui\+Color\+Edit\+Flags}} Im\+Gui\+Context\+::\+Color\+Edit\+Options}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae3a119a9a71b31ede7ccc87447627b68}\label{struct_im_gui_context_ae3a119a9a71b31ede7ccc87447627b68}} 
+\index{ImGuiContext@{ImGuiContext}!ColorPickerRef@{ColorPickerRef}}
+\index{ColorPickerRef@{ColorPickerRef}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ColorPickerRef}{ColorPickerRef}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec4}{Im\+Vec4}} Im\+Gui\+Context\+::\+Color\+Picker\+Ref}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae3c32dfddf77ff73f122b8ed644176ca}\label{struct_im_gui_context_ae3c32dfddf77ff73f122b8ed644176ca}} 
+\index{ImGuiContext@{ImGuiContext}!ColorStack@{ColorStack}}
+\index{ColorStack@{ColorStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ColorStack}{ColorStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_color_mod}{Im\+Gui\+Color\+Mod}}$>$ Im\+Gui\+Context\+::\+Color\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_a9df05c31c613ac0093ed4171c0ac8f0e}\label{struct_im_gui_context_a9df05c31c613ac0093ed4171c0ac8f0e}} 
+\index{ImGuiContext@{ImGuiContext}!ComboPreviewData@{ComboPreviewData}}
+\index{ComboPreviewData@{ComboPreviewData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ComboPreviewData}{ComboPreviewData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_combo_preview_data}{Im\+Gui\+Combo\+Preview\+Data}} Im\+Gui\+Context\+::\+Combo\+Preview\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_ad927ca653d001680b8f0d86c71131f7c}\label{struct_im_gui_context_ad927ca653d001680b8f0d86c71131f7c}} 
+\index{ImGuiContext@{ImGuiContext}!ConfigFlagsCurrFrame@{ConfigFlagsCurrFrame}}
+\index{ConfigFlagsCurrFrame@{ConfigFlagsCurrFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ConfigFlagsCurrFrame}{ConfigFlagsCurrFrame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a91442880bed105ca5fe1be683b91d9a0}{Im\+Gui\+Config\+Flags}} Im\+Gui\+Context\+::\+Config\+Flags\+Curr\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0078d34685fe7223676d56b46cb38f64}\label{struct_im_gui_context_a0078d34685fe7223676d56b46cb38f64}} 
+\index{ImGuiContext@{ImGuiContext}!ConfigFlagsLastFrame@{ConfigFlagsLastFrame}}
+\index{ConfigFlagsLastFrame@{ConfigFlagsLastFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ConfigFlagsLastFrame}{ConfigFlagsLastFrame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a91442880bed105ca5fe1be683b91d9a0}{Im\+Gui\+Config\+Flags}} Im\+Gui\+Context\+::\+Config\+Flags\+Last\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2c207eee4f861cd2f338bf26352f0631}\label{struct_im_gui_context_a2c207eee4f861cd2f338bf26352f0631}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentDpiScale@{CurrentDpiScale}}
+\index{CurrentDpiScale@{CurrentDpiScale}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentDpiScale}{CurrentDpiScale}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Current\+Dpi\+Scale}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2b9e83b70baf004df8bd1ccf2a640ed4}\label{struct_im_gui_context_a2b9e83b70baf004df8bd1ccf2a640ed4}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentItemFlags@{CurrentItemFlags}}
+\index{CurrentItemFlags@{CurrentItemFlags}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentItemFlags}{CurrentItemFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abcf9eafab4557e911b2c0d8fe2feeb38}{Im\+Gui\+Item\+Flags}} Im\+Gui\+Context\+::\+Current\+Item\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae0289628e3d91b5e56ed46369c55ef47}\label{struct_im_gui_context_ae0289628e3d91b5e56ed46369c55ef47}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentTabBar@{CurrentTabBar}}
+\index{CurrentTabBar@{CurrentTabBar}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentTabBar}{CurrentTabBar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_tab_bar}{Im\+Gui\+Tab\+Bar}}$\ast$ Im\+Gui\+Context\+::\+Current\+Tab\+Bar}
+
+\mbox{\Hypertarget{struct_im_gui_context_a50e1ec3f51a0a362b770b6e4630b085c}\label{struct_im_gui_context_a50e1ec3f51a0a362b770b6e4630b085c}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentTabBarStack@{CurrentTabBarStack}}
+\index{CurrentTabBarStack@{CurrentTabBarStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentTabBarStack}{CurrentTabBarStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_ptr_or_index}{Im\+Gui\+Ptr\+Or\+Index}}$>$ Im\+Gui\+Context\+::\+Current\+Tab\+Bar\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_adbba564ef36512258c8e63b55c41c77e}\label{struct_im_gui_context_adbba564ef36512258c8e63b55c41c77e}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentTable@{CurrentTable}}
+\index{CurrentTable@{CurrentTable}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentTable}{CurrentTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_table}{Im\+Gui\+Table}}$\ast$ Im\+Gui\+Context\+::\+Current\+Table}
+
+\mbox{\Hypertarget{struct_im_gui_context_a1075f13f0204526469ef40cf1317f794}\label{struct_im_gui_context_a1075f13f0204526469ef40cf1317f794}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentViewport@{CurrentViewport}}
+\index{CurrentViewport@{CurrentViewport}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentViewport}{CurrentViewport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}}$\ast$ Im\+Gui\+Context\+::\+Current\+Viewport}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa923044f396241668aef5ed2f4c4d847}\label{struct_im_gui_context_aa923044f396241668aef5ed2f4c4d847}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentWindow@{CurrentWindow}}
+\index{CurrentWindow@{CurrentWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentWindow}{CurrentWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Current\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_a9ab54092f94cbf9b8e8b9bc3bdbc0759}\label{struct_im_gui_context_a9ab54092f94cbf9b8e8b9bc3bdbc0759}} 
+\index{ImGuiContext@{ImGuiContext}!CurrentWindowStack@{CurrentWindowStack}}
+\index{CurrentWindowStack@{CurrentWindowStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{CurrentWindowStack}{CurrentWindowStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_window_stack_data}{Im\+Gui\+Window\+Stack\+Data}}$>$ Im\+Gui\+Context\+::\+Current\+Window\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_a07b7e4db124eaf368cf52dedee426fe1}\label{struct_im_gui_context_a07b7e4db124eaf368cf52dedee426fe1}} 
+\index{ImGuiContext@{ImGuiContext}!DebugHookIdInfo@{DebugHookIdInfo}}
+\index{DebugHookIdInfo@{DebugHookIdInfo}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DebugHookIdInfo}{DebugHookIdInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Debug\+Hook\+Id\+Info}
+
+\mbox{\Hypertarget{struct_im_gui_context_a166e3b48f51fc46f01145dbaf695ef4f}\label{struct_im_gui_context_a166e3b48f51fc46f01145dbaf695ef4f}} 
+\index{ImGuiContext@{ImGuiContext}!DebugItemPickerActive@{DebugItemPickerActive}}
+\index{DebugItemPickerActive@{DebugItemPickerActive}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DebugItemPickerActive}{DebugItemPickerActive}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Debug\+Item\+Picker\+Active}
+
+\mbox{\Hypertarget{struct_im_gui_context_a87f10f1e5b4c2a3550cf9bc1ca57bac5}\label{struct_im_gui_context_a87f10f1e5b4c2a3550cf9bc1ca57bac5}} 
+\index{ImGuiContext@{ImGuiContext}!DebugItemPickerBreakId@{DebugItemPickerBreakId}}
+\index{DebugItemPickerBreakId@{DebugItemPickerBreakId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DebugItemPickerBreakId}{DebugItemPickerBreakId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Debug\+Item\+Picker\+Break\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a31e8817483f05c9b790788636190ee47}\label{struct_im_gui_context_a31e8817483f05c9b790788636190ee47}} 
+\index{ImGuiContext@{ImGuiContext}!DebugMetricsConfig@{DebugMetricsConfig}}
+\index{DebugMetricsConfig@{DebugMetricsConfig}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DebugMetricsConfig}{DebugMetricsConfig}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_metrics_config}{Im\+Gui\+Metrics\+Config}} Im\+Gui\+Context\+::\+Debug\+Metrics\+Config}
+
+\mbox{\Hypertarget{struct_im_gui_context_a4b26a74f8ba51543730fb526c2c2c663}\label{struct_im_gui_context_a4b26a74f8ba51543730fb526c2c2c663}} 
+\index{ImGuiContext@{ImGuiContext}!DebugStackTool@{DebugStackTool}}
+\index{DebugStackTool@{DebugStackTool}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DebugStackTool}{DebugStackTool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_stack_tool}{Im\+Gui\+Stack\+Tool}} Im\+Gui\+Context\+::\+Debug\+Stack\+Tool}
+
+\mbox{\Hypertarget{struct_im_gui_context_af5761a79ad40a0b0fbdb1376ce0af4a1}\label{struct_im_gui_context_af5761a79ad40a0b0fbdb1376ce0af4a1}} 
+\index{ImGuiContext@{ImGuiContext}!DimBgRatio@{DimBgRatio}}
+\index{DimBgRatio@{DimBgRatio}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DimBgRatio}{DimBgRatio}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Dim\+Bg\+Ratio}
+
+\mbox{\Hypertarget{struct_im_gui_context_a3fcd07940c700bf8b106e414d28db79c}\label{struct_im_gui_context_a3fcd07940c700bf8b106e414d28db79c}} 
+\index{ImGuiContext@{ImGuiContext}!DisabledAlphaBackup@{DisabledAlphaBackup}}
+\index{DisabledAlphaBackup@{DisabledAlphaBackup}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DisabledAlphaBackup}{DisabledAlphaBackup}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Disabled\+Alpha\+Backup}
+
+\mbox{\Hypertarget{struct_im_gui_context_a4d61d8b3551b138a415455d74a44521b}\label{struct_im_gui_context_a4d61d8b3551b138a415455d74a44521b}} 
+\index{ImGuiContext@{ImGuiContext}!DisabledStackSize@{DisabledStackSize}}
+\index{DisabledStackSize@{DisabledStackSize}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DisabledStackSize}{DisabledStackSize}}
+{\footnotesize\ttfamily short Im\+Gui\+Context\+::\+Disabled\+Stack\+Size}
+
+\mbox{\Hypertarget{struct_im_gui_context_add5bb7fc35d87cbd653c2975e56bcc6b}\label{struct_im_gui_context_add5bb7fc35d87cbd653c2975e56bcc6b}} 
+\index{ImGuiContext@{ImGuiContext}!DockContext@{DockContext}}
+\index{DockContext@{DockContext}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DockContext}{DockContext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_dock_context}{Im\+Gui\+Dock\+Context}} Im\+Gui\+Context\+::\+Dock\+Context}
+
+\mbox{\Hypertarget{struct_im_gui_context_a524267e65a0b5c3c96a2b629902b4db2}\label{struct_im_gui_context_a524267e65a0b5c3c96a2b629902b4db2}} 
+\index{ImGuiContext@{ImGuiContext}!DragCurrentAccum@{DragCurrentAccum}}
+\index{DragCurrentAccum@{DragCurrentAccum}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragCurrentAccum}{DragCurrentAccum}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Drag\+Current\+Accum}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2a465bca097a53eba66b613d01765636}\label{struct_im_gui_context_a2a465bca097a53eba66b613d01765636}} 
+\index{ImGuiContext@{ImGuiContext}!DragCurrentAccumDirty@{DragCurrentAccumDirty}}
+\index{DragCurrentAccumDirty@{DragCurrentAccumDirty}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragCurrentAccumDirty}{DragCurrentAccumDirty}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Drag\+Current\+Accum\+Dirty}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7342ae93b69ed2c9d3ba08d184df2827}\label{struct_im_gui_context_a7342ae93b69ed2c9d3ba08d184df2827}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropAcceptFlags@{DragDropAcceptFlags}}
+\index{DragDropAcceptFlags@{DragDropAcceptFlags}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropAcceptFlags}{DragDropAcceptFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a4e54f95ded29d2584125d116df22e430}{Im\+Gui\+Drag\+Drop\+Flags}} Im\+Gui\+Context\+::\+Drag\+Drop\+Accept\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_context_a8163ed15c1f157390a3215dcb28feb9e}\label{struct_im_gui_context_a8163ed15c1f157390a3215dcb28feb9e}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropAcceptFrameCount@{DragDropAcceptFrameCount}}
+\index{DragDropAcceptFrameCount@{DragDropAcceptFrameCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropAcceptFrameCount}{DragDropAcceptFrameCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Drag\+Drop\+Accept\+Frame\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_af0ac51e2f6bd98443fe5f135f3e2ecac}\label{struct_im_gui_context_af0ac51e2f6bd98443fe5f135f3e2ecac}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropAcceptIdCurr@{DragDropAcceptIdCurr}}
+\index{DragDropAcceptIdCurr@{DragDropAcceptIdCurr}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropAcceptIdCurr}{DragDropAcceptIdCurr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Drag\+Drop\+Accept\+Id\+Curr}
+
+\mbox{\Hypertarget{struct_im_gui_context_a4a3aa38a5b88e2be8fd73b29e39e3fbc}\label{struct_im_gui_context_a4a3aa38a5b88e2be8fd73b29e39e3fbc}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropAcceptIdCurrRectSurface@{DragDropAcceptIdCurrRectSurface}}
+\index{DragDropAcceptIdCurrRectSurface@{DragDropAcceptIdCurrRectSurface}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropAcceptIdCurrRectSurface}{DragDropAcceptIdCurrRectSurface}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Drag\+Drop\+Accept\+Id\+Curr\+Rect\+Surface}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab835f6cb1536a4e91b6d589a100612f9}\label{struct_im_gui_context_ab835f6cb1536a4e91b6d589a100612f9}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropAcceptIdPrev@{DragDropAcceptIdPrev}}
+\index{DragDropAcceptIdPrev@{DragDropAcceptIdPrev}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropAcceptIdPrev}{DragDropAcceptIdPrev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Drag\+Drop\+Accept\+Id\+Prev}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2de4fe755e10ccfee6b06aa84b3d9c0d}\label{struct_im_gui_context_a2de4fe755e10ccfee6b06aa84b3d9c0d}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropActive@{DragDropActive}}
+\index{DragDropActive@{DragDropActive}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropActive}{DragDropActive}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Drag\+Drop\+Active}
+
+\mbox{\Hypertarget{struct_im_gui_context_a8367a60f9f9e1584bfb4e1352c70dcff}\label{struct_im_gui_context_a8367a60f9f9e1584bfb4e1352c70dcff}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropHoldJustPressedId@{DragDropHoldJustPressedId}}
+\index{DragDropHoldJustPressedId@{DragDropHoldJustPressedId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropHoldJustPressedId}{DragDropHoldJustPressedId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Drag\+Drop\+Hold\+Just\+Pressed\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0efbd88ee7334cb922fccb1487ba496c}\label{struct_im_gui_context_a0efbd88ee7334cb922fccb1487ba496c}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropMouseButton@{DragDropMouseButton}}
+\index{DragDropMouseButton@{DragDropMouseButton}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropMouseButton}{DragDropMouseButton}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Drag\+Drop\+Mouse\+Button}
+
+\mbox{\Hypertarget{struct_im_gui_context_a35f39762769e30c083758c21fbde3e78}\label{struct_im_gui_context_a35f39762769e30c083758c21fbde3e78}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropPayload@{DragDropPayload}}
+\index{DragDropPayload@{DragDropPayload}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropPayload}{DragDropPayload}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_payload}{Im\+Gui\+Payload}} Im\+Gui\+Context\+::\+Drag\+Drop\+Payload}
+
+\mbox{\Hypertarget{struct_im_gui_context_af4797d5b38c5c659d1aa0160d46549d8}\label{struct_im_gui_context_af4797d5b38c5c659d1aa0160d46549d8}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropPayloadBufHeap@{DragDropPayloadBufHeap}}
+\index{DragDropPayloadBufHeap@{DragDropPayloadBufHeap}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropPayloadBufHeap}{DragDropPayloadBufHeap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$unsigned char$>$ Im\+Gui\+Context\+::\+Drag\+Drop\+Payload\+Buf\+Heap}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac209d61ab1857e5e060a3b9d18254685}\label{struct_im_gui_context_ac209d61ab1857e5e060a3b9d18254685}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropPayloadBufLocal@{DragDropPayloadBufLocal}}
+\index{DragDropPayloadBufLocal@{DragDropPayloadBufLocal}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropPayloadBufLocal}{DragDropPayloadBufLocal}}
+{\footnotesize\ttfamily unsigned char Im\+Gui\+Context\+::\+Drag\+Drop\+Payload\+Buf\+Local\mbox{[}16\mbox{]}}
+
+\mbox{\Hypertarget{struct_im_gui_context_a61d6d8dbd670e2f4e70d50248caac012}\label{struct_im_gui_context_a61d6d8dbd670e2f4e70d50248caac012}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropSourceFlags@{DragDropSourceFlags}}
+\index{DragDropSourceFlags@{DragDropSourceFlags}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropSourceFlags}{DragDropSourceFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a4e54f95ded29d2584125d116df22e430}{Im\+Gui\+Drag\+Drop\+Flags}} Im\+Gui\+Context\+::\+Drag\+Drop\+Source\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_context_a03bca20dc62ae39fb6c7eb047babf12c}\label{struct_im_gui_context_a03bca20dc62ae39fb6c7eb047babf12c}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropSourceFrameCount@{DragDropSourceFrameCount}}
+\index{DragDropSourceFrameCount@{DragDropSourceFrameCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropSourceFrameCount}{DragDropSourceFrameCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Drag\+Drop\+Source\+Frame\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_af8641ca16b62736c6af16364e65666ab}\label{struct_im_gui_context_af8641ca16b62736c6af16364e65666ab}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropTargetId@{DragDropTargetId}}
+\index{DragDropTargetId@{DragDropTargetId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropTargetId}{DragDropTargetId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Drag\+Drop\+Target\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a9c0b11750492d186c9b96b75d824e91b}\label{struct_im_gui_context_a9c0b11750492d186c9b96b75d824e91b}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropTargetRect@{DragDropTargetRect}}
+\index{DragDropTargetRect@{DragDropTargetRect}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropTargetRect}{DragDropTargetRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Context\+::\+Drag\+Drop\+Target\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_context_a5e6e55130cd0bdf76fd716b767e15046}\label{struct_im_gui_context_a5e6e55130cd0bdf76fd716b767e15046}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropWithinSource@{DragDropWithinSource}}
+\index{DragDropWithinSource@{DragDropWithinSource}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropWithinSource}{DragDropWithinSource}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Drag\+Drop\+Within\+Source}
+
+\mbox{\Hypertarget{struct_im_gui_context_abb22625c9c2f9b3b339c2ea696def2bb}\label{struct_im_gui_context_abb22625c9c2f9b3b339c2ea696def2bb}} 
+\index{ImGuiContext@{ImGuiContext}!DragDropWithinTarget@{DragDropWithinTarget}}
+\index{DragDropWithinTarget@{DragDropWithinTarget}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragDropWithinTarget}{DragDropWithinTarget}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Drag\+Drop\+Within\+Target}
+
+\mbox{\Hypertarget{struct_im_gui_context_aea2d961c03a1d0879088385d8cf602dd}\label{struct_im_gui_context_aea2d961c03a1d0879088385d8cf602dd}} 
+\index{ImGuiContext@{ImGuiContext}!DragSpeedDefaultRatio@{DragSpeedDefaultRatio}}
+\index{DragSpeedDefaultRatio@{DragSpeedDefaultRatio}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DragSpeedDefaultRatio}{DragSpeedDefaultRatio}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Drag\+Speed\+Default\+Ratio}
+
+\mbox{\Hypertarget{struct_im_gui_context_abdd495b0ffbf1fd1b0a8cf7656bf4d5a}\label{struct_im_gui_context_abdd495b0ffbf1fd1b0a8cf7656bf4d5a}} 
+\index{ImGuiContext@{ImGuiContext}!DrawChannelsTempMergeBuffer@{DrawChannelsTempMergeBuffer}}
+\index{DrawChannelsTempMergeBuffer@{DrawChannelsTempMergeBuffer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DrawChannelsTempMergeBuffer}{DrawChannelsTempMergeBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_draw_channel}{Im\+Draw\+Channel}}$>$ Im\+Gui\+Context\+::\+Draw\+Channels\+Temp\+Merge\+Buffer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a71045e6879ff2d074836273ba00674e6}\label{struct_im_gui_context_a71045e6879ff2d074836273ba00674e6}} 
+\index{ImGuiContext@{ImGuiContext}!DrawListSharedData@{DrawListSharedData}}
+\index{DrawListSharedData@{DrawListSharedData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{DrawListSharedData}{DrawListSharedData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_draw_list_shared_data}{Im\+Draw\+List\+Shared\+Data}} Im\+Gui\+Context\+::\+Draw\+List\+Shared\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_a6d47f2c0021ce0e60df093c560bd8160}\label{struct_im_gui_context_a6d47f2c0021ce0e60df093c560bd8160}} 
+\index{ImGuiContext@{ImGuiContext}!FallbackMonitor@{FallbackMonitor}}
+\index{FallbackMonitor@{FallbackMonitor}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FallbackMonitor}{FallbackMonitor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_platform_monitor}{Im\+Gui\+Platform\+Monitor}} Im\+Gui\+Context\+::\+Fallback\+Monitor}
+
+\mbox{\Hypertarget{struct_im_gui_context_a56ca0a9debefb6f4e96b03602b8cb551}\label{struct_im_gui_context_a56ca0a9debefb6f4e96b03602b8cb551}} 
+\index{ImGuiContext@{ImGuiContext}!FocusScopeStack@{FocusScopeStack}}
+\index{FocusScopeStack@{FocusScopeStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FocusScopeStack}{FocusScopeStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}}$>$ Im\+Gui\+Context\+::\+Focus\+Scope\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_aec64e774018a7d74515baeb9e06fb4e3}\label{struct_im_gui_context_aec64e774018a7d74515baeb9e06fb4e3}} 
+\index{ImGuiContext@{ImGuiContext}!Font@{Font}}
+\index{Font@{Font}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Font}{Font}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_font}{Im\+Font}}$\ast$ Im\+Gui\+Context\+::\+Font}
+
+\mbox{\Hypertarget{struct_im_gui_context_a06996a09451ec85ef2a34c4de4280441}\label{struct_im_gui_context_a06996a09451ec85ef2a34c4de4280441}} 
+\index{ImGuiContext@{ImGuiContext}!FontAtlasOwnedByContext@{FontAtlasOwnedByContext}}
+\index{FontAtlasOwnedByContext@{FontAtlasOwnedByContext}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FontAtlasOwnedByContext}{FontAtlasOwnedByContext}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Font\+Atlas\+Owned\+By\+Context}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0fcbda57d25b80111283ed7305ee3ee8}\label{struct_im_gui_context_a0fcbda57d25b80111283ed7305ee3ee8}} 
+\index{ImGuiContext@{ImGuiContext}!FontBaseSize@{FontBaseSize}}
+\index{FontBaseSize@{FontBaseSize}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FontBaseSize}{FontBaseSize}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Font\+Base\+Size}
+
+\mbox{\Hypertarget{struct_im_gui_context_af4022d1866887cdc400131fc6a65b200}\label{struct_im_gui_context_af4022d1866887cdc400131fc6a65b200}} 
+\index{ImGuiContext@{ImGuiContext}!FontSize@{FontSize}}
+\index{FontSize@{FontSize}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FontSize}{FontSize}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Font\+Size}
+
+\mbox{\Hypertarget{struct_im_gui_context_a8a6a9f23604fe0d0b51c78e45e4432b0}\label{struct_im_gui_context_a8a6a9f23604fe0d0b51c78e45e4432b0}} 
+\index{ImGuiContext@{ImGuiContext}!FontStack@{FontStack}}
+\index{FontStack@{FontStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FontStack}{FontStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_font}{Im\+Font}}$\ast$$>$ Im\+Gui\+Context\+::\+Font\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab9a1f3b3f15f0a6c5f29aef85f1a8ea2}\label{struct_im_gui_context_ab9a1f3b3f15f0a6c5f29aef85f1a8ea2}} 
+\index{ImGuiContext@{ImGuiContext}!FrameCount@{FrameCount}}
+\index{FrameCount@{FrameCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FrameCount}{FrameCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Frame\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa4cc3099c789be981d665c617b6d78a9}\label{struct_im_gui_context_aa4cc3099c789be981d665c617b6d78a9}} 
+\index{ImGuiContext@{ImGuiContext}!FrameCountEnded@{FrameCountEnded}}
+\index{FrameCountEnded@{FrameCountEnded}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FrameCountEnded}{FrameCountEnded}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Frame\+Count\+Ended}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2c3a2e7a0952453f68bf0d8cd675db32}\label{struct_im_gui_context_a2c3a2e7a0952453f68bf0d8cd675db32}} 
+\index{ImGuiContext@{ImGuiContext}!FrameCountPlatformEnded@{FrameCountPlatformEnded}}
+\index{FrameCountPlatformEnded@{FrameCountPlatformEnded}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FrameCountPlatformEnded}{FrameCountPlatformEnded}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Frame\+Count\+Platform\+Ended}
+
+\mbox{\Hypertarget{struct_im_gui_context_a64a96ecd43f4b10c1fec8eb3fc9bff89}\label{struct_im_gui_context_a64a96ecd43f4b10c1fec8eb3fc9bff89}} 
+\index{ImGuiContext@{ImGuiContext}!FrameCountRendered@{FrameCountRendered}}
+\index{FrameCountRendered@{FrameCountRendered}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FrameCountRendered}{FrameCountRendered}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Frame\+Count\+Rendered}
+
+\mbox{\Hypertarget{struct_im_gui_context_aca772ab262c0094e8bbe7eae215fc23b}\label{struct_im_gui_context_aca772ab262c0094e8bbe7eae215fc23b}} 
+\index{ImGuiContext@{ImGuiContext}!FramerateSecPerFrame@{FramerateSecPerFrame}}
+\index{FramerateSecPerFrame@{FramerateSecPerFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FramerateSecPerFrame}{FramerateSecPerFrame}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Framerate\+Sec\+Per\+Frame\mbox{[}120\mbox{]}}
+
+\mbox{\Hypertarget{struct_im_gui_context_abcd18f2f8fedf0f45c3148b3e956e653}\label{struct_im_gui_context_abcd18f2f8fedf0f45c3148b3e956e653}} 
+\index{ImGuiContext@{ImGuiContext}!FramerateSecPerFrameAccum@{FramerateSecPerFrameAccum}}
+\index{FramerateSecPerFrameAccum@{FramerateSecPerFrameAccum}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FramerateSecPerFrameAccum}{FramerateSecPerFrameAccum}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Framerate\+Sec\+Per\+Frame\+Accum}
+
+\mbox{\Hypertarget{struct_im_gui_context_a65a399070bea994471e5d935fa419651}\label{struct_im_gui_context_a65a399070bea994471e5d935fa419651}} 
+\index{ImGuiContext@{ImGuiContext}!FramerateSecPerFrameCount@{FramerateSecPerFrameCount}}
+\index{FramerateSecPerFrameCount@{FramerateSecPerFrameCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FramerateSecPerFrameCount}{FramerateSecPerFrameCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Framerate\+Sec\+Per\+Frame\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_a64a96ad72dd7009dba134f6214a4936e}\label{struct_im_gui_context_a64a96ad72dd7009dba134f6214a4936e}} 
+\index{ImGuiContext@{ImGuiContext}!FramerateSecPerFrameIdx@{FramerateSecPerFrameIdx}}
+\index{FramerateSecPerFrameIdx@{FramerateSecPerFrameIdx}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{FramerateSecPerFrameIdx}{FramerateSecPerFrameIdx}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Framerate\+Sec\+Per\+Frame\+Idx}
+
+\mbox{\Hypertarget{struct_im_gui_context_a76187b6c38ef1c4024852baae5bb26d9}\label{struct_im_gui_context_a76187b6c38ef1c4024852baae5bb26d9}} 
+\index{ImGuiContext@{ImGuiContext}!GcCompactAll@{GcCompactAll}}
+\index{GcCompactAll@{GcCompactAll}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{GcCompactAll}{GcCompactAll}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Gc\+Compact\+All}
+
+\mbox{\Hypertarget{struct_im_gui_context_a77874099397573e207c03405508e3637}\label{struct_im_gui_context_a77874099397573e207c03405508e3637}} 
+\index{ImGuiContext@{ImGuiContext}!GroupStack@{GroupStack}}
+\index{GroupStack@{GroupStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{GroupStack}{GroupStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_group_data}{Im\+Gui\+Group\+Data}}$>$ Im\+Gui\+Context\+::\+Group\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_a4c1de2c1a15e1dda468035b774b84ee1}\label{struct_im_gui_context_a4c1de2c1a15e1dda468035b774b84ee1}} 
+\index{ImGuiContext@{ImGuiContext}!HookIdNext@{HookIdNext}}
+\index{HookIdNext@{HookIdNext}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HookIdNext}{HookIdNext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Hook\+Id\+Next}
+
+\mbox{\Hypertarget{struct_im_gui_context_a68184290b56a87584f085608790caef5}\label{struct_im_gui_context_a68184290b56a87584f085608790caef5}} 
+\index{ImGuiContext@{ImGuiContext}!Hooks@{Hooks}}
+\index{Hooks@{Hooks}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Hooks}{Hooks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_context_hook}{Im\+Gui\+Context\+Hook}}$>$ Im\+Gui\+Context\+::\+Hooks}
+
+\mbox{\Hypertarget{struct_im_gui_context_a963b93b6ee1bbb4dc978d4fd4af2a6a5}\label{struct_im_gui_context_a963b93b6ee1bbb4dc978d4fd4af2a6a5}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredDockNode@{HoveredDockNode}}
+\index{HoveredDockNode@{HoveredDockNode}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredDockNode}{HoveredDockNode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_dock_node}{Im\+Gui\+Dock\+Node}}$\ast$ Im\+Gui\+Context\+::\+Hovered\+Dock\+Node}
+
+\mbox{\Hypertarget{struct_im_gui_context_a32bef5a7740179ad8076643b001f15e4}\label{struct_im_gui_context_a32bef5a7740179ad8076643b001f15e4}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredId@{HoveredId}}
+\index{HoveredId@{HoveredId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredId}{HoveredId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Hovered\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a171f67ac705994d413a0bccf491aa4e1}\label{struct_im_gui_context_a171f67ac705994d413a0bccf491aa4e1}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredIdAllowOverlap@{HoveredIdAllowOverlap}}
+\index{HoveredIdAllowOverlap@{HoveredIdAllowOverlap}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredIdAllowOverlap}{HoveredIdAllowOverlap}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Hovered\+Id\+Allow\+Overlap}
+
+\mbox{\Hypertarget{struct_im_gui_context_a5d969e8f2ff39c038893e15e3e4f216f}\label{struct_im_gui_context_a5d969e8f2ff39c038893e15e3e4f216f}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredIdDisabled@{HoveredIdDisabled}}
+\index{HoveredIdDisabled@{HoveredIdDisabled}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredIdDisabled}{HoveredIdDisabled}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Hovered\+Id\+Disabled}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac2d1b0663e1ece41f9347fb299789b32}\label{struct_im_gui_context_ac2d1b0663e1ece41f9347fb299789b32}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredIdNotActiveTimer@{HoveredIdNotActiveTimer}}
+\index{HoveredIdNotActiveTimer@{HoveredIdNotActiveTimer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredIdNotActiveTimer}{HoveredIdNotActiveTimer}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Hovered\+Id\+Not\+Active\+Timer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a08742c14087e26304ff47fb9212d8eb6}\label{struct_im_gui_context_a08742c14087e26304ff47fb9212d8eb6}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredIdPreviousFrame@{HoveredIdPreviousFrame}}
+\index{HoveredIdPreviousFrame@{HoveredIdPreviousFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredIdPreviousFrame}{HoveredIdPreviousFrame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Hovered\+Id\+Previous\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_a82fd6bea3b303ee8aa341040759750dd}\label{struct_im_gui_context_a82fd6bea3b303ee8aa341040759750dd}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredIdPreviousFrameUsingMouseWheel@{HoveredIdPreviousFrameUsingMouseWheel}}
+\index{HoveredIdPreviousFrameUsingMouseWheel@{HoveredIdPreviousFrameUsingMouseWheel}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredIdPreviousFrameUsingMouseWheel}{HoveredIdPreviousFrameUsingMouseWheel}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Hovered\+Id\+Previous\+Frame\+Using\+Mouse\+Wheel}
+
+\mbox{\Hypertarget{struct_im_gui_context_a07a6bd929503077394ea0f80965470f9}\label{struct_im_gui_context_a07a6bd929503077394ea0f80965470f9}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredIdTimer@{HoveredIdTimer}}
+\index{HoveredIdTimer@{HoveredIdTimer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredIdTimer}{HoveredIdTimer}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Hovered\+Id\+Timer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a6eef87012f6162b74eba1adfb3b3bc12}\label{struct_im_gui_context_a6eef87012f6162b74eba1adfb3b3bc12}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredIdUsingMouseWheel@{HoveredIdUsingMouseWheel}}
+\index{HoveredIdUsingMouseWheel@{HoveredIdUsingMouseWheel}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredIdUsingMouseWheel}{HoveredIdUsingMouseWheel}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Hovered\+Id\+Using\+Mouse\+Wheel}
+
+\mbox{\Hypertarget{struct_im_gui_context_a6dd89693704216a036d2676b8c6610f8}\label{struct_im_gui_context_a6dd89693704216a036d2676b8c6610f8}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredWindow@{HoveredWindow}}
+\index{HoveredWindow@{HoveredWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredWindow}{HoveredWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Hovered\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_ace3d84fd6e57f608eb90d7bc0b928cf5}\label{struct_im_gui_context_ace3d84fd6e57f608eb90d7bc0b928cf5}} 
+\index{ImGuiContext@{ImGuiContext}!HoveredWindowUnderMovingWindow@{HoveredWindowUnderMovingWindow}}
+\index{HoveredWindowUnderMovingWindow@{HoveredWindowUnderMovingWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{HoveredWindowUnderMovingWindow}{HoveredWindowUnderMovingWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Hovered\+Window\+Under\+Moving\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_a71b32432f5c4658b4772b293640a66c0}\label{struct_im_gui_context_a71b32432f5c4658b4772b293640a66c0}} 
+\index{ImGuiContext@{ImGuiContext}!Initialized@{Initialized}}
+\index{Initialized@{Initialized}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Initialized}{Initialized}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Initialized}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae6d16d6a5d17963c289c2403f8857399}\label{struct_im_gui_context_ae6d16d6a5d17963c289c2403f8857399}} 
+\index{ImGuiContext@{ImGuiContext}!InputEventsQueue@{InputEventsQueue}}
+\index{InputEventsQueue@{InputEventsQueue}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{InputEventsQueue}{InputEventsQueue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_input_event}{Im\+Gui\+Input\+Event}}$>$ Im\+Gui\+Context\+::\+Input\+Events\+Queue}
+
+\mbox{\Hypertarget{struct_im_gui_context_aea1526d4c9879d8a70f1f11ea84d4339}\label{struct_im_gui_context_aea1526d4c9879d8a70f1f11ea84d4339}} 
+\index{ImGuiContext@{ImGuiContext}!InputEventsTrail@{InputEventsTrail}}
+\index{InputEventsTrail@{InputEventsTrail}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{InputEventsTrail}{InputEventsTrail}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_input_event}{Im\+Gui\+Input\+Event}}$>$ Im\+Gui\+Context\+::\+Input\+Events\+Trail}
+
+\mbox{\Hypertarget{struct_im_gui_context_a6aa67b9b778bd741d9866ec34cc8ee8b}\label{struct_im_gui_context_a6aa67b9b778bd741d9866ec34cc8ee8b}} 
+\index{ImGuiContext@{ImGuiContext}!InputTextPasswordFont@{InputTextPasswordFont}}
+\index{InputTextPasswordFont@{InputTextPasswordFont}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{InputTextPasswordFont}{InputTextPasswordFont}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_font}{Im\+Font}} Im\+Gui\+Context\+::\+Input\+Text\+Password\+Font}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab6f5d3daaa248a26bdbcb098d73640c1}\label{struct_im_gui_context_ab6f5d3daaa248a26bdbcb098d73640c1}} 
+\index{ImGuiContext@{ImGuiContext}!InputTextState@{InputTextState}}
+\index{InputTextState@{InputTextState}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{InputTextState}{InputTextState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_input_text_state}{Im\+Gui\+Input\+Text\+State}} Im\+Gui\+Context\+::\+Input\+Text\+State}
+
+\mbox{\Hypertarget{struct_im_gui_context_add4fdcc8c6a437d8f8e7c837418be83c}\label{struct_im_gui_context_add4fdcc8c6a437d8f8e7c837418be83c}} 
+\index{ImGuiContext@{ImGuiContext}!IO@{IO}}
+\index{IO@{IO}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{IO}{IO}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_i_o}{Im\+Gui\+IO}} Im\+Gui\+Context\+::\+IO}
+
+\mbox{\Hypertarget{struct_im_gui_context_a85e81a50ff68aaf925faab072b710edd}\label{struct_im_gui_context_a85e81a50ff68aaf925faab072b710edd}} 
+\index{ImGuiContext@{ImGuiContext}!ItemFlagsStack@{ItemFlagsStack}}
+\index{ItemFlagsStack@{ItemFlagsStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ItemFlagsStack}{ItemFlagsStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{imgui__internal_8h_abcf9eafab4557e911b2c0d8fe2feeb38}{Im\+Gui\+Item\+Flags}}$>$ Im\+Gui\+Context\+::\+Item\+Flags\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_a8609dbb667eced2b9f1eb1f0c0aff838}\label{struct_im_gui_context_a8609dbb667eced2b9f1eb1f0c0aff838}} 
+\index{ImGuiContext@{ImGuiContext}!LastActiveId@{LastActiveId}}
+\index{LastActiveId@{LastActiveId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LastActiveId}{LastActiveId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Last\+Active\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7296c8f2a4794c561cfb4ad0af563928}\label{struct_im_gui_context_a7296c8f2a4794c561cfb4ad0af563928}} 
+\index{ImGuiContext@{ImGuiContext}!LastActiveIdTimer@{LastActiveIdTimer}}
+\index{LastActiveIdTimer@{LastActiveIdTimer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LastActiveIdTimer}{LastActiveIdTimer}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Last\+Active\+Id\+Timer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a47a03a88886e1700f40be15d9fd9329e}\label{struct_im_gui_context_a47a03a88886e1700f40be15d9fd9329e}} 
+\index{ImGuiContext@{ImGuiContext}!LastItemData@{LastItemData}}
+\index{LastItemData@{LastItemData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LastItemData}{LastItemData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_last_item_data}{Im\+Gui\+Last\+Item\+Data}} Im\+Gui\+Context\+::\+Last\+Item\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7ee6cc4eb7d913073f7f65245f74b44b}\label{struct_im_gui_context_a7ee6cc4eb7d913073f7f65245f74b44b}} 
+\index{ImGuiContext@{ImGuiContext}!LogBuffer@{LogBuffer}}
+\index{LogBuffer@{LogBuffer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogBuffer}{LogBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} Im\+Gui\+Context\+::\+Log\+Buffer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a56710f298126b4a30a9d45c433ec66be}\label{struct_im_gui_context_a56710f298126b4a30a9d45c433ec66be}} 
+\index{ImGuiContext@{ImGuiContext}!LogDepthRef@{LogDepthRef}}
+\index{LogDepthRef@{LogDepthRef}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogDepthRef}{LogDepthRef}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Log\+Depth\+Ref}
+
+\mbox{\Hypertarget{struct_im_gui_context_a03a52c2f6ed034934140180049e1ad93}\label{struct_im_gui_context_a03a52c2f6ed034934140180049e1ad93}} 
+\index{ImGuiContext@{ImGuiContext}!LogDepthToExpand@{LogDepthToExpand}}
+\index{LogDepthToExpand@{LogDepthToExpand}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogDepthToExpand}{LogDepthToExpand}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Log\+Depth\+To\+Expand}
+
+\mbox{\Hypertarget{struct_im_gui_context_a48b837ab4012447dde42bab75406abdd}\label{struct_im_gui_context_a48b837ab4012447dde42bab75406abdd}} 
+\index{ImGuiContext@{ImGuiContext}!LogDepthToExpandDefault@{LogDepthToExpandDefault}}
+\index{LogDepthToExpandDefault@{LogDepthToExpandDefault}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogDepthToExpandDefault}{LogDepthToExpandDefault}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Log\+Depth\+To\+Expand\+Default}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2508bec1862aa4477eca2c79d6924b82}\label{struct_im_gui_context_a2508bec1862aa4477eca2c79d6924b82}} 
+\index{ImGuiContext@{ImGuiContext}!LogEnabled@{LogEnabled}}
+\index{LogEnabled@{LogEnabled}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogEnabled}{LogEnabled}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Log\+Enabled}
+
+\mbox{\Hypertarget{struct_im_gui_context_af533c63d15c334b863f9e95f11aca78a}\label{struct_im_gui_context_af533c63d15c334b863f9e95f11aca78a}} 
+\index{ImGuiContext@{ImGuiContext}!LogFile@{LogFile}}
+\index{LogFile@{LogFile}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogFile}{LogFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_a5c58fe70d0547f85609b2b99ab451efe}{Im\+File\+Handle}} Im\+Gui\+Context\+::\+Log\+File}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab011a2f260e200403d6177bdccc3b20b}\label{struct_im_gui_context_ab011a2f260e200403d6177bdccc3b20b}} 
+\index{ImGuiContext@{ImGuiContext}!LogLineFirstItem@{LogLineFirstItem}}
+\index{LogLineFirstItem@{LogLineFirstItem}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogLineFirstItem}{LogLineFirstItem}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Log\+Line\+First\+Item}
+
+\mbox{\Hypertarget{struct_im_gui_context_a8da8ba7ae9201ae085630a396d226244}\label{struct_im_gui_context_a8da8ba7ae9201ae085630a396d226244}} 
+\index{ImGuiContext@{ImGuiContext}!LogLinePosY@{LogLinePosY}}
+\index{LogLinePosY@{LogLinePosY}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogLinePosY}{LogLinePosY}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Log\+Line\+PosY}
+
+\mbox{\Hypertarget{struct_im_gui_context_a48d9613d2debdc972cf22f98c241faa9}\label{struct_im_gui_context_a48d9613d2debdc972cf22f98c241faa9}} 
+\index{ImGuiContext@{ImGuiContext}!LogNextPrefix@{LogNextPrefix}}
+\index{LogNextPrefix@{LogNextPrefix}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogNextPrefix}{LogNextPrefix}}
+{\footnotesize\ttfamily const char$\ast$ Im\+Gui\+Context\+::\+Log\+Next\+Prefix}
+
+\mbox{\Hypertarget{struct_im_gui_context_a877334cd40755e94cad5549f30774767}\label{struct_im_gui_context_a877334cd40755e94cad5549f30774767}} 
+\index{ImGuiContext@{ImGuiContext}!LogNextSuffix@{LogNextSuffix}}
+\index{LogNextSuffix@{LogNextSuffix}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogNextSuffix}{LogNextSuffix}}
+{\footnotesize\ttfamily const char$\ast$ Im\+Gui\+Context\+::\+Log\+Next\+Suffix}
+
+\mbox{\Hypertarget{struct_im_gui_context_a832ec584c0e3558c15b342ac077515d5}\label{struct_im_gui_context_a832ec584c0e3558c15b342ac077515d5}} 
+\index{ImGuiContext@{ImGuiContext}!LogType@{LogType}}
+\index{LogType@{LogType}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{LogType}{LogType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_ac65915203eef19cd87f2ff1cde435c1e}{Im\+Gui\+Log\+Type}} Im\+Gui\+Context\+::\+Log\+Type}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2e6135b1a52d2dcf7ef18c301caa943b}\label{struct_im_gui_context_a2e6135b1a52d2dcf7ef18c301caa943b}} 
+\index{ImGuiContext@{ImGuiContext}!MenusIdSubmittedThisFrame@{MenusIdSubmittedThisFrame}}
+\index{MenusIdSubmittedThisFrame@{MenusIdSubmittedThisFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{MenusIdSubmittedThisFrame}{MenusIdSubmittedThisFrame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}}$>$ Im\+Gui\+Context\+::\+Menus\+Id\+Submitted\+This\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab60730c7f9f601fd0b22dac060a822e3}\label{struct_im_gui_context_ab60730c7f9f601fd0b22dac060a822e3}} 
+\index{ImGuiContext@{ImGuiContext}!MouseCursor@{MouseCursor}}
+\index{MouseCursor@{MouseCursor}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{MouseCursor}{MouseCursor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a9223d6c82bb5d12c2eab5f829ca520ef}{Im\+Gui\+Mouse\+Cursor}} Im\+Gui\+Context\+::\+Mouse\+Cursor}
+
+\mbox{\Hypertarget{struct_im_gui_context_ad1f91a764097437815ed9e316090750a}\label{struct_im_gui_context_ad1f91a764097437815ed9e316090750a}} 
+\index{ImGuiContext@{ImGuiContext}!MouseLastHoveredViewport@{MouseLastHoveredViewport}}
+\index{MouseLastHoveredViewport@{MouseLastHoveredViewport}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{MouseLastHoveredViewport}{MouseLastHoveredViewport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}}$\ast$ Im\+Gui\+Context\+::\+Mouse\+Last\+Hovered\+Viewport}
+
+\mbox{\Hypertarget{struct_im_gui_context_abb075f88a3d5919045be0746a128f7fc}\label{struct_im_gui_context_abb075f88a3d5919045be0746a128f7fc}} 
+\index{ImGuiContext@{ImGuiContext}!MouseLastValidPos@{MouseLastValidPos}}
+\index{MouseLastValidPos@{MouseLastValidPos}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{MouseLastValidPos}{MouseLastValidPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Gui\+Context\+::\+Mouse\+Last\+Valid\+Pos}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7fde14aa6ffc4c4fa6b7715c534c4f79}\label{struct_im_gui_context_a7fde14aa6ffc4c4fa6b7715c534c4f79}} 
+\index{ImGuiContext@{ImGuiContext}!MouseViewport@{MouseViewport}}
+\index{MouseViewport@{MouseViewport}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{MouseViewport}{MouseViewport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}}$\ast$ Im\+Gui\+Context\+::\+Mouse\+Viewport}
+
+\mbox{\Hypertarget{struct_im_gui_context_a28078cc22f615213fd8544016cd6ae20}\label{struct_im_gui_context_a28078cc22f615213fd8544016cd6ae20}} 
+\index{ImGuiContext@{ImGuiContext}!MovingWindow@{MovingWindow}}
+\index{MovingWindow@{MovingWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{MovingWindow}{MovingWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Moving\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_a07e49e172b0aad8b1ff2ac3df71b788b}\label{struct_im_gui_context_a07e49e172b0aad8b1ff2ac3df71b788b}} 
+\index{ImGuiContext@{ImGuiContext}!NavActivateDownId@{NavActivateDownId}}
+\index{NavActivateDownId@{NavActivateDownId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavActivateDownId}{NavActivateDownId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Activate\+Down\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae0b1af7b04d34fd89806da19c15e3ca9}\label{struct_im_gui_context_ae0b1af7b04d34fd89806da19c15e3ca9}} 
+\index{ImGuiContext@{ImGuiContext}!NavActivateFlags@{NavActivateFlags}}
+\index{NavActivateFlags@{NavActivateFlags}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavActivateFlags}{NavActivateFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_a69818e5784f8f39375ee58059c449ab2}{Im\+Gui\+Activate\+Flags}} Im\+Gui\+Context\+::\+Nav\+Activate\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_context_a809b5fc440a6198e4266b36150dc3396}\label{struct_im_gui_context_a809b5fc440a6198e4266b36150dc3396}} 
+\index{ImGuiContext@{ImGuiContext}!NavActivateId@{NavActivateId}}
+\index{NavActivateId@{NavActivateId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavActivateId}{NavActivateId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Activate\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0f8907e7a87f3199f9f07ed41c90e810}\label{struct_im_gui_context_a0f8907e7a87f3199f9f07ed41c90e810}} 
+\index{ImGuiContext@{ImGuiContext}!NavActivateInputId@{NavActivateInputId}}
+\index{NavActivateInputId@{NavActivateInputId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavActivateInputId}{NavActivateInputId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Activate\+Input\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a24929a88fa69cfb49cfd41c8cb4225d0}\label{struct_im_gui_context_a24929a88fa69cfb49cfd41c8cb4225d0}} 
+\index{ImGuiContext@{ImGuiContext}!NavActivatePressedId@{NavActivatePressedId}}
+\index{NavActivatePressedId@{NavActivatePressedId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavActivatePressedId}{NavActivatePressedId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Activate\+Pressed\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2bb94ad4b29cd6359f5e2a6d0f24e617}\label{struct_im_gui_context_a2bb94ad4b29cd6359f5e2a6d0f24e617}} 
+\index{ImGuiContext@{ImGuiContext}!NavAnyRequest@{NavAnyRequest}}
+\index{NavAnyRequest@{NavAnyRequest}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavAnyRequest}{NavAnyRequest}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Any\+Request}
+
+\mbox{\Hypertarget{struct_im_gui_context_a15bae5126d0c9f911ff5eacda9e6958f}\label{struct_im_gui_context_a15bae5126d0c9f911ff5eacda9e6958f}} 
+\index{ImGuiContext@{ImGuiContext}!NavDisableHighlight@{NavDisableHighlight}}
+\index{NavDisableHighlight@{NavDisableHighlight}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavDisableHighlight}{NavDisableHighlight}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Disable\+Highlight}
+
+\mbox{\Hypertarget{struct_im_gui_context_aee7132fe5dfc3afdecf13c319da7dbf6}\label{struct_im_gui_context_aee7132fe5dfc3afdecf13c319da7dbf6}} 
+\index{ImGuiContext@{ImGuiContext}!NavDisableMouseHover@{NavDisableMouseHover}}
+\index{NavDisableMouseHover@{NavDisableMouseHover}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavDisableMouseHover}{NavDisableMouseHover}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Disable\+Mouse\+Hover}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac286ff64f5d18ec35bb8214825107557}\label{struct_im_gui_context_ac286ff64f5d18ec35bb8214825107557}} 
+\index{ImGuiContext@{ImGuiContext}!NavFocusScopeId@{NavFocusScopeId}}
+\index{NavFocusScopeId@{NavFocusScopeId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavFocusScopeId}{NavFocusScopeId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Focus\+Scope\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0416d655ac426f9923dab220d95a4b6b}\label{struct_im_gui_context_a0416d655ac426f9923dab220d95a4b6b}} 
+\index{ImGuiContext@{ImGuiContext}!NavId@{NavId}}
+\index{NavId@{NavId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavId}{NavId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_aabd1e23f5be55f6331281f2c2ea9e411}\label{struct_im_gui_context_aabd1e23f5be55f6331281f2c2ea9e411}} 
+\index{ImGuiContext@{ImGuiContext}!NavIdIsAlive@{NavIdIsAlive}}
+\index{NavIdIsAlive@{NavIdIsAlive}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavIdIsAlive}{NavIdIsAlive}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Id\+Is\+Alive}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac1e37ea3392df255f52f8cc53bf8180a}\label{struct_im_gui_context_ac1e37ea3392df255f52f8cc53bf8180a}} 
+\index{ImGuiContext@{ImGuiContext}!NavInitRequest@{NavInitRequest}}
+\index{NavInitRequest@{NavInitRequest}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavInitRequest}{NavInitRequest}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Init\+Request}
+
+\mbox{\Hypertarget{struct_im_gui_context_a92dbda9104ae60cea64926e9e7d98702}\label{struct_im_gui_context_a92dbda9104ae60cea64926e9e7d98702}} 
+\index{ImGuiContext@{ImGuiContext}!NavInitRequestFromMove@{NavInitRequestFromMove}}
+\index{NavInitRequestFromMove@{NavInitRequestFromMove}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavInitRequestFromMove}{NavInitRequestFromMove}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Init\+Request\+From\+Move}
+
+\mbox{\Hypertarget{struct_im_gui_context_a1a4e4062115647df8cfc566e595fe3e1}\label{struct_im_gui_context_a1a4e4062115647df8cfc566e595fe3e1}} 
+\index{ImGuiContext@{ImGuiContext}!NavInitResultId@{NavInitResultId}}
+\index{NavInitResultId@{NavInitResultId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavInitResultId}{NavInitResultId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Init\+Result\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a4d59fe60fd93303628212a3d52f6c9e0}\label{struct_im_gui_context_a4d59fe60fd93303628212a3d52f6c9e0}} 
+\index{ImGuiContext@{ImGuiContext}!NavInitResultRectRel@{NavInitResultRectRel}}
+\index{NavInitResultRectRel@{NavInitResultRectRel}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavInitResultRectRel}{NavInitResultRectRel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Context\+::\+Nav\+Init\+Result\+Rect\+Rel}
+
+\mbox{\Hypertarget{struct_im_gui_context_a3054bc5ed01af6c56159cd8de77e7b44}\label{struct_im_gui_context_a3054bc5ed01af6c56159cd8de77e7b44}} 
+\index{ImGuiContext@{ImGuiContext}!NavInputSource@{NavInputSource}}
+\index{NavInputSource@{NavInputSource}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavInputSource}{NavInputSource}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_a8ee603a145a3a4f4ab5c93c8c8333b78}{Im\+Gui\+Input\+Source}} Im\+Gui\+Context\+::\+Nav\+Input\+Source}
+
+\mbox{\Hypertarget{struct_im_gui_context_aec90740a5c2a6ab58738e54333ec05cd}\label{struct_im_gui_context_aec90740a5c2a6ab58738e54333ec05cd}} 
+\index{ImGuiContext@{ImGuiContext}!NavJustMovedToFocusScopeId@{NavJustMovedToFocusScopeId}}
+\index{NavJustMovedToFocusScopeId@{NavJustMovedToFocusScopeId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavJustMovedToFocusScopeId}{NavJustMovedToFocusScopeId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Just\+Moved\+To\+Focus\+Scope\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a1ad32892bff3773daf74bf39f525e2c0}\label{struct_im_gui_context_a1ad32892bff3773daf74bf39f525e2c0}} 
+\index{ImGuiContext@{ImGuiContext}!NavJustMovedToId@{NavJustMovedToId}}
+\index{NavJustMovedToId@{NavJustMovedToId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavJustMovedToId}{NavJustMovedToId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Just\+Moved\+To\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a9b5edcf4987c71c88e885e3b61d1a7ef}\label{struct_im_gui_context_a9b5edcf4987c71c88e885e3b61d1a7ef}} 
+\index{ImGuiContext@{ImGuiContext}!NavJustMovedToKeyMods@{NavJustMovedToKeyMods}}
+\index{NavJustMovedToKeyMods@{NavJustMovedToKeyMods}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavJustMovedToKeyMods}{NavJustMovedToKeyMods}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a5e8631cd16b6c616f78112766b3e16fb}{Im\+Gui\+Mod\+Flags}} Im\+Gui\+Context\+::\+Nav\+Just\+Moved\+To\+Key\+Mods}
+
+\mbox{\Hypertarget{struct_im_gui_context_a19072bf282ae59f30d55478d74195d45}\label{struct_im_gui_context_a19072bf282ae59f30d55478d74195d45}} 
+\index{ImGuiContext@{ImGuiContext}!NavLayer@{NavLayer}}
+\index{NavLayer@{NavLayer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavLayer}{NavLayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_afb412215b8327dc2c6af2c19fdca64c6}{Im\+Gui\+Nav\+Layer}} Im\+Gui\+Context\+::\+Nav\+Layer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a45d87c28d8ea54ea82cb5d26c12c13db}\label{struct_im_gui_context_a45d87c28d8ea54ea82cb5d26c12c13db}} 
+\index{ImGuiContext@{ImGuiContext}!NavMousePosDirty@{NavMousePosDirty}}
+\index{NavMousePosDirty@{NavMousePosDirty}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMousePosDirty}{NavMousePosDirty}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Mouse\+Pos\+Dirty}
+
+\mbox{\Hypertarget{struct_im_gui_context_a445c588479dbf5122c062ba8bcdb99e2}\label{struct_im_gui_context_a445c588479dbf5122c062ba8bcdb99e2}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveClipDir@{NavMoveClipDir}}
+\index{NavMoveClipDir@{NavMoveClipDir}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveClipDir}{NavMoveClipDir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a874086389bc27cc9647118d22a806403}{Im\+Gui\+Dir}} Im\+Gui\+Context\+::\+Nav\+Move\+Clip\+Dir}
+
+\mbox{\Hypertarget{struct_im_gui_context_a20208736529ff4a1067d8d15ef17400b}\label{struct_im_gui_context_a20208736529ff4a1067d8d15ef17400b}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveDir@{NavMoveDir}}
+\index{NavMoveDir@{NavMoveDir}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveDir}{NavMoveDir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a874086389bc27cc9647118d22a806403}{Im\+Gui\+Dir}} Im\+Gui\+Context\+::\+Nav\+Move\+Dir}
+
+\mbox{\Hypertarget{struct_im_gui_context_a955774256450d53d8466e28495741ac8}\label{struct_im_gui_context_a955774256450d53d8466e28495741ac8}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveDirForDebug@{NavMoveDirForDebug}}
+\index{NavMoveDirForDebug@{NavMoveDirForDebug}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveDirForDebug}{NavMoveDirForDebug}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a874086389bc27cc9647118d22a806403}{Im\+Gui\+Dir}} Im\+Gui\+Context\+::\+Nav\+Move\+Dir\+For\+Debug}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae43522d6c3e4615fdc2d78a43870b33b}\label{struct_im_gui_context_ae43522d6c3e4615fdc2d78a43870b33b}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveFlags@{NavMoveFlags}}
+\index{NavMoveFlags@{NavMoveFlags}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveFlags}{NavMoveFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_aff7a453b89555bb074f2fe46a159ac25}{Im\+Gui\+Nav\+Move\+Flags}} Im\+Gui\+Context\+::\+Nav\+Move\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_context_ad11b07c5a723bfe0aae33849719d41c8}\label{struct_im_gui_context_ad11b07c5a723bfe0aae33849719d41c8}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveForwardToNextFrame@{NavMoveForwardToNextFrame}}
+\index{NavMoveForwardToNextFrame@{NavMoveForwardToNextFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveForwardToNextFrame}{NavMoveForwardToNextFrame}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Move\+Forward\+To\+Next\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_a075fddc0c0db81df2f4ffd6af86de51b}\label{struct_im_gui_context_a075fddc0c0db81df2f4ffd6af86de51b}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveKeyMods@{NavMoveKeyMods}}
+\index{NavMoveKeyMods@{NavMoveKeyMods}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveKeyMods}{NavMoveKeyMods}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a5e8631cd16b6c616f78112766b3e16fb}{Im\+Gui\+Mod\+Flags}} Im\+Gui\+Context\+::\+Nav\+Move\+Key\+Mods}
+
+\mbox{\Hypertarget{struct_im_gui_context_a59df70904cc425fd2bba56b20655bb9b}\label{struct_im_gui_context_a59df70904cc425fd2bba56b20655bb9b}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveResultLocal@{NavMoveResultLocal}}
+\index{NavMoveResultLocal@{NavMoveResultLocal}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveResultLocal}{NavMoveResultLocal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} Im\+Gui\+Context\+::\+Nav\+Move\+Result\+Local}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae408e3ce0610927e94f065aeb32869ac}\label{struct_im_gui_context_ae408e3ce0610927e94f065aeb32869ac}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveResultLocalVisible@{NavMoveResultLocalVisible}}
+\index{NavMoveResultLocalVisible@{NavMoveResultLocalVisible}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveResultLocalVisible}{NavMoveResultLocalVisible}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} Im\+Gui\+Context\+::\+Nav\+Move\+Result\+Local\+Visible}
+
+\mbox{\Hypertarget{struct_im_gui_context_a68660b4bf8e33143cd8b490dc8bb2ebb}\label{struct_im_gui_context_a68660b4bf8e33143cd8b490dc8bb2ebb}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveResultOther@{NavMoveResultOther}}
+\index{NavMoveResultOther@{NavMoveResultOther}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveResultOther}{NavMoveResultOther}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} Im\+Gui\+Context\+::\+Nav\+Move\+Result\+Other}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae6b106c2ed61604aea063be16fc60408}\label{struct_im_gui_context_ae6b106c2ed61604aea063be16fc60408}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveScoringItems@{NavMoveScoringItems}}
+\index{NavMoveScoringItems@{NavMoveScoringItems}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveScoringItems}{NavMoveScoringItems}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Move\+Scoring\+Items}
+
+\mbox{\Hypertarget{struct_im_gui_context_a5153d4b5c4ffcfb34cb3d1c45b3506bf}\label{struct_im_gui_context_a5153d4b5c4ffcfb34cb3d1c45b3506bf}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveScrollFlags@{NavMoveScrollFlags}}
+\index{NavMoveScrollFlags@{NavMoveScrollFlags}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveScrollFlags}{NavMoveScrollFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_a3c23ec9366e4bede0fedb065a79dcbc1}{Im\+Gui\+Scroll\+Flags}} Im\+Gui\+Context\+::\+Nav\+Move\+Scroll\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_context_a64c70fc7feea0cbc0aac843d2bf32b6e}\label{struct_im_gui_context_a64c70fc7feea0cbc0aac843d2bf32b6e}} 
+\index{ImGuiContext@{ImGuiContext}!NavMoveSubmitted@{NavMoveSubmitted}}
+\index{NavMoveSubmitted@{NavMoveSubmitted}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavMoveSubmitted}{NavMoveSubmitted}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Move\+Submitted}
+
+\mbox{\Hypertarget{struct_im_gui_context_a498c30d93a56d5cc173687ab25d86f85}\label{struct_im_gui_context_a498c30d93a56d5cc173687ab25d86f85}} 
+\index{ImGuiContext@{ImGuiContext}!NavNextActivateFlags@{NavNextActivateFlags}}
+\index{NavNextActivateFlags@{NavNextActivateFlags}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavNextActivateFlags}{NavNextActivateFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_a69818e5784f8f39375ee58059c449ab2}{Im\+Gui\+Activate\+Flags}} Im\+Gui\+Context\+::\+Nav\+Next\+Activate\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_context_abc1fa0d9750d44d4595905a0ce178ded}\label{struct_im_gui_context_abc1fa0d9750d44d4595905a0ce178ded}} 
+\index{ImGuiContext@{ImGuiContext}!NavNextActivateId@{NavNextActivateId}}
+\index{NavNextActivateId@{NavNextActivateId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavNextActivateId}{NavNextActivateId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Nav\+Next\+Activate\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_aad0534754076c6f8d877bd19c5760a6a}\label{struct_im_gui_context_aad0534754076c6f8d877bd19c5760a6a}} 
+\index{ImGuiContext@{ImGuiContext}!NavScoringDebugCount@{NavScoringDebugCount}}
+\index{NavScoringDebugCount@{NavScoringDebugCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavScoringDebugCount}{NavScoringDebugCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Nav\+Scoring\+Debug\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_adfc19aa2d5bf8c7e7bb8944946cfd6ba}\label{struct_im_gui_context_adfc19aa2d5bf8c7e7bb8944946cfd6ba}} 
+\index{ImGuiContext@{ImGuiContext}!NavScoringNoClipRect@{NavScoringNoClipRect}}
+\index{NavScoringNoClipRect@{NavScoringNoClipRect}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavScoringNoClipRect}{NavScoringNoClipRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Context\+::\+Nav\+Scoring\+No\+Clip\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_context_a39fb4271af9f1e60e3e5d4c3707e2773}\label{struct_im_gui_context_a39fb4271af9f1e60e3e5d4c3707e2773}} 
+\index{ImGuiContext@{ImGuiContext}!NavScoringRect@{NavScoringRect}}
+\index{NavScoringRect@{NavScoringRect}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavScoringRect}{NavScoringRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Context\+::\+Nav\+Scoring\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_context_af1fa9ff1a1315592ff9ddf1802579411}\label{struct_im_gui_context_af1fa9ff1a1315592ff9ddf1802579411}} 
+\index{ImGuiContext@{ImGuiContext}!NavTabbingCounter@{NavTabbingCounter}}
+\index{NavTabbingCounter@{NavTabbingCounter}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavTabbingCounter}{NavTabbingCounter}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Nav\+Tabbing\+Counter}
+
+\mbox{\Hypertarget{struct_im_gui_context_acb60e5e6a41146db87fea98a4c3332f2}\label{struct_im_gui_context_acb60e5e6a41146db87fea98a4c3332f2}} 
+\index{ImGuiContext@{ImGuiContext}!NavTabbingDir@{NavTabbingDir}}
+\index{NavTabbingDir@{NavTabbingDir}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavTabbingDir}{NavTabbingDir}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Nav\+Tabbing\+Dir}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7eb64dfe2b4ae995bbbe8afbd53c8fce}\label{struct_im_gui_context_a7eb64dfe2b4ae995bbbe8afbd53c8fce}} 
+\index{ImGuiContext@{ImGuiContext}!NavTabbingResultFirst@{NavTabbingResultFirst}}
+\index{NavTabbingResultFirst@{NavTabbingResultFirst}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavTabbingResultFirst}{NavTabbingResultFirst}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_nav_item_data}{Im\+Gui\+Nav\+Item\+Data}} Im\+Gui\+Context\+::\+Nav\+Tabbing\+Result\+First}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae06077e45c894488b28baaf2d7ff8e41}\label{struct_im_gui_context_ae06077e45c894488b28baaf2d7ff8e41}} 
+\index{ImGuiContext@{ImGuiContext}!NavWindow@{NavWindow}}
+\index{NavWindow@{NavWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavWindow}{NavWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Nav\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_a58906b21765f83b753e33b4733fa596c}\label{struct_im_gui_context_a58906b21765f83b753e33b4733fa596c}} 
+\index{ImGuiContext@{ImGuiContext}!NavWindowingHighlightAlpha@{NavWindowingHighlightAlpha}}
+\index{NavWindowingHighlightAlpha@{NavWindowingHighlightAlpha}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavWindowingHighlightAlpha}{NavWindowingHighlightAlpha}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Nav\+Windowing\+Highlight\+Alpha}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa9d5283b6d3fc1d02d8dd75debe735f7}\label{struct_im_gui_context_aa9d5283b6d3fc1d02d8dd75debe735f7}} 
+\index{ImGuiContext@{ImGuiContext}!NavWindowingListWindow@{NavWindowingListWindow}}
+\index{NavWindowingListWindow@{NavWindowingListWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavWindowingListWindow}{NavWindowingListWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Nav\+Windowing\+List\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_a90cb834d237027d39e0d2efbe3d90d04}\label{struct_im_gui_context_a90cb834d237027d39e0d2efbe3d90d04}} 
+\index{ImGuiContext@{ImGuiContext}!NavWindowingTarget@{NavWindowingTarget}}
+\index{NavWindowingTarget@{NavWindowingTarget}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavWindowingTarget}{NavWindowingTarget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Nav\+Windowing\+Target}
+
+\mbox{\Hypertarget{struct_im_gui_context_aaaf83b57ad918ef20a653bc8f5dbcde7}\label{struct_im_gui_context_aaaf83b57ad918ef20a653bc8f5dbcde7}} 
+\index{ImGuiContext@{ImGuiContext}!NavWindowingTargetAnim@{NavWindowingTargetAnim}}
+\index{NavWindowingTargetAnim@{NavWindowingTargetAnim}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavWindowingTargetAnim}{NavWindowingTargetAnim}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Nav\+Windowing\+Target\+Anim}
+
+\mbox{\Hypertarget{struct_im_gui_context_a412d61294f8c686db6ecc366c845bd08}\label{struct_im_gui_context_a412d61294f8c686db6ecc366c845bd08}} 
+\index{ImGuiContext@{ImGuiContext}!NavWindowingTimer@{NavWindowingTimer}}
+\index{NavWindowingTimer@{NavWindowingTimer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavWindowingTimer}{NavWindowingTimer}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Nav\+Windowing\+Timer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a324b59dc38e7121a1aef959218d3563a}\label{struct_im_gui_context_a324b59dc38e7121a1aef959218d3563a}} 
+\index{ImGuiContext@{ImGuiContext}!NavWindowingToggleLayer@{NavWindowingToggleLayer}}
+\index{NavWindowingToggleLayer@{NavWindowingToggleLayer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NavWindowingToggleLayer}{NavWindowingToggleLayer}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Nav\+Windowing\+Toggle\+Layer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a3c05fda47e3d35e3279387a2524ac6cb}\label{struct_im_gui_context_a3c05fda47e3d35e3279387a2524ac6cb}} 
+\index{ImGuiContext@{ImGuiContext}!NextItemData@{NextItemData}}
+\index{NextItemData@{NextItemData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NextItemData}{NextItemData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_next_item_data}{Im\+Gui\+Next\+Item\+Data}} Im\+Gui\+Context\+::\+Next\+Item\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_a1220ef65a7464ef2dc4a6020cd1b9c47}\label{struct_im_gui_context_a1220ef65a7464ef2dc4a6020cd1b9c47}} 
+\index{ImGuiContext@{ImGuiContext}!NextWindowData@{NextWindowData}}
+\index{NextWindowData@{NextWindowData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{NextWindowData}{NextWindowData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_next_window_data}{Im\+Gui\+Next\+Window\+Data}} Im\+Gui\+Context\+::\+Next\+Window\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0f175fa6d802c77e1c3bda0555bffaef}\label{struct_im_gui_context_a0f175fa6d802c77e1c3bda0555bffaef}} 
+\index{ImGuiContext@{ImGuiContext}!OpenPopupStack@{OpenPopupStack}}
+\index{OpenPopupStack@{OpenPopupStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{OpenPopupStack}{OpenPopupStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_popup_data}{Im\+Gui\+Popup\+Data}}$>$ Im\+Gui\+Context\+::\+Open\+Popup\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_a084e716b3a64cf2ad9de9a5f7cb32c31}\label{struct_im_gui_context_a084e716b3a64cf2ad9de9a5f7cb32c31}} 
+\index{ImGuiContext@{ImGuiContext}!PlatformImeData@{PlatformImeData}}
+\index{PlatformImeData@{PlatformImeData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{PlatformImeData}{PlatformImeData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_platform_ime_data}{Im\+Gui\+Platform\+Ime\+Data}} Im\+Gui\+Context\+::\+Platform\+Ime\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_ad2719ffa6b669a551932a6c4b2fd43f0}\label{struct_im_gui_context_ad2719ffa6b669a551932a6c4b2fd43f0}} 
+\index{ImGuiContext@{ImGuiContext}!PlatformImeDataPrev@{PlatformImeDataPrev}}
+\index{PlatformImeDataPrev@{PlatformImeDataPrev}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{PlatformImeDataPrev}{PlatformImeDataPrev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_platform_ime_data}{Im\+Gui\+Platform\+Ime\+Data}} Im\+Gui\+Context\+::\+Platform\+Ime\+Data\+Prev}
+
+\mbox{\Hypertarget{struct_im_gui_context_aba13379b1a72f70c988dd97543d72b16}\label{struct_im_gui_context_aba13379b1a72f70c988dd97543d72b16}} 
+\index{ImGuiContext@{ImGuiContext}!PlatformImeViewport@{PlatformImeViewport}}
+\index{PlatformImeViewport@{PlatformImeViewport}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{PlatformImeViewport}{PlatformImeViewport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Platform\+Ime\+Viewport}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7f234cee51193f9e36fd6b0313c67cd0}\label{struct_im_gui_context_a7f234cee51193f9e36fd6b0313c67cd0}} 
+\index{ImGuiContext@{ImGuiContext}!PlatformIO@{PlatformIO}}
+\index{PlatformIO@{PlatformIO}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{PlatformIO}{PlatformIO}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_platform_i_o}{Im\+Gui\+Platform\+IO}} Im\+Gui\+Context\+::\+Platform\+IO}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab71c34c2b8c073bcafd74fc929a10705}\label{struct_im_gui_context_ab71c34c2b8c073bcafd74fc929a10705}} 
+\index{ImGuiContext@{ImGuiContext}!PlatformLastFocusedViewportId@{PlatformLastFocusedViewportId}}
+\index{PlatformLastFocusedViewportId@{PlatformLastFocusedViewportId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{PlatformLastFocusedViewportId}{PlatformLastFocusedViewportId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Platform\+Last\+Focused\+Viewport\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a5d5fd7d993ebbec34ca233ee3846a548}\label{struct_im_gui_context_a5d5fd7d993ebbec34ca233ee3846a548}} 
+\index{ImGuiContext@{ImGuiContext}!PlatformLocaleDecimalPoint@{PlatformLocaleDecimalPoint}}
+\index{PlatformLocaleDecimalPoint@{PlatformLocaleDecimalPoint}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{PlatformLocaleDecimalPoint}{PlatformLocaleDecimalPoint}}
+{\footnotesize\ttfamily char Im\+Gui\+Context\+::\+Platform\+Locale\+Decimal\+Point}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2922e36c1eed77cc0ec707e9771cf07a}\label{struct_im_gui_context_a2922e36c1eed77cc0ec707e9771cf07a}} 
+\index{ImGuiContext@{ImGuiContext}!ScrollbarClickDeltaToGrabCenter@{ScrollbarClickDeltaToGrabCenter}}
+\index{ScrollbarClickDeltaToGrabCenter@{ScrollbarClickDeltaToGrabCenter}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ScrollbarClickDeltaToGrabCenter}{ScrollbarClickDeltaToGrabCenter}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Scrollbar\+Click\+Delta\+To\+Grab\+Center}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7e0dd3aef4a4f0fd85ed39e13824f2ab}\label{struct_im_gui_context_a7e0dd3aef4a4f0fd85ed39e13824f2ab}} 
+\index{ImGuiContext@{ImGuiContext}!SettingsDirtyTimer@{SettingsDirtyTimer}}
+\index{SettingsDirtyTimer@{SettingsDirtyTimer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SettingsDirtyTimer}{SettingsDirtyTimer}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Settings\+Dirty\+Timer}
+
+\mbox{\Hypertarget{struct_im_gui_context_aded9a2cb80c805407734b8bf7d0ef515}\label{struct_im_gui_context_aded9a2cb80c805407734b8bf7d0ef515}} 
+\index{ImGuiContext@{ImGuiContext}!SettingsHandlers@{SettingsHandlers}}
+\index{SettingsHandlers@{SettingsHandlers}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SettingsHandlers}{SettingsHandlers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_settings_handler}{Im\+Gui\+Settings\+Handler}}$>$ Im\+Gui\+Context\+::\+Settings\+Handlers}
+
+\mbox{\Hypertarget{struct_im_gui_context_a5b4bad72af7065aa7e57b32fedd5ea0e}\label{struct_im_gui_context_a5b4bad72af7065aa7e57b32fedd5ea0e}} 
+\index{ImGuiContext@{ImGuiContext}!SettingsIniData@{SettingsIniData}}
+\index{SettingsIniData@{SettingsIniData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SettingsIniData}{SettingsIniData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} Im\+Gui\+Context\+::\+Settings\+Ini\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_a1043af3ac30119c12c2e85923e1ec20b}\label{struct_im_gui_context_a1043af3ac30119c12c2e85923e1ec20b}} 
+\index{ImGuiContext@{ImGuiContext}!SettingsLoaded@{SettingsLoaded}}
+\index{SettingsLoaded@{SettingsLoaded}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SettingsLoaded}{SettingsLoaded}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Settings\+Loaded}
+
+\mbox{\Hypertarget{struct_im_gui_context_ad2ede9b6bf347485792dbd3c9ec4f5eb}\label{struct_im_gui_context_ad2ede9b6bf347485792dbd3c9ec4f5eb}} 
+\index{ImGuiContext@{ImGuiContext}!SettingsTables@{SettingsTables}}
+\index{SettingsTables@{SettingsTables}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SettingsTables}{SettingsTables}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$\mbox{\hyperlink{struct_im_gui_table_settings}{Im\+Gui\+Table\+Settings}}$>$ Im\+Gui\+Context\+::\+Settings\+Tables}
+
+\mbox{\Hypertarget{struct_im_gui_context_a17f0de5b1060388d02bec8ee2cb164ae}\label{struct_im_gui_context_a17f0de5b1060388d02bec8ee2cb164ae}} 
+\index{ImGuiContext@{ImGuiContext}!SettingsWindows@{SettingsWindows}}
+\index{SettingsWindows@{SettingsWindows}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SettingsWindows}{SettingsWindows}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_chunk_stream}{Im\+Chunk\+Stream}}$<$\mbox{\hyperlink{struct_im_gui_window_settings}{Im\+Gui\+Window\+Settings}}$>$ Im\+Gui\+Context\+::\+Settings\+Windows}
+
+\mbox{\Hypertarget{struct_im_gui_context_a835de1c6d4630fbe87831dcc1db80715}\label{struct_im_gui_context_a835de1c6d4630fbe87831dcc1db80715}} 
+\index{ImGuiContext@{ImGuiContext}!ShrinkWidthBuffer@{ShrinkWidthBuffer}}
+\index{ShrinkWidthBuffer@{ShrinkWidthBuffer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ShrinkWidthBuffer}{ShrinkWidthBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_shrink_width_item}{Im\+Gui\+Shrink\+Width\+Item}}$>$ Im\+Gui\+Context\+::\+Shrink\+Width\+Buffer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a44af675b4e2e615fe768cd5ce677c34e}\label{struct_im_gui_context_a44af675b4e2e615fe768cd5ce677c34e}} 
+\index{ImGuiContext@{ImGuiContext}!SliderCurrentAccum@{SliderCurrentAccum}}
+\index{SliderCurrentAccum@{SliderCurrentAccum}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SliderCurrentAccum}{SliderCurrentAccum}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Slider\+Current\+Accum}
+
+\mbox{\Hypertarget{struct_im_gui_context_a5e31703c42698a572be557ec57c5cbe7}\label{struct_im_gui_context_a5e31703c42698a572be557ec57c5cbe7}} 
+\index{ImGuiContext@{ImGuiContext}!SliderCurrentAccumDirty@{SliderCurrentAccumDirty}}
+\index{SliderCurrentAccumDirty@{SliderCurrentAccumDirty}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{SliderCurrentAccumDirty}{SliderCurrentAccumDirty}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Slider\+Current\+Accum\+Dirty}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2e682502e1a3d2c399171dd3c4fc969d}\label{struct_im_gui_context_a2e682502e1a3d2c399171dd3c4fc969d}} 
+\index{ImGuiContext@{ImGuiContext}!Style@{Style}}
+\index{Style@{Style}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Style}{Style}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_style}{Im\+Gui\+Style}} Im\+Gui\+Context\+::\+Style}
+
+\mbox{\Hypertarget{struct_im_gui_context_abc0ca120e14467083bee0400d9abbabe}\label{struct_im_gui_context_abc0ca120e14467083bee0400d9abbabe}} 
+\index{ImGuiContext@{ImGuiContext}!StyleVarStack@{StyleVarStack}}
+\index{StyleVarStack@{StyleVarStack}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{StyleVarStack}{StyleVarStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_style_mod}{Im\+Gui\+Style\+Mod}}$>$ Im\+Gui\+Context\+::\+Style\+Var\+Stack}
+
+\mbox{\Hypertarget{struct_im_gui_context_a8ed1e9dd2d6cf69e7aaded9a70c5c712}\label{struct_im_gui_context_a8ed1e9dd2d6cf69e7aaded9a70c5c712}} 
+\index{ImGuiContext@{ImGuiContext}!TabBars@{TabBars}}
+\index{TabBars@{TabBars}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TabBars}{TabBars}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_pool}{Im\+Pool}}$<$\mbox{\hyperlink{struct_im_gui_tab_bar}{Im\+Gui\+Tab\+Bar}}$>$ Im\+Gui\+Context\+::\+Tab\+Bars}
+
+\mbox{\Hypertarget{struct_im_gui_context_af98791565876933c63b1db9df4118116}\label{struct_im_gui_context_af98791565876933c63b1db9df4118116}} 
+\index{ImGuiContext@{ImGuiContext}!Tables@{Tables}}
+\index{Tables@{Tables}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Tables}{Tables}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_pool}{Im\+Pool}}$<$\mbox{\hyperlink{struct_im_gui_table}{Im\+Gui\+Table}}$>$ Im\+Gui\+Context\+::\+Tables}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa98196e3c920ef448851d1da5922305e}\label{struct_im_gui_context_aa98196e3c920ef448851d1da5922305e}} 
+\index{ImGuiContext@{ImGuiContext}!TablesLastTimeActive@{TablesLastTimeActive}}
+\index{TablesLastTimeActive@{TablesLastTimeActive}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TablesLastTimeActive}{TablesLastTimeActive}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$float$>$ Im\+Gui\+Context\+::\+Tables\+Last\+Time\+Active}
+
+\mbox{\Hypertarget{struct_im_gui_context_a63e5713a11fb1dd32218a5185b4ee920}\label{struct_im_gui_context_a63e5713a11fb1dd32218a5185b4ee920}} 
+\index{ImGuiContext@{ImGuiContext}!TablesTempData@{TablesTempData}}
+\index{TablesTempData@{TablesTempData}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TablesTempData}{TablesTempData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_table_temp_data}{Im\+Gui\+Table\+Temp\+Data}}$>$ Im\+Gui\+Context\+::\+Tables\+Temp\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_context_abc9df715f3ce4d380ac9687e11d2c9d3}\label{struct_im_gui_context_abc9df715f3ce4d380ac9687e11d2c9d3}} 
+\index{ImGuiContext@{ImGuiContext}!TablesTempDataStacked@{TablesTempDataStacked}}
+\index{TablesTempDataStacked@{TablesTempDataStacked}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TablesTempDataStacked}{TablesTempDataStacked}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Tables\+Temp\+Data\+Stacked}
+
+\mbox{\Hypertarget{struct_im_gui_context_a875033fc5c10bc1e050f8701055ae93b}\label{struct_im_gui_context_a875033fc5c10bc1e050f8701055ae93b}} 
+\index{ImGuiContext@{ImGuiContext}!TempBuffer@{TempBuffer}}
+\index{TempBuffer@{TempBuffer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TempBuffer}{TempBuffer}}
+{\footnotesize\ttfamily char Im\+Gui\+Context\+::\+Temp\+Buffer\mbox{[}1024 $\ast$3+1\mbox{]}}
+
+\mbox{\Hypertarget{struct_im_gui_context_aecd3835b2891bcdb78d14d7005daf4c0}\label{struct_im_gui_context_aecd3835b2891bcdb78d14d7005daf4c0}} 
+\index{ImGuiContext@{ImGuiContext}!TempInputId@{TempInputId}}
+\index{TempInputId@{TempInputId}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TempInputId}{TempInputId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Context\+::\+Temp\+Input\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a41245f5433674e8e818058692e68c27f}\label{struct_im_gui_context_a41245f5433674e8e818058692e68c27f}} 
+\index{ImGuiContext@{ImGuiContext}!TestEngine@{TestEngine}}
+\index{TestEngine@{TestEngine}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TestEngine}{TestEngine}}
+{\footnotesize\ttfamily void$\ast$ Im\+Gui\+Context\+::\+Test\+Engine}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae2909a189f72609068a9f1ef429f9540}\label{struct_im_gui_context_ae2909a189f72609068a9f1ef429f9540}} 
+\index{ImGuiContext@{ImGuiContext}!TestEngineHookItems@{TestEngineHookItems}}
+\index{TestEngineHookItems@{TestEngineHookItems}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TestEngineHookItems}{TestEngineHookItems}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Test\+Engine\+Hook\+Items}
+
+\mbox{\Hypertarget{struct_im_gui_context_a2b4eb26da74e5b80bdc7efa34d267570}\label{struct_im_gui_context_a2b4eb26da74e5b80bdc7efa34d267570}} 
+\index{ImGuiContext@{ImGuiContext}!Time@{Time}}
+\index{Time@{Time}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Time}{Time}}
+{\footnotesize\ttfamily double Im\+Gui\+Context\+::\+Time}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae73720b1df3224bb90d0c860dc090f01}\label{struct_im_gui_context_ae73720b1df3224bb90d0c860dc090f01}} 
+\index{ImGuiContext@{ImGuiContext}!TooltipOverrideCount@{TooltipOverrideCount}}
+\index{TooltipOverrideCount@{TooltipOverrideCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TooltipOverrideCount}{TooltipOverrideCount}}
+{\footnotesize\ttfamily short Im\+Gui\+Context\+::\+Tooltip\+Override\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_ab2753ea2a0c1df4a4a6399dc0e036217}\label{struct_im_gui_context_ab2753ea2a0c1df4a4a6399dc0e036217}} 
+\index{ImGuiContext@{ImGuiContext}!TooltipSlowDelay@{TooltipSlowDelay}}
+\index{TooltipSlowDelay@{TooltipSlowDelay}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{TooltipSlowDelay}{TooltipSlowDelay}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Tooltip\+Slow\+Delay}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac1bb91dda5688f85b36b8fd05b0b955b}\label{struct_im_gui_context_ac1bb91dda5688f85b36b8fd05b0b955b}} 
+\index{ImGuiContext@{ImGuiContext}!ViewportFrontMostStampCount@{ViewportFrontMostStampCount}}
+\index{ViewportFrontMostStampCount@{ViewportFrontMostStampCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{ViewportFrontMostStampCount}{ViewportFrontMostStampCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Viewport\+Front\+Most\+Stamp\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_aa8958dc7c05b83d00ad6439f3d539c44}\label{struct_im_gui_context_aa8958dc7c05b83d00ad6439f3d539c44}} 
+\index{ImGuiContext@{ImGuiContext}!Viewports@{Viewports}}
+\index{Viewports@{Viewports}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Viewports}{Viewports}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_viewport_p}{Im\+Gui\+ViewportP}}$\ast$$>$ Im\+Gui\+Context\+::\+Viewports}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0372056c72eac8b3e6de06c404caa5b3}\label{struct_im_gui_context_a0372056c72eac8b3e6de06c404caa5b3}} 
+\index{ImGuiContext@{ImGuiContext}!WantCaptureKeyboardNextFrame@{WantCaptureKeyboardNextFrame}}
+\index{WantCaptureKeyboardNextFrame@{WantCaptureKeyboardNextFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WantCaptureKeyboardNextFrame}{WantCaptureKeyboardNextFrame}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Want\+Capture\+Keyboard\+Next\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_a7e7a9bbeaac9519abe29818ce6c2cc3b}\label{struct_im_gui_context_a7e7a9bbeaac9519abe29818ce6c2cc3b}} 
+\index{ImGuiContext@{ImGuiContext}!WantCaptureMouseNextFrame@{WantCaptureMouseNextFrame}}
+\index{WantCaptureMouseNextFrame@{WantCaptureMouseNextFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WantCaptureMouseNextFrame}{WantCaptureMouseNextFrame}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Want\+Capture\+Mouse\+Next\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_abe551d35ea5c1aa61a4d5c785c8e0d9d}\label{struct_im_gui_context_abe551d35ea5c1aa61a4d5c785c8e0d9d}} 
+\index{ImGuiContext@{ImGuiContext}!WantTextInputNextFrame@{WantTextInputNextFrame}}
+\index{WantTextInputNextFrame@{WantTextInputNextFrame}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WantTextInputNextFrame}{WantTextInputNextFrame}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Want\+Text\+Input\+Next\+Frame}
+
+\mbox{\Hypertarget{struct_im_gui_context_a30c249bb99dd335b71b437e9240cfcb2}\label{struct_im_gui_context_a30c249bb99dd335b71b437e9240cfcb2}} 
+\index{ImGuiContext@{ImGuiContext}!WheelingWindow@{WheelingWindow}}
+\index{WheelingWindow@{WheelingWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WheelingWindow}{WheelingWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Context\+::\+Wheeling\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_context_ae9d2a8e67d3518f7170495fa2eef9f08}\label{struct_im_gui_context_ae9d2a8e67d3518f7170495fa2eef9f08}} 
+\index{ImGuiContext@{ImGuiContext}!WheelingWindowRefMousePos@{WheelingWindowRefMousePos}}
+\index{WheelingWindowRefMousePos@{WheelingWindowRefMousePos}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WheelingWindowRefMousePos}{WheelingWindowRefMousePos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Gui\+Context\+::\+Wheeling\+Window\+Ref\+Mouse\+Pos}
+
+\mbox{\Hypertarget{struct_im_gui_context_ac4edb09cdef0590e8dc265a8265417c9}\label{struct_im_gui_context_ac4edb09cdef0590e8dc265a8265417c9}} 
+\index{ImGuiContext@{ImGuiContext}!WheelingWindowTimer@{WheelingWindowTimer}}
+\index{WheelingWindowTimer@{WheelingWindowTimer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WheelingWindowTimer}{WheelingWindowTimer}}
+{\footnotesize\ttfamily float Im\+Gui\+Context\+::\+Wheeling\+Window\+Timer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a0f59a9a861d097be066c6cc106e40f3e}\label{struct_im_gui_context_a0f59a9a861d097be066c6cc106e40f3e}} 
+\index{ImGuiContext@{ImGuiContext}!Windows@{Windows}}
+\index{Windows@{Windows}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{Windows}{Windows}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$$>$ Im\+Gui\+Context\+::\+Windows}
+
+\mbox{\Hypertarget{struct_im_gui_context_a95237c5f9eb869da0f1947c54a521489}\label{struct_im_gui_context_a95237c5f9eb869da0f1947c54a521489}} 
+\index{ImGuiContext@{ImGuiContext}!WindowsActiveCount@{WindowsActiveCount}}
+\index{WindowsActiveCount@{WindowsActiveCount}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WindowsActiveCount}{WindowsActiveCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Context\+::\+Windows\+Active\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_context_adc1e46e1c1582a0f0eb74d957efedf98}\label{struct_im_gui_context_adc1e46e1c1582a0f0eb74d957efedf98}} 
+\index{ImGuiContext@{ImGuiContext}!WindowsById@{WindowsById}}
+\index{WindowsById@{WindowsById}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WindowsById}{WindowsById}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_storage}{Im\+Gui\+Storage}} Im\+Gui\+Context\+::\+Windows\+By\+Id}
+
+\mbox{\Hypertarget{struct_im_gui_context_a1fd9e62737932c069dce5f137a4a4fab}\label{struct_im_gui_context_a1fd9e62737932c069dce5f137a4a4fab}} 
+\index{ImGuiContext@{ImGuiContext}!WindowsFocusOrder@{WindowsFocusOrder}}
+\index{WindowsFocusOrder@{WindowsFocusOrder}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WindowsFocusOrder}{WindowsFocusOrder}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$$>$ Im\+Gui\+Context\+::\+Windows\+Focus\+Order}
+
+\mbox{\Hypertarget{struct_im_gui_context_a21d3704971b7f7fc8454828bf8747c2b}\label{struct_im_gui_context_a21d3704971b7f7fc8454828bf8747c2b}} 
+\index{ImGuiContext@{ImGuiContext}!WindowsHoverPadding@{WindowsHoverPadding}}
+\index{WindowsHoverPadding@{WindowsHoverPadding}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WindowsHoverPadding}{WindowsHoverPadding}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Gui\+Context\+::\+Windows\+Hover\+Padding}
+
+\mbox{\Hypertarget{struct_im_gui_context_a21665657dd462ee265755c99fe7b94e2}\label{struct_im_gui_context_a21665657dd462ee265755c99fe7b94e2}} 
+\index{ImGuiContext@{ImGuiContext}!WindowsTempSortBuffer@{WindowsTempSortBuffer}}
+\index{WindowsTempSortBuffer@{WindowsTempSortBuffer}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WindowsTempSortBuffer}{WindowsTempSortBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$$>$ Im\+Gui\+Context\+::\+Windows\+Temp\+Sort\+Buffer}
+
+\mbox{\Hypertarget{struct_im_gui_context_a87f71757a5e647648ad9417cb21091d6}\label{struct_im_gui_context_a87f71757a5e647648ad9417cb21091d6}} 
+\index{ImGuiContext@{ImGuiContext}!WithinEndChild@{WithinEndChild}}
+\index{WithinEndChild@{WithinEndChild}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WithinEndChild}{WithinEndChild}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Within\+End\+Child}
+
+\mbox{\Hypertarget{struct_im_gui_context_a76ea955f2691b0c034e78127e6788c44}\label{struct_im_gui_context_a76ea955f2691b0c034e78127e6788c44}} 
+\index{ImGuiContext@{ImGuiContext}!WithinFrameScope@{WithinFrameScope}}
+\index{WithinFrameScope@{WithinFrameScope}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WithinFrameScope}{WithinFrameScope}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Within\+Frame\+Scope}
+
+\mbox{\Hypertarget{struct_im_gui_context_aad225e155364262380ea2e6ea306381a}\label{struct_im_gui_context_aad225e155364262380ea2e6ea306381a}} 
+\index{ImGuiContext@{ImGuiContext}!WithinFrameScopeWithImplicitWindow@{WithinFrameScopeWithImplicitWindow}}
+\index{WithinFrameScopeWithImplicitWindow@{WithinFrameScopeWithImplicitWindow}!ImGuiContext@{ImGuiContext}}
+\doxysubsubsection{\texorpdfstring{WithinFrameScopeWithImplicitWindow}{WithinFrameScopeWithImplicitWindow}}
+{\footnotesize\ttfamily bool Im\+Gui\+Context\+::\+Within\+Frame\+Scope\+With\+Implicit\+Window}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+util/imgui/\mbox{\hyperlink{imgui__internal_8h}{imgui\+\_\+internal.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,873 @@
+\hypertarget{struct_im_gui_table}{}\doxysection{Im\+Gui\+Table Struct Reference}
+\label{struct_im_gui_table}\index{ImGuiTable@{ImGuiTable}}
+
+
+{\ttfamily \#include $<$imgui\+\_\+internal.\+h$>$}
+
+
+
+Collaboration diagram for Im\+Gui\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_im_gui_table__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_im_gui_table_ad9cfd8be1defebf32b2b2d7fcd5fd152}{Im\+Gui\+Table}} ()
+\item 
+\mbox{\hyperlink{struct_im_gui_table_ac9e489ed577c125c930364a4c903132c}{$\sim$\+Im\+Gui\+Table}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} \mbox{\hyperlink{struct_im_gui_table_a1f7e5dd488328d3a78de80e7ccc64036}{ID}}
+\item 
+\mbox{\hyperlink{imgui_8h_ad3032e379f8aba2cb5c31b05cd40858d}{Im\+Gui\+Table\+Flags}} \mbox{\hyperlink{struct_im_gui_table_ac232807fd66991e640579fb3b02ae051}{Flags}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_im_gui_table_a7e661eeaca53f374216bf0f45dff29e4}{Raw\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_gui_table_temp_data}{Im\+Gui\+Table\+Temp\+Data}} $\ast$ \mbox{\hyperlink{struct_im_gui_table_a89db69966920e938cdf67f23164c3a80}{Temp\+Data}}
+\item 
+\mbox{\hyperlink{struct_im_span}{Im\+Span}}$<$ \mbox{\hyperlink{struct_im_gui_table_column}{Im\+Gui\+Table\+Column}} $>$ \mbox{\hyperlink{struct_im_gui_table_a6b39e1812dd524fe2dd4a04b613588cf}{Columns}}
+\item 
+\mbox{\hyperlink{struct_im_span}{Im\+Span}}$<$ \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} $>$ \mbox{\hyperlink{struct_im_gui_table_a4fca96eb35902fcfa166694087814edd}{Display\+Order\+To\+Index}}
+\item 
+\mbox{\hyperlink{struct_im_span}{Im\+Span}}$<$ \mbox{\hyperlink{struct_im_gui_table_cell_data}{Im\+Gui\+Table\+Cell\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_table_a686734156d60378e2c792c93b554d327}{Row\+Cell\+Data}}
+\item 
+\mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} \mbox{\hyperlink{struct_im_gui_table_a48a3e6385222c39b4aff0981ccab7e9e}{Enabled\+Mask\+By\+Display\+Order}}
+\item 
+\mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} \mbox{\hyperlink{struct_im_gui_table_a4847a140fb04dbf6446432a720764728}{Enabled\+Mask\+By\+Index}}
+\item 
+\mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} \mbox{\hyperlink{struct_im_gui_table_a7c13f14fa0933b15a4430123f49acb05}{Visible\+Mask\+By\+Index}}
+\item 
+\mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} \mbox{\hyperlink{struct_im_gui_table_af7746ea46154a9055dd467922dcc3c0c}{Request\+Output\+Mask\+By\+Index}}
+\item 
+\mbox{\hyperlink{imgui_8h_ad3032e379f8aba2cb5c31b05cd40858d}{Im\+Gui\+Table\+Flags}} \mbox{\hyperlink{struct_im_gui_table_a099a9fc8ad83bf0338221463848315b2}{Settings\+Loaded\+Flags}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_table_af300d599c6b3ff9e43ee714da21aac1d}{Settings\+Offset}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_table_a6be35e3ea6e5ae9f63949f86aa2a6216}{Last\+Frame\+Active}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_table_aff0ebae8e79edf5268133b644fb01ee9}{Columns\+Count}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_table_a1e188a304ad3d2d30e7defe542bda5d6}{Current\+Row}}
+\item 
+int \mbox{\hyperlink{struct_im_gui_table_a944e033f46b7729d15b8946d06dbe682}{Current\+Column}}
+\item 
+\mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} \mbox{\hyperlink{struct_im_gui_table_a79fe77ae5bb4b1280fcfbbd2e98ad882}{Instance\+Current}}
+\item 
+\mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} \mbox{\hyperlink{struct_im_gui_table_ac0ff33b9c82c9405189c4130a165cfdc}{Instance\+Interacted}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_af9b476f4a6582468c0ed0a019548d022}{Row\+Pos\+Y1}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a48403ef1b4c11fe3c7d4df835b2f7a82}{Row\+Pos\+Y2}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_af23ea5ea747d5c2daffc7954cf4df66c}{Row\+Min\+Height}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_af517dd5ce92ebaf84982083485507634}{Row\+Text\+Baseline}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_abac804d6f3bd10e7920924eb3bf9067c}{Row\+Indent\+OffsetX}}
+\item 
+\mbox{\hyperlink{imgui_8h_acff5083d4dbfa7a898927046008598c1}{Im\+Gui\+Table\+Row\+Flags}} \mbox{\hyperlink{struct_im_gui_table_ae5b7b9728836e1928cc1b838f9aa74ef}{Row\+Flags}}\+: 16
+\item 
+\mbox{\hyperlink{imgui_8h_acff5083d4dbfa7a898927046008598c1}{Im\+Gui\+Table\+Row\+Flags}} \mbox{\hyperlink{struct_im_gui_table_adccfcf7b8e9670d762f9df1df0c5d6b6}{Last\+Row\+Flags}}\+: 16
+\item 
+int \mbox{\hyperlink{struct_im_gui_table_a6e6aa2309557862d7da9d6970c0f2f0b}{Row\+Bg\+Color\+Counter}}
+\item 
+\mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} \mbox{\hyperlink{struct_im_gui_table_a252e602ec807bf532edd501110bdc7b1}{Row\+Bg\+Color}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} \mbox{\hyperlink{struct_im_gui_table_a936d4880c94acaaf59a1bdaafd4fb9cf}{Border\+Color\+Strong}}
+\item 
+\mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} \mbox{\hyperlink{struct_im_gui_table_ac79c118ebe0c19a00fd0e6a83c7fcfd5}{Border\+Color\+Light}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a5e3562f22a0b19142111c8c5c297dc69}{Border\+X1}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a01d72b316dbb8d9af031f0f139ce65f3}{Border\+X2}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_ad568622dbcfc53bef54e644a74a6abdc}{Host\+IndentX}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a4eb7492114618b5c15abdeec7d71ad2f}{Min\+Column\+Width}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a05c1d38368970a409eaaf83fb06292cc}{Outer\+PaddingX}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a66d3dd51b20c89305d736fdcd0e7a701}{Cell\+PaddingX}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_ab48f51c68023105a76a062636424700c}{Cell\+PaddingY}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a3e07bf133695e0131dcf608aa9ec1143}{Cell\+Spacing\+X1}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a5f6b9f6696fa8a32296ee6d859356fcc}{Cell\+Spacing\+X2}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_acc6781cae73928ba8dca19cae61dccb1}{Inner\+Width}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_aefc860a8a1fdc36347d1d4224aae810f}{Columns\+Given\+Width}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a7c42c7caf5a05ac02305aa356f29a9a4}{Columns\+Auto\+Fit\+Width}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_ab1f45cc1c2eca4d78a2c8eaf202a651a}{Resized\+Column\+Next\+Width}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a92324407723470ac6b102e2201b09ce2}{Resize\+Lock\+Min\+Contents\+X2}}
+\item 
+float \mbox{\hyperlink{struct_im_gui_table_a21f1ccb2537abbf1fd8ba5f5ddcae612}{Ref\+Scale}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a6f98734a1abb8f866ffd9fc69d35b2a3}{Outer\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a6d2deeb579e5caff1a9fce372003a68c}{Inner\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a4e0fd51349a7bedc8321f3977ff9e48c}{Work\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a695a8cfb51a47bf557de0a2fd10744d2}{Inner\+Clip\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a07e838bd92bd6531121bfde156b23e7d}{Bg\+Clip\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a15d1df65b26a440ffbb941f30b11b948}{Bg0\+Clip\+Rect\+For\+Draw\+Cmd}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a166018c1f957586c14bc0ee081cc3125}{Bg2\+Clip\+Rect\+For\+Draw\+Cmd}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a478781580df4716cfe31e8d639c6f2c5}{Host\+Clip\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_rect}{Im\+Rect}} \mbox{\hyperlink{struct_im_gui_table_a3a35f7340d466bac8239fd8f3c626ac2}{Host\+Backup\+Inner\+Clip\+Rect}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_table_ab5a28e3ba666fece11feb5cdee2e1104}{Outer\+Window}}
+\item 
+\mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}} $\ast$ \mbox{\hyperlink{struct_im_gui_table_ad4cac002e07c96d3df71e37e3e81485e}{Inner\+Window}}
+\item 
+\mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} \mbox{\hyperlink{struct_im_gui_table_afb12197bd1ad6ae7317b6b0843eb3a60}{Columns\+Names}}
+\item 
+\mbox{\hyperlink{struct_im_draw_list_splitter}{Im\+Draw\+List\+Splitter}} $\ast$ \mbox{\hyperlink{struct_im_gui_table_afeda8864273e89f4094a763398652d2a}{Draw\+Splitter}}
+\item 
+\mbox{\hyperlink{struct_im_gui_table_instance_data}{Im\+Gui\+Table\+Instance\+Data}} \mbox{\hyperlink{struct_im_gui_table_a0511f834ebfb52d3ace661fc1f6e82a6}{Instance\+Data\+First}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_table_instance_data}{Im\+Gui\+Table\+Instance\+Data}} $>$ \mbox{\hyperlink{struct_im_gui_table_ae68a68cd4308506c90b3eebf535f388a}{Instance\+Data\+Extra}}
+\item 
+\mbox{\hyperlink{struct_im_gui_table_column_sort_specs}{Im\+Gui\+Table\+Column\+Sort\+Specs}} \mbox{\hyperlink{struct_im_gui_table_ad111a9b0073e5061f2a847e9ad99519f}{Sort\+Specs\+Single}}
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_gui_table_column_sort_specs}{Im\+Gui\+Table\+Column\+Sort\+Specs}} $>$ \mbox{\hyperlink{struct_im_gui_table_aba33a5c466948cb483b0b50c840dd422}{Sort\+Specs\+Multi}}
+\item 
+\mbox{\hyperlink{struct_im_gui_table_sort_specs}{Im\+Gui\+Table\+Sort\+Specs}} \mbox{\hyperlink{struct_im_gui_table_a8770e95686f57cfc9b61a037e95cc5b1}{Sort\+Specs}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a72d50758681cecf127e6c9a44883ccfd}{Sort\+Specs\+Count}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a51e7f9180f9739e52406c2192aa627f9}{Columns\+Enabled\+Count}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_aedc6edf409c9668781496fe16d19958b}{Columns\+Enabled\+Fixed\+Count}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a8f405d885f74a82872edd0dab5790789}{Decl\+Columns\+Count}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a3a94c100bab9cb7a01a02360aaf3b323}{Hovered\+Column\+Body}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a1c47654491f288507621e4b2231b4f89}{Hovered\+Column\+Border}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a393160a00b60d647071b9f2925e5161e}{Auto\+Fit\+Single\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_af1ef3df199510dd5210d6501ce6c3996}{Resized\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_ad5ceb30e1aef45ce269fc661c5e89281}{Last\+Resized\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_af90fbb7f2d6eba59a140c7dc9e163615}{Held\+Header\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_afe40dc28725db705210bd3a920aea591}{Reorder\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a39d9e079bb8f4073e5b02806d890b59b}{Reorder\+Column\+Dir}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_aaf5f34705f41f958a897d211168f083f}{Left\+Most\+Enabled\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a8f297cc1ad1839a3039adf00e9f29047}{Right\+Most\+Enabled\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a0e6b930bc9743fa9fe1067adf1d66830}{Left\+Most\+Stretched\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a40e26ce4a610b6688c956ffa374ad0dc}{Right\+Most\+Stretched\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_aeda01405560dc7f5ba2a26081bf5499d}{Context\+Popup\+Column}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_aa90d00342e8c46396854b44101c7355d}{Freeze\+Rows\+Request}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_ad982334f307fbe429c1de62ef9da8caf}{Freeze\+Rows\+Count}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a75f70ed643a861d05a22c566664e0eaf}{Freeze\+Columns\+Request}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_add0b2bf413de36eab591d5e376d2f0b4}{Freeze\+Columns\+Count}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a3b2630067aff7df6e9111de94fcc5e3b}{Row\+Cell\+Data\+Current}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_aad84cfe70f5c1afb2c057b0284cbed03}{Im\+Gui\+Table\+Draw\+Channel\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a1daad01c8bb3bc4194401c658b61a667}{Dummy\+Draw\+Channel}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_aad84cfe70f5c1afb2c057b0284cbed03}{Im\+Gui\+Table\+Draw\+Channel\+Idx}} \mbox{\hyperlink{struct_im_gui_table_a2963b4f92f924de8c1ef1fcb43a9e597}{Bg2\+Draw\+Channel\+Current}}
+\item 
+\mbox{\hyperlink{imgui__internal_8h_aad84cfe70f5c1afb2c057b0284cbed03}{Im\+Gui\+Table\+Draw\+Channel\+Idx}} \mbox{\hyperlink{struct_im_gui_table_aefc8289f98d409d303517159c521a4b0}{Bg2\+Draw\+Channel\+Unfrozen}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a1596be40e96bb5faa7aad3fd50291e33}{Is\+Layout\+Locked}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a32f59376aae5cbe008c49605be3cd007}{Is\+Inside\+Row}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a28cdc6e10e4295c6548660b2c31ad593}{Is\+Initializing}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a066141fe3c9b74ec5492d4acd4f1a21a}{Is\+Sort\+Specs\+Dirty}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_aa24819d7de86a33a491b909cfb00251c}{Is\+Using\+Headers}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a5345136b8044075f539c4fbe7cc4b53b}{Is\+Context\+Popup\+Open}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_ab1f0c3a1a1c500cb5b3a3e1cd2761519}{Is\+Settings\+Request\+Load}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a4c0a3b840b7a5c111551e1e8a6ad6c3a}{Is\+Settings\+Dirty}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_aa7f7e814cd813fd5de652ae315c8c135}{Is\+Default\+Display\+Order}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a2d066ad49460272713bd6c9beba4a1cc}{Is\+Reset\+All\+Request}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_ab1e0c549a7c1de0ffbd14c18ae7bb402}{Is\+Reset\+Display\+Order\+Request}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a011cb090506f53f6fed0a395b1ac1c22}{Is\+Unfrozen\+Rows}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a84bfdcc0efeb85cf6f103ddf166e4c65}{Is\+Default\+Sizing\+Policy}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_aa6825c0891fe234c20d5f92e33725d0d}{Memory\+Compacted}}
+\item 
+bool \mbox{\hyperlink{struct_im_gui_table_a202de697d7aabc75e0d06d4b700cacdd}{Host\+Skip\+Items}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_im_gui_table_ad9cfd8be1defebf32b2b2d7fcd5fd152}\label{struct_im_gui_table_ad9cfd8be1defebf32b2b2d7fcd5fd152}} 
+\index{ImGuiTable@{ImGuiTable}!ImGuiTable@{ImGuiTable}}
+\index{ImGuiTable@{ImGuiTable}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ImGuiTable()}{ImGuiTable()}}
+{\footnotesize\ttfamily Im\+Gui\+Table\+::\+Im\+Gui\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_gui_table_ac9e489ed577c125c930364a4c903132c}\label{struct_im_gui_table_ac9e489ed577c125c930364a4c903132c}} 
+\index{ImGuiTable@{ImGuiTable}!````~ImGuiTable@{$\sim$ImGuiTable}}
+\index{````~ImGuiTable@{$\sim$ImGuiTable}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{$\sim$ImGuiTable()}{~ImGuiTable()}}
+{\footnotesize\ttfamily Im\+Gui\+Table\+::$\sim$\+Im\+Gui\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_im_gui_table_a393160a00b60d647071b9f2925e5161e}\label{struct_im_gui_table_a393160a00b60d647071b9f2925e5161e}} 
+\index{ImGuiTable@{ImGuiTable}!AutoFitSingleColumn@{AutoFitSingleColumn}}
+\index{AutoFitSingleColumn@{AutoFitSingleColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{AutoFitSingleColumn}{AutoFitSingleColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Auto\+Fit\+Single\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a15d1df65b26a440ffbb941f30b11b948}\label{struct_im_gui_table_a15d1df65b26a440ffbb941f30b11b948}} 
+\index{ImGuiTable@{ImGuiTable}!Bg0ClipRectForDrawCmd@{Bg0ClipRectForDrawCmd}}
+\index{Bg0ClipRectForDrawCmd@{Bg0ClipRectForDrawCmd}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{Bg0ClipRectForDrawCmd}{Bg0ClipRectForDrawCmd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Bg0\+Clip\+Rect\+For\+Draw\+Cmd}
+
+\mbox{\Hypertarget{struct_im_gui_table_a166018c1f957586c14bc0ee081cc3125}\label{struct_im_gui_table_a166018c1f957586c14bc0ee081cc3125}} 
+\index{ImGuiTable@{ImGuiTable}!Bg2ClipRectForDrawCmd@{Bg2ClipRectForDrawCmd}}
+\index{Bg2ClipRectForDrawCmd@{Bg2ClipRectForDrawCmd}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{Bg2ClipRectForDrawCmd}{Bg2ClipRectForDrawCmd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Bg2\+Clip\+Rect\+For\+Draw\+Cmd}
+
+\mbox{\Hypertarget{struct_im_gui_table_a2963b4f92f924de8c1ef1fcb43a9e597}\label{struct_im_gui_table_a2963b4f92f924de8c1ef1fcb43a9e597}} 
+\index{ImGuiTable@{ImGuiTable}!Bg2DrawChannelCurrent@{Bg2DrawChannelCurrent}}
+\index{Bg2DrawChannelCurrent@{Bg2DrawChannelCurrent}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{Bg2DrawChannelCurrent}{Bg2DrawChannelCurrent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_aad84cfe70f5c1afb2c057b0284cbed03}{Im\+Gui\+Table\+Draw\+Channel\+Idx}} Im\+Gui\+Table\+::\+Bg2\+Draw\+Channel\+Current}
+
+\mbox{\Hypertarget{struct_im_gui_table_aefc8289f98d409d303517159c521a4b0}\label{struct_im_gui_table_aefc8289f98d409d303517159c521a4b0}} 
+\index{ImGuiTable@{ImGuiTable}!Bg2DrawChannelUnfrozen@{Bg2DrawChannelUnfrozen}}
+\index{Bg2DrawChannelUnfrozen@{Bg2DrawChannelUnfrozen}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{Bg2DrawChannelUnfrozen}{Bg2DrawChannelUnfrozen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_aad84cfe70f5c1afb2c057b0284cbed03}{Im\+Gui\+Table\+Draw\+Channel\+Idx}} Im\+Gui\+Table\+::\+Bg2\+Draw\+Channel\+Unfrozen}
+
+\mbox{\Hypertarget{struct_im_gui_table_a07e838bd92bd6531121bfde156b23e7d}\label{struct_im_gui_table_a07e838bd92bd6531121bfde156b23e7d}} 
+\index{ImGuiTable@{ImGuiTable}!BgClipRect@{BgClipRect}}
+\index{BgClipRect@{BgClipRect}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{BgClipRect}{BgClipRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Bg\+Clip\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_table_ac79c118ebe0c19a00fd0e6a83c7fcfd5}\label{struct_im_gui_table_ac79c118ebe0c19a00fd0e6a83c7fcfd5}} 
+\index{ImGuiTable@{ImGuiTable}!BorderColorLight@{BorderColorLight}}
+\index{BorderColorLight@{BorderColorLight}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{BorderColorLight}{BorderColorLight}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} Im\+Gui\+Table\+::\+Border\+Color\+Light}
+
+\mbox{\Hypertarget{struct_im_gui_table_a936d4880c94acaaf59a1bdaafd4fb9cf}\label{struct_im_gui_table_a936d4880c94acaaf59a1bdaafd4fb9cf}} 
+\index{ImGuiTable@{ImGuiTable}!BorderColorStrong@{BorderColorStrong}}
+\index{BorderColorStrong@{BorderColorStrong}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{BorderColorStrong}{BorderColorStrong}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} Im\+Gui\+Table\+::\+Border\+Color\+Strong}
+
+\mbox{\Hypertarget{struct_im_gui_table_a5e3562f22a0b19142111c8c5c297dc69}\label{struct_im_gui_table_a5e3562f22a0b19142111c8c5c297dc69}} 
+\index{ImGuiTable@{ImGuiTable}!BorderX1@{BorderX1}}
+\index{BorderX1@{BorderX1}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{BorderX1}{BorderX1}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Border\+X1}
+
+\mbox{\Hypertarget{struct_im_gui_table_a01d72b316dbb8d9af031f0f139ce65f3}\label{struct_im_gui_table_a01d72b316dbb8d9af031f0f139ce65f3}} 
+\index{ImGuiTable@{ImGuiTable}!BorderX2@{BorderX2}}
+\index{BorderX2@{BorderX2}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{BorderX2}{BorderX2}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Border\+X2}
+
+\mbox{\Hypertarget{struct_im_gui_table_a66d3dd51b20c89305d736fdcd0e7a701}\label{struct_im_gui_table_a66d3dd51b20c89305d736fdcd0e7a701}} 
+\index{ImGuiTable@{ImGuiTable}!CellPaddingX@{CellPaddingX}}
+\index{CellPaddingX@{CellPaddingX}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{CellPaddingX}{CellPaddingX}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Cell\+PaddingX}
+
+\mbox{\Hypertarget{struct_im_gui_table_ab48f51c68023105a76a062636424700c}\label{struct_im_gui_table_ab48f51c68023105a76a062636424700c}} 
+\index{ImGuiTable@{ImGuiTable}!CellPaddingY@{CellPaddingY}}
+\index{CellPaddingY@{CellPaddingY}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{CellPaddingY}{CellPaddingY}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Cell\+PaddingY}
+
+\mbox{\Hypertarget{struct_im_gui_table_a3e07bf133695e0131dcf608aa9ec1143}\label{struct_im_gui_table_a3e07bf133695e0131dcf608aa9ec1143}} 
+\index{ImGuiTable@{ImGuiTable}!CellSpacingX1@{CellSpacingX1}}
+\index{CellSpacingX1@{CellSpacingX1}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{CellSpacingX1}{CellSpacingX1}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Cell\+Spacing\+X1}
+
+\mbox{\Hypertarget{struct_im_gui_table_a5f6b9f6696fa8a32296ee6d859356fcc}\label{struct_im_gui_table_a5f6b9f6696fa8a32296ee6d859356fcc}} 
+\index{ImGuiTable@{ImGuiTable}!CellSpacingX2@{CellSpacingX2}}
+\index{CellSpacingX2@{CellSpacingX2}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{CellSpacingX2}{CellSpacingX2}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Cell\+Spacing\+X2}
+
+\mbox{\Hypertarget{struct_im_gui_table_a6b39e1812dd524fe2dd4a04b613588cf}\label{struct_im_gui_table_a6b39e1812dd524fe2dd4a04b613588cf}} 
+\index{ImGuiTable@{ImGuiTable}!Columns@{Columns}}
+\index{Columns@{Columns}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{Columns}{Columns}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_span}{Im\+Span}}$<$\mbox{\hyperlink{struct_im_gui_table_column}{Im\+Gui\+Table\+Column}}$>$ Im\+Gui\+Table\+::\+Columns}
+
+\mbox{\Hypertarget{struct_im_gui_table_a7c42c7caf5a05ac02305aa356f29a9a4}\label{struct_im_gui_table_a7c42c7caf5a05ac02305aa356f29a9a4}} 
+\index{ImGuiTable@{ImGuiTable}!ColumnsAutoFitWidth@{ColumnsAutoFitWidth}}
+\index{ColumnsAutoFitWidth@{ColumnsAutoFitWidth}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ColumnsAutoFitWidth}{ColumnsAutoFitWidth}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Columns\+Auto\+Fit\+Width}
+
+\mbox{\Hypertarget{struct_im_gui_table_aff0ebae8e79edf5268133b644fb01ee9}\label{struct_im_gui_table_aff0ebae8e79edf5268133b644fb01ee9}} 
+\index{ImGuiTable@{ImGuiTable}!ColumnsCount@{ColumnsCount}}
+\index{ColumnsCount@{ColumnsCount}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ColumnsCount}{ColumnsCount}}
+{\footnotesize\ttfamily int Im\+Gui\+Table\+::\+Columns\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_table_a51e7f9180f9739e52406c2192aa627f9}\label{struct_im_gui_table_a51e7f9180f9739e52406c2192aa627f9}} 
+\index{ImGuiTable@{ImGuiTable}!ColumnsEnabledCount@{ColumnsEnabledCount}}
+\index{ColumnsEnabledCount@{ColumnsEnabledCount}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ColumnsEnabledCount}{ColumnsEnabledCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Columns\+Enabled\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_table_aedc6edf409c9668781496fe16d19958b}\label{struct_im_gui_table_aedc6edf409c9668781496fe16d19958b}} 
+\index{ImGuiTable@{ImGuiTable}!ColumnsEnabledFixedCount@{ColumnsEnabledFixedCount}}
+\index{ColumnsEnabledFixedCount@{ColumnsEnabledFixedCount}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ColumnsEnabledFixedCount}{ColumnsEnabledFixedCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Columns\+Enabled\+Fixed\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_table_aefc860a8a1fdc36347d1d4224aae810f}\label{struct_im_gui_table_aefc860a8a1fdc36347d1d4224aae810f}} 
+\index{ImGuiTable@{ImGuiTable}!ColumnsGivenWidth@{ColumnsGivenWidth}}
+\index{ColumnsGivenWidth@{ColumnsGivenWidth}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ColumnsGivenWidth}{ColumnsGivenWidth}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Columns\+Given\+Width}
+
+\mbox{\Hypertarget{struct_im_gui_table_afb12197bd1ad6ae7317b6b0843eb3a60}\label{struct_im_gui_table_afb12197bd1ad6ae7317b6b0843eb3a60}} 
+\index{ImGuiTable@{ImGuiTable}!ColumnsNames@{ColumnsNames}}
+\index{ColumnsNames@{ColumnsNames}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ColumnsNames}{ColumnsNames}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_text_buffer}{Im\+Gui\+Text\+Buffer}} Im\+Gui\+Table\+::\+Columns\+Names}
+
+\mbox{\Hypertarget{struct_im_gui_table_aeda01405560dc7f5ba2a26081bf5499d}\label{struct_im_gui_table_aeda01405560dc7f5ba2a26081bf5499d}} 
+\index{ImGuiTable@{ImGuiTable}!ContextPopupColumn@{ContextPopupColumn}}
+\index{ContextPopupColumn@{ContextPopupColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ContextPopupColumn}{ContextPopupColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Context\+Popup\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a944e033f46b7729d15b8946d06dbe682}\label{struct_im_gui_table_a944e033f46b7729d15b8946d06dbe682}} 
+\index{ImGuiTable@{ImGuiTable}!CurrentColumn@{CurrentColumn}}
+\index{CurrentColumn@{CurrentColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{CurrentColumn}{CurrentColumn}}
+{\footnotesize\ttfamily int Im\+Gui\+Table\+::\+Current\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a1e188a304ad3d2d30e7defe542bda5d6}\label{struct_im_gui_table_a1e188a304ad3d2d30e7defe542bda5d6}} 
+\index{ImGuiTable@{ImGuiTable}!CurrentRow@{CurrentRow}}
+\index{CurrentRow@{CurrentRow}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{CurrentRow}{CurrentRow}}
+{\footnotesize\ttfamily int Im\+Gui\+Table\+::\+Current\+Row}
+
+\mbox{\Hypertarget{struct_im_gui_table_a8f405d885f74a82872edd0dab5790789}\label{struct_im_gui_table_a8f405d885f74a82872edd0dab5790789}} 
+\index{ImGuiTable@{ImGuiTable}!DeclColumnsCount@{DeclColumnsCount}}
+\index{DeclColumnsCount@{DeclColumnsCount}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{DeclColumnsCount}{DeclColumnsCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Decl\+Columns\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_table_a4fca96eb35902fcfa166694087814edd}\label{struct_im_gui_table_a4fca96eb35902fcfa166694087814edd}} 
+\index{ImGuiTable@{ImGuiTable}!DisplayOrderToIndex@{DisplayOrderToIndex}}
+\index{DisplayOrderToIndex@{DisplayOrderToIndex}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{DisplayOrderToIndex}{DisplayOrderToIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_span}{Im\+Span}}$<$\mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}}$>$ Im\+Gui\+Table\+::\+Display\+Order\+To\+Index}
+
+\mbox{\Hypertarget{struct_im_gui_table_afeda8864273e89f4094a763398652d2a}\label{struct_im_gui_table_afeda8864273e89f4094a763398652d2a}} 
+\index{ImGuiTable@{ImGuiTable}!DrawSplitter@{DrawSplitter}}
+\index{DrawSplitter@{DrawSplitter}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{DrawSplitter}{DrawSplitter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_draw_list_splitter}{Im\+Draw\+List\+Splitter}}$\ast$ Im\+Gui\+Table\+::\+Draw\+Splitter}
+
+\mbox{\Hypertarget{struct_im_gui_table_a1daad01c8bb3bc4194401c658b61a667}\label{struct_im_gui_table_a1daad01c8bb3bc4194401c658b61a667}} 
+\index{ImGuiTable@{ImGuiTable}!DummyDrawChannel@{DummyDrawChannel}}
+\index{DummyDrawChannel@{DummyDrawChannel}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{DummyDrawChannel}{DummyDrawChannel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_aad84cfe70f5c1afb2c057b0284cbed03}{Im\+Gui\+Table\+Draw\+Channel\+Idx}} Im\+Gui\+Table\+::\+Dummy\+Draw\+Channel}
+
+\mbox{\Hypertarget{struct_im_gui_table_a48a3e6385222c39b4aff0981ccab7e9e}\label{struct_im_gui_table_a48a3e6385222c39b4aff0981ccab7e9e}} 
+\index{ImGuiTable@{ImGuiTable}!EnabledMaskByDisplayOrder@{EnabledMaskByDisplayOrder}}
+\index{EnabledMaskByDisplayOrder@{EnabledMaskByDisplayOrder}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{EnabledMaskByDisplayOrder}{EnabledMaskByDisplayOrder}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} Im\+Gui\+Table\+::\+Enabled\+Mask\+By\+Display\+Order}
+
+\mbox{\Hypertarget{struct_im_gui_table_a4847a140fb04dbf6446432a720764728}\label{struct_im_gui_table_a4847a140fb04dbf6446432a720764728}} 
+\index{ImGuiTable@{ImGuiTable}!EnabledMaskByIndex@{EnabledMaskByIndex}}
+\index{EnabledMaskByIndex@{EnabledMaskByIndex}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{EnabledMaskByIndex}{EnabledMaskByIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} Im\+Gui\+Table\+::\+Enabled\+Mask\+By\+Index}
+
+\mbox{\Hypertarget{struct_im_gui_table_ac232807fd66991e640579fb3b02ae051}\label{struct_im_gui_table_ac232807fd66991e640579fb3b02ae051}} 
+\index{ImGuiTable@{ImGuiTable}!Flags@{Flags}}
+\index{Flags@{Flags}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{Flags}{Flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_ad3032e379f8aba2cb5c31b05cd40858d}{Im\+Gui\+Table\+Flags}} Im\+Gui\+Table\+::\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_table_add0b2bf413de36eab591d5e376d2f0b4}\label{struct_im_gui_table_add0b2bf413de36eab591d5e376d2f0b4}} 
+\index{ImGuiTable@{ImGuiTable}!FreezeColumnsCount@{FreezeColumnsCount}}
+\index{FreezeColumnsCount@{FreezeColumnsCount}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{FreezeColumnsCount}{FreezeColumnsCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Freeze\+Columns\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_table_a75f70ed643a861d05a22c566664e0eaf}\label{struct_im_gui_table_a75f70ed643a861d05a22c566664e0eaf}} 
+\index{ImGuiTable@{ImGuiTable}!FreezeColumnsRequest@{FreezeColumnsRequest}}
+\index{FreezeColumnsRequest@{FreezeColumnsRequest}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{FreezeColumnsRequest}{FreezeColumnsRequest}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Freeze\+Columns\+Request}
+
+\mbox{\Hypertarget{struct_im_gui_table_ad982334f307fbe429c1de62ef9da8caf}\label{struct_im_gui_table_ad982334f307fbe429c1de62ef9da8caf}} 
+\index{ImGuiTable@{ImGuiTable}!FreezeRowsCount@{FreezeRowsCount}}
+\index{FreezeRowsCount@{FreezeRowsCount}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{FreezeRowsCount}{FreezeRowsCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Freeze\+Rows\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_table_aa90d00342e8c46396854b44101c7355d}\label{struct_im_gui_table_aa90d00342e8c46396854b44101c7355d}} 
+\index{ImGuiTable@{ImGuiTable}!FreezeRowsRequest@{FreezeRowsRequest}}
+\index{FreezeRowsRequest@{FreezeRowsRequest}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{FreezeRowsRequest}{FreezeRowsRequest}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Freeze\+Rows\+Request}
+
+\mbox{\Hypertarget{struct_im_gui_table_af90fbb7f2d6eba59a140c7dc9e163615}\label{struct_im_gui_table_af90fbb7f2d6eba59a140c7dc9e163615}} 
+\index{ImGuiTable@{ImGuiTable}!HeldHeaderColumn@{HeldHeaderColumn}}
+\index{HeldHeaderColumn@{HeldHeaderColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{HeldHeaderColumn}{HeldHeaderColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Held\+Header\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a3a35f7340d466bac8239fd8f3c626ac2}\label{struct_im_gui_table_a3a35f7340d466bac8239fd8f3c626ac2}} 
+\index{ImGuiTable@{ImGuiTable}!HostBackupInnerClipRect@{HostBackupInnerClipRect}}
+\index{HostBackupInnerClipRect@{HostBackupInnerClipRect}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{HostBackupInnerClipRect}{HostBackupInnerClipRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Host\+Backup\+Inner\+Clip\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_table_a478781580df4716cfe31e8d639c6f2c5}\label{struct_im_gui_table_a478781580df4716cfe31e8d639c6f2c5}} 
+\index{ImGuiTable@{ImGuiTable}!HostClipRect@{HostClipRect}}
+\index{HostClipRect@{HostClipRect}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{HostClipRect}{HostClipRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Host\+Clip\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_table_ad568622dbcfc53bef54e644a74a6abdc}\label{struct_im_gui_table_ad568622dbcfc53bef54e644a74a6abdc}} 
+\index{ImGuiTable@{ImGuiTable}!HostIndentX@{HostIndentX}}
+\index{HostIndentX@{HostIndentX}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{HostIndentX}{HostIndentX}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Host\+IndentX}
+
+\mbox{\Hypertarget{struct_im_gui_table_a202de697d7aabc75e0d06d4b700cacdd}\label{struct_im_gui_table_a202de697d7aabc75e0d06d4b700cacdd}} 
+\index{ImGuiTable@{ImGuiTable}!HostSkipItems@{HostSkipItems}}
+\index{HostSkipItems@{HostSkipItems}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{HostSkipItems}{HostSkipItems}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Host\+Skip\+Items}
+
+\mbox{\Hypertarget{struct_im_gui_table_a3a94c100bab9cb7a01a02360aaf3b323}\label{struct_im_gui_table_a3a94c100bab9cb7a01a02360aaf3b323}} 
+\index{ImGuiTable@{ImGuiTable}!HoveredColumnBody@{HoveredColumnBody}}
+\index{HoveredColumnBody@{HoveredColumnBody}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{HoveredColumnBody}{HoveredColumnBody}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Hovered\+Column\+Body}
+
+\mbox{\Hypertarget{struct_im_gui_table_a1c47654491f288507621e4b2231b4f89}\label{struct_im_gui_table_a1c47654491f288507621e4b2231b4f89}} 
+\index{ImGuiTable@{ImGuiTable}!HoveredColumnBorder@{HoveredColumnBorder}}
+\index{HoveredColumnBorder@{HoveredColumnBorder}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{HoveredColumnBorder}{HoveredColumnBorder}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Hovered\+Column\+Border}
+
+\mbox{\Hypertarget{struct_im_gui_table_a1f7e5dd488328d3a78de80e7ccc64036}\label{struct_im_gui_table_a1f7e5dd488328d3a78de80e7ccc64036}} 
+\index{ImGuiTable@{ImGuiTable}!ID@{ID}}
+\index{ID@{ID}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a1785c9b6f4e16406764a85f32582236f}{Im\+Gui\+ID}} Im\+Gui\+Table\+::\+ID}
+
+\mbox{\Hypertarget{struct_im_gui_table_a695a8cfb51a47bf557de0a2fd10744d2}\label{struct_im_gui_table_a695a8cfb51a47bf557de0a2fd10744d2}} 
+\index{ImGuiTable@{ImGuiTable}!InnerClipRect@{InnerClipRect}}
+\index{InnerClipRect@{InnerClipRect}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InnerClipRect}{InnerClipRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Inner\+Clip\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_table_a6d2deeb579e5caff1a9fce372003a68c}\label{struct_im_gui_table_a6d2deeb579e5caff1a9fce372003a68c}} 
+\index{ImGuiTable@{ImGuiTable}!InnerRect@{InnerRect}}
+\index{InnerRect@{InnerRect}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InnerRect}{InnerRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Inner\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_table_acc6781cae73928ba8dca19cae61dccb1}\label{struct_im_gui_table_acc6781cae73928ba8dca19cae61dccb1}} 
+\index{ImGuiTable@{ImGuiTable}!InnerWidth@{InnerWidth}}
+\index{InnerWidth@{InnerWidth}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InnerWidth}{InnerWidth}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Inner\+Width}
+
+\mbox{\Hypertarget{struct_im_gui_table_ad4cac002e07c96d3df71e37e3e81485e}\label{struct_im_gui_table_ad4cac002e07c96d3df71e37e3e81485e}} 
+\index{ImGuiTable@{ImGuiTable}!InnerWindow@{InnerWindow}}
+\index{InnerWindow@{InnerWindow}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InnerWindow}{InnerWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Table\+::\+Inner\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_table_a79fe77ae5bb4b1280fcfbbd2e98ad882}\label{struct_im_gui_table_a79fe77ae5bb4b1280fcfbbd2e98ad882}} 
+\index{ImGuiTable@{ImGuiTable}!InstanceCurrent@{InstanceCurrent}}
+\index{InstanceCurrent@{InstanceCurrent}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InstanceCurrent}{InstanceCurrent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} Im\+Gui\+Table\+::\+Instance\+Current}
+
+\mbox{\Hypertarget{struct_im_gui_table_ae68a68cd4308506c90b3eebf535f388a}\label{struct_im_gui_table_ae68a68cd4308506c90b3eebf535f388a}} 
+\index{ImGuiTable@{ImGuiTable}!InstanceDataExtra@{InstanceDataExtra}}
+\index{InstanceDataExtra@{InstanceDataExtra}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InstanceDataExtra}{InstanceDataExtra}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_table_instance_data}{Im\+Gui\+Table\+Instance\+Data}}$>$ Im\+Gui\+Table\+::\+Instance\+Data\+Extra}
+
+\mbox{\Hypertarget{struct_im_gui_table_a0511f834ebfb52d3ace661fc1f6e82a6}\label{struct_im_gui_table_a0511f834ebfb52d3ace661fc1f6e82a6}} 
+\index{ImGuiTable@{ImGuiTable}!InstanceDataFirst@{InstanceDataFirst}}
+\index{InstanceDataFirst@{InstanceDataFirst}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InstanceDataFirst}{InstanceDataFirst}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_table_instance_data}{Im\+Gui\+Table\+Instance\+Data}} Im\+Gui\+Table\+::\+Instance\+Data\+First}
+
+\mbox{\Hypertarget{struct_im_gui_table_ac0ff33b9c82c9405189c4130a165cfdc}\label{struct_im_gui_table_ac0ff33b9c82c9405189c4130a165cfdc}} 
+\index{ImGuiTable@{ImGuiTable}!InstanceInteracted@{InstanceInteracted}}
+\index{InstanceInteracted@{InstanceInteracted}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{InstanceInteracted}{InstanceInteracted}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_aaeddc1534022a5078cb5ff793d404991}{Im\+S16}} Im\+Gui\+Table\+::\+Instance\+Interacted}
+
+\mbox{\Hypertarget{struct_im_gui_table_a5345136b8044075f539c4fbe7cc4b53b}\label{struct_im_gui_table_a5345136b8044075f539c4fbe7cc4b53b}} 
+\index{ImGuiTable@{ImGuiTable}!IsContextPopupOpen@{IsContextPopupOpen}}
+\index{IsContextPopupOpen@{IsContextPopupOpen}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsContextPopupOpen}{IsContextPopupOpen}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Context\+Popup\+Open}
+
+\mbox{\Hypertarget{struct_im_gui_table_aa7f7e814cd813fd5de652ae315c8c135}\label{struct_im_gui_table_aa7f7e814cd813fd5de652ae315c8c135}} 
+\index{ImGuiTable@{ImGuiTable}!IsDefaultDisplayOrder@{IsDefaultDisplayOrder}}
+\index{IsDefaultDisplayOrder@{IsDefaultDisplayOrder}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsDefaultDisplayOrder}{IsDefaultDisplayOrder}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Default\+Display\+Order}
+
+\mbox{\Hypertarget{struct_im_gui_table_a84bfdcc0efeb85cf6f103ddf166e4c65}\label{struct_im_gui_table_a84bfdcc0efeb85cf6f103ddf166e4c65}} 
+\index{ImGuiTable@{ImGuiTable}!IsDefaultSizingPolicy@{IsDefaultSizingPolicy}}
+\index{IsDefaultSizingPolicy@{IsDefaultSizingPolicy}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsDefaultSizingPolicy}{IsDefaultSizingPolicy}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Default\+Sizing\+Policy}
+
+\mbox{\Hypertarget{struct_im_gui_table_a28cdc6e10e4295c6548660b2c31ad593}\label{struct_im_gui_table_a28cdc6e10e4295c6548660b2c31ad593}} 
+\index{ImGuiTable@{ImGuiTable}!IsInitializing@{IsInitializing}}
+\index{IsInitializing@{IsInitializing}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsInitializing}{IsInitializing}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Initializing}
+
+\mbox{\Hypertarget{struct_im_gui_table_a32f59376aae5cbe008c49605be3cd007}\label{struct_im_gui_table_a32f59376aae5cbe008c49605be3cd007}} 
+\index{ImGuiTable@{ImGuiTable}!IsInsideRow@{IsInsideRow}}
+\index{IsInsideRow@{IsInsideRow}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsInsideRow}{IsInsideRow}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Inside\+Row}
+
+\mbox{\Hypertarget{struct_im_gui_table_a1596be40e96bb5faa7aad3fd50291e33}\label{struct_im_gui_table_a1596be40e96bb5faa7aad3fd50291e33}} 
+\index{ImGuiTable@{ImGuiTable}!IsLayoutLocked@{IsLayoutLocked}}
+\index{IsLayoutLocked@{IsLayoutLocked}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsLayoutLocked}{IsLayoutLocked}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Layout\+Locked}
+
+\mbox{\Hypertarget{struct_im_gui_table_a2d066ad49460272713bd6c9beba4a1cc}\label{struct_im_gui_table_a2d066ad49460272713bd6c9beba4a1cc}} 
+\index{ImGuiTable@{ImGuiTable}!IsResetAllRequest@{IsResetAllRequest}}
+\index{IsResetAllRequest@{IsResetAllRequest}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsResetAllRequest}{IsResetAllRequest}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Reset\+All\+Request}
+
+\mbox{\Hypertarget{struct_im_gui_table_ab1e0c549a7c1de0ffbd14c18ae7bb402}\label{struct_im_gui_table_ab1e0c549a7c1de0ffbd14c18ae7bb402}} 
+\index{ImGuiTable@{ImGuiTable}!IsResetDisplayOrderRequest@{IsResetDisplayOrderRequest}}
+\index{IsResetDisplayOrderRequest@{IsResetDisplayOrderRequest}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsResetDisplayOrderRequest}{IsResetDisplayOrderRequest}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Reset\+Display\+Order\+Request}
+
+\mbox{\Hypertarget{struct_im_gui_table_a4c0a3b840b7a5c111551e1e8a6ad6c3a}\label{struct_im_gui_table_a4c0a3b840b7a5c111551e1e8a6ad6c3a}} 
+\index{ImGuiTable@{ImGuiTable}!IsSettingsDirty@{IsSettingsDirty}}
+\index{IsSettingsDirty@{IsSettingsDirty}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsSettingsDirty}{IsSettingsDirty}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Settings\+Dirty}
+
+\mbox{\Hypertarget{struct_im_gui_table_ab1f0c3a1a1c500cb5b3a3e1cd2761519}\label{struct_im_gui_table_ab1f0c3a1a1c500cb5b3a3e1cd2761519}} 
+\index{ImGuiTable@{ImGuiTable}!IsSettingsRequestLoad@{IsSettingsRequestLoad}}
+\index{IsSettingsRequestLoad@{IsSettingsRequestLoad}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsSettingsRequestLoad}{IsSettingsRequestLoad}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Settings\+Request\+Load}
+
+\mbox{\Hypertarget{struct_im_gui_table_a066141fe3c9b74ec5492d4acd4f1a21a}\label{struct_im_gui_table_a066141fe3c9b74ec5492d4acd4f1a21a}} 
+\index{ImGuiTable@{ImGuiTable}!IsSortSpecsDirty@{IsSortSpecsDirty}}
+\index{IsSortSpecsDirty@{IsSortSpecsDirty}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsSortSpecsDirty}{IsSortSpecsDirty}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Sort\+Specs\+Dirty}
+
+\mbox{\Hypertarget{struct_im_gui_table_a011cb090506f53f6fed0a395b1ac1c22}\label{struct_im_gui_table_a011cb090506f53f6fed0a395b1ac1c22}} 
+\index{ImGuiTable@{ImGuiTable}!IsUnfrozenRows@{IsUnfrozenRows}}
+\index{IsUnfrozenRows@{IsUnfrozenRows}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsUnfrozenRows}{IsUnfrozenRows}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Unfrozen\+Rows}
+
+\mbox{\Hypertarget{struct_im_gui_table_aa24819d7de86a33a491b909cfb00251c}\label{struct_im_gui_table_aa24819d7de86a33a491b909cfb00251c}} 
+\index{ImGuiTable@{ImGuiTable}!IsUsingHeaders@{IsUsingHeaders}}
+\index{IsUsingHeaders@{IsUsingHeaders}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{IsUsingHeaders}{IsUsingHeaders}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Is\+Using\+Headers}
+
+\mbox{\Hypertarget{struct_im_gui_table_a6be35e3ea6e5ae9f63949f86aa2a6216}\label{struct_im_gui_table_a6be35e3ea6e5ae9f63949f86aa2a6216}} 
+\index{ImGuiTable@{ImGuiTable}!LastFrameActive@{LastFrameActive}}
+\index{LastFrameActive@{LastFrameActive}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{LastFrameActive}{LastFrameActive}}
+{\footnotesize\ttfamily int Im\+Gui\+Table\+::\+Last\+Frame\+Active}
+
+\mbox{\Hypertarget{struct_im_gui_table_ad5ceb30e1aef45ce269fc661c5e89281}\label{struct_im_gui_table_ad5ceb30e1aef45ce269fc661c5e89281}} 
+\index{ImGuiTable@{ImGuiTable}!LastResizedColumn@{LastResizedColumn}}
+\index{LastResizedColumn@{LastResizedColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{LastResizedColumn}{LastResizedColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Last\+Resized\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_adccfcf7b8e9670d762f9df1df0c5d6b6}\label{struct_im_gui_table_adccfcf7b8e9670d762f9df1df0c5d6b6}} 
+\index{ImGuiTable@{ImGuiTable}!LastRowFlags@{LastRowFlags}}
+\index{LastRowFlags@{LastRowFlags}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{LastRowFlags}{LastRowFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_acff5083d4dbfa7a898927046008598c1}{Im\+Gui\+Table\+Row\+Flags}} Im\+Gui\+Table\+::\+Last\+Row\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_table_aaf5f34705f41f958a897d211168f083f}\label{struct_im_gui_table_aaf5f34705f41f958a897d211168f083f}} 
+\index{ImGuiTable@{ImGuiTable}!LeftMostEnabledColumn@{LeftMostEnabledColumn}}
+\index{LeftMostEnabledColumn@{LeftMostEnabledColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{LeftMostEnabledColumn}{LeftMostEnabledColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Left\+Most\+Enabled\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a0e6b930bc9743fa9fe1067adf1d66830}\label{struct_im_gui_table_a0e6b930bc9743fa9fe1067adf1d66830}} 
+\index{ImGuiTable@{ImGuiTable}!LeftMostStretchedColumn@{LeftMostStretchedColumn}}
+\index{LeftMostStretchedColumn@{LeftMostStretchedColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{LeftMostStretchedColumn}{LeftMostStretchedColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Left\+Most\+Stretched\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_aa6825c0891fe234c20d5f92e33725d0d}\label{struct_im_gui_table_aa6825c0891fe234c20d5f92e33725d0d}} 
+\index{ImGuiTable@{ImGuiTable}!MemoryCompacted@{MemoryCompacted}}
+\index{MemoryCompacted@{MemoryCompacted}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{MemoryCompacted}{MemoryCompacted}}
+{\footnotesize\ttfamily bool Im\+Gui\+Table\+::\+Memory\+Compacted}
+
+\mbox{\Hypertarget{struct_im_gui_table_a4eb7492114618b5c15abdeec7d71ad2f}\label{struct_im_gui_table_a4eb7492114618b5c15abdeec7d71ad2f}} 
+\index{ImGuiTable@{ImGuiTable}!MinColumnWidth@{MinColumnWidth}}
+\index{MinColumnWidth@{MinColumnWidth}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{MinColumnWidth}{MinColumnWidth}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Min\+Column\+Width}
+
+\mbox{\Hypertarget{struct_im_gui_table_a05c1d38368970a409eaaf83fb06292cc}\label{struct_im_gui_table_a05c1d38368970a409eaaf83fb06292cc}} 
+\index{ImGuiTable@{ImGuiTable}!OuterPaddingX@{OuterPaddingX}}
+\index{OuterPaddingX@{OuterPaddingX}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{OuterPaddingX}{OuterPaddingX}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Outer\+PaddingX}
+
+\mbox{\Hypertarget{struct_im_gui_table_a6f98734a1abb8f866ffd9fc69d35b2a3}\label{struct_im_gui_table_a6f98734a1abb8f866ffd9fc69d35b2a3}} 
+\index{ImGuiTable@{ImGuiTable}!OuterRect@{OuterRect}}
+\index{OuterRect@{OuterRect}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{OuterRect}{OuterRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Outer\+Rect}
+
+\mbox{\Hypertarget{struct_im_gui_table_ab5a28e3ba666fece11feb5cdee2e1104}\label{struct_im_gui_table_ab5a28e3ba666fece11feb5cdee2e1104}} 
+\index{ImGuiTable@{ImGuiTable}!OuterWindow@{OuterWindow}}
+\index{OuterWindow@{OuterWindow}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{OuterWindow}{OuterWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_window}{Im\+Gui\+Window}}$\ast$ Im\+Gui\+Table\+::\+Outer\+Window}
+
+\mbox{\Hypertarget{struct_im_gui_table_a7e661eeaca53f374216bf0f45dff29e4}\label{struct_im_gui_table_a7e661eeaca53f374216bf0f45dff29e4}} 
+\index{ImGuiTable@{ImGuiTable}!RawData@{RawData}}
+\index{RawData@{RawData}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RawData}{RawData}}
+{\footnotesize\ttfamily void$\ast$ Im\+Gui\+Table\+::\+Raw\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_table_a21f1ccb2537abbf1fd8ba5f5ddcae612}\label{struct_im_gui_table_a21f1ccb2537abbf1fd8ba5f5ddcae612}} 
+\index{ImGuiTable@{ImGuiTable}!RefScale@{RefScale}}
+\index{RefScale@{RefScale}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RefScale}{RefScale}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Ref\+Scale}
+
+\mbox{\Hypertarget{struct_im_gui_table_afe40dc28725db705210bd3a920aea591}\label{struct_im_gui_table_afe40dc28725db705210bd3a920aea591}} 
+\index{ImGuiTable@{ImGuiTable}!ReorderColumn@{ReorderColumn}}
+\index{ReorderColumn@{ReorderColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ReorderColumn}{ReorderColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Reorder\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a39d9e079bb8f4073e5b02806d890b59b}\label{struct_im_gui_table_a39d9e079bb8f4073e5b02806d890b59b}} 
+\index{ImGuiTable@{ImGuiTable}!ReorderColumnDir@{ReorderColumnDir}}
+\index{ReorderColumnDir@{ReorderColumnDir}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ReorderColumnDir}{ReorderColumnDir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Reorder\+Column\+Dir}
+
+\mbox{\Hypertarget{struct_im_gui_table_af7746ea46154a9055dd467922dcc3c0c}\label{struct_im_gui_table_af7746ea46154a9055dd467922dcc3c0c}} 
+\index{ImGuiTable@{ImGuiTable}!RequestOutputMaskByIndex@{RequestOutputMaskByIndex}}
+\index{RequestOutputMaskByIndex@{RequestOutputMaskByIndex}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RequestOutputMaskByIndex}{RequestOutputMaskByIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} Im\+Gui\+Table\+::\+Request\+Output\+Mask\+By\+Index}
+
+\mbox{\Hypertarget{struct_im_gui_table_af1ef3df199510dd5210d6501ce6c3996}\label{struct_im_gui_table_af1ef3df199510dd5210d6501ce6c3996}} 
+\index{ImGuiTable@{ImGuiTable}!ResizedColumn@{ResizedColumn}}
+\index{ResizedColumn@{ResizedColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ResizedColumn}{ResizedColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Resized\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_ab1f45cc1c2eca4d78a2c8eaf202a651a}\label{struct_im_gui_table_ab1f45cc1c2eca4d78a2c8eaf202a651a}} 
+\index{ImGuiTable@{ImGuiTable}!ResizedColumnNextWidth@{ResizedColumnNextWidth}}
+\index{ResizedColumnNextWidth@{ResizedColumnNextWidth}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ResizedColumnNextWidth}{ResizedColumnNextWidth}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Resized\+Column\+Next\+Width}
+
+\mbox{\Hypertarget{struct_im_gui_table_a92324407723470ac6b102e2201b09ce2}\label{struct_im_gui_table_a92324407723470ac6b102e2201b09ce2}} 
+\index{ImGuiTable@{ImGuiTable}!ResizeLockMinContentsX2@{ResizeLockMinContentsX2}}
+\index{ResizeLockMinContentsX2@{ResizeLockMinContentsX2}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{ResizeLockMinContentsX2}{ResizeLockMinContentsX2}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Resize\+Lock\+Min\+Contents\+X2}
+
+\mbox{\Hypertarget{struct_im_gui_table_a8f297cc1ad1839a3039adf00e9f29047}\label{struct_im_gui_table_a8f297cc1ad1839a3039adf00e9f29047}} 
+\index{ImGuiTable@{ImGuiTable}!RightMostEnabledColumn@{RightMostEnabledColumn}}
+\index{RightMostEnabledColumn@{RightMostEnabledColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RightMostEnabledColumn}{RightMostEnabledColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Right\+Most\+Enabled\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a40e26ce4a610b6688c956ffa374ad0dc}\label{struct_im_gui_table_a40e26ce4a610b6688c956ffa374ad0dc}} 
+\index{ImGuiTable@{ImGuiTable}!RightMostStretchedColumn@{RightMostStretchedColumn}}
+\index{RightMostStretchedColumn@{RightMostStretchedColumn}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RightMostStretchedColumn}{RightMostStretchedColumn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Right\+Most\+Stretched\+Column}
+
+\mbox{\Hypertarget{struct_im_gui_table_a252e602ec807bf532edd501110bdc7b1}\label{struct_im_gui_table_a252e602ec807bf532edd501110bdc7b1}} 
+\index{ImGuiTable@{ImGuiTable}!RowBgColor@{RowBgColor}}
+\index{RowBgColor@{RowBgColor}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowBgColor}{RowBgColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a118cff4eeb8d00e7d07ce3d6460eed36}{Im\+U32}} Im\+Gui\+Table\+::\+Row\+Bg\+Color\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{struct_im_gui_table_a6e6aa2309557862d7da9d6970c0f2f0b}\label{struct_im_gui_table_a6e6aa2309557862d7da9d6970c0f2f0b}} 
+\index{ImGuiTable@{ImGuiTable}!RowBgColorCounter@{RowBgColorCounter}}
+\index{RowBgColorCounter@{RowBgColorCounter}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowBgColorCounter}{RowBgColorCounter}}
+{\footnotesize\ttfamily int Im\+Gui\+Table\+::\+Row\+Bg\+Color\+Counter}
+
+\mbox{\Hypertarget{struct_im_gui_table_a686734156d60378e2c792c93b554d327}\label{struct_im_gui_table_a686734156d60378e2c792c93b554d327}} 
+\index{ImGuiTable@{ImGuiTable}!RowCellData@{RowCellData}}
+\index{RowCellData@{RowCellData}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowCellData}{RowCellData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_span}{Im\+Span}}$<$\mbox{\hyperlink{struct_im_gui_table_cell_data}{Im\+Gui\+Table\+Cell\+Data}}$>$ Im\+Gui\+Table\+::\+Row\+Cell\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_table_a3b2630067aff7df6e9111de94fcc5e3b}\label{struct_im_gui_table_a3b2630067aff7df6e9111de94fcc5e3b}} 
+\index{ImGuiTable@{ImGuiTable}!RowCellDataCurrent@{RowCellDataCurrent}}
+\index{RowCellDataCurrent@{RowCellDataCurrent}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowCellDataCurrent}{RowCellDataCurrent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Row\+Cell\+Data\+Current}
+
+\mbox{\Hypertarget{struct_im_gui_table_ae5b7b9728836e1928cc1b838f9aa74ef}\label{struct_im_gui_table_ae5b7b9728836e1928cc1b838f9aa74ef}} 
+\index{ImGuiTable@{ImGuiTable}!RowFlags@{RowFlags}}
+\index{RowFlags@{RowFlags}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowFlags}{RowFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_acff5083d4dbfa7a898927046008598c1}{Im\+Gui\+Table\+Row\+Flags}} Im\+Gui\+Table\+::\+Row\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_table_abac804d6f3bd10e7920924eb3bf9067c}\label{struct_im_gui_table_abac804d6f3bd10e7920924eb3bf9067c}} 
+\index{ImGuiTable@{ImGuiTable}!RowIndentOffsetX@{RowIndentOffsetX}}
+\index{RowIndentOffsetX@{RowIndentOffsetX}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowIndentOffsetX}{RowIndentOffsetX}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Row\+Indent\+OffsetX}
+
+\mbox{\Hypertarget{struct_im_gui_table_af23ea5ea747d5c2daffc7954cf4df66c}\label{struct_im_gui_table_af23ea5ea747d5c2daffc7954cf4df66c}} 
+\index{ImGuiTable@{ImGuiTable}!RowMinHeight@{RowMinHeight}}
+\index{RowMinHeight@{RowMinHeight}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowMinHeight}{RowMinHeight}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Row\+Min\+Height}
+
+\mbox{\Hypertarget{struct_im_gui_table_af9b476f4a6582468c0ed0a019548d022}\label{struct_im_gui_table_af9b476f4a6582468c0ed0a019548d022}} 
+\index{ImGuiTable@{ImGuiTable}!RowPosY1@{RowPosY1}}
+\index{RowPosY1@{RowPosY1}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowPosY1}{RowPosY1}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Row\+Pos\+Y1}
+
+\mbox{\Hypertarget{struct_im_gui_table_a48403ef1b4c11fe3c7d4df835b2f7a82}\label{struct_im_gui_table_a48403ef1b4c11fe3c7d4df835b2f7a82}} 
+\index{ImGuiTable@{ImGuiTable}!RowPosY2@{RowPosY2}}
+\index{RowPosY2@{RowPosY2}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowPosY2}{RowPosY2}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Row\+Pos\+Y2}
+
+\mbox{\Hypertarget{struct_im_gui_table_af517dd5ce92ebaf84982083485507634}\label{struct_im_gui_table_af517dd5ce92ebaf84982083485507634}} 
+\index{ImGuiTable@{ImGuiTable}!RowTextBaseline@{RowTextBaseline}}
+\index{RowTextBaseline@{RowTextBaseline}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{RowTextBaseline}{RowTextBaseline}}
+{\footnotesize\ttfamily float Im\+Gui\+Table\+::\+Row\+Text\+Baseline}
+
+\mbox{\Hypertarget{struct_im_gui_table_a099a9fc8ad83bf0338221463848315b2}\label{struct_im_gui_table_a099a9fc8ad83bf0338221463848315b2}} 
+\index{ImGuiTable@{ImGuiTable}!SettingsLoadedFlags@{SettingsLoadedFlags}}
+\index{SettingsLoadedFlags@{SettingsLoadedFlags}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{SettingsLoadedFlags}{SettingsLoadedFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_ad3032e379f8aba2cb5c31b05cd40858d}{Im\+Gui\+Table\+Flags}} Im\+Gui\+Table\+::\+Settings\+Loaded\+Flags}
+
+\mbox{\Hypertarget{struct_im_gui_table_af300d599c6b3ff9e43ee714da21aac1d}\label{struct_im_gui_table_af300d599c6b3ff9e43ee714da21aac1d}} 
+\index{ImGuiTable@{ImGuiTable}!SettingsOffset@{SettingsOffset}}
+\index{SettingsOffset@{SettingsOffset}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{SettingsOffset}{SettingsOffset}}
+{\footnotesize\ttfamily int Im\+Gui\+Table\+::\+Settings\+Offset}
+
+\mbox{\Hypertarget{struct_im_gui_table_a8770e95686f57cfc9b61a037e95cc5b1}\label{struct_im_gui_table_a8770e95686f57cfc9b61a037e95cc5b1}} 
+\index{ImGuiTable@{ImGuiTable}!SortSpecs@{SortSpecs}}
+\index{SortSpecs@{SortSpecs}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{SortSpecs}{SortSpecs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_table_sort_specs}{Im\+Gui\+Table\+Sort\+Specs}} Im\+Gui\+Table\+::\+Sort\+Specs}
+
+\mbox{\Hypertarget{struct_im_gui_table_a72d50758681cecf127e6c9a44883ccfd}\label{struct_im_gui_table_a72d50758681cecf127e6c9a44883ccfd}} 
+\index{ImGuiTable@{ImGuiTable}!SortSpecsCount@{SortSpecsCount}}
+\index{SortSpecsCount@{SortSpecsCount}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{SortSpecsCount}{SortSpecsCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__internal_8h_abe1882c8292cd23a77a54eda2407f147}{Im\+Gui\+Table\+Column\+Idx}} Im\+Gui\+Table\+::\+Sort\+Specs\+Count}
+
+\mbox{\Hypertarget{struct_im_gui_table_aba33a5c466948cb483b0b50c840dd422}\label{struct_im_gui_table_aba33a5c466948cb483b0b50c840dd422}} 
+\index{ImGuiTable@{ImGuiTable}!SortSpecsMulti@{SortSpecsMulti}}
+\index{SortSpecsMulti@{SortSpecsMulti}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{SortSpecsMulti}{SortSpecsMulti}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$\mbox{\hyperlink{struct_im_gui_table_column_sort_specs}{Im\+Gui\+Table\+Column\+Sort\+Specs}}$>$ Im\+Gui\+Table\+::\+Sort\+Specs\+Multi}
+
+\mbox{\Hypertarget{struct_im_gui_table_ad111a9b0073e5061f2a847e9ad99519f}\label{struct_im_gui_table_ad111a9b0073e5061f2a847e9ad99519f}} 
+\index{ImGuiTable@{ImGuiTable}!SortSpecsSingle@{SortSpecsSingle}}
+\index{SortSpecsSingle@{SortSpecsSingle}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{SortSpecsSingle}{SortSpecsSingle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_table_column_sort_specs}{Im\+Gui\+Table\+Column\+Sort\+Specs}} Im\+Gui\+Table\+::\+Sort\+Specs\+Single}
+
+\mbox{\Hypertarget{struct_im_gui_table_a89db69966920e938cdf67f23164c3a80}\label{struct_im_gui_table_a89db69966920e938cdf67f23164c3a80}} 
+\index{ImGuiTable@{ImGuiTable}!TempData@{TempData}}
+\index{TempData@{TempData}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{TempData}{TempData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_gui_table_temp_data}{Im\+Gui\+Table\+Temp\+Data}}$\ast$ Im\+Gui\+Table\+::\+Temp\+Data}
+
+\mbox{\Hypertarget{struct_im_gui_table_a7c13f14fa0933b15a4430123f49acb05}\label{struct_im_gui_table_a7c13f14fa0933b15a4430123f49acb05}} 
+\index{ImGuiTable@{ImGuiTable}!VisibleMaskByIndex@{VisibleMaskByIndex}}
+\index{VisibleMaskByIndex@{VisibleMaskByIndex}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{VisibleMaskByIndex}{VisibleMaskByIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a6875b9978368bbd5cf7e9b967e22eea4}{Im\+U64}} Im\+Gui\+Table\+::\+Visible\+Mask\+By\+Index}
+
+\mbox{\Hypertarget{struct_im_gui_table_a4e0fd51349a7bedc8321f3977ff9e48c}\label{struct_im_gui_table_a4e0fd51349a7bedc8321f3977ff9e48c}} 
+\index{ImGuiTable@{ImGuiTable}!WorkRect@{WorkRect}}
+\index{WorkRect@{WorkRect}!ImGuiTable@{ImGuiTable}}
+\doxysubsubsection{\texorpdfstring{WorkRect}{WorkRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_rect}{Im\+Rect}} Im\+Gui\+Table\+::\+Work\+Rect}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+util/imgui/\mbox{\hyperlink{imgui__internal_8h}{imgui\+\_\+internal.\+h}}\end{DoxyCompactItemize}

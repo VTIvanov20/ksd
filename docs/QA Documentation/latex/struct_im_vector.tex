@@ -1,0 +1,455 @@
+\hypertarget{struct_im_vector}{}\doxysection{Im\+Vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{struct_im_vector}\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+
+
+{\ttfamily \#include $<$imgui.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \mbox{\hyperlink{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}{value\+\_\+type}}
+\item 
+typedef \mbox{\hyperlink{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}{value\+\_\+type}} $\ast$ \mbox{\hyperlink{struct_im_vector_a74b5478f1f6fd471cc71219bce483db6}{iterator}}
+\item 
+typedef const \mbox{\hyperlink{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}{value\+\_\+type}} $\ast$ \mbox{\hyperlink{struct_im_vector_aedeac9c5080f9d6ce96ae837768ee4c4}{const\+\_\+iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_im_vector_a547fff373659fd848c3ecc6b25a83f25}{Im\+Vector}} ()
+\item 
+\mbox{\hyperlink{struct_im_vector_a6e2ee59d8b2fa1583617a2110a56aed4}{Im\+Vector}} (const \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&src)
+\item 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{struct_im_vector_aa616055e1c04b4b1026ecdb67ce839e7}{operator=}} (const \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&src)
+\item 
+\mbox{\hyperlink{struct_im_vector_a9b782359ca26eaa1a6a6138fcf341c54}{$\sim$\+Im\+Vector}} ()
+\item 
+void \mbox{\hyperlink{struct_im_vector_ae2d401b4ec5f1113cdb8edb5a61a38f7}{clear}} ()
+\item 
+void \mbox{\hyperlink{struct_im_vector_aed9c986ef3cd59fabbd89355d0023122}{clear\+\_\+delete}} ()
+\item 
+void \mbox{\hyperlink{struct_im_vector_ac1ed34eac753156e87e8a92f78dbbe3f}{clear\+\_\+destruct}} ()
+\item 
+bool \mbox{\hyperlink{struct_im_vector_aa53e48a5272f4bad1099368769514ff1}{empty}} () const
+\item 
+int \mbox{\hyperlink{struct_im_vector_a8c903ecb1aaee0601b6a8ad835a4a435}{size}} () const
+\item 
+int \mbox{\hyperlink{struct_im_vector_ade9f2e937e47b0e0f9970dcfba038204}{size\+\_\+in\+\_\+bytes}} () const
+\item 
+int \mbox{\hyperlink{struct_im_vector_a6df36345c5943c83cf11b8e827584bf9}{max\+\_\+size}} () const
+\item 
+int \mbox{\hyperlink{struct_im_vector_ac17681baa8b9b5cd97e556da29f9ef73}{capacity}} () const
+\item 
+T \& \mbox{\hyperlink{struct_im_vector_aec87a57a48b7c07e636f338b6113935b}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\item 
+const T \& \mbox{\hyperlink{struct_im_vector_a1aac88ee8dded24c94801a41ed41b793}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_ab48ae48675fa779e29c9ae5892bb99f4}{begin}} ()
+\item 
+const T $\ast$ \mbox{\hyperlink{struct_im_vector_a1e10cf9afeb244d7d42131682531f865}{begin}} () const
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_a278ca772697b2b2139d3b8add336a249}{end}} ()
+\item 
+const T $\ast$ \mbox{\hyperlink{struct_im_vector_a457ca3fb7345e1b21c59fc196dd08607}{end}} () const
+\item 
+T \& \mbox{\hyperlink{struct_im_vector_a5a21f508086337de2f6739701d22f721}{front}} ()
+\item 
+const T \& \mbox{\hyperlink{struct_im_vector_a6f55b8b7351295c06eeb4f4f28af14ae}{front}} () const
+\item 
+T \& \mbox{\hyperlink{struct_im_vector_a2d80e87e81b1b01143c8d8be93e6fde1}{back}} ()
+\item 
+const T \& \mbox{\hyperlink{struct_im_vector_ab46e61c71932385c2ee96d1dfc94546a}{back}} () const
+\item 
+void \mbox{\hyperlink{struct_im_vector_afcec0d2a1e28aebe412b6efd06f0a77a}{swap}} (\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&rhs)
+\item 
+int \mbox{\hyperlink{struct_im_vector_a3a097635d464b1b70dc7d59996a88b28}{\+\_\+grow\+\_\+capacity}} (int sz) const
+\item 
+void \mbox{\hyperlink{struct_im_vector_ac371dd62e56ae486b1a5038cf07eee56}{resize}} (int new\+\_\+size)
+\item 
+void \mbox{\hyperlink{struct_im_vector_abe7f21776ecfb7d0214963fd8c0689f0}{resize}} (int new\+\_\+size, const T \&v)
+\item 
+void \mbox{\hyperlink{struct_im_vector_a8dafcce1e393244890f52ef1aa490876}{shrink}} (int new\+\_\+size)
+\item 
+void \mbox{\hyperlink{struct_im_vector_a0f14f5736c3372157856eebb67123b75}{reserve}} (int new\+\_\+capacity)
+\item 
+void \mbox{\hyperlink{struct_im_vector_aab5df48e0711a48bd12f3206e08c4108}{push\+\_\+back}} (const T \&v)
+\item 
+void \mbox{\hyperlink{struct_im_vector_a3db7ce62d3c429effdb893fbf7148c1c}{pop\+\_\+back}} ()
+\item 
+void \mbox{\hyperlink{struct_im_vector_a168658df8e0e1df5698ebe7a69946389}{push\+\_\+front}} (const T \&v)
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_a2f88ac70791f2da6d4168d7b29f38f1e}{erase}} (const T $\ast$it)
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_a8feb96da4eb8ef13a48dbd2e18cb641d}{erase}} (const T $\ast$it, const T $\ast$it\+\_\+last)
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_a87a4cae517c156b73823c5cd5e86378a}{erase\+\_\+unsorted}} (const T $\ast$it)
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_a541c8cd4b844f5276f10d160cb500533}{insert}} (const T $\ast$it, const T \&v)
+\item 
+bool \mbox{\hyperlink{struct_im_vector_a2e7860fbde1c721f168b6262d8f14aec}{contains}} (const T \&v) const
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_a406417c3efef769d4bee47df2188831a}{find}} (const T \&v)
+\item 
+const T $\ast$ \mbox{\hyperlink{struct_im_vector_a1fb6def3d26d7efeae0881e8dffb3f79}{find}} (const T \&v) const
+\item 
+bool \mbox{\hyperlink{struct_im_vector_a4e9214ecaa413240f76223500dbed912}{find\+\_\+erase}} (const T \&v)
+\item 
+bool \mbox{\hyperlink{struct_im_vector_a07f501e40783436616156682ec668327}{find\+\_\+erase\+\_\+unsorted}} (const T \&v)
+\item 
+int \mbox{\hyperlink{struct_im_vector_a3fd48379f807eeb01fb9da39afa30dc7}{index\+\_\+from\+\_\+ptr}} (const T $\ast$it) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_im_vector_abbfd157947f66280d27b21d70a16df8d}{Size}}
+\item 
+int \mbox{\hyperlink{struct_im_vector_abd24482b4d30d22e37582e521e5bfb33}{Capacity}}
+\item 
+T $\ast$ \mbox{\hyperlink{struct_im_vector_ac0e46e8b30cb079d93c8f0aad7d7cbd0}{Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{struct_im_vector_aedeac9c5080f9d6ce96ae837768ee4c4}\label{struct_im_vector_aedeac9c5080f9d6ce96ae837768ee4c4}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef const \mbox{\hyperlink{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}{value\+\_\+type}}$\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::const\+\_\+iterator}
+
+\mbox{\Hypertarget{struct_im_vector_a74b5478f1f6fd471cc71219bce483db6}\label{struct_im_vector_a74b5478f1f6fd471cc71219bce483db6}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef \mbox{\hyperlink{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}{value\+\_\+type}}$\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::iterator}
+
+\mbox{\Hypertarget{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}\label{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef T \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::value\+\_\+type}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_im_vector_a547fff373659fd848c3ecc6b25a83f25}\label{struct_im_vector_a547fff373659fd848c3ecc6b25a83f25}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!ImVector@{ImVector}}
+\index{ImVector@{ImVector}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ImVector()}{ImVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\mbox{\hyperlink{struct_im_vector}{\+::\+Im\+Vector}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a6e2ee59d8b2fa1583617a2110a56aed4}\label{struct_im_vector_a6e2ee59d8b2fa1583617a2110a56aed4}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!ImVector@{ImVector}}
+\index{ImVector@{ImVector}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ImVector()}{ImVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\mbox{\hyperlink{struct_im_vector}{\+::\+Im\+Vector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a9b782359ca26eaa1a6a6138fcf341c54}\label{struct_im_vector_a9b782359ca26eaa1a6a6138fcf341c54}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!````~ImVector@{$\sim$ImVector}}
+\index{````~ImVector@{$\sim$ImVector}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$ImVector()}{~ImVector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{struct_im_vector}{Im\+Vector}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_im_vector_a3a097635d464b1b70dc7d59996a88b28}\label{struct_im_vector_a3a097635d464b1b70dc7d59996a88b28}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!\_grow\_capacity@{\_grow\_capacity}}
+\index{\_grow\_capacity@{\_grow\_capacity}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_grow\_capacity()}{\_grow\_capacity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::\+\_\+grow\+\_\+capacity (\begin{DoxyParamCaption}\item[{int}]{sz }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a2d80e87e81b1b01143c8d8be93e6fde1}\label{struct_im_vector_a2d80e87e81b1b01143c8d8be93e6fde1}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!back@{back}}
+\index{back@{back}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_ab46e61c71932385c2ee96d1dfc94546a}\label{struct_im_vector_ab46e61c71932385c2ee96d1dfc94546a}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!back@{back}}
+\index{back@{back}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_ab48ae48675fa779e29c9ae5892bb99f4}\label{struct_im_vector_ab48ae48675fa779e29c9ae5892bb99f4}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a1e10cf9afeb244d7d42131682531f865}\label{struct_im_vector_a1e10cf9afeb244d7d42131682531f865}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_ac17681baa8b9b5cd97e556da29f9ef73}\label{struct_im_vector_ac17681baa8b9b5cd97e556da29f9ef73}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_ae2d401b4ec5f1113cdb8edb5a61a38f7}\label{struct_im_vector_ae2d401b4ec5f1113cdb8edb5a61a38f7}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_aed9c986ef3cd59fabbd89355d0023122}\label{struct_im_vector_aed9c986ef3cd59fabbd89355d0023122}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!clear\_delete@{clear\_delete}}
+\index{clear\_delete@{clear\_delete}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear\_delete()}{clear\_delete()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::clear\+\_\+delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_ac1ed34eac753156e87e8a92f78dbbe3f}\label{struct_im_vector_ac1ed34eac753156e87e8a92f78dbbe3f}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!clear\_destruct@{clear\_destruct}}
+\index{clear\_destruct@{clear\_destruct}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear\_destruct()}{clear\_destruct()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::clear\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a2e7860fbde1c721f168b6262d8f14aec}\label{struct_im_vector_a2e7860fbde1c721f168b6262d8f14aec}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!contains@{contains}}
+\index{contains@{contains}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_aa53e48a5272f4bad1099368769514ff1}\label{struct_im_vector_aa53e48a5272f4bad1099368769514ff1}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a278ca772697b2b2139d3b8add336a249}\label{struct_im_vector_a278ca772697b2b2139d3b8add336a249}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!end@{end}}
+\index{end@{end}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a457ca3fb7345e1b21c59fc196dd08607}\label{struct_im_vector_a457ca3fb7345e1b21c59fc196dd08607}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!end@{end}}
+\index{end@{end}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a2f88ac70791f2da6d4168d7b29f38f1e}\label{struct_im_vector_a2f88ac70791f2da6d4168d7b29f38f1e}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{const T $\ast$}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a8feb96da4eb8ef13a48dbd2e18cb641d}\label{struct_im_vector_a8feb96da4eb8ef13a48dbd2e18cb641d}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{const T $\ast$}]{it,  }\item[{const T $\ast$}]{it\+\_\+last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a87a4cae517c156b73823c5cd5e86378a}\label{struct_im_vector_a87a4cae517c156b73823c5cd5e86378a}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!erase\_unsorted@{erase\_unsorted}}
+\index{erase\_unsorted@{erase\_unsorted}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase\_unsorted()}{erase\_unsorted()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::erase\+\_\+unsorted (\begin{DoxyParamCaption}\item[{const T $\ast$}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a406417c3efef769d4bee47df2188831a}\label{struct_im_vector_a406417c3efef769d4bee47df2188831a}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!find@{find}}
+\index{find@{find}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a1fb6def3d26d7efeae0881e8dffb3f79}\label{struct_im_vector_a1fb6def3d26d7efeae0881e8dffb3f79}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!find@{find}}
+\index{find@{find}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a4e9214ecaa413240f76223500dbed912}\label{struct_im_vector_a4e9214ecaa413240f76223500dbed912}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!find\_erase@{find\_erase}}
+\index{find\_erase@{find\_erase}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find\_erase()}{find\_erase()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::find\+\_\+erase (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a07f501e40783436616156682ec668327}\label{struct_im_vector_a07f501e40783436616156682ec668327}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!find\_erase\_unsorted@{find\_erase\_unsorted}}
+\index{find\_erase\_unsorted@{find\_erase\_unsorted}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find\_erase\_unsorted()}{find\_erase\_unsorted()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::find\+\_\+erase\+\_\+unsorted (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a5a21f508086337de2f6739701d22f721}\label{struct_im_vector_a5a21f508086337de2f6739701d22f721}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!front@{front}}
+\index{front@{front}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a6f55b8b7351295c06eeb4f4f28af14ae}\label{struct_im_vector_a6f55b8b7351295c06eeb4f4f28af14ae}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!front@{front}}
+\index{front@{front}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a3fd48379f807eeb01fb9da39afa30dc7}\label{struct_im_vector_a3fd48379f807eeb01fb9da39afa30dc7}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!index\_from\_ptr@{index\_from\_ptr}}
+\index{index\_from\_ptr@{index\_from\_ptr}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{index\_from\_ptr()}{index\_from\_ptr()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::index\+\_\+from\+\_\+ptr (\begin{DoxyParamCaption}\item[{const T $\ast$}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a541c8cd4b844f5276f10d160cb500533}\label{struct_im_vector_a541c8cd4b844f5276f10d160cb500533}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{const T $\ast$}]{it,  }\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a6df36345c5943c83cf11b8e827584bf9}\label{struct_im_vector_a6df36345c5943c83cf11b8e827584bf9}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!max\_size@{max\_size}}
+\index{max\_size@{max\_size}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{max\_size()}{max\_size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::max\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_aa616055e1c04b4b1026ecdb67ce839e7}\label{struct_im_vector_aa616055e1c04b4b1026ecdb67ce839e7}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_aec87a57a48b7c07e636f338b6113935b}\label{struct_im_vector_aec87a57a48b7c07e636f338b6113935b}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a1aac88ee8dded24c94801a41ed41b793}\label{struct_im_vector_a1aac88ee8dded24c94801a41ed41b793}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a3db7ce62d3c429effdb893fbf7148c1c}\label{struct_im_vector_a3db7ce62d3c429effdb893fbf7148c1c}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_aab5df48e0711a48bd12f3206e08c4108}\label{struct_im_vector_aab5df48e0711a48bd12f3206e08c4108}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a168658df8e0e1df5698ebe7a69946389}\label{struct_im_vector_a168658df8e0e1df5698ebe7a69946389}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!push\_front@{push\_front}}
+\index{push\_front@{push\_front}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a0f14f5736c3372157856eebb67123b75}\label{struct_im_vector_a0f14f5736c3372157856eebb67123b75}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::reserve (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_ac371dd62e56ae486b1a5038cf07eee56}\label{struct_im_vector_ac371dd62e56ae486b1a5038cf07eee56}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!resize@{resize}}
+\index{resize@{resize}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::resize (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_abe7f21776ecfb7d0214963fd8c0689f0}\label{struct_im_vector_abe7f21776ecfb7d0214963fd8c0689f0}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!resize@{resize}}
+\index{resize@{resize}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::resize (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+size,  }\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a8dafcce1e393244890f52ef1aa490876}\label{struct_im_vector_a8dafcce1e393244890f52ef1aa490876}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!shrink@{shrink}}
+\index{shrink@{shrink}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{shrink()}{shrink()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::shrink (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_a8c903ecb1aaee0601b6a8ad835a4a435}\label{struct_im_vector_a8c903ecb1aaee0601b6a8ad835a4a435}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!size@{size}}
+\index{size@{size}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_ade9f2e937e47b0e0f9970dcfba038204}\label{struct_im_vector_ade9f2e937e47b0e0f9970dcfba038204}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!size\_in\_bytes@{size\_in\_bytes}}
+\index{size\_in\_bytes@{size\_in\_bytes}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size\_in\_bytes()}{size\_in\_bytes()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::size\+\_\+in\+\_\+bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_im_vector_afcec0d2a1e28aebe412b6efd06f0a77a}\label{struct_im_vector_afcec0d2a1e28aebe412b6efd06f0a77a}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!swap@{swap}}
+\index{swap@{swap}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_im_vector_abd24482b4d30d22e37582e521e5bfb33}\label{struct_im_vector_abd24482b4d30d22e37582e521e5bfb33}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!Capacity@{Capacity}}
+\index{Capacity@{Capacity}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Capacity}{Capacity}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::\+Capacity}
+
+\mbox{\Hypertarget{struct_im_vector_ac0e46e8b30cb079d93c8f0aad7d7cbd0}\label{struct_im_vector_ac0e46e8b30cb079d93c8f0aad7d7cbd0}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!Data@{Data}}
+\index{Data@{Data}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::\+Data}
+
+\mbox{\Hypertarget{struct_im_vector_abbfd157947f66280d27b21d70a16df8d}\label{struct_im_vector_abbfd157947f66280d27b21d70a16df8d}} 
+\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}!Size@{Size}}
+\index{Size@{Size}!ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$\+::\+Size}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+util/imgui/\mbox{\hyperlink{imgui_8h}{imgui.\+h}}\end{DoxyCompactItemize}

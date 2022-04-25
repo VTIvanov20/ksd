@@ -1,0 +1,24 @@
+\hypertarget{_e_c_s_manager_8hpp_source}{}\doxysection{ECSManager.\+hpp}
+\mbox{\hyperlink{_e_c_s_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_entity_8hpp}{./Entity.hpp}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8hpp}{./components/Component.hpp}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_object_manager_8hpp}{ObjectManager.hpp}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_e_c_s}{ECS}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     std::weak\_ptr<Entity> \mbox{\hyperlink{namespace_e_c_s_a66c908df76bc054165415ad749204ce7}{CreateEntity}}()}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_object_manager_ad2782406e7482eeddffd1941a810d6e6}{ObjectManager::GetInstance}}()-\/>\mbox{\hyperlink{class_object_manager_a928109b56f35053ee336b096647bb477}{CreateObject}}<\mbox{\hyperlink{class_entity}{Entity}}>();}
+\DoxyCodeLine{12     \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keyword}{template} <\textcolor{keyword}{typename} CT>}
+\DoxyCodeLine{15     std::weak\_ptr<CT> \mbox{\hyperlink{namespace_e_c_s_a82bff9254f8404acc72944d60228e011}{CreateComponent}}()}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_object_manager_ad2782406e7482eeddffd1941a810d6e6}{ObjectManager::GetInstance}}()-\/>\mbox{\hyperlink{class_object_manager_a928109b56f35053ee336b096647bb477}{CreateObject}}<CT>();}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
