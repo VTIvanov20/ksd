@@ -1,9 +1,0 @@
-<map id="ExampleAppLog" name="ExampleAppLog">
-<area shape="rect" id="node1" title=" " alt="" coords="172,303,289,329"/>
-<area shape="rect" id="node2" href="$struct_im_gui_text_buffer.html" title=" " alt="" coords="27,213,141,240"/>
-<area shape="rect" id="node3" href="$struct_im_vector.html" title=" " alt="" coords="5,117,128,143"/>
-<area shape="rect" id="node4" href="$struct_im_gui_text_filter.html" title=" " alt="" coords="175,213,286,240"/>
-<area shape="rect" id="node5" href="$struct_im_vector.html" title=" " alt="" coords="153,109,327,151"/>
-<area shape="rect" id="node6" href="$struct_im_gui_text_filter_1_1_im_gui_text_range.html" title=" " alt="" coords="151,5,329,47"/>
-<area shape="rect" id="node7" href="$struct_im_vector.html" title=" " alt="" coords="311,213,423,240"/>
-</map>
