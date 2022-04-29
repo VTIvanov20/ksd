@@ -175,7 +175,20 @@ void Graphics::SetWindowPosition(Vec2f pos)
     SDL_SetWindowPosition(winHandle, (int)pos.x, (int)pos.y);
 }
 
-void Texture::LoadTexture(const char *path)
+void Texture::LoadEmpty(
+    int width, int height,
+    SDL_TextureAccess access = SDL_TEXTUREACCESS_STREAMING)
+{
+    texture = SDL_CreateTexture(winRenderer, SDL_PIXELFORMAT_RGBA8888, access, width, height);
+
+    if (texture == nullptr)
+    {
+        printf("FATAL: Unable to initialise texture");
+        exit(1);
+    }
+}
+
+void Texture::LoadFromFile(const char *path)
 {
     if (winHandle == nullptr || winRenderer == nullptr)
     {
@@ -194,7 +207,7 @@ void Texture::LoadTexture(const char *path)
     this->texture = texture;
 }
 
-void Texture::UnloadTexture()
+void Texture::Unload()
 {
     if (this->texture != nullptr)
     {
@@ -203,7 +216,7 @@ void Texture::UnloadTexture()
     }
 }
 
-void Texture::DrawTexture()
+void Texture::Draw()
 {
     if (this->texture != nullptr)
     {
@@ -223,7 +236,17 @@ Vec2i Texture::GetSize()
 
 Texture::~Texture()
 {
-    this->UnloadTexture();
+    this->Unload();
+}
+
+void Texture::BeginDrawingTo()
+{
+    SDL_SetRenderTarget(winRenderer, texture);
+}
+
+void Texture::EndDrawingTo()
+{
+    SDL_SetRenderTarget(winRenderer, nullptr);
 }
 
 bool Input::IsKeyDown(SDL_KeyCode code)
@@ -288,10 +311,10 @@ bool SDLImGui::InitImGui()
 
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGui::StyleColorsDark();
 
     ImGuiIO &io = ImGui::GetIO();
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    io.Fonts->AddFontFromFileTTF("res/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf", 15);
 
     success = ImGui_ImplSDL2_InitForSDLRenderer(winHandle, winRenderer);
     success = ImGui_ImplSDLRenderer_Init(winRenderer);

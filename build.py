@@ -16,7 +16,7 @@ object_dir = "obj"
 compiler = "c++"
 compile_pattern = ".*\.cpp$"
 
-cflags = f"-I{source_dir} -I{os.path.join(source_dir, 'util', 'imgui')} {call_shell('pkg-config --cflags SDL2')}"
+cflags = f"-I{source_dir} -I{os.path.join(source_dir, 'util', 'dear_imgui')} {call_shell('pkg-config --cflags SDL2')}"
 err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -fpermissive -g -ggdb -fdiagnostics-color=always"
 
 libs = ""

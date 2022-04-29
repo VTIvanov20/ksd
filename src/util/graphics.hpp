@@ -5,9 +5,9 @@
 #include <cassert>
 #include <memory>
 #include <unordered_map>
-#include "./imgui/imgui.h"
-#include "./imgui/backends/imgui_impl_sdl.h"
-#include "./imgui/backends/imgui_impl_sdlrenderer.h"
+#include "./dear_imgui/imgui.h"
+#include "./dear_imgui/backends/imgui_impl_sdl.h"
+#include "./dear_imgui/backends/imgui_impl_sdlrenderer.h"
 #include "../ObjectManager.hpp"
 #include "./la.hpp"
 
@@ -18,10 +18,15 @@ public:
 
     virtual ~Texture();
 
-    void LoadTexture(const char *path);
-    void UnloadTexture();
+    void LoadEmpty(int width, int height, SDL_TextureAccess access);
+    void LoadFromFile(const char *path);
+    void Unload();
 
-    void DrawTexture();
+    void Draw();
+
+    void BeginDrawingTo();
+    void EndDrawingTo();
+
     Vec2i GetSize();
     Recti Source;
     Recti Destination;
