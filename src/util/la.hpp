@@ -33,6 +33,7 @@ typedef struct Vec4i {
 
 typedef SDL_FRect Rectf;
 typedef SDL_Rect Recti;
+typedef SDL_Color Color;
 
 // float lerpf(float a, float b, float t)
 // {

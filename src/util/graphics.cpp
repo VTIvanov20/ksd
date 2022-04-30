@@ -2,8 +2,6 @@
 #include "../GameManager.hpp"
 #include "../config.h"
 
-// suggestion: maybe this library could open more than one window in the future??
-
 static SDL_Window *winHandle = nullptr;
 static SDL_Renderer *winRenderer = nullptr;
 static std::unordered_map<SDL_Keycode, uint8_t> keyStates;
@@ -150,6 +148,7 @@ void Graphics::BeginDrawing()
         }
     }
 
+    SDL_SetRenderDrawColor(winRenderer, 0, 0, 0, 0);
     SDL_RenderClear(winRenderer);
 }
 
@@ -175,11 +174,10 @@ void Graphics::SetWindowPosition(Vec2f pos)
     SDL_SetWindowPosition(winHandle, (int)pos.x, (int)pos.y);
 }
 
-void Texture::LoadEmpty(
-    int width, int height,
-    SDL_TextureAccess access = SDL_TEXTUREACCESS_STREAMING)
+void Texture::LoadEmpty(Vec2i res, SDL_TextureAccess access)
 {
-    texture = SDL_CreateTexture(winRenderer, SDL_PIXELFORMAT_RGBA8888, access, width, height);
+    if (texture != nullptr) Unload();
+    texture = SDL_CreateTexture(winRenderer, SDL_PIXELFORMAT_RGBA8888, access, res.x, res.y);
 
     if (texture == nullptr)
     {
@@ -195,7 +193,8 @@ void Texture::LoadFromFile(const char *path)
         printf("ERROR: Cannot create texture without a renderer\n");
     }
     
-    SDL_Texture *texture = IMG_LoadTexture(winRenderer, path);
+    if (texture != nullptr) Unload();
+    texture = IMG_LoadTexture(winRenderer, path);
 
     if (texture == nullptr)
     {
@@ -203,8 +202,6 @@ void Texture::LoadFromFile(const char *path)
         printf("FATAL: Error message: %s\n", SDL_GetError());
         exit(1);
     }
-
-    this->texture = texture;
 }
 
 void Texture::Unload()
@@ -216,7 +213,7 @@ void Texture::Unload()
     }
 }
 
-void Texture::Draw()
+void Texture::Draw(Recti Source, Recti Destination)
 {
     if (this->texture != nullptr)
     {

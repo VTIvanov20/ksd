@@ -1,6 +1,7 @@
 #pragma once
 
 #include "./Component.hpp"
+#include "../util/graphics.hpp"
 #include "../util/dear_imgui/imgui.h"
 #include "../GameManager.hpp"
 
@@ -16,11 +17,12 @@ class MainMenu : public Component
 {
 public:
     DEFINE_COMPONENT(MainMenu)
-    void OnUpdate() override;
+    void OnUI() override;
     void OnCreate() override;
     void OnDestroy() override;
 
 protected:
     MainMenuState state = MainMenuState::MAIN_MENU;
+    const ImVec2 windowSize {400, 200};
     char *multiplayerCodeBuf;
 };

@@ -18,18 +18,16 @@ public:
 
     virtual ~Texture();
 
-    void LoadEmpty(int width, int height, SDL_TextureAccess access);
+    void LoadEmpty(Vec2i res, SDL_TextureAccess access = SDL_TEXTUREACCESS_STREAMING);
     void LoadFromFile(const char *path);
     void Unload();
 
-    void Draw();
+    void Draw(Recti Source, Recti Destination);
 
     void BeginDrawingTo();
     void EndDrawingTo();
 
     Vec2i GetSize();
-    Recti Source;
-    Recti Destination;
 
 private:
     SDL_Texture* texture = nullptr;
@@ -54,7 +52,6 @@ namespace Graphics
 
     // Used to set the window position
     void SetWindowPosition(Vec2f);
-
 };
 
 namespace Input
