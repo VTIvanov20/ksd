@@ -7,6 +7,7 @@
 #include <cassert>
 #include <cstdio>
 #include <type_traits>
+#include <vector>
 
 class Object
 {
@@ -22,6 +23,8 @@ public:
 
     virtual const char* ObjectBaseName() { return nullptr; }
     inline uint64_t GetID() { return id; }
+
+    bool DestroyOnReload = true;
 };
 
 #define DEFINE_OBJECT(TYPE) \

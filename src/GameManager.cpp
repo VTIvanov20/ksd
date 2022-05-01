@@ -17,13 +17,10 @@ void GameManager::ReinitializeScene()
 {
     // Destroy any leftover drawables to prevent memory leaking
     ObjectManager::GetInstance()->DestroyAllEntities();
-
-    {    
-        auto entity = ECS::CreateEntity();
-        entity.lock()->BindComponent(ECS::CreateComponent<MainMenu>());
-    }
-
+    InitSceneFromFile(state.scenePath);
     ObjectManager::GetInstance()->TriggerCreateEvents();
+    
+    state.scene_update = false;
 }
 
 void GameManager::Initialize()
@@ -39,13 +36,6 @@ void GameManager::Initialize()
     ReinitializeScene();
 }
 
-void GameManager::ChangeScene(Scene scene)
-{
-    // Changes scene to wanted scene and sets the bool to true
-    state.scene = scene;
-    state.scene_update = true;
-}
-
 void GameManager::Quit()
 {
     // Sets the bool to true
@@ -59,7 +49,6 @@ void GameManager::Update()
     if (state.scene_update)
     {
         ReinitializeScene();
-        state.scene_update = false;
         std::cout << "INFO: GameManager: Scene Update!" << std::endl;
     }
 
@@ -86,4 +75,10 @@ bool GameManager::ShouldQuit()
 {
     // Returns if the window should quit
     return state.should_quit;
+}
+
+void GameManager::ChangeScene(std::string scenePath)
+{
+    state.scenePath = scenePath;
+    state.scene_update = true;
 }

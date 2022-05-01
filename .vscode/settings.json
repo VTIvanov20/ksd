@@ -54,6 +54,13 @@
         "memory_resource": "cpp",
         "numeric": "cpp",
         "random": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "sstream": "cpp",
+        "any": "cpp",
+        "codecvt": "cpp",
+        "forward_list": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "valarray": "cpp"
     }
 }

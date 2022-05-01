@@ -37,8 +37,11 @@ void Entity::OnEntityDestroy()
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
         auto sharedComponent = component.second.lock();
-        sharedComponent->OnDestroy();
-        sharedComponent->IsUsed = false;
+        if (sharedComponent->DestroyOnReload)
+        {
+            sharedComponent->OnDestroy();
+            sharedComponent->IsUsed = false;
+        }
     }
 }
 

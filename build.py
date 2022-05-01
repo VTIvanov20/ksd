@@ -38,6 +38,11 @@ def compile_file(file):
     if not re.search(compile_pattern, file) == None:
         compile_path = os.path.join(dir, file)
         out_path = os.path.join(object_dir, file.split('.')[0]) + '.o'
+
+        if os.path.exists(out_path) and os.path.getmtime(compile_path) < os.path.getmtime(out_path):
+            compiled_objects.append(out_path)
+            return
+        
         call_shell(f"{compiler} {cflags} {err_flags} -c {compile_path} -o {out_path} {libs}")
         print(f"INFO: Compiled {compile_path}!")
         compiled_objects.append(out_path)

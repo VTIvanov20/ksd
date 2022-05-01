@@ -24,13 +24,14 @@ void ObjectManager::CleanUnusedComponents()
     {
         if (CheckBaseName(object.second, "Component"))
         {
-            if (!(std::static_pointer_cast<Component>(object.second)->IsUsed))
-            idsForDestroying.push_back(object.first);
+            auto sharedComponent = std::static_pointer_cast<Component>(object.second);
+            if (!sharedComponent->IsUsed && sharedComponent->DestroyOnReload)
+                idsForDestroying.push_back(object.first);
         }
     }
 
     for(auto id : idsForDestroying)
-        objectTable.erase(id);
+        DestroyObjectFromID(id);
 }
 
 ObjectManager* ObjectManager::GetInstance()
@@ -43,15 +44,20 @@ ObjectManager* ObjectManager::GetInstance()
 
 void ObjectManager::DestroyAllEntities()
 {
+    std::list<uint64_t> idsForDestroying;
+
     for (auto object : objectTable)
     {
-        if (CheckBaseName(object.second, "Entity"))
+        if (object.second->DestroyOnReload)
         {
-            std::static_pointer_cast<Entity>(object.second)->OnEntityDestroy();
+            if (CheckBaseName(object.second, "Entity"))
+                std::static_pointer_cast<Entity>(object.second)->OnEntityDestroy();
+            idsForDestroying.push_back(object.second->GetID());
         }
     }
 
-    objectTable.clear();
+    for (auto id : idsForDestroying)
+        DestroyObjectFromID(id);
 }
 
 void ObjectManager::DestroyEntityFromID(uint64_t id)
@@ -61,14 +67,23 @@ void ObjectManager::DestroyEntityFromID(uint64_t id)
         if (CheckBaseName(objectTable[id], "Entity"))
         {
             std::static_pointer_cast<Entity>(objectTable[id])->OnEntityDestroy();
-            objectTable.erase(id);
+            DestroyObjectFromID(id);
         }
     }
 }
 
 void ObjectManager::DestroyAllObjects()
 {
-    objectTable.clear();
+    std::list<uint64_t> idsForDestroying;
+    
+    for (auto object : objectTable)
+    {
+        if (object.second->DestroyOnReload)
+            idsForDestroying.push_back(object.second->GetID());
+    }
+
+    for (auto id : idsForDestroying)
+        DestroyObjectFromID(id);
 }
 
 void ObjectManager::DestroyObjectFromID(uint64_t id)

@@ -3,13 +3,15 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <memory>
+#include <type_traits>
 
 #include "config.h"
 
 #include "ObjectManager.hpp"
 #include "Entity.hpp"
 
-#include "components/MainMenu.hpp"
+#include "SceneReader.hpp"
 #include "util/graphics.hpp"
 
 class Scene
@@ -18,7 +20,9 @@ public:
     Scene() {};
     virtual ~Scene() = default;
 
-    virtual void Initialize() {};
+    virtual void Initialize() {
+        printf("Kuche!");
+    };
 };
 
 class GameManager
@@ -28,7 +32,7 @@ private:
     {
         bool scene_update;
         bool should_quit;
-        Scene scene;
+        std::string scenePath;
     } state;
 
     void ReinitializeScene();
@@ -92,5 +96,5 @@ public:
      * 
      * @note Meant to be used at any point in the code
      */
-    void ChangeScene(Scene scene);
+    void ChangeScene(std::string scenePath);
 };

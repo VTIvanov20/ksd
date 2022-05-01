@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <memory>
 
 #include "GameManager.hpp"
 
@@ -9,15 +10,16 @@ int main(int, char **)
     SDL_Init(SDL_INIT_FLAGS);
     IMG_Init(IMG_INIT_FLAGS);
 
-    GameManager* game_manager = GameManager::GetInstance();
-    game_manager->Initialize();
+    GameManager* gameManager = GameManager::GetInstance();
+    gameManager->ChangeScene("res/scenes/main_menu.json");
+    gameManager->Initialize();
 
-    while (!game_manager->ShouldQuit())
+    while (!gameManager->ShouldQuit())
     {
-        game_manager->Update();
+        gameManager->Update();
     }
 
-    game_manager->Deinitialize();
+    gameManager->Deinitialize();
 
     SDL_Quit();
     IMG_Quit();

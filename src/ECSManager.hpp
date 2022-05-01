@@ -6,15 +6,17 @@
 #include "./components/Component.hpp"
 #include "ObjectManager.hpp"
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-function"
 namespace ECS
 {
-    std::weak_ptr<Entity> CreateEntity()
+    static std::weak_ptr<Entity> CreateEntity()
     {
         return ObjectManager::GetInstance()->CreateObject<Entity>();
     }
 
     template <typename CT>
-    std::weak_ptr<CT> CreateComponent()
+    static std::weak_ptr<CT> CreateComponent()
     {
         return ObjectManager::GetInstance()->CreateObject<CT>();
     }
