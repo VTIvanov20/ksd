@@ -8,7 +8,6 @@
 #include "./components/MainMenu.hpp"
 #include "./components/TransformComponent2D.hpp"
 #include "./components/SpriteComponent.hpp"
-#include "./components/BehaviouralComponent.hpp"
 #include "./components/GlobalState.hpp"
 
 std::string GetFileContents(const std::string path)
