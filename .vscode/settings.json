@@ -61,6 +61,7 @@
         "forward_list": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "optional": "cpp"
     }
 }
