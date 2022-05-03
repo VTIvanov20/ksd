@@ -28,7 +28,8 @@
 
 void MainMenu::OnCreate()
 {
-    multiplayerCodeBuf = new char[256];
+    multiplayerCodeBuf = new char[16];
+    multiplayerCodeBuf[0] = '\0';
 }
 void MainMenu::OnDestroy()
 {
