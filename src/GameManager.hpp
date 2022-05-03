@@ -14,17 +14,6 @@
 #include "SceneReader.hpp"
 #include "util/graphics.hpp"
 
-class Scene
-{
-public:
-    Scene() {};
-    virtual ~Scene() = default;
-
-    virtual void Initialize() {
-        printf("Kuche!");
-    };
-};
-
 class GameManager
 {
 private:

@@ -6,6 +6,10 @@
 #include <cassert>
 
 #include "./components/MainMenu.hpp"
+#include "./components/TransformComponent2D.hpp"
+#include "./components/SpriteComponent.hpp"
+#include "./components/BehaviouralComponent.hpp"
+#include "./components/GlobalState.hpp"
 
 std::string GetFileContents(const std::string path)
 {
@@ -37,11 +41,55 @@ void InitSceneFromFile(const std::string fPath)
     for (auto ent : sJson)
     {
         auto entity = ECS::CreateEntity();
+        
+        try {
+            ent["TagName"].get_to(entity.lock()->TagName);
+        } catch(const nlohmann::json::exception&) {
+            printf("WARN: TagName is possibly missing in an entity\n");
+        }
+
+        try {
+            ent["DestroyOnReload"].get_to(entity.lock()->DestroyOnReload);
+        } catch(const std::exception& e) {}
 
         for (auto [name, component] : ent["components"].items())
         {
             if (name == "MainMenu")
                 entity.lock()->BindComponent(ECS::CreateComponent<MainMenu>());
+            else if (name == "TransformComponent2D")
+            {
+                auto cmp = ECS::CreateComponent<TransformComponent2D>().lock();
+
+                component["Position"]["x"].get_to(cmp->Position.x);
+                component["Position"]["y"].get_to(cmp->Position.y);
+
+                component["Rotation"].get_to(cmp->Rotation);
+
+                component["Scale"]["x"].get_to(cmp->Scale.x);
+                component["Scale"]["y"].get_to(cmp->Scale.y);
+
+                entity.lock()->BindComponent(cmp);
+            }
+            else if (name == "SpriteComponent")
+            {
+                auto cmp = ECS::CreateComponent<SpriteComponent>().lock();
+
+                component["ImagePath"].get_to(cmp->ImagePath);
+
+                entity.lock()->BindComponent(cmp);
+            }
+            // else if (name == "BehaviouralComponent")
+            // {
+            //     auto cmp = ECS::CreateComponent<BehaviouralComponent>().lock();
+
+            //     component["Velocity"].get_to(cmp->Velocity);
+
+            //     entity.lock()->BindComponent(cmp);
+            // }
+            else if (name == "GlobalState")
+            {
+                entity.lock()->BindComponent(ECS::CreateComponent<GlobalState>().lock());
+            }
         }
     }
 }
