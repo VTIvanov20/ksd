@@ -22,7 +22,8 @@ public:
     void LoadFromFile(const char *path);
     void Unload();
 
-    void Draw(Recti Source, Recti Destination);
+    void Draw(Recti Source, Rectf Destination);
+    void Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Origin);
 
     void BeginDrawingTo();
     void EndDrawingTo();

@@ -184,6 +184,8 @@ void Texture::LoadEmpty(Vec2i res, SDL_TextureAccess access)
         printf("FATAL: Unable to initialise texture");
         exit(1);
     }
+
+    printf("INFO: Created empty texture [ID: %lld]\n", GetID());
 }
 
 void Texture::LoadFromFile(const char *path)
@@ -202,6 +204,8 @@ void Texture::LoadFromFile(const char *path)
         printf("FATAL: Error message: %s\n", SDL_GetError());
         exit(1);
     }
+
+    printf("INFO: Created texture from file: \"%s\" [ID: %lld]\n", path, GetID());
 }
 
 void Texture::Unload()
@@ -211,14 +215,28 @@ void Texture::Unload()
         SDL_DestroyTexture(this->texture);
         this->texture = nullptr;
     }
+
+    printf("INFO: Unloaded texture [ID: %lld]", GetID());
 }
 
-void Texture::Draw(Recti Source, Recti Destination)
+void Texture::Draw(Recti Source, Rectf Destination)
 {
     if (this->texture != nullptr)
     {
-        SDL_RenderCopy(winRenderer, this->texture, 
+        SDL_RenderCopyF(winRenderer, this->texture,
             &Source, &Destination);
+    }
+}
+
+void Texture::Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Origin)
+{
+    if (this->texture != nullptr)
+    {
+        Vec2i res = GetSize();
+        Recti source { 0, 0, res.x, res.y };
+        Rectf dest { Position.x, Position.y, res.x * Scale.x, res.y * Scale.y };
+        SDL_RenderCopyExF(winRenderer, this->texture, &source, &dest,
+            Rotation, NULL, SDL_FLIP_NONE);
     }
 }
 
