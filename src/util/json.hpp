@@ -3482,8 +3482,15 @@ struct is_compatible_string_type
 template<typename BasicJsonType, typename ConstructibleStringType>
 struct is_constructible_string_type
 {
+    // launder type through decltype() to fix compilation failure on ICPC
+#ifdef __INTEL_COMPILER
+    using laundered_type = decltype(std::declval<ConstructibleStringType>());
+#else
+    using laundered_type = ConstructibleStringType;
+#endif
+
     static constexpr auto value =
-        is_constructible<ConstructibleStringType,
+        is_constructible<laundered_type,
         typename BasicJsonType::string_t>::value;
 };
 
@@ -10645,6 +10652,13 @@ class binary_reader
             std::vector<char_int_type> bjdx = {'[', '{', 'S', 'H', 'T', 'F', 'N', 'Z'}; // excluded markers in bjdata optimized type
 
             result.second = get();  // must not ignore 'N', because 'N' maybe the type
+            if (JSON_HEDLEY_UNLIKELY( input_format == input_format_t::bjdata && std::find(bjdx.begin(), bjdx.end(), result.second) != bjdx.end() ))
+            {
+                auto last_token = get_token_string();
+                return sax->parse_error(chars_read, last_token, parse_error::create(112, chars_read,
+                                        exception_message(input_format, concat("marker 0x", last_token, " is not a permitted optimized array type"), "type"), nullptr));
+            }
+
             if (JSON_HEDLEY_UNLIKELY(!unexpect_eof(input_format, "type") || (input_format == input_format_t::bjdata && std::find(bjdx.begin(), bjdx.end(), result.second) != bjdx.end() )))
             {
                 return false;
