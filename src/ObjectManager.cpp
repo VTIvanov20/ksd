@@ -42,6 +42,11 @@ ObjectManager* ObjectManager::GetInstance()
     return instance;
 }
 
+int ObjectManager::GetObjectCount()
+{
+    return objectTable.size();
+}
+
 void ObjectManager::DestroyAllEntities()
 {
     std::list<uint64_t> idsForDestroying;
@@ -96,6 +101,34 @@ std::weak_ptr<Object> ObjectManager::GetObjectFromID(uint64_t id)
     if (objectTable.find(id) != objectTable.end())
         return objectTable[id];
     else return std::weak_ptr<Object>(); /* null */
+}
+
+std::list<std::weak_ptr<Object>> ObjectManager::GetObjectsFromName(std::string name)
+{
+    std::list<std::weak_ptr<Object>> out {};
+
+    for (auto [key, value] : objectTable)
+    {
+        if (CheckBaseName(value, name.c_str()))
+            out.push_back(value);
+    }
+
+    return out;
+}
+
+std::weak_ptr<Object> ObjectManager::GetEntityFromTagName(std::string name)
+{
+    for (auto [key, value] : objectTable)
+    {
+        if (CheckBaseName(value, "Entity"))
+        {
+            std::shared_ptr<Entity> shEntity = std::static_pointer_cast<Entity>(value);
+            if (shEntity->TagName == name)
+                return value;
+        }
+    }
+
+    return std::weak_ptr<Object>();
 }
 
 void ObjectManager::TriggerCreateEvents()

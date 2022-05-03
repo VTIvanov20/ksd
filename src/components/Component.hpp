@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <cassert>
+#include <string>
 
 #include "../ObjectManager.hpp"
 
@@ -26,7 +27,7 @@ public:
     std::weak_ptr<Component> GetComponent(std::string);
 
 protected:
-    std::weak_ptr<Object> boundEntity;
+    std::weak_ptr<Object> boundEntity {};
 };
 
 #define DEFINE_COMPONENT(TYPE) \
@@ -38,3 +39,4 @@ protected:
     const char* ComponentName() override { return #TYPE; };
 
 #define MGetComponent(ComponentType) std::static_pointer_cast<ComponentType>(GetComponent(#ComponentType).lock())
+#define MGetComponentFrom(From, ComponentType) std::static_pointer_cast<ComponentType>(From->GetComponent(#ComponentType).lock())

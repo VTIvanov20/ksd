@@ -34,7 +34,7 @@ public:
 class ObjectManager
 {
 private:
-    std::unordered_map<uint64_t, std::shared_ptr<Object>> objectTable;
+    std::unordered_map<uint64_t, std::shared_ptr<Object>> objectTable {};
 
     static uint64_t currentId;
     static ObjectManager* instance;
@@ -65,12 +65,18 @@ public:
         return current;
     }
 
+    int GetObjectCount();
+
     void DestroyAllEntities();
     void DestroyEntityFromID(uint64_t id);
 
     void DestroyAllObjects();
     void DestroyObjectFromID(uint64_t id);
+    
     std::weak_ptr<Object> GetObjectFromID(uint64_t id);
+    std::list<std::weak_ptr<Object>> GetObjectsFromName(std::string name);
+
+    std::weak_ptr<Object> GetEntityFromTagName(std::string name);
 
     void TriggerCreateEvents();
     void TriggerUpdateEvents();

@@ -5,6 +5,7 @@
 #include <string>
 #include <list>
 #include <cassert>
+#include <map>
 
 #include "./components/Component.hpp"
 #include "./ObjectManager.hpp"
@@ -12,7 +13,7 @@
 class Entity : public Object
 {
 private:
-    std::unordered_map<std::string, std::weak_ptr<Component>> boundComponents;
+    std::unordered_map<std::string, std::weak_ptr<Component>> boundComponents{};
     
 public:
     DEFINE_OBJECT(Entity);
@@ -26,4 +27,6 @@ public:
 
     void BindComponent(std::weak_ptr<Component> component);
     std::weak_ptr<Component> GetComponent(std::string componentName);
+
+    std::string TagName {};
 };
