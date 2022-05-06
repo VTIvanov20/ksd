@@ -16,5 +16,5 @@ public:
     std::string ImagePath;
 
 private:
-    std::weak_ptr<Texture> texture;
+    std::weak_ptr<TextureObject> texture;
 };

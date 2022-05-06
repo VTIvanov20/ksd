@@ -3,7 +3,7 @@
 
 void SpriteComponent::OnCreate()
 {
-    texture = ObjectManager::GetInstance()->CreateObject<Texture>();
+    texture = ObjectManager::GetInstance()->CreateObject<TextureObject>();
     texture.lock()->LoadFromFile(ImagePath.c_str());
 }
 
@@ -17,7 +17,7 @@ void SpriteComponent::OnUpdate()
 {
     if (!texture.expired())
     {
-        std::shared_ptr<Texture> shTexture = texture.lock();
+        std::shared_ptr<TextureObject> shTexture = texture.lock();
         std::shared_ptr<TransformComponent2D> transform = MGetComponent(TransformComponent2D);
 
         auto texRes = shTexture->GetSize();

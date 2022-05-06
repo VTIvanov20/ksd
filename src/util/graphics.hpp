@@ -1,43 +1,44 @@
 #pragma once
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <cstdio>
 #include <cassert>
 #include <memory>
 #include <unordered_map>
 #include "./dear_imgui/imgui.h"
-#include "./dear_imgui/backends/imgui_impl_sdl.h"
-#include "./dear_imgui/backends/imgui_impl_sdlrenderer.h"
 #include "../ObjectManager.hpp"
 #include "./la.hpp"
+#include <raylib.h>
 
-class Texture : public Object
+class TextureObject : public Object
 {
 public:
-    DEFINE_OBJECT(Texture)
+    DEFINE_OBJECT(TextureObject)
 
-    virtual ~Texture();
+    virtual ~TextureObject();
 
-    void LoadEmpty(Vec2i res, SDL_TextureAccess access = SDL_TEXTUREACCESS_STREAMING);
+    void LoadEmpty(Vec2i res);
     void LoadFromFile(const char *path);
     void Unload();
 
-    void Draw(Recti Source, Rectf Destination);
+    void Draw(Recti Source, Rectf Destination, double Rotation, Vec2f Origin);
     void Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Origin);
 
     void BeginDrawingTo();
     void EndDrawingTo();
 
     Vec2i GetSize();
+    Texture& GetTexture();
+    RenderTexture& GetRenderTexture();
 
 private:
-    SDL_Texture* texture = nullptr;
+    Texture texture {};
+    RenderTexture renderTexture {};
+    RenderTexture verticallyMirroredTexture {};
 };
 
 namespace Graphics
 {
     // Used to initialize an SDL window
-    bool InitWindow(Vec2f winDimensions, const char* title, SDL_WindowFlags winFlags, SDL_RendererFlags rendFlags);
+    bool InitWindow(Vec2f winDimensions, const char* title);
 
     // Used to close the SDL window initialized by InitWindow
     bool CloseWindow();
@@ -58,10 +59,10 @@ namespace Graphics
 namespace Input
 {
     // Checks if the passed key is pressed down
-    bool IsKeyDown(SDL_KeyCode);
+    bool IsKeyDown(int);
 
     // Checks if the passed key isn't pressed down
-    bool IsKeyUp(SDL_KeyCode);
+    bool IsKeyUp(int);
     
     // Returns mouse position (relative to the focused window) in the form of a vector
     Vec2i GetMousePos();
@@ -72,13 +73,13 @@ namespace Input
     // Sets the mouse position relative to the window
     void SetMousePos(Vec2i);
 
-    bool IsMouseButtonDown(uint8_t button);
+    bool IsMouseButtonDown(int button);
 
-    bool IsMouseButtonUp(uint8_t button);
+    bool IsMouseButtonUp(int button);
     // float GetMouseWheelMove();
 };
 
-namespace SDLImGui
+namespace RLImGui
 {
     bool InitImGui();
 

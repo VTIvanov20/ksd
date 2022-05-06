@@ -1,361 +1,208 @@
 #include "./graphics.hpp"
 #include "../GameManager.hpp"
 #include "../config.h"
+#include "./util/dear_imgui/backends/rlImGui.h"
 
-static SDL_Window *winHandle = nullptr;
-static SDL_Renderer *winRenderer = nullptr;
-static std::unordered_map<SDL_Keycode, uint8_t> keyStates;
-static std::unordered_map<uint8_t, uint8_t> mouseBtnStates;
-
-static bool imguiInitialized = false;
-
-bool Graphics::InitWindow(
-    Vec2f winDimensions, const char* title,
-    SDL_WindowFlags winFlags, SDL_RendererFlags rendFlags)
+bool Graphics::InitWindow(Vec2f winDimensions, const char* title)
 {
-    if (winFlags == 0)
-        winFlags = static_cast<SDL_WindowFlags>(SDL_WINDOW_FLAGS);
-
-    if (rendFlags == 0)
-        rendFlags = static_cast<SDL_RendererFlags>(SDL_RENDERER_FLAGS);
-    
-    if (winHandle != nullptr)
-    {
-        printf("WARN: Window has already been initialized\n");
-        return false;
-    }
-
-    if (SDL_WasInit(SDL_INIT_VIDEO) == 0)
-    {
-        printf("WARN: SDL probably wasn't initialized properly!\n");
-        SDL_Init(SDL_INIT_VIDEO);
-    }
-
-    SDL_DisplayMode dm;
-
-    // get information about the first screen
-    SDL_GetCurrentDisplayMode(0, &dm);
-
-    Vec2f winPos {
-        dm.w / 2 - winDimensions.x / 2,
-        dm.h / 2 - winDimensions.y / 2
-    };
-
-    bool success = false;
-    
-    winHandle = SDL_CreateWindow(
-        title, winPos.x, winPos.y,
-        winDimensions.x, winDimensions.y,
-        winFlags);
-
-    if (winHandle == nullptr)
-    {
-        printf("ERROR: Could not create window: %s\n", SDL_GetError());
-        success = false;
-    }
-    else
-    {
-        printf("INFO: Successfully initalized window!\n");
-        printf("INFO: Window Dimensions: %.0f, %.0f\n", winDimensions.x, winDimensions.y);
-        printf("INFO: Screen Dimensions: %d, %d\n", dm.w, dm.h);
-        success = true;
-    }
-
-    winRenderer = SDL_CreateRenderer(winHandle, -1, rendFlags);
-    
-    if (winRenderer == nullptr)
-    {
-        printf("ERROR: Could not create a renderer: %s\n", SDL_GetError());
-        success = false;
-    }
-    else
-    {
-        printf("INFO: Successfully initialized renderer!\n");
-        success = true;
-
-        SDL_RendererInfo rendInfo{};
-        if(SDL_GetRendererInfo(winRenderer, &rendInfo) != 0)
-            printf("WARN: Could not get information about the renderer: %s\n", SDL_GetError());
-        else
-        {
-            printf("INFO: Renderer Name: %s\n", rendInfo.name);
-            printf("INFO: Max texture height: %d\n", rendInfo.max_texture_height);
-            printf("INFO: Max texture width: %d\n", rendInfo.max_texture_width);
-        }
-    }
-
-    return success;
+    ::InitWindow(winDimensions.x, winDimensions.y, title);
+    return true;
 }
 
 bool Graphics::CloseWindow()
 {
-    if (winHandle == nullptr)
-    {
-        printf("WARN: Tried to destroy a window that was not opened\n");
-        return false;
-    }
-    else
-    {
-        SDL_DestroyWindow(winHandle);
-        SDL_DestroyRenderer(winRenderer);
-        
-        printf("INFO: Successfully closed window!\n");
-        winHandle = nullptr;
-        winRenderer = nullptr;
-        return true;
-    }
+    ::CloseWindow();
+    return true;
 }
 
 Vec2i Graphics::GetWindowDimensions()
 {
-    if (winHandle != nullptr)
-    {
-        int w, h;
-
-        SDL_GetWindowSize(winHandle, &w, &h);
-
-        return Vec2i { w, h };
-    } else return Vec2i {};
+    return Vec2i {
+        GetScreenWidth(),
+        GetScreenHeight()
+    };
 }
 
 void Graphics::BeginDrawing()
 {
-    if (winHandle == nullptr)
-    {
-        printf("WARN: Window must be initialized before calling BeginDrawing");
-        return;
-    }
+    if (WindowShouldClose())
+        GameManager::GetInstance()->Quit();
 
-    SDL_Event e;
-    while (SDL_PollEvent(&e))
-    {
-        if (imguiInitialized)
-            ImGui_ImplSDL2_ProcessEvent(&e);
-        
-        switch(e.type)
-        {
-        case SDL_QUIT:
-            GameManager::GetInstance()->Quit();
-            break;
-        case SDL_KEYUP:
-        case SDL_KEYDOWN:
-            keyStates[e.key.keysym.sym] = e.key.state;
-            break;
-        case SDL_MOUSEBUTTONUP:
-        case SDL_MOUSEBUTTONDOWN:
-            mouseBtnStates[e.button.button] = e.button.state;
-            break;
-        }
-    }
-
-    SDL_SetRenderDrawColor(winRenderer, 0, 0, 0, 0);
-    SDL_RenderClear(winRenderer);
+    ::BeginDrawing();
+    ::ClearBackground(BLACK);
 }
 
 void Graphics::EndDrawing()
 {
-    if (winHandle == nullptr)
-    {
-        printf("WARN: Window must be initialized before calling EndDrawing");
-        return;
-    }
-
-    SDL_RenderPresent(winRenderer);
+    ::EndDrawing();
 }
 
 void Graphics::SetWindowPosition(Vec2f pos)
 {
-    if (winHandle == nullptr)
-    {
-        printf("ERROR: No main window initalized to change its position\n");
-        return;
-    }
-
-    SDL_SetWindowPosition(winHandle, (int)pos.x, (int)pos.y);
+    ::SetWindowPosition(pos.x, pos.y);
 }
 
-void Texture::LoadEmpty(Vec2i res, SDL_TextureAccess access)
+// TODO!
+void TextureObject::LoadEmpty(Vec2i res)
 {
-    if (texture != nullptr) Unload();
-    texture = SDL_CreateTexture(winRenderer, SDL_PIXELFORMAT_RGBA8888, access, res.x, res.y);
-
-    if (texture == nullptr)
-    {
-        printf("FATAL: Unable to initialise texture");
-        exit(1);
-    }
-
-    printf("INFO: Created empty texture [ID: %lld]\n", GetID());
+    renderTexture = LoadRenderTexture(res.x, res.y);
+    verticallyMirroredTexture = LoadRenderTexture(res.x, res.y);
 }
 
-void Texture::LoadFromFile(const char *path)
+void TextureObject::LoadFromFile(const char *path)
 {
-    if (winHandle == nullptr || winRenderer == nullptr)
-    {
-        printf("ERROR: Cannot create texture without a renderer\n");
-    }
-    
-    if (texture != nullptr) Unload();
-    texture = IMG_LoadTexture(winRenderer, path);
+    if (texture.id != 0) Unload();
 
-    if (texture == nullptr)
-    {
-        printf("FATAL: Couldn't load image \"%s\"\n", path);
-        printf("FATAL: Error message: %s\n", SDL_GetError());
-        exit(1);
-    }
-
-    printf("INFO: Created texture from file: \"%s\" [ID: %lld]\n", path, GetID());
+    texture = LoadTexture(path);
 }
 
-void Texture::Unload()
+void TextureObject::Unload()
 {
-    if (this->texture != nullptr)
-    {
-        SDL_DestroyTexture(this->texture);
-        this->texture = nullptr;
-    }
-
-    printf("INFO: Unloaded texture [ID: %lld]", GetID());
+    if (texture.id != 0) UnloadTexture(texture);
+    if (renderTexture.id != 0) UnloadRenderTexture(renderTexture);
 }
 
-void Texture::Draw(Recti Source, Rectf Destination)
+void TextureObject::Draw(Recti Source, Rectf Destination, double Rotation, Vec2f Origin)
 {
-    if (this->texture != nullptr)
-    {
-        SDL_RenderCopyF(winRenderer, this->texture,
-            &Source, &Destination);
-    }
+    if (renderTexture.id != 0)
+        DrawTexturePro(renderTexture.texture,
+            {
+                -(float)renderTexture.texture.width + Source.x,
+                (float)renderTexture.texture.height - Source.y,
+                (float)renderTexture.texture.width,
+                -(float)renderTexture.texture.height
+            },
+            Destination, Origin, Rotation, WHITE);
+    if (texture.id != 0)
+        DrawTexturePro(texture, { float(Source.x), float(Source.y), float(Source.width), float(Source.height) },
+            Destination, Origin, Rotation, Color { 255, 255, 255, 255 });
 }
 
-void Texture::Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Origin)
+void TextureObject::Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Origin)
 {
-    if (this->texture != nullptr)
-    {
-        Vec2i res = GetSize();
-        Recti source { 0, 0, res.x, res.y };
-        Rectf dest { Position.x, Position.y, res.x * Scale.x, res.y * Scale.y };
-        SDL_RenderCopyExF(winRenderer, this->texture, &source, &dest,
-            Rotation, NULL, SDL_FLIP_NONE);
-    }
+    if (renderTexture.id != 0)
+        DrawTexturePro(renderTexture.texture,
+            {
+                -(float)renderTexture.texture.width,
+                (float)renderTexture.texture.height,
+                (float)renderTexture.texture.width,
+                -(float)renderTexture.texture.height
+            },
+            {
+                0, 0,
+                (float)renderTexture.texture.width * Scale.x,
+                (float)renderTexture.texture.height * Scale.y
+            },
+            Origin, Rotation, WHITE);
+    if (texture.id != 0)
+        DrawTexturePro(texture,
+            { 0, 0, float(texture.width), float(texture.height) },
+            { Position.x, Position.y, Scale.x * texture.width, Scale.y * texture.height },
+            Origin, Rotation, WHITE);
 }
 
-Vec2i Texture::GetSize()
+Vec2i TextureObject::GetSize()
 {
-    Vec2i out{};
-    if (this->texture != nullptr)
-        SDL_QueryTexture(this->texture, NULL, NULL, &out.x, &out.y);
-    
-    return out;
+    if (renderTexture.id != 0)
+        return { renderTexture.texture.width, renderTexture.texture.height };
+    if (texture.id != 0)
+        return { texture.width, texture.height };
+    return {};
 }
 
-Texture::~Texture()
+TextureObject::~TextureObject()
 {
     this->Unload();
 }
 
-void Texture::BeginDrawingTo()
+void TextureObject::BeginDrawingTo()
 {
-    SDL_SetRenderTarget(winRenderer, texture);
+    if (renderTexture.id == 0) return;
+    BeginTextureMode(renderTexture);
 }
 
-void Texture::EndDrawingTo()
+void TextureObject::EndDrawingTo()
 {
-    SDL_SetRenderTarget(winRenderer, nullptr);
+    if (renderTexture.id == 0) return;
+    EndTextureMode();
+
+    BeginTextureMode(verticallyMirroredTexture);
+        DrawTexture(renderTexture.texture, 0, 0, WHITE);
+    EndTextureMode();
 }
 
-bool Input::IsKeyDown(SDL_KeyCode code)
+Texture& TextureObject::GetTexture()
 {
-    if (keyStates.find(code) != keyStates.end())
-        return keyStates[code];
-    else return false;
+    return texture;
 }
 
-bool Input::IsKeyUp(SDL_KeyCode code)
+RenderTexture2D& TextureObject::GetRenderTexture()
 {
-    return !IsKeyDown(code);
+    return verticallyMirroredTexture;
+}
+
+bool Input::IsKeyDown(int key)
+{
+    return ::IsKeyDown(key);
+}
+
+bool Input::IsKeyUp(int key)
+{
+    return ::IsKeyUp(key);
 }
 
 Vec2i Input::GetMousePos()
 {
-    if (winHandle == nullptr)
-        return Vec2i {};
-    
-    int x, y;
-
-    SDL_PumpEvents();
-    SDL_GetMouseState(&x, &y);
-
-    return Vec2i { x, y };
+    Vec2f pos = GetMousePosition();
+    return { int(pos.x), int(pos.y) };
 }
 
 Vec2i Input::GetMouseDelta()
 {
-    if (winHandle == nullptr)
-        return Vec2i {};
-
-    int x, y;
-
-    SDL_PumpEvents();
-    SDL_GetRelativeMouseState(&x, &y);
-
-    return Vec2i { x, y };
+    Vec2f delta = ::GetMouseDelta();
+    return { int(delta.x), int(delta.y) };
 }
 
 void Input::SetMousePos(Vec2i pos)
 {
-    if (winHandle != nullptr)
-        SDL_WarpMouseInWindow(winHandle, pos.x, pos.y);
+    ::SetMousePosition(pos.x, pos.y);
 }
 
-bool Input::IsMouseButtonDown(uint8_t button)
+bool Input::IsMouseButtonDown(int button)
 {
-    if (mouseBtnStates.find(button) != mouseBtnStates.end())
-        return mouseBtnStates[button];
-    else return false;
+    return ::IsMouseButtonDown(button);
 }
 
-bool Input::IsMouseButtonUp(uint8_t button)
+bool Input::IsMouseButtonUp(int button)
 {
-    return !IsMouseButtonDown(button);
+    return ::IsMouseButtonUp(button);
 }
 
-bool SDLImGui::InitImGui()
+bool RLImGui::InitImGui()
 {
-    bool success = true;
-
     IMGUI_CHECKVERSION();
-    ImGui::CreateContext();
+
+    SetupRLImGui(true);
 
     ImGuiIO &io = ImGui::GetIO();
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
     io.Fonts->AddFontFromFileTTF("res/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf", 15);
+    ReloadImGuiFonts();
 
-    success = ImGui_ImplSDL2_InitForSDLRenderer(winHandle, winRenderer);
-    success = ImGui_ImplSDLRenderer_Init(winRenderer);
-
-    if (success) imguiInitialized = true;
-
-    return success;
+    return true;
 }
 
-void SDLImGui::CloseImGui()
+void RLImGui::CloseImGui()
 {
-    ImGui_ImplSDLRenderer_Shutdown();
-    ImGui_ImplSDL2_Shutdown();
-
-    imguiInitialized = false;
+    ShutdownRLImGui();
 }
 
-void SDLImGui::BeginImGuiDrawing()
+void RLImGui::BeginImGuiDrawing()
 {
-    ImGui_ImplSDLRenderer_NewFrame();
-    ImGui_ImplSDL2_NewFrame();
-    ImGui::NewFrame();
+    BeginRLImGui();
 }
 
-void SDLImGui::EndImGuiDrawing()
+void RLImGui::EndImGuiDrawing()
 {
-    ImGui::Render();
-    ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
+    EndRLImGui();
 }

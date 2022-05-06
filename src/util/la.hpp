@@ -1,8 +1,12 @@
 #pragma once
-#include <SDL2/SDL.h>
+#include <raylib.h>
 
-typedef SDL_FPoint Vec2f;
-typedef SDL_Point Vec2i;
+typedef Vector2 Vec2f;
+
+typedef struct Vec2i {
+    int x;
+    int y;
+} Vec2i;
 
 typedef struct Vec3f {
     float x;
@@ -31,9 +35,16 @@ typedef struct Vec4i {
     int w;
 } Vec4i;
 
-typedef SDL_FRect Rectf;
-typedef SDL_Rect Recti;
-typedef SDL_Color Color;
+typedef Rectangle Rectf;
+
+typedef struct Recti {
+    int x;
+    int y;
+    int width;
+    int height;
+} Recti;
+
+typedef Color Color;
 
 // float lerpf(float a, float b, float t)
 // {
