@@ -13,17 +13,19 @@ def call_shell(*args):
 
 source_dir = "src"
 object_dir = "obj"
-compiler = "c++"
+compiler = "g++"
 compile_pattern = ".*\.cpp$"
 
-cflags = f"-I{source_dir} -I{os.path.join(source_dir, 'util', 'dear_imgui')} {call_shell('pkg-config --cflags SDL2')}"
-err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -fpermissive -g -ggdb -fdiagnostics-color=always"
+cflags = f"-I{source_dir} -I{os.path.join(source_dir, 'util', 'dear_imgui')}"
+
+# err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -g -ggdb -fdiagnostics-color=always"
+err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -g -ggdb -fdiagnostics-color=always"
 
 libs = ""
 if platform.system() == "Windows":
-    libs += "-LC:/msys64/mingw64/bin/../lib -lSDL2_image -lmingw32 -lSDL2main -lSDL2"
+    libs += "-LC:/msys64/mingw64/bin/../lib -lraylib -lopengl32 -lgdi32 -lwinmm"
 else:
-    libs = call_shell("pkg-config --libs sdl2") + " " + call_shell("pkg-config --libs SDL2_image")
+    raise NotImplementedError()
 
 out_ext = ""
 if platform.system() == "Windows":
