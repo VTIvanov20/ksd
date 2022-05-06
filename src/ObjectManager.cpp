@@ -26,7 +26,10 @@ void ObjectManager::CleanUnusedComponents()
         {
             auto sharedComponent = std::static_pointer_cast<Component>(object.second);
             if (!sharedComponent->IsUsed && sharedComponent->DestroyOnReload)
+            {
                 idsForDestroying.push_back(object.first);
+                sharedComponent->OnDestroy();
+            }
         }
     }
 
@@ -156,7 +159,7 @@ void ObjectManager::TriggerUpdateEvents()
         }
     }
 
-    SDLImGui::BeginImGuiDrawing();
+    RLImGui::BeginImGuiDrawing();
     for (auto obj : objectTable)
     {
         if (CheckBaseName(obj.second, "Entity"))
@@ -164,5 +167,5 @@ void ObjectManager::TriggerUpdateEvents()
             std::static_pointer_cast<Entity>(obj.second)->OnUpdateUIComponents();
         }
     }
-    SDLImGui::EndImGuiDrawing();
+    RLImGui::EndImGuiDrawing();
 }
