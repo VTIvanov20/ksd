@@ -9,6 +9,8 @@
 #include "./components/TransformComponent2D.hpp"
 #include "./components/SpriteComponent.hpp"
 #include "./components/GlobalState.hpp"
+#include "./components/GameController.hpp"
+#include "./components/GameWindow.hpp"
 
 std::string GetFileContents(const std::string path)
 {
@@ -88,6 +90,14 @@ void InitSceneFromFile(const std::string fPath)
             else if (name == "GlobalState")
             {
                 entity.lock()->BindComponent(ECS::CreateComponent<GlobalState>().lock());
+            }
+            else if (name == "GameController")
+            {
+                entity.lock()->BindComponent(ECS::CreateComponent<GameController>().lock());
+            }
+            else if (name == "GameWindow")
+            {
+                entity.lock()->BindComponent(ECS::CreateComponent<GameWindow>().lock());
             }
         }
     }
