@@ -1,0 +1,16 @@
+[
+    {
+        "DestroyOnReload": false,
+        "TagName": "global_state",
+        "components": {
+            "GlobalState": {}
+        }
+    },
+    {
+        "DestroyOnReload": true,
+        "components": {
+            "GameController": {},
+            "GameWindow": {}
+        }
+    }
+]

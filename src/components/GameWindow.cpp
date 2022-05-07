@@ -39,6 +39,20 @@ void GameWindow::OnUpdate()
             DrawBeginningNode(card, { (float)idx, cards.size() - 1 });
         }
     renderTexture.lock()->EndDrawingTo();
+
+    if (MGetComponent(GameController)->GetCurrentTurn() == Turn::YOUR)
+    {
+        DrawText("Your Turn", 10, 10, 30, WHITE);
+    }
+    else
+    {
+        DrawText("Opponent's Turn", 10, 10, 30, WHITE);
+    }
+
+    if (MGetComponent(GameController)->CanPlaceCard({0, 5}))
+        DrawText("True", 10, 100, 30, WHITE);
+    else
+        DrawText("False", 10, 100, 30, WHITE);
 }
 
 void GameWindow::OnDestroy()

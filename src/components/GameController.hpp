@@ -5,6 +5,12 @@
 
 #include "./CardTypes.hpp"
 
+enum class Turn
+{
+    YOUR,
+    OPPONENT
+};
+
 class GameController : public Component
 {
 public:
@@ -15,7 +21,11 @@ public:
     void OnUpdate() override;
 
     std::array<BeginningNode<CardType>, 6> GetCards();
+    Turn GetCurrentTurn();
+
+    bool CanPlaceCard(Vec2i cardPos);
 
 private:
     std::array<BeginningNode<CardType>, 6> cards;
+    Turn currentTurn;
 };
