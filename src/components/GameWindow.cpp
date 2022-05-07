@@ -52,7 +52,7 @@ void GameWindow::OnDestroy()
 void GameWindow::OnUI()
 {
     Texture& texture = renderTexture.lock()->GetRenderTexture().texture;
-    ImGui::Begin("GameController");
+    ImGui::Begin("GameWindow");
         ImGui::Image((void*)&texture.id,
             { static_cast<float>(texture.width), static_cast<float>(texture.height) });
     ImGui::End();

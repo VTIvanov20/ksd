@@ -29,6 +29,6 @@ private:
 
     std::weak_ptr<TextureObject> renderTexture;
 
-    const Vec2f scaleTo { 142.f / 2, 204.f / 2 };
+    const Vec2f scaleTo { 142.f, 204.f };
     const Vec2f spacing { 10.f, 10.f };
 };
