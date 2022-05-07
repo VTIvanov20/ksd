@@ -11,23 +11,21 @@ enum class CardType
 enum class VerticalCardPos
 {
     TOP,
+    CENTER,
     BOTTOM
 };
 
 template <typename T>
 struct Node
 {
-    std::shared_ptr<Node<T>> left;
-    std::shared_ptr<Node<T>> right;
+    std::shared_ptr<Node<T>> next;
     T val;
 };
 
 template <typename T>
 struct BeginningNode
 {
-    std::shared_ptr<Node<T>> topL;
-    std::shared_ptr<Node<T>> topR;
-    std::shared_ptr<Node<T>> bottomL;
-    std::shared_ptr<Node<T>> bottomR;
+    std::shared_ptr<Node<T>> topNext;
+    std::shared_ptr<Node<T>> bottomNext;
     T val;
 };

@@ -12,9 +12,11 @@ void GameWindow::OnCreate()
     xorZero = ObjectManager::GetInstance()->CreateObject<TextureObject>();
     xorOne = ObjectManager::GetInstance()->CreateObject<TextureObject>();
 
+    auto cards = MGetComponent(GameController)->GetCards();
+
     renderTexture.lock()->LoadEmpty({
-        int(scaleTo.x + spacing.x) * 6,
-        int(scaleTo.x + spacing.x) * 11
+        int(scaleTo.x) * int(cards.size()),
+        int(scaleTo.y) * int(cards.size() * 2 - 1) /*- int(scaleTo.y - scaleTo.y * .75f) * int(cards.size() * 2 - 1)*/
     });
 
     state.lock()->LoadFromFile("res/img/state.png");
@@ -28,12 +30,13 @@ void GameWindow::OnCreate()
 
 void GameWindow::OnUpdate()
 {
-    auto cards = MGetComponent(GameController)->GetCards();
+
     renderTexture.lock()->BeginDrawingTo();
+        auto cards = MGetComponent(GameController)->GetCards();
         for (size_t idx = 0; idx < cards.size(); idx++)
         {
             auto card = cards[idx];
-            DrawBeginningNode(card, { (float)idx, 1.f });
+            DrawBeginningNode(card, { (float)idx, cards.size() - 1 });
         }
     renderTexture.lock()->EndDrawingTo();
 }
@@ -52,40 +55,53 @@ void GameWindow::OnDestroy()
 void GameWindow::OnUI()
 {
     Texture& texture = renderTexture.lock()->GetRenderTexture().texture;
-    ImGui::Begin("GameWindow");
+    const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
+    const ImVec2 windowSize { static_cast<float>(texture.width), static_cast<float>(texture.height) };
+    const ImVec2 windowPos {
+        displaySize.x / 2 - windowSize.x / 2,
+        displaySize.y / 2 - windowSize.y / 2
+    };
+
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, { 0, 0 });
+    ImGui::SetNextWindowPos(windowPos);
+    ImGui::SetNextWindowSize(windowSize);
+    ImGui::Begin("GameWindow", nullptr,
+        ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
+        ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDocking);
         ImGui::Image((void*)&texture.id,
             { static_cast<float>(texture.width), static_cast<float>(texture.height) });
     ImGui::End();
+    ImGui::PopStyleVar();
 }
 
 void GameWindow::DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx)
 {
-    DrawFromType(top.val, idx, {});
+    DrawFromType(top.val, idx);
 
-    if (top.topR != nullptr)
-        DrawNode(*top.topR, { idx.x, idx.y + 1 }, VerticalCardPos::TOP);
-    if (top.bottomR != nullptr)
-        DrawNode(*top.bottomR, { idx.x, idx.y - 1 }, VerticalCardPos::BOTTOM);
+    if (top.topNext != nullptr)
+        DrawNode(*top.topNext, { idx.x - .5f, idx.y - .75f }, VerticalCardPos::TOP);
+    if (top.bottomNext != nullptr)
+        DrawNode(*top.bottomNext, { idx.x - .5f, idx.y + .75f }, VerticalCardPos::BOTTOM);
 }
 
 void GameWindow::DrawNode(Node<CardType> top, Vec2f idx, VerticalCardPos vertPos)
 {
-    DrawFromType(top.val, idx, {});
+    DrawFromType(top.val, idx);
 
-    if (top.right != nullptr)
-        DrawNode(*top.right,
-            { idx.x + .5f, vertPos == VerticalCardPos::BOTTOM ? idx.y - 1 : idx.y + 1 }, vertPos);
+    if (top.next != nullptr)
+        DrawNode(*top.next,
+            { idx.x - .5f, vertPos == VerticalCardPos::BOTTOM ? idx.y + .75f : idx.y - .75f }, vertPos);
 }
 
-void GameWindow::DrawFromType(CardType type, Vec2f index, Vec2f spacing)
+void GameWindow::DrawFromType(CardType type, Vec2f index)
 {
     /*
         x -> index
         y -> floor
     */
     Vec2f actualPos = {
-        index.x * scaleTo.x + spacing.x,
-        index.y * scaleTo.y + spacing.y
+        index.x * scaleTo.x,
+        index.y * scaleTo.y
     };
 
     Vec2i texRes {};
@@ -119,8 +135,8 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, Vec2f spacing)
     }
 
     Rectf dest = {
-        actualPos.x + texRes.x / 2,
-        actualPos.y + texRes.y / 2,
+        actualPos.x + scaleTo.x / 2,
+        actualPos.y + scaleTo.y / 2,
         scaleTo.x,
         scaleTo.y
     };
@@ -132,8 +148,8 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, Vec2f spacing)
     };
 
     Vec2f origin = {
-        texRes.x / 2.f,
-        texRes.y / 2.f
+        scaleTo.x / 2.f,
+        scaleTo.y / 2.f
     };
 
     switch(type)

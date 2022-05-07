@@ -17,7 +17,7 @@ public:
 private:
     void DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx);
     void DrawNode(Node<CardType> top, Vec2f idx, VerticalCardPos vertPos);
-    void DrawFromType(CardType type, Vec2f index, Vec2f spacing);
+    void DrawFromType(CardType type, Vec2f index);
 
     std::weak_ptr<TextureObject> state;
     std::weak_ptr<TextureObject> andZero;
@@ -29,6 +29,5 @@ private:
 
     std::weak_ptr<TextureObject> renderTexture;
 
-    const Vec2f scaleTo { 142.f, 204.f };
-    const Vec2f spacing { 10.f, 10.f };
+    const Vec2f scaleTo { 142.f / 2.f, 204.f / 2.f };
 };
