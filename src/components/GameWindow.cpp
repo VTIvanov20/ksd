@@ -30,7 +30,7 @@ void GameWindow::OnCreate()
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -1});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -1});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -1});
-    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {3, -1});
+    // MGetComponent(GameController)->PlaceCard(CardType::OR_0, {3, -1});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {4, -1});
 
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -2});
@@ -41,6 +41,11 @@ void GameWindow::OnCreate()
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -3});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -3});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -3});
+
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -4});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -4});
+
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -5});
 }
 
 void GameWindow::OnUpdate()
@@ -104,6 +109,7 @@ void GameWindow::DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx)
 
     if (top.topNext != nullptr)
         DrawNode(*top.topNext, { idx.x - .5f, idx.y - .75f }, VerticalCardPos::TOP);
+
     if (top.bottomNext != nullptr)
         DrawNode(*top.bottomNext, { idx.x - .5f, idx.y + .75f }, VerticalCardPos::BOTTOM);
 }
@@ -115,6 +121,7 @@ void GameWindow::DrawNode(Node<CardType> top, Vec2f idx, VerticalCardPos vertPos
     if (top.next != nullptr)
         DrawNode(*top.next,
             { idx.x - .5f, vertPos == VerticalCardPos::BOTTOM ? idx.y + .75f : idx.y - .75f }, vertPos);
+    // else DrawFromType(CardType::EMPTY, { idx.x - .5f, idx.y + .75f }, VerticalCardPos::CENTER);
 }
 
 void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPos)
@@ -127,6 +134,11 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
         index.x * scaleTo.x,
         index.y * scaleTo.y
     };
+
+    if (type == CardType::EMPTY)
+    {
+        DrawRectangleV(actualPos, scaleTo, WHITE);
+    }
 
     Vec2i texRes {};
 
@@ -156,6 +168,7 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
     case CardType::STATE_0_1:
         texRes = state.lock()->GetSize();
         break;
+    case CardType::EMPTY: {}
     }
 
     Rectf dest = {
@@ -202,5 +215,6 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
     case CardType::STATE_0_1:
         state.lock()->Draw(source, dest, 180.f, origin);
         break;
+    case CardType::EMPTY: {}
     }
 }

@@ -35,6 +35,10 @@ void GameController::PlaceCard(CardType type, Vec2i cardPos)
 
     if (CanPlaceCard(cardPos))
     {
+        if (CanPlaceCard({ cardPos.x, cardPos.y + (cardPos.y > 0 ? -1 : 1) }) ||
+            CanPlaceCard({ cardPos.x + 1, cardPos.y + (cardPos.y > 0 ? -1 : 1) }))
+            return;
+
         std::shared_ptr<Node<CardType>> card;
 
         if (cardPos.y < 0)

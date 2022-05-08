@@ -5,7 +5,8 @@ enum class CardType
     STATE_0_1, STATE_1_0,
     AND_0, AND_1,
     OR_0, OR_1,
-    XOR_0, XOR_1
+    XOR_0, XOR_1,
+    EMPTY
 };
 
 enum class VerticalCardPos
