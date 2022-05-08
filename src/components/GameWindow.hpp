@@ -17,7 +17,7 @@ public:
 private:
     void DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx);
     void DrawNode(Node<CardType> top, Vec2f idx, VerticalCardPos vertPos);
-    void DrawFromType(CardType type, Vec2f index);
+    void DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPos);
 
     std::weak_ptr<TextureObject> state;
     std::weak_ptr<TextureObject> andZero;

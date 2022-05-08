@@ -12,7 +12,10 @@ void GameController::OnCreate()
 
 void GameController::OnUpdate()
 {
-    
+    // if (currentTurn == Turn::OPPONENT)
+    // {
+
+    // }
 }
 
 std::array<BeginningNode<CardType>, 6> GameController::GetCards()
@@ -25,28 +28,72 @@ Turn GameController::GetCurrentTurn()
     return currentTurn;
 }
 
+void GameController::PlaceCard(CardType type, Vec2i cardPos)
+{
+    if (type == CardType::STATE_0_1 || type == CardType::STATE_1_0)
+        return;
+
+    if (CanPlaceCard(cardPos))
+    {
+        std::shared_ptr<Node<CardType>> card;
+
+        if (cardPos.y < 0)
+            card = cards[cardPos.x - cardPos.y].bottomNext;
+        else if (cardPos.y > 0)
+            card = cards[cardPos.x + cardPos.y].topNext;
+        
+        if (card == nullptr)
+        {
+            if (cardPos.y < 0)
+                cards[cardPos.x - cardPos.y].bottomNext = std::make_shared<Node<CardType>>(Node<CardType> {
+                    nullptr,
+                    type
+                });
+            else if (cardPos.y > 0)
+                cards[cardPos.x + cardPos.y].topNext = std::make_shared<Node<CardType>>(Node<CardType> {
+                    nullptr,
+                    type
+                });
+
+            return;
+        }
+
+        while (card->next != nullptr)
+            card = card->next;
+        
+        card->next = std::make_shared<Node<CardType>>(Node<CardType> {
+            nullptr,
+            type
+        });
+    }
+}
+
 bool GameController::CanPlaceCard(Vec2i cardPos)
 {
     std::shared_ptr<Node<CardType>> currentNode;
 
-    if (cardPos.y == 0 || abs(cardPos.y) > abs(cardPos.x))
-    {
+    if (cardPos.y == 0 || cardPos.x < 0)
         return false;
-    }
+    
+    if (cardPos.y >= static_cast<int>(cards.size()) || cardPos.x >= static_cast<int>(cards.size()) - abs(cardPos.y))
+        return false;
+
     if (cardPos.y > 0)
     {
-        currentNode = cards[abs(cardPos.x)].topNext;
+        currentNode = cards[cardPos.x + cardPos.y].topNext;
     }
     else if (cardPos.y < 0)
     {
-        currentNode = cards[abs(cardPos.x)].bottomNext;
+        currentNode = cards[cardPos.x - cardPos.y].bottomNext;
     }
     
-    for (int i = 0; i <= abs(cardPos.x); i++)
+    for (int y = 1; y <= abs(cardPos.y); y++)
     {
-        if (currentNode == nullptr && abs(cardPos.y) >= i)
+        if (currentNode == nullptr)
         {
-            return true;
+            if (abs(cardPos.y) == y)
+                return true;
+            else return false;
         }
         currentNode = currentNode->next;
     }

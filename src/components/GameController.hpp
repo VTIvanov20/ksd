@@ -23,9 +23,11 @@ public:
     std::array<BeginningNode<CardType>, 6> GetCards();
     Turn GetCurrentTurn();
 
-    bool CanPlaceCard(Vec2i cardPos);
+    void PlaceCard(CardType type, Vec2i cardPos);
 
 private:
+    bool CanPlaceCard(Vec2i cardPos);
+
     std::array<BeginningNode<CardType>, 6> cards;
     Turn currentTurn;
 };

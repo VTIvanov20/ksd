@@ -26,6 +26,21 @@ void GameWindow::OnCreate()
     orOne.lock()->LoadFromFile("res/img/or_1.png");
     xorZero.lock()->LoadFromFile("res/img/xor_0.png");
     xorOne.lock()->LoadFromFile("res/img/xor_1.png");
+
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -1});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -1});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -1});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {3, -1});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {4, -1});
+
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -2});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -2});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -2});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {3, -2});
+
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -3});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -3});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -3});
 }
 
 void GameWindow::OnUpdate()
@@ -48,11 +63,6 @@ void GameWindow::OnUpdate()
     {
         DrawText("Opponent's Turn", 10, 10, 30, WHITE);
     }
-
-    if (MGetComponent(GameController)->CanPlaceCard({0, 5}))
-        DrawText("True", 10, 100, 30, WHITE);
-    else
-        DrawText("False", 10, 100, 30, WHITE);
 }
 
 void GameWindow::OnDestroy()
@@ -90,7 +100,7 @@ void GameWindow::OnUI()
 
 void GameWindow::DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx)
 {
-    DrawFromType(top.val, idx);
+    DrawFromType(top.val, idx, VerticalCardPos::CENTER);
 
     if (top.topNext != nullptr)
         DrawNode(*top.topNext, { idx.x - .5f, idx.y - .75f }, VerticalCardPos::TOP);
@@ -100,14 +110,14 @@ void GameWindow::DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx)
 
 void GameWindow::DrawNode(Node<CardType> top, Vec2f idx, VerticalCardPos vertPos)
 {
-    DrawFromType(top.val, idx);
+    DrawFromType(top.val, idx, vertPos);
 
     if (top.next != nullptr)
         DrawNode(*top.next,
             { idx.x - .5f, vertPos == VerticalCardPos::BOTTOM ? idx.y + .75f : idx.y - .75f }, vertPos);
 }
 
-void GameWindow::DrawFromType(CardType type, Vec2f index)
+void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPos)
 {
     /*
         x -> index
@@ -169,22 +179,22 @@ void GameWindow::DrawFromType(CardType type, Vec2f index)
     switch(type)
     {
     case CardType::AND_0:
-        andZero.lock()->Draw(source, dest, index.x < 0 ? 180.f : 0.f, origin);
+        andZero.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
         break;
     case CardType::AND_1:
-        andOne.lock()->Draw(source, dest, index.x < 0 ? 180.f : 0.f, origin);
+        andOne.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
         break;
     case CardType::OR_0:
-        orZero.lock()->Draw(source, dest, index.x < 0 ? 180.f : 0.f, origin);
+        orZero.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
         break;
     case CardType::OR_1:
-        orOne.lock()->Draw(source, dest, index.x < 0 ? 180.f : 0.f, origin);
+        orOne.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
         break;
     case CardType::XOR_0:
-        xorZero.lock()->Draw(source, dest, index.x < 0 ? 180.f : 0.f, origin);
+        xorZero.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
         break;
     case CardType::XOR_1:
-        xorOne.lock()->Draw(source, dest, index.x < 0 ? 180.f : 0.f, origin);
+        xorOne.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
         break;
     case CardType::STATE_1_0:
         state.lock()->Draw(source, dest, 0.f, origin);
