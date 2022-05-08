@@ -54,6 +54,12 @@ void TextureObject::LoadFromFile(const char *path)
     if (texture.id != 0) Unload();
 
     texture = LoadTexture(path);
+
+    if (texture.id == 0)
+    {
+        printf("FATAL: Texture could not be loaded [%s]\n", path);
+        exit(1);
+    }
 }
 
 void TextureObject::Unload()
