@@ -26,6 +26,8 @@ public:
     void PlaceCard(CardType type, Vec2i cardPos);
     std::vector<Vec2i> GetPlaceablePositions();
 
+    CardType GetCard(Vec2i cardPos);
+
 private:
     bool CanPlaceCard(Vec2i cardPos); // alternative name: inverted CardExists
 

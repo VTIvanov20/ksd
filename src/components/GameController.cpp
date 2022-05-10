@@ -133,3 +133,32 @@ bool GameController::CanPlaceCard(Vec2i cardPos)
 
     return false;
 }
+
+CardType GameController::GetCard(Vec2i cardPos)
+{
+    std::shared_ptr<Node<CardType>> currentNode;
+
+    if (cardPos.x < 0)
+        return CardType::EMPTY;
+    
+    if (cardPos.y >= static_cast<int>(cards.size()) || cardPos.x >= static_cast<int>(cards.size()) - abs(cardPos.y))
+        return CardType::EMPTY;
+
+    if (cardPos.y > 0)
+    {
+        currentNode = cards[cardPos.x + cardPos.y].topNext;
+    }
+    else if (cardPos.y < 0)
+    {
+        currentNode = cards[cardPos.x - cardPos.y].bottomNext;
+    }
+    
+    for (int y = 1; y <= abs(cardPos.y); y++)
+    {
+        if (abs(cardPos.y) == y)
+            return currentNode->val;
+        currentNode = currentNode->next;
+    }
+
+    return CardType::EMPTY;
+}
