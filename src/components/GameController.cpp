@@ -155,6 +155,9 @@ CardType GameController::GetCard(Vec2i cardPos)
     
     for (int y = 1; y <= abs(cardPos.y); y++)
     {
+        if (currentNode == nullptr)
+            return CardType::EMPTY;
+        
         if (abs(cardPos.y) == y)
             return currentNode->val;
         currentNode = currentNode->next;
