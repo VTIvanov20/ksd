@@ -16,7 +16,7 @@ void GameWindow::OnCreate()
 
     renderTexture.lock()->LoadEmpty({
         int(scaleTo.x) * int(cards.size()),
-        int(scaleTo.y) * int(cards.size() * 2 - 1) /*- int(scaleTo.y - scaleTo.y * .75f) * int(cards.size() * 2 - 1)*/
+        int(scaleTo.y * .75f) * int(cards.size() * 2 - 1) + int(scaleTo.y * .30f)
     });
 
     state.lock()->LoadFromFile("res/img/state.png");
@@ -26,11 +26,11 @@ void GameWindow::OnCreate()
     orOne.lock()->LoadFromFile("res/img/or_1.png");
     xorZero.lock()->LoadFromFile("res/img/xor_0.png");
     xorOne.lock()->LoadFromFile("res/img/xor_1.png");
-
+    
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -1});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -1});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -1});
-    // MGetComponent(GameController)->PlaceCard(CardType::OR_0, {3, -1});
+    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {3, -1});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {4, -1});
 
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -2});
@@ -38,12 +38,12 @@ void GameWindow::OnCreate()
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -2});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {3, -2});
 
-    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -3});
+    // MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -3});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -3});
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {2, -3});
 
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -4});
-    MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -4});
+    // MGetComponent(GameController)->PlaceCard(CardType::OR_0, {1, -4});
 
     MGetComponent(GameController)->PlaceCard(CardType::OR_0, {0, -5});
 }
@@ -56,7 +56,12 @@ void GameWindow::OnUpdate()
         for (size_t idx = 0; idx < cards.size(); idx++)
         {
             auto card = cards[idx];
-            DrawBeginningNode(card, { (float)idx, cards.size() - 1 });
+            DrawBeginningNode(card, { (float)idx, (cards.size() - 1) * .75f });
+        }
+
+        for (auto pos : MGetComponent(GameController)->GetPlaceablePositions())
+        {
+            DrawFromType(CardType::EMPTY, { pos.x + abs(pos.y) * .5f, float(abs(pos.y) + cards.size() - 1) * .75f }, VerticalCardPos::CENTER);
         }
     renderTexture.lock()->EndDrawingTo();
 
@@ -85,18 +90,22 @@ void GameWindow::OnUI()
 {
     Texture& texture = renderTexture.lock()->GetRenderTexture().texture;
     const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
-    const ImVec2 windowSize { static_cast<float>(texture.width), static_cast<float>(texture.height) };
+    const ImVec2 windowPadding = ImGui::GetStyle().WindowPadding;
+    const ImVec2 windowSize {
+        static_cast<float>(texture.width) + windowPadding.x * 2,
+        static_cast<float>(texture.height) + windowPadding.y * 2
+    };
     const ImVec2 windowPos {
         displaySize.x / 2 - windowSize.x / 2,
         displaySize.y / 2 - windowSize.y / 2
     };
 
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, { 0, 0 });
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 5.f);
     ImGui::SetNextWindowPos(windowPos);
     ImGui::SetNextWindowSize(windowSize);
     ImGui::Begin("GameWindow", nullptr,
         ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
-        ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDocking);
+        ImGuiWindowFlags_NoDocking);
         ImGui::Image((void*)&texture.id,
             { static_cast<float>(texture.width), static_cast<float>(texture.height) });
     ImGui::End();
@@ -121,7 +130,6 @@ void GameWindow::DrawNode(Node<CardType> top, Vec2f idx, VerticalCardPos vertPos
     if (top.next != nullptr)
         DrawNode(*top.next,
             { idx.x - .5f, vertPos == VerticalCardPos::BOTTOM ? idx.y + .75f : idx.y - .75f }, vertPos);
-    // else DrawFromType(CardType::EMPTY, { idx.x - .5f, idx.y + .75f }, VerticalCardPos::CENTER);
 }
 
 void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPos)
