@@ -80,8 +80,7 @@ void TextureObject::Draw(Recti Source, Rectf Destination, double Rotation, Vec2f
             },
             Destination, Origin, Rotation, WHITE);
     if (texture.id != 0)
-        DrawTexturePro(texture, { float(Source.x), float(Source.y), float(Source.width), float(Source.height) },
-            Destination, Origin, Rotation, Color { 255, 255, 255, 255 });
+        DrawTexturePro(texture, Source, Destination, Origin, Rotation, Color { 255, 255, 255, 255 });
 }
 
 void TextureObject::Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Origin)
