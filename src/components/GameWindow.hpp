@@ -4,6 +4,11 @@
 #include "./CardTypes.hpp"
 #include "./GameController.hpp"
 
+#include <map>
+
+inline bool operator< (const Vec2i& lhs, const Vec2i& rhs) { return lhs.x < rhs.x && lhs.y < rhs.y; }
+inline bool operator> (const Vec2i& lhs, const Vec2i& rhs) { return lhs.x > rhs.x && lhs.y > rhs.y; }
+
 class GameWindow : public Component
 {
 public:
@@ -28,6 +33,8 @@ private:
     std::weak_ptr<TextureObject> xorOne;
 
     std::weak_ptr<TextureObject> renderTexture;
+    std::vector<Vec2i> clickablePositions {};
 
+    const float narrowness = .75f;
     const Vec2f scaleTo { 142.f / 2.f, 204.f / 2.f };
 };
