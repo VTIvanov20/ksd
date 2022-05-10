@@ -12,10 +12,10 @@ void GameController::OnCreate()
 
 void GameController::OnUpdate()
 {
-    // if (currentTurn == Turn::OPPONENT)
-    // {
-
-    // }
+    if (currentTurn == Turn::OPPONENT)
+    {
+        
+    }
 }
 
 std::array<BeginningNode<CardType>, 6> GameController::GetCards()
@@ -168,4 +168,103 @@ CardType GameController::GetCard(Vec2i cardPos)
     }
 
     return CardType::EMPTY;
+}
+
+std::vector<CardType> GameController::GetPlaceableCards(Vec2i cardPos)
+{
+    // sanity check
+    if ((CanPlaceCard({ cardPos.x, cardPos.y + (cardPos.y > 0 ? -1 : 1) }) ||
+        CanPlaceCard({ cardPos.x + 1, cardPos.y + (cardPos.y > 0 ? -1 : 1) })) && !CanPlaceCard(cardPos))
+        return {};
+
+    CardType mostLeft, mostRight;
+
+    if (cardPos.y < 0)
+    {
+        mostLeft = GetCard({ cardPos.x, cardPos.y + 1 });
+        mostRight = GetCard({ cardPos.x + 1, cardPos.y + 1 });
+    }
+    else if (cardPos.y > 0)
+    {
+        mostLeft = GetCard({ cardPos.x, cardPos.y - 1 });
+        mostRight = GetCard({ cardPos.x + 1, cardPos.y - 1 });
+    }
+
+    bool mostLeftState, mostRightState;
+
+    switch (mostLeft)
+    {
+        case CardType::STATE_0_1:
+            if (cardPos.y > 0)
+                mostLeftState = true;
+            else if (cardPos.y < 0)
+                mostLeftState = false;
+            break;
+        case CardType::STATE_1_0:
+            if (cardPos.y > 0)
+                mostLeftState = false;
+            else if (cardPos.y < 0)
+                mostLeftState = true;
+            break;
+        case CardType::AND_0:
+            mostLeftState = false;
+            break;
+        case CardType::AND_1:
+            mostLeftState = true;
+            break;
+        case CardType::OR_0:
+            mostLeftState = false;
+            break;
+        case CardType::OR_1:
+            mostLeftState = true;
+            break;
+        case CardType::XOR_0:
+            mostLeftState = false;
+            break;
+        case CardType::XOR_1:
+            mostLeftState = true;
+            break;
+        default: return {};
+    }
+
+    switch (mostRight)
+    {
+        case CardType::STATE_0_1:
+            if (cardPos.y > 0)
+                mostRightState = true;
+            else if (cardPos.y < 0)
+                mostRightState = false;
+            break;
+        case CardType::STATE_1_0:
+            if (cardPos.y > 0)
+                mostRightState = false;
+            else if (cardPos.y < 0)
+                mostRightState = true;
+            break;
+        case CardType::AND_0:
+            mostRightState = false;
+            break;
+        case CardType::AND_1:
+            mostRightState = true;
+            break;
+        case CardType::OR_0:
+            mostRightState = false;
+            break;
+        case CardType::OR_1:
+            mostRightState = true;
+            break;
+        case CardType::XOR_0:
+            mostRightState = false;
+            break;
+        case CardType::XOR_1:
+            mostRightState = true;
+            break;
+        default: return {};
+    }
+
+    if (mostRightState && mostLeftState)
+        return { CardType::AND_1, CardType::OR_1, CardType::XOR_0 };
+    else if ((mostRightState && !mostLeftState) || (!mostRightState && mostLeftState))
+        return { CardType::AND_0, CardType::OR_1, CardType::XOR_1 };
+    else return { CardType::AND_0, CardType::OR_0, CardType::XOR_0 };
 }

@@ -146,6 +146,21 @@ void GameWindow::OnUI()
             mousePosAbsolute.y - screenPosAbsolute.y
         };
         
+        if (ImGui::BeginPopup("card_select_popup"))
+        {
+            for (auto type : gameController->GetPlaceableCards(positionForPlacing))
+            {
+                ImGui::SameLine();
+                if (DrawImageButton(type))
+                {
+                    gameController->PlaceCard(type, positionForPlacing);
+                    ImGui::CloseCurrentPopup();
+                    positionForPlacing = { 0, 0 };
+                }
+            }
+            ImGui::EndPopup();
+        }
+        
         for (auto pos : clickablePositions)
         {
             if (CheckCollisionPointRec({ mousePosRelative.x, mousePosRelative.y }, {
@@ -158,24 +173,8 @@ void GameWindow::OnUI()
                 positionForPlacing = pos;
             }
         }
-
-        if (ImGui::BeginPopup("card_select_popup"))
-        {
-            for (int i = static_cast<int>(CardType::AND_0); i < static_cast<int>(CardType::EMPTY); i++)
-            {
-                ImGui::SameLine();
-                if (DrawImageButton(static_cast<CardType>(i)))
-                {
-                    gameController->PlaceCard(static_cast<CardType>(i), positionForPlacing);
-                    ImGui::CloseCurrentPopup();
-                    positionForPlacing = { 0, 0 };
-                }
-            }
-            ImGui::EndPopup();
-        }
     ImGui::End();
     ImGui::PopStyleVar();
-    
 }
 
 void GameWindow::DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx)

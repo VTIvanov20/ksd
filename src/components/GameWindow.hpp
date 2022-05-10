@@ -6,9 +6,6 @@
 
 #include <map>
 
-inline bool operator< (const Vec2i& lhs, const Vec2i& rhs) { return lhs.x < rhs.x && lhs.y < rhs.y; }
-inline bool operator> (const Vec2i& lhs, const Vec2i& rhs) { return lhs.x > rhs.x && lhs.y > rhs.y; }
-
 class GameWindow : public Component
 {
 public:

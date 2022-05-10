@@ -25,6 +25,7 @@ public:
 
     void PlaceCard(CardType type, Vec2i cardPos);
     std::vector<Vec2i> GetPlaceablePositions();
+    std::vector<CardType> GetPlaceableCards(Vec2i cardPos);
 
     CardType GetCard(Vec2i cardPos);
 
