@@ -152,6 +152,10 @@ CardType GameController::GetCard(Vec2i cardPos)
     {
         currentNode = cards[cardPos.x - cardPos.y].bottomNext;
     }
+    else if (cardPos.y == 0)
+    {
+        return cards[cardPos.x].val;
+    }
     
     for (int y = 1; y <= abs(cardPos.y); y++)
     {
