@@ -24,9 +24,10 @@ public:
     Turn GetCurrentTurn();
 
     void PlaceCard(CardType type, Vec2i cardPos);
+    std::vector<Vec2i> GetPlaceablePositions();
 
 private:
-    bool CanPlaceCard(Vec2i cardPos);
+    bool CanPlaceCard(Vec2i cardPos); // alternative name: inverted CardExists
 
     std::array<BeginningNode<CardType>, 6> cards;
     Turn currentTurn;

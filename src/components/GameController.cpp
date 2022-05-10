@@ -28,13 +28,42 @@ Turn GameController::GetCurrentTurn()
     return currentTurn;
 }
 
+std::vector<Vec2i> GameController::GetPlaceablePositions()
+{
+    std::vector<Vec2i> out;
+
+    for (int i = 0; i < cards.size(); i++)
+    {
+        auto bottomNode = cards[i].bottomNext;
+
+        if (bottomNode != nullptr)
+        {
+            Vec2i pos { i - 1, -1 };
+            while (bottomNode != nullptr)
+            {
+                bottomNode = bottomNode->next;
+                pos.x--;
+                pos.y--;
+            } 
+            
+            if ((!CanPlaceCard({ pos.x, pos.y + 1 }) &&
+                !CanPlaceCard({ pos.x + 1, pos.y + 1 })) && CanPlaceCard(pos))
+                out.push_back(pos);
+        } else if (i != 0) out.push_back({ i, -1 });
+    }
+
+    return out;
+}
+
 void GameController::PlaceCard(CardType type, Vec2i cardPos)
 {
     if (type == CardType::STATE_0_1 || type == CardType::STATE_1_0)
         return;
 
+    // can place a card (according to linked list)
     if (CanPlaceCard(cardPos))
     {
+        // can place a card (according to rules)
         if (CanPlaceCard({ cardPos.x, cardPos.y + (cardPos.y > 0 ? -1 : 1) }) ||
             CanPlaceCard({ cardPos.x + 1, cardPos.y + (cardPos.y > 0 ? -1 : 1) }))
             return;
