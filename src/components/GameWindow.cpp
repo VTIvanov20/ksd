@@ -71,12 +71,53 @@ void GameWindow::OnDestroy()
     ObjectManager::GetInstance()->DestroyObjectFromID(xorOne.lock()->GetID());
 }
 
+bool GameWindow::DrawImageButton(CardType type)
+{
+    Texture *texture = nullptr;
+
+    switch(type)
+    {
+    case CardType::AND_0:
+        texture = &andZero.lock()->GetTexture();
+        break;
+    case CardType::AND_1:
+        texture = &andOne.lock()->GetTexture();
+        break;
+    case CardType::OR_0:
+        texture = &orZero.lock()->GetTexture();
+        break;
+    case CardType::OR_1:
+        texture = &orOne.lock()->GetTexture();
+        break;
+    case CardType::XOR_0:
+        texture = &xorZero.lock()->GetTexture();
+        break;
+    case CardType::XOR_1:
+        texture = &xorOne.lock()->GetTexture();
+        break;
+    case CardType::STATE_1_0:
+        texture = &state.lock()->GetTexture();
+        break;
+    case CardType::STATE_0_1:
+        texture = &state.lock()->GetTexture();
+        break;
+    case CardType::EMPTY: {}
+    }
+
+    if (texture == nullptr) return false;
+
+    ImVec2 imTexRes = { static_cast<float>(texture->width), static_cast<float>(texture->height) };
+    ImTextureID id = (void*)&texture->id;
+
+    return ImGui::ImageButton(id, imTexRes);
+}
+
 void GameWindow::OnUI()
 {
     Texture& texture = renderTexture.lock()->GetRenderTexture().texture;
     auto gameController = MGetComponent(GameController);
     auto cards = gameController->GetCards();
-    
+
     const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
     const ImVec2 windowPadding = ImGui::GetStyle().WindowPadding;
     const ImVec2 windowSize {
@@ -87,6 +128,8 @@ void GameWindow::OnUI()
         displaySize.x / 2 - windowSize.x / 2,
         displaySize.y / 2 - windowSize.y / 2
     };
+
+    static Vec2i positionForPlacing { 0, 0 };
 
     ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 5.f);
     ImGui::SetNextWindowPos(windowPos);
@@ -102,18 +145,37 @@ void GameWindow::OnUI()
             mousePosAbsolute.x - screenPosAbsolute.x,
             mousePosAbsolute.y - screenPosAbsolute.y
         };
-        DrawText(TextFormat("%0.f, %0.f", mousePosRelative.x, mousePosRelative.y), 0, 100, 20, WHITE);
+        
         for (auto pos : clickablePositions)
         {
             if (CheckCollisionPointRec({ mousePosRelative.x, mousePosRelative.y }, {
                 (pos.x + abs(pos.y) * narrowness / 1.5f) * scaleTo.x,
                 (float(abs(pos.y) + cards.size() - 1) * narrowness) * scaleTo.y,
                 scaleTo.x, scaleTo.y
-            }) && ImGui::IsMouseClicked(ImGuiMouseButton_Left))
-                gameController->PlaceCard(CardType::OR_0, pos);
+            }) && ImGui::IsMouseReleased(ImGuiMouseButton_Left))
+            {
+                ImGui::OpenPopup("card_select_popup");
+                positionForPlacing = pos;
+            }
+        }
+
+        if (ImGui::BeginPopup("card_select_popup"))
+        {
+            for (int i = static_cast<int>(CardType::AND_0); i < static_cast<int>(CardType::EMPTY); i++)
+            {
+                ImGui::SameLine();
+                if (DrawImageButton(static_cast<CardType>(i)))
+                {
+                    gameController->PlaceCard(static_cast<CardType>(i), positionForPlacing);
+                    ImGui::CloseCurrentPopup();
+                    positionForPlacing = { 0, 0 };
+                }
+            }
+            ImGui::EndPopup();
         }
     ImGui::End();
     ImGui::PopStyleVar();
+    
 }
 
 void GameWindow::DrawBeginningNode(BeginningNode<CardType> top, Vec2f idx)
