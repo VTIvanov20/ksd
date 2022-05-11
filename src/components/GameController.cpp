@@ -12,9 +12,15 @@ void GameController::OnCreate()
 
 void GameController::OnUpdate()
 {
-    if (currentTurn == Turn::OPPONENT)
+    auto placeablePositions = GetOpponentPlaceablePositions();
+
+    if (currentTurn == Turn::OPPONENT && placeablePositions.size() != 0)
     {
-        
+        auto pos = placeablePositions[GetRandomValue(0, placeablePositions.size() - 1)];
+        auto placeableCards = GetPlaceableCards(pos);
+        int cardIdx = GetRandomValue(0, placeableCards.size() - 1);
+
+        PlaceCard(placeableCards[cardIdx], pos);
     }
 }
 
@@ -55,6 +61,33 @@ std::vector<Vec2i> GameController::GetPlaceablePositions()
     return out;
 }
 
+std::vector<Vec2i> GameController::GetOpponentPlaceablePositions()
+{
+    std::vector<Vec2i> out;
+
+    for (size_t i = 0; i < cards.size(); i++)
+    {
+        auto topNode = cards[i].topNext;
+
+        if (topNode != nullptr)
+        {
+            Vec2i pos { static_cast<int>(i) - 1, 1 };
+            while (topNode != nullptr)
+            {
+                topNode = topNode->next;
+                pos.x--;
+                pos.y++;
+            }
+
+            if ((!CanPlaceCard({ pos.x, pos.y - 1 }) &&
+                !CanPlaceCard({ pos.x + 1, pos.y - 1 })) && CanPlaceCard(pos))
+                out.push_back(pos);
+        } else if (i != 0) out.push_back({ static_cast<int>(i) - 1, 1 });
+    }
+
+    return out;
+}
+
 void GameController::PlaceCard(CardType type, Vec2i cardPos)
 {
     if (type == CardType::STATE_0_1 || type == CardType::STATE_1_0)
@@ -67,6 +100,8 @@ void GameController::PlaceCard(CardType type, Vec2i cardPos)
         if (CanPlaceCard({ cardPos.x, cardPos.y + (cardPos.y > 0 ? -1 : 1) }) ||
             CanPlaceCard({ cardPos.x + 1, cardPos.y + (cardPos.y > 0 ? -1 : 1) }))
             return;
+        
+        currentTurn = currentTurn == Turn::OPPONENT ? Turn::YOUR : Turn::OPPONENT;
 
         std::shared_ptr<Node<CardType>> card;
 
@@ -99,6 +134,7 @@ void GameController::PlaceCard(CardType type, Vec2i cardPos)
             type
         });
     }
+
 }
 
 bool GameController::CanPlaceCard(Vec2i cardPos)
