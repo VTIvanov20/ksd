@@ -41,16 +41,24 @@ void InitSceneFromFile(const std::string fPath)
 
     for (auto ent : sJson)
     {
-        auto entity = ECS::CreateEntity();
+        std::weak_ptr<Entity> entity;
         
         try {
-            ent["TagName"].get_to(entity.lock()->TagName);
+            std::string tag;
+            ent["TagName"].get_to(tag);
+
+            if (ObjectManager::GetInstance()->TagNameAlreadyExists(tag))
+                continue;
+
+            entity = ECS::CreateEntity();
+            entity.lock()->TagName = tag;
         } catch(const nlohmann::json::exception&) {
             printf("WARN: TagName is possibly missing in an entity\n");
+            entity = ECS::CreateEntity();
         }
 
         try {
-            ent["DestroyOnReload"].get_to(entity.lock()->DestroyOnReload);
+            ent["DestroyOnReload"].get_to(entity.lock()->_destroyOnReload);
         } catch(const std::exception& e) {}
 
         for (auto [name, component] : ent["components"].items())

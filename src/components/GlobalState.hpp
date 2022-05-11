@@ -7,15 +7,15 @@
 class GlobalState : public Component
 {
 private:
-    std::unordered_map<std::string, char> stateTable {};
+    std::unordered_map<std::string, std::string> stateTable {};
 
 public:
     DEFINE_COMPONENT(GlobalState)
     ~GlobalState() = default;
 
-    std::optional<char> GetValue(std::string key);
-    void SetValue(std::string key, char value);
+    std::optional<std::string> GetValue(std::string key);
+    void SetValue(std::string key, std::string value);
     void DeleteValue(std::string key);
 
-    bool DestroyOnReload = false;
+    bool DestroyOnReload() override { return false; };
 };

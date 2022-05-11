@@ -25,7 +25,7 @@ void ObjectManager::CleanUnusedComponents()
         if (CheckBaseName(object.second, "Component"))
         {
             auto sharedComponent = std::static_pointer_cast<Component>(object.second);
-            if (!sharedComponent->IsUsed && sharedComponent->DestroyOnReload)
+            if (!sharedComponent->IsUsed && sharedComponent->DestroyOnReload())
             {
                 idsForDestroying.push_back(object.first);
                 sharedComponent->OnDestroy();
@@ -56,10 +56,12 @@ void ObjectManager::DestroyAllEntities()
 
     for (auto object : objectTable)
     {
-        if (object.second->DestroyOnReload)
+        if (object.second->DestroyOnReload())
         {
             if (CheckBaseName(object.second, "Entity"))
                 std::static_pointer_cast<Entity>(object.second)->OnEntityDestroy();
+            else if (CheckBaseName(object.second, "Component"))
+                printf("Destroying %s component\n", std::static_pointer_cast<Component>(object.second)->ComponentName());
             idsForDestroying.push_back(object.second->GetID());
         }
     }
@@ -86,7 +88,7 @@ void ObjectManager::DestroyAllObjects()
     
     for (auto object : objectTable)
     {
-        if (object.second->DestroyOnReload)
+        if (object.second->DestroyOnReload())
             idsForDestroying.push_back(object.second->GetID());
     }
 
@@ -132,6 +134,21 @@ std::weak_ptr<Object> ObjectManager::GetEntityFromTagName(std::string name)
     }
 
     return std::weak_ptr<Object>();
+}
+
+bool ObjectManager::TagNameAlreadyExists(std::string name)
+{
+    for (auto [key, value] : objectTable)
+    {
+        if (CheckBaseName(value, "Entity"))
+        {
+            std::shared_ptr<Entity> shEntity = std::static_pointer_cast<Entity>(value);
+            if (shEntity->TagName == name)
+                return true;
+        }
+    }
+
+    return false;
 }
 
 void ObjectManager::TriggerCreateEvents()

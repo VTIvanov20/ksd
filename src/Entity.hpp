@@ -29,4 +29,8 @@ public:
     std::weak_ptr<Component> GetComponent(std::string componentName);
 
     std::string TagName {};
+
+    bool DestroyOnReload() override { return _destroyOnReload; };
+
+    bool _destroyOnReload = true;
 };

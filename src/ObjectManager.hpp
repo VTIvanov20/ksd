@@ -22,9 +22,8 @@ public:
     }
 
     virtual const char* ObjectBaseName() { return nullptr; }
+    virtual bool DestroyOnReload() { return true; }
     inline uint64_t GetID() { return id; }
-
-    bool DestroyOnReload = true;
 };
 
 #define DEFINE_OBJECT(TYPE) \
@@ -77,6 +76,7 @@ public:
     std::list<std::weak_ptr<Object>> GetObjectsFromName(std::string name);
 
     std::weak_ptr<Object> GetEntityFromTagName(std::string name);
+    bool TagNameAlreadyExists(std::string name);
 
     void TriggerCreateEvents();
     void TriggerUpdateEvents();
