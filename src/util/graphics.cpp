@@ -64,8 +64,9 @@ void TextureObject::LoadFromFile(const char *path)
 
 void TextureObject::Unload()
 {
-    if (texture.id != 0) UnloadTexture(texture);
-    if (renderTexture.id != 0) UnloadRenderTexture(renderTexture);
+    UnloadTexture(texture);
+    UnloadRenderTexture(renderTexture);
+    UnloadRenderTexture(verticallyMirroredTexture);
 }
 
 void TextureObject::Draw(Recti Source, Rectf Destination, double Rotation, Vec2f Origin)
