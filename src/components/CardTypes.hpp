@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 
 enum class CardType
 {
