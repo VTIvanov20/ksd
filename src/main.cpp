@@ -13,6 +13,8 @@ int main(int, char **)
     GameManager* gameManager = GameManager::GetInstance();
     gameManager->ChangeScene("res/scenes/main_menu.json");
     gameManager->Initialize();
+    
+    SetExitKey(0);
 
     while (!gameManager->ShouldQuit())
     {

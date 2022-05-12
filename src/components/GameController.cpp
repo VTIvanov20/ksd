@@ -1,27 +1,142 @@
 #include "./GameController.hpp"
+#include "../Entity.hpp"
+#include "./GlobalState.hpp"
+#include "../GameManager.hpp"
 
-void GameController::OnCreate()
+#include <random>
+#include <algorithm>
+
+const std::string GameController::GetOverReason()
 {
-    currentTurn = (Turn)GetRandomValue(0, 1);
+    if (gameMode == GameMode::UNKNOWN)
+        return "An unknown GameMode has been set";
+
+    if (GetCard({ 0, static_cast<int>(cards.size()) - 1 }) != CardType::EMPTY) // opponent won
+        return "Opponent won the game";
+    
+    if (GetCard({ 0, (static_cast<int>(cards.size()) - 1) * -1 }) != CardType::EMPTY) // player won
+        return "Player won the game";
+    
+    return "";
+}
+
+std::vector<CardType> GameController::GetDeck() const
+{
+    return playerDeck;
+}
+
+bool GameController::IsGameOver()
+{
+    if (gameMode == GameMode::UNKNOWN)
+        return true;
+    
+    bool topState, mostRightState;
+
+    if (GetCard({ 0, static_cast<int>(cards.size()) - 1 }) != CardType::EMPTY)
+    {
+        {
+            CardType state = GetCard({ 0, static_cast<int>(cards.size()) - 1 });
+            topState = static_cast<int>(state) % 2 != 0;
+        }
+        mostRightState = GetCard({ 0, 0 }) == CardType::STATE_0_1 ? true : false;
+
+        if (topState == mostRightState) // opponent won
+            return true;
+    }
+
+
+    if (GetCard({ 0, (static_cast<int>(cards.size()) - 1) * -1 }) != CardType::EMPTY)
+    {
+        {
+            CardType state = GetCard({ 0, (static_cast<int>(cards.size()) - 1) * -1 });
+            topState = static_cast<int>(state) % 2 != 0;
+        }
+        mostRightState = GetCard({ (static_cast<int>(cards.size()) - 1), 0 }) == CardType::STATE_0_1 ? false : true;
+        
+        if (topState == mostRightState) // player won
+            return true;
+    }
+    
+    return false;
+}
+
+void GameController::FillDeck(std::vector<CardType>& deck)
+{
+    while (deck.size() != 5)
+    {
+        AddOneToDeck(deck);
+    }
+}
+
+void GameController::AddOneToDeck(std::vector<CardType>& deck)
+{
+    deck.push_back(globalDeck.back());
+    globalDeck.pop_back();
+}
+
+void GameController::AddOneToPlayerDeck()
+{
+    currentTurn = currentTurn == Turn::OPPONENT ? Turn::YOUR : Turn::OPPONENT;
+    AddOneToDeck(playerDeck);
+}
+
+void GameController::FillPlayerDeck()
+{
+    FillDeck(playerDeck);
+}
+
+void GameController::InitSinglePlayerGame()
+{
+    gameMode = GameMode::SINGLEPLAYER_WITHOUT_NOT;
+    currentTurn = (Turn)GetRandomValue(0, 1);    
 
     for (size_t i = 0; i < cards.size(); i++)
     {
         cards[i].val = GetRandomValue(0, 1) ? CardType::STATE_0_1 : CardType::STATE_1_0;
     }
+
+    const std::array<CardType, 6> logicCards {
+        CardType::AND_0, CardType::AND_1,
+        CardType::OR_0, CardType::OR_1,
+        CardType::XOR_0, CardType::XOR_1
+    };
+
+    for (auto type : logicCards)
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            globalDeck.push_back(type);
+        }
+    }
+
+    std::shuffle(globalDeck.begin(), globalDeck.end(), std::default_random_engine());
+
+    FillDeck(playerDeck);
+    FillDeck(opponentDeck);
 }
 
-void GameController::OnUpdate()
+void GameController::PlaceCardFromDeckIndex(unsigned short deckIndex, Vec2i cardPos)
 {
-    auto placeablePositions = GetOpponentPlaceablePositions();
+    if (deckIndex > playerDeck.size())
+        return;
+    
+    const auto placeableCards = GetPlaceableCards(cardPos);
+    const auto chosenCard = playerDeck[deckIndex];
 
-    if (currentTurn == Turn::OPPONENT && placeablePositions.size() != 0)
+    if (std::find(placeableCards.begin(), placeableCards.end(), chosenCard) != placeableCards.end())
     {
-        auto pos = placeablePositions[GetRandomValue(0, placeablePositions.size() - 1)];
-        auto placeableCards = GetPlaceableCards(pos);
-        int cardIdx = GetRandomValue(0, placeableCards.size() - 1);
+        playerDeck.erase(std::find(playerDeck.begin(), playerDeck.end(), chosenCard));
 
-        PlaceCard(placeableCards[cardIdx], pos);
+        PlaceCard(chosenCard, cardPos);
     }
+    
+    if (playerDeck.empty())
+        FillDeck(playerDeck);
+}
+
+void GameController::InitMultiPlayerGame(std::string code)
+{
+    gameMode = GameMode::UNKNOWN;
 }
 
 std::array<BeginningNode<CardType>, 6> GameController::GetCards()
@@ -298,9 +413,36 @@ std::vector<CardType> GameController::GetPlaceableCards(Vec2i cardPos)
         default: return {};
     }
 
+    std::vector<CardType> placeablePos {};
+
     if (mostRightState && mostLeftState)
-        return { CardType::AND_1, CardType::OR_1, CardType::XOR_0 };
+        placeablePos = { CardType::AND_1, CardType::OR_1, CardType::XOR_0 };
     else if ((mostRightState && !mostLeftState) || (!mostRightState && mostLeftState))
-        return { CardType::AND_0, CardType::OR_1, CardType::XOR_1 };
-    else return { CardType::AND_0, CardType::OR_0, CardType::XOR_0 };
+        placeablePos = { CardType::AND_0, CardType::OR_1, CardType::XOR_1 };
+    else placeablePos = { CardType::AND_0, CardType::OR_0, CardType::XOR_0 };
+    
+    if (cardPos.y == static_cast<int>(cards.size()) - 1)
+    {
+        bool initialRightState = GetCard({ 0, 0 }) == CardType::STATE_0_1 ? true : false;
+
+        std::vector<CardType> filtered;
+        std::copy_if(placeablePos.begin(), placeablePos.end(), std::back_inserter(filtered), [&](CardType i) {
+            return initialRightState ? static_cast<int>(i) % 2 != 0 : static_cast<int>(i) % 2 == 0;
+        });
+        
+        return filtered;
+    }
+    else if (cardPos.y == -(static_cast<int>(cards.size()) - 1))
+    {
+        bool initialRightState = GetCard({ static_cast<int>(cards.size()) - 1, 0 }) == CardType::STATE_0_1 ? false : true;
+
+        std::vector<CardType> filtered;
+        std::copy_if(placeablePos.begin(), placeablePos.end(), std::back_inserter(filtered), [&](CardType i) {
+            return initialRightState ? static_cast<int>(i) % 2 != 0 : static_cast<int>(i) % 2 == 0;
+        });
+
+        return filtered;
+    }
+
+    return placeablePos;
 }

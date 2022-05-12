@@ -17,9 +17,10 @@ class MainMenu : public Component
 {
 public:
     DEFINE_COMPONENT(MainMenu)
+    ~MainMenu();
+
     void OnUI() override;
     void OnCreate() override;
-    void OnDestroy() override;
 
 protected:
     MainMenuState state = MainMenuState::MAIN_MENU;

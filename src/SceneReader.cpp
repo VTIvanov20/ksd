@@ -11,6 +11,7 @@
 #include "./components/GlobalState.hpp"
 #include "./components/GameController.hpp"
 #include "./components/GameWindow.hpp"
+#include "./components/GameHUD.hpp"
 
 std::string GetFileContents(const std::string path)
 {
@@ -106,6 +107,10 @@ void InitSceneFromFile(const std::string fPath)
             else if (name == "GameWindow")
             {
                 entity.lock()->BindComponent(ECS::CreateComponent<GameWindow>().lock());
+            }
+            else if (name == "GameHUD")
+            {
+                entity.lock()->BindComponent(ECS::CreateComponent<GameHUD>().lock());
             }
         }
     }

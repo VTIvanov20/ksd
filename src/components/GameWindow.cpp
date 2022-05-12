@@ -1,4 +1,5 @@
 #include "./GameWindow.hpp"
+#include "../GameManager.hpp"
 
 void GameWindow::OnCreate()
 {
@@ -30,7 +31,13 @@ void GameWindow::OnCreate()
 
 void GameWindow::OnUpdate()
 {
+    if (IsKeyReleased(KEY_Q))
+        GameManager::GetInstance()->ChangeScene("res/scenes/main_menu.json");
+
     auto gameController = MGetComponent(GameController);
+    
+    if (gameController->IsGameOver())
+        return;
 
     renderTexture.lock()->BeginDrawingTo();
         auto cards = gameController->GetCards();
@@ -69,6 +76,8 @@ void GameWindow::OnDestroy()
     ObjectManager::GetInstance()->DestroyObjectFromID(orOne.lock()->GetID());
     ObjectManager::GetInstance()->DestroyObjectFromID(xorZero.lock()->GetID());
     ObjectManager::GetInstance()->DestroyObjectFromID(xorOne.lock()->GetID());
+
+    ObjectManager::GetInstance()->DestroyObjectFromID(renderTexture.lock()->GetID());
 }
 
 bool GameWindow::DrawImageButton(CardType type)
@@ -114,8 +123,21 @@ bool GameWindow::DrawImageButton(CardType type)
 
 void GameWindow::OnUI()
 {
-    Texture& texture = renderTexture.lock()->GetRenderTexture().texture;
     auto gameController = MGetComponent(GameController);
+
+    if (gameController->IsGameOver())
+    {
+        ImGui::Begin("Message", nullptr, ImGuiWindowFlags_NoMove);
+            ImGui::Text(gameController->GetOverReason().c_str());
+            if (ImGui::Button("OK"))
+            {
+                GameManager::GetInstance()->ChangeScene("res/scenes/main_menu.json");
+            }
+        ImGui::End();
+        return;
+    }
+
+    Texture& texture = renderTexture.lock()->GetRenderTexture().texture;
     auto cards = gameController->GetCards();
 
     const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
@@ -148,12 +170,15 @@ void GameWindow::OnUI()
         
         if (ImGui::BeginPopup("card_select_popup"))
         {
-            for (auto type : gameController->GetPlaceableCards(positionForPlacing))
+            const auto cards = gameController->GetDeck();
+            for (unsigned short i = 0; i < static_cast<unsigned short>(cards.size()); i++)
             {
+                auto type = cards[i];
+
                 ImGui::SameLine();
                 if (DrawImageButton(type))
                 {
-                    gameController->PlaceCard(type, positionForPlacing);
+                    gameController->PlaceCardFromDeckIndex(i, positionForPlacing);
                     ImGui::CloseCurrentPopup();
                     positionForPlacing = { 0, 0 };
                 }

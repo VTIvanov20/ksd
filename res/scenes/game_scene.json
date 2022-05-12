@@ -9,7 +9,9 @@
     {
         "DestroyOnReload": true,
         "components": {
-            "MainMenu": {}
+            "GameController": {},
+            "GameWindow": {},
+            "GameHUD": {}
         }
     }
 ]

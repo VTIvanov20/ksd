@@ -1,6 +1,6 @@
 #include "MainMenu.hpp"
 #include <iostream>
-
+#include "./GlobalState.hpp"
 
 /* - Main Menu Layout -
 
@@ -31,13 +31,21 @@ void MainMenu::OnCreate()
     multiplayerCodeBuf = new char[16];
     multiplayerCodeBuf[0] = '\0';
 }
-void MainMenu::OnDestroy()
+
+MainMenu::~MainMenu()
 {
     delete[] multiplayerCodeBuf;
 }
 
 void MainMenu::OnUI()
 {
+    if (IsKeyReleased(KEY_Q))
+    {
+        auto globalState = std::static_pointer_cast<Entity>(
+            ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
+        MGetComponentFrom(globalState, GlobalState)->SetValue("mode", "singleplayer");
+        GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
+    }
     const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
     const ImVec2 windowPadding = ImGui::GetStyle().WindowPadding;
     const ImVec2 windowPos {
@@ -77,11 +85,14 @@ void MainMenu::OnUI()
         {
             if(ImGui::Button("Without NOT card", buttonSize))
             {
-                // GameManager::GetInstance()->StartSinglePlayerGame();
+                auto globalState = std::static_pointer_cast<Entity>(
+                    ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
+                MGetComponentFrom(globalState, GlobalState)->SetValue("mode", "singleplayer");
+                GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
             }
             if(ImGui::Button("With NOT card", buttonSize))
             {
-                // GameManager::GetInstance()->StartSinglePlayerGame();
+                // GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
             }
             if(ImGui::Button("Back", buttonSize))
             {
@@ -94,12 +105,10 @@ void MainMenu::OnUI()
             if(ImGui::Button("Host", buttonSize))
             {
                 state = MainMenuState::MULTIPLAYER_HOST;
-                // GameManager::GetInstance()->StartMultiplayerGame();
             }
             if(ImGui::Button("Join", buttonSize))
             {
                 state = MainMenuState::MULTIPLAYER_JOIN;
-                // GameManager::GetInstance()->JoinMultiplayerGame();
             }
             if(ImGui::Button("Back", buttonSize))
             {
@@ -111,11 +120,15 @@ void MainMenu::OnUI()
         {
             if(ImGui::Button("Without NOT card", buttonSize))
             {
-                // GameManager::GetInstance()->StartMultiplayerGame();
+                auto globalState = std::static_pointer_cast<Entity>(
+                    ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
+                MGetComponentFrom(globalState, GlobalState)->SetValue("mode", "multiplayer");
+                MGetComponentFrom(globalState, GlobalState)->SetValue("code", "");
+                GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
             }
             if(ImGui::Button("With NOT card", buttonSize))
             {
-                // GameManager::GetInstance()->StartMultiplayerGame();
+                // GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
             }
             if(ImGui::Button("Back", buttonSize))
             {
@@ -133,6 +146,11 @@ void MainMenu::OnUI()
             ImGui::SameLine();
             if(ImGui::Button("Join", ImVec2(100, 0)))
             {
+                auto globalState = std::static_pointer_cast<Entity>(
+                    ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
+                MGetComponentFrom(globalState, GlobalState)->SetValue("mode", "multiplayer");
+                MGetComponentFrom(globalState, GlobalState)->SetValue("code", std::string { multiplayerCodeBuf });
+                GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
                 // GameManager::GetInstance()->JoinMultiplayerGame();
             }
             if(ImGui::Button("Back"))
