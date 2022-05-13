@@ -53,7 +53,7 @@ void GameController::OnUpdate()
             if (crossSection.empty())
             {
                 AddOneToDeck(opponentDeck);
-                currentTurn = currentTurn == Turn::OPPONENT ? Turn::YOUR : Turn::OPPONENT;
+                currentTurn = currentTurn == Turn::OPPONENT ? Turn::PLAYER : Turn::OPPONENT;
                 return;
             }
 

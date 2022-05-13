@@ -76,7 +76,7 @@ void GameController::AddOneToDeck(std::vector<CardType>& deck)
 
 void GameController::AddOneToPlayerDeck()
 {
-    currentTurn = currentTurn == Turn::OPPONENT ? Turn::YOUR : Turn::OPPONENT;
+    currentTurn = currentTurn == Turn::OPPONENT ? Turn::PLAYER : Turn::OPPONENT;
     AddOneToDeck(playerDeck);
 }
 
@@ -216,7 +216,7 @@ void GameController::PlaceCard(CardType type, Vec2i cardPos)
             CanPlaceCard({ cardPos.x + 1, cardPos.y + (cardPos.y > 0 ? -1 : 1) }))
             return;
         
-        currentTurn = currentTurn == Turn::OPPONENT ? Turn::YOUR : Turn::OPPONENT;
+        currentTurn = currentTurn == Turn::OPPONENT ? Turn::PLAYER : Turn::OPPONENT;
 
         std::shared_ptr<Node<CardType>> card;
 

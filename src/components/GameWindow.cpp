@@ -57,7 +57,7 @@ void GameWindow::OnUpdate()
         }
     renderTexture.lock()->EndDrawingTo();
 
-    if (gameController->GetCurrentTurn() == Turn::YOUR)
+    if (gameController->GetCurrentTurn() == Turn::PLAYER)
     {
         DrawText("Your Turn", 10, 10, 30, WHITE);
     }

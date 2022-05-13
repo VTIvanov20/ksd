@@ -7,7 +7,7 @@
 
 enum class Turn
 {
-    YOUR,
+    PLAYER,
     OPPONENT
 };
 
