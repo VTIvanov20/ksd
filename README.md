@@ -1,4 +1,4 @@
-# Team Banka KSD
+<h1 align="center">Team Banka KSD</h1>
 
 <p align="center">
     <img src="res/img/banners/ksd-banner-light.jpg#gh-light-mode-only"/>
@@ -14,6 +14,8 @@
 <br>
 
 ## 💻 About
+<p align="center">This is our take on the digitalisation of the board game "b00le0", where you can play versus our AI, or against one of your friends in an online match.</p>
+<p align="center">Whoever completes their nand gate pyramid first wins!</p>
 
 ## 📄 Documents
 
