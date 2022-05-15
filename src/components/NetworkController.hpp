@@ -24,6 +24,7 @@ public:
     DEFINE_COMPONENT(NetworkController);
 
     void OnCreate() override;
+    void OnUpdate() override;
     void OnDestroy() override;
 
     void JoinRoom(std::string code);

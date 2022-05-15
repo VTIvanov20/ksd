@@ -162,6 +162,24 @@ void NetworkController::OnCreate()
     });
 }
 
+void NetworkController::OnUpdate()
+{
+    static int delay = 0;
+
+    if (IsActive())
+    {
+        if (delay % 1000 == 0)
+        {
+            SendPacket(nlohmann::json{{
+                {"t", "keep-alive"}
+            }});
+            delay = 0;
+        }
+
+        delay++;
+    }
+}
+
 void NetworkController::CreateRoom()
 {
     SendPacket(nlohmann::json({
@@ -221,5 +239,5 @@ NetworkState NetworkController::GetState()
 
 bool NetworkController::IsActive()
 {
-    return wsClient.load()->stopped();
+    return !wsClient.load()->stopped();
 }
