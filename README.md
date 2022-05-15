@@ -14,8 +14,8 @@
 <br>
 
 ## 💻 About
-<p align="center">This is our take on the digitalisation of the board game "b00le0", where you can play versus our AI, or against one of your friends in an online match.</p>
-<p align="center">Whoever completes their nand gate pyramid first wins!</p>
+<p align="center">This is our take on the digitalisation of the board game "<B>b00le0</B>", where you can play versus our <B>AI</B>, or against one of your friends in an <b>online match</b>.</p>
+<p align="center">The first player to complete their nand gate pyramid wins!</p>
 
 ## 🗂️ Our Tech Stack
 ### Used code editor & collaborative service:
@@ -69,7 +69,15 @@
 - <a href = "https://github.com/GGGeorgiev20"> Galin Georgiev </a> (Back-end Developer)
 - <a href = "https://github.com/MMMarinov20"> Maxim Marinov </a> (QA Engineer)
 
-
 ## Credits
 - powered by [8ball-engine](https://github.com/TheBrightSide/codename-8ball-engine) created by AEManov20
 - the rest of the components for the engine have been created by everyone
+
+## Reviews
+If you're not sold on this game yet, just listen to what our fans have to say about it!
+
+![Picture](res/img/banners/duck.png) "This game is pretty cool" - Value's Duck <br>
+    (picture of Value's duck)
+
+![Picture](res/img/banners/duck.png) "Really fun to play with friends, haha" - Also Value's Duck <br>
+    (another picture of Value's duck)
