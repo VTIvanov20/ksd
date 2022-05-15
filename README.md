@@ -18,6 +18,16 @@
 <p align="center">Whoever completes their nand gate pyramid first wins!</p>
 
 ## 📄 Documents
+### QA Documentation
+  - [Test Plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/mmmarinov20_codingburgas_bg/EeD7jO835_RCuwrzUUf1rR4BOu9SfPDFHS1_5PKnmHc0wA?e=CzQkOa)
+  - [QA Documentation](https://codingburgas-my.sharepoint.com/:x:/g/personal/mmmarinov20_codingburgas_bg/ETdkmjILzaxMlQJXpbLyAt4BXELspmsbYYRs7hyqzAoYmA?e=YFWlK1)
+
+### Code & Team Documentation
+  - [Doxygen]()
+  - [Team Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/mmmarinov20_codingburgas_bg/EQW4FjkcMSlKsHJdgFD9ZNgBRjqL-YJlKYuJwjW257MJWg?e=g1Iryv)
+
+### Presenting
+  - [Presentation]()
 
 ## 📥 Installation
 
