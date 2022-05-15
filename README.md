@@ -52,12 +52,12 @@
 
 ## 📄 Documents
 ### QA Documentation
-  - [Test Plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/mmmarinov20_codingburgas_bg/EeD7jO835_RCuwrzUUf1rR4BOu9SfPDFHS1_5PKnmHc0wA?e=CzQkOa)
-  - [QA Documentation](https://codingburgas-my.sharepoint.com/:x:/g/personal/mmmarinov20_codingburgas_bg/ETdkmjILzaxMlQJXpbLyAt4BXELspmsbYYRs7hyqzAoYmA?e=YFWlK1)
+  - [Test Plan](https://github.com/VTIvanov20/banka-ksd/raw/main/docs/Banka%20KSD%20-%20Test%20plan.docx)
+  - [QA Documentation](https://github.com/VTIvanov20/banka-ksd/raw/main/docs/Banka%20KSD%20-%20QA%20Documentation.xlsx)
 
 ### Code & Team Documentation
   - [Doxygen]()
-  - [Team Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/mmmarinov20_codingburgas_bg/EQW4FjkcMSlKsHJdgFD9ZNgBRjqL-YJlKYuJwjW257MJWg?e=g1Iryv)
+  - [Team Documentation](https://github.com/VTIvanov20/banka-ksd/raw/main/docs/Banka%20KSD%20-%20Documentation.docx)
 
 ### Presenting
   - [Presentation]()
