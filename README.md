@@ -86,10 +86,10 @@
 ## 📖 Reviews
 <p align="center">If you're not sold on this project yet, just listen to what our fans have to say about it!</p>
 
-![Picture](res/img/banners/duck.png) "Wow, it's cool to see this game finally digitalised!" - Value's Duck <br>
+![Picture](res/img/other/duck.png) "Wow, it's cool to see this game finally digitalised!" - Value's Duck <br>
     (picture of Value's duck)
 
-![Picture](res/img/banners/duck.png) "Really fun to play with other ducks, haha" - Also Value's Duck <br>
+![Picture](res/img/other/duck.png) "Really fun to play with other ducks, haha" - Also Value's Duck <br>
     (another picture of Value's duck)
 
 <hr>
