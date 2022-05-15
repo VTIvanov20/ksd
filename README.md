@@ -76,10 +76,10 @@
 ## Reviews
 If you're not sold on this game yet, just listen to what our fans have to say about it!
 
-![Picture](res/img/banners/duck.png) "This game is pretty cool" - Value's Duck <br>
+![Picture](res/img/banners/duck.png) "Wow, it's cool to see this game finally digitalised!" - Value's Duck <br>
     (picture of Value's duck)
 
-![Picture](res/img/banners/duck.png) "Really fun to play with friends, haha" - Also Value's Duck <br>
+![Picture](res/img/banners/duck.png) "Really fun to play with other ducks, haha" - Also Value's Duck <br>
     (another picture of Value's duck)
 
 <hr>
