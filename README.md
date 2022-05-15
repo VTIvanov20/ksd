@@ -81,3 +81,7 @@ If you're not sold on this game yet, just listen to what our fans have to say ab
 
 ![Picture](res/img/banners/duck.png) "Really fun to play with friends, haha" - Also Value's Duck <br>
     (another picture of Value's duck)
+
+<hr>
+
+## <p align="center">Thank you for checking out our repo, show us some ❤️ by giving our repo a ⭐️!</p>
