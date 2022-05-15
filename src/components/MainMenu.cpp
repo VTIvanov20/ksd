@@ -1,6 +1,7 @@
 #include "MainMenu.hpp"
 #include <iostream>
 #include "./GlobalState.hpp"
+#include "./NetworkController.hpp"
 
 /* - Main Menu Layout -
 
@@ -39,13 +40,11 @@ MainMenu::~MainMenu()
 
 void MainMenu::OnUI()
 {
-    if (IsKeyReleased(KEY_Q))
-    {
-        auto globalState = std::static_pointer_cast<Entity>(
-            ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
-        MGetComponentFrom(globalState, GlobalState)->SetValue("mode", "singleplayer");
-        GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
-    }
+    auto networkControllerEntity =
+        std::static_pointer_cast<Entity>(
+            ObjectManager::GetInstance()->GetEntityFromTagName("network_controller").lock());
+    auto networkController = MGetComponentFrom(networkControllerEntity, NetworkController);
+    
     const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
     const ImVec2 windowPadding = ImGui::GetStyle().WindowPadding;
     const ImVec2 windowPos {
@@ -122,9 +121,12 @@ void MainMenu::OnUI()
             {
                 auto globalState = std::static_pointer_cast<Entity>(
                     ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
+                networkController->CreateRoom();
                 MGetComponentFrom(globalState, GlobalState)->SetValue("mode", "multiplayer");
-                MGetComponentFrom(globalState, GlobalState)->SetValue("code", "");
-                GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
+
+                state = MainMenuState::WAITING_FOR_PLAYERS_MULTIPLAYER;
+
+                // GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
             }
             if(ImGui::Button("With NOT card", buttonSize))
             {
@@ -148,9 +150,10 @@ void MainMenu::OnUI()
             {
                 auto globalState = std::static_pointer_cast<Entity>(
                     ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
+                networkController->JoinRoom(std::string { multiplayerCodeBuf });
                 MGetComponentFrom(globalState, GlobalState)->SetValue("mode", "multiplayer");
-                MGetComponentFrom(globalState, GlobalState)->SetValue("code", std::string { multiplayerCodeBuf });
-                GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
+
+                state = MainMenuState::WAITING_FOR_PLAYERS_MULTIPLAYER;
                 // GameManager::GetInstance()->JoinMultiplayerGame();
             }
             if(ImGui::Button("Back"))
@@ -158,6 +161,17 @@ void MainMenu::OnUI()
                 state = MainMenuState::MULTIPLAYER;
             }
             break;
+        }
+        case MainMenuState::WAITING_FOR_PLAYERS_MULTIPLAYER:
+        {
+            auto nState = networkController->GetState();
+            ImGui::Text("Waiting for a player to join...");
+            ImGui::Text("inGame = %s", nState.inGame ? "true" : "false");
+            ImGui::Text("gameStarted = %s", nState.gameStarted ? "true" : "false");
+            ImGui::Text("code = %s", nState.code.c_str());
+
+            if (nState.gameStarted)
+                GameManager::GetInstance()->ChangeScene("res/scenes/game_scene.json");
         }
     }
     ImGui::End();

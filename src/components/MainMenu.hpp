@@ -11,6 +11,7 @@ enum class MainMenuState {
     MULTIPLAYER,
     MULTIPLAYER_HOST,
     MULTIPLAYER_JOIN,
+    WAITING_FOR_PLAYERS_MULTIPLAYER
 };
 
 class MainMenu : public Component

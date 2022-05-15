@@ -31,3 +31,9 @@ struct BeginningNode
     std::shared_ptr<Node<T>> bottomNext;
     T val;
 };
+
+enum class Turn
+{
+    PLAYER,
+    OPPONENT
+};

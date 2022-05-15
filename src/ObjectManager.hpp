@@ -66,7 +66,7 @@ public:
 
     int GetObjectCount();
 
-    void DestroyAllEntities();
+    void DestroyAllEntities(bool checkDestroyOnReload = true);
     void DestroyEntityFromID(uint64_t id);
 
     void DestroyAllObjects();

@@ -50,16 +50,16 @@ int ObjectManager::GetObjectCount()
     return objectTable.size();
 }
 
-void ObjectManager::DestroyAllEntities()
+void ObjectManager::DestroyAllEntities(bool checkDestroyOnReload)
 {
     std::list<uint64_t> idsForDestroying;
 
     for (auto object : objectTable)
     {
-        if (object.second->DestroyOnReload())
+        if (object.second->DestroyOnReload() || !checkDestroyOnReload)
         {
             if (CheckBaseName(object.second, "Entity"))
-                std::static_pointer_cast<Entity>(object.second)->OnEntityDestroy();
+                std::static_pointer_cast<Entity>(object.second)->OnEntityDestroy(checkDestroyOnReload);
             else if (CheckBaseName(object.second, "Component"))
                 printf("Destroying %s component\n", std::static_pointer_cast<Component>(object.second)->ComponentName());
             idsForDestroying.push_back(object.second->GetID());

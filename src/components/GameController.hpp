@@ -4,19 +4,12 @@
 #include "../util/graphics.hpp"
 
 #include "./CardTypes.hpp"
-
-enum class Turn
-{
-    PLAYER,
-    OPPONENT
-};
+#include "./NetworkController.hpp"
 
 enum class GameMode
 {
     SINGLEPLAYER_WITHOUT_NOT,
     MULTIPLAYER_WITHOUT_NOT,
-    SINGLEPLAYER_WITH_NOT,
-    MULTIPLAYER_WITH_NOT,
     UNKNOWN
 };
 
@@ -45,6 +38,9 @@ public:
 
     void FillPlayerDeck();
     void AddOneToPlayerDeck();
+    void DiscardCard(unsigned short deckIndex);
+
+    void FillGlobalDeck();
 
     bool IsGameOver();
     const std::string GetOverReason();
@@ -53,7 +49,7 @@ public:
 
 private:
     void InitSinglePlayerGame();
-    void InitMultiPlayerGame(std::string code);
+    void InitMultiPlayerGame();
 
     void FillDeck(std::vector<CardType>& deck);
     void AddOneToDeck(std::vector<CardType>& deck);
@@ -65,6 +61,7 @@ private:
 
     // multiplayer and singleplayer
     std::vector<CardType> globalDeck;
+    std::vector<CardType> discardDeck;
     std::vector<CardType> playerDeck;
 
     // singleplayer only
@@ -72,4 +69,6 @@ private:
 
     GameMode gameMode = GameMode::UNKNOWN;
     Turn currentTurn;
+
+    std::weak_ptr<NetworkController> networkController {};
 };

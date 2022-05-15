@@ -2,6 +2,7 @@
 #include "../Entity.hpp"
 #include "./GlobalState.hpp"
 #include "../GameManager.hpp"
+#include "./NetworkController.hpp"
 
 #include <algorithm>
 
@@ -18,18 +19,29 @@ void GameController::OnCreate()
         if (mode == "singleplayer")
             InitSinglePlayerGame();
         else if (mode == "multiplayer")
-            InitMultiPlayerGame(*MGetComponentFrom(globalState, GlobalState)->GetValue("code"));
+            InitMultiPlayerGame();
         else gameMode = GameMode::UNKNOWN;
     }
 }
 
 void GameController::OnUpdate()
 {
-    if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT || gameMode == GameMode::MULTIPLAYER_WITH_NOT)
+    if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
     {
-        // some websocket polling idk
+        auto networkControllerEntity =
+        std::static_pointer_cast<Entity>(
+            ObjectManager::GetInstance()->GetEntityFromTagName("network_controller").lock());
+        auto networkController = MGetComponentFrom(networkControllerEntity, NetworkController);
+
+        NetworkState nState = networkController->GetState();
+        cards = nState.cardState;
+        currentTurn = nState.currentTurn;
+        playerDeck = nState.playerDeck;
+
+        if (!nState.gameStarted)
+            GameManager::GetInstance()->ChangeScene("res/scenes/main_menu.json");
     }
-    else if (gameMode == GameMode::SINGLEPLAYER_WITHOUT_NOT || gameMode == GameMode::SINGLEPLAYER_WITH_NOT)
+    else if (gameMode == GameMode::SINGLEPLAYER_WITHOUT_NOT)
     {
         // use very smart AI
         auto placeablePositions = GetOpponentPlaceablePositions();

@@ -12,6 +12,7 @@
 #include "./components/GameController.hpp"
 #include "./components/GameWindow.hpp"
 #include "./components/GameHUD.hpp"
+#include "./components/NetworkController.hpp"
 
 std::string GetFileContents(const std::string path)
 {
@@ -111,6 +112,14 @@ void InitSceneFromFile(const std::string fPath)
             else if (name == "GameHUD")
             {
                 entity.lock()->BindComponent(ECS::CreateComponent<GameHUD>().lock());
+            }
+            else if (name == "NetworkController")
+            {
+                auto cmp = ECS::CreateComponent<NetworkController>().lock();
+
+                component["WebSocketURI"].get_to(cmp->WsUri);
+
+                entity.lock()->BindComponent(cmp);
             }
         }
     }

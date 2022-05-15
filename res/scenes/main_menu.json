@@ -7,6 +7,15 @@
         }
     },
     {
+        "DestroyOnReload": false,
+        "TagName": "network_controller",
+        "components": {
+            "NetworkController": {
+                "WebSocketURI": "ws://banka-ksd-multiplayer.herokuapp.com/"
+            }
+        }
+    },
+    {
         "DestroyOnReload": true,
         "components": {
             "MainMenu": {}

@@ -20,20 +20,17 @@ void GameWindow::OnCreate()
         int(scaleTo.y * narrowness) * int(cards.size() * 2 - 1) + int(scaleTo.y * .30f)
     });
 
-    state.lock()->LoadFromFile("res/img/state.png");
-    andZero.lock()->LoadFromFile("res/img/and_0.png");
-    andOne.lock()->LoadFromFile("res/img/and_1.png");
-    orZero.lock()->LoadFromFile("res/img/or_0.png");
-    orOne.lock()->LoadFromFile("res/img/or_1.png");
-    xorZero.lock()->LoadFromFile("res/img/xor_0.png");
-    xorOne.lock()->LoadFromFile("res/img/xor_1.png");
+    state.lock()->LoadFromFile("res/img/themes/cards/state-0-1.png");
+    andZero.lock()->LoadFromFile("res/img/themes/cards/and_0.png");
+    andOne.lock()->LoadFromFile("res/img/themes/cards/and_1.png");
+    orZero.lock()->LoadFromFile("res/img/themes/cards/or_0.png");
+    orOne.lock()->LoadFromFile("res/img/themes/cards/or_1.png");
+    xorZero.lock()->LoadFromFile("res/img/themes/cards/xor_0.png");
+    xorOne.lock()->LoadFromFile("res/img/themes/cards/xor_1.png");
 }
 
 void GameWindow::OnUpdate()
 {
-    if (IsKeyReleased(KEY_Q))
-        GameManager::GetInstance()->ChangeScene("res/scenes/main_menu.json");
-
     auto gameController = MGetComponent(GameController);
     
     if (gameController->IsGameOver())

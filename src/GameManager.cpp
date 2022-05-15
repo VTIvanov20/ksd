@@ -62,7 +62,7 @@ void GameManager::Update()
 void GameManager::Deinitialize()
 {
     // Destroy any leftover drawables to prevent memory leaking
-    ObjectManager::GetInstance()->DestroyAllEntities();
+    ObjectManager::GetInstance()->DestroyAllEntities(false);
 
     RLImGui::CloseImGui();
     Graphics::CloseWindow();

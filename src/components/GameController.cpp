@@ -2,6 +2,7 @@
 #include "../Entity.hpp"
 #include "./GlobalState.hpp"
 #include "../GameManager.hpp"
+#include "./NetworkController.hpp"
 
 #include <random>
 #include <algorithm>
@@ -95,6 +96,14 @@ void GameController::InitSinglePlayerGame()
         cards[i].val = GetRandomValue(0, 1) ? CardType::STATE_0_1 : CardType::STATE_1_0;
     }
 
+    FillGlobalDeck();
+
+    FillDeck(playerDeck);
+    FillDeck(opponentDeck);
+}
+
+void GameController::FillGlobalDeck()
+{
     const std::array<CardType, 6> logicCards {
         CardType::AND_0, CardType::AND_1,
         CardType::OR_0, CardType::OR_1,
@@ -110,9 +119,6 @@ void GameController::InitSinglePlayerGame()
     }
 
     std::shuffle(globalDeck.begin(), globalDeck.end(), std::default_random_engine());
-
-    FillDeck(playerDeck);
-    FillDeck(opponentDeck);
 }
 
 void GameController::PlaceCardFromDeckIndex(unsigned short deckIndex, Vec2i cardPos)
@@ -123,20 +129,66 @@ void GameController::PlaceCardFromDeckIndex(unsigned short deckIndex, Vec2i card
     const auto placeableCards = GetPlaceableCards(cardPos);
     const auto chosenCard = playerDeck[deckIndex];
 
-    if (std::find(placeableCards.begin(), placeableCards.end(), chosenCard) != placeableCards.end())
+    if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
     {
-        playerDeck.erase(std::find(playerDeck.begin(), playerDeck.end(), chosenCard));
-
-        PlaceCard(chosenCard, cardPos);
+        networkController.lock()->SendPacket(nlohmann::json({
+            {"t", "place-card"},
+            {"d", {
+                {"deckIdx", deckIndex},
+                {"pos", {{"x", cardPos.x}, {"y", cardPos.y}}}
+            }}
+        }));
     }
-    
-    if (playerDeck.empty())
-        FillDeck(playerDeck);
+    else if (gameMode == GameMode::SINGLEPLAYER_WITHOUT_NOT)
+    {
+        if (std::find(placeableCards.begin(), placeableCards.end(), chosenCard) != placeableCards.end())
+        {
+            playerDeck.erase(std::find(playerDeck.begin(), playerDeck.end(), chosenCard));
+
+            PlaceCard(chosenCard, cardPos);
+        }
+
+        if (playerDeck.size() < 5)
+            AddOneToDeck(playerDeck);
+    }
 }
 
-void GameController::InitMultiPlayerGame(std::string code)
+void GameController::DiscardCard(unsigned short deckIndex)
 {
-    gameMode = GameMode::UNKNOWN;
+    if (currentTurn == Turn::OPPONENT)
+        return;
+    
+    const auto chosenCard = playerDeck[deckIndex];
+
+    if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
+    {
+        networkController.lock()->SendPacket(nlohmann::json({
+            {"t", "discard-card"},
+            {"d", {
+                {"deckIdx", deckIndex}
+            }}
+        }));
+    }
+    else
+    {
+        playerDeck.erase(std::find(playerDeck.begin(), playerDeck.end(), chosenCard));
+        currentTurn = currentTurn == Turn::OPPONENT ? Turn::PLAYER : Turn::OPPONENT;
+
+        if (playerDeck.size() < 5)
+            AddOneToDeck(playerDeck);
+        if (globalDeck.empty())
+            FillGlobalDeck();
+    }
+}
+
+void GameController::InitMultiPlayerGame()
+{
+    gameMode = GameMode::MULTIPLAYER_WITHOUT_NOT;
+
+    auto networkControllerEntity =
+        std::static_pointer_cast<Entity>(
+            ObjectManager::GetInstance()->GetEntityFromTagName("network_controller").lock());
+    networkController = MGetComponentFrom(networkControllerEntity, NetworkController);
 }
 
 std::array<BeginningNode<CardType>, 6> GameController::GetCards()
