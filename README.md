@@ -80,17 +80,7 @@
 ## 🤝 Credits
 - Powered by [8ball-engine](https://github.com/TheBrightSide/codename-8ball-engine), created by <a href="https://github.com/AEManov20">AEManov20</a>
 - Components for the engine have been created by everyone
-
-<hr>
-
-## 📖 Reviews
-<p align="center">If you're not sold on this project yet, just listen to what our fans have to say about it!</p>
-
-![Picture](res/img/other/duck.png) "Wow, it's cool to see this game finally digitalised!" - Value's Duck <br>
-    (picture of Value's duck)
-
-![Picture](res/img/other/duck.png) "Really fun to play with other ducks, haha" - Also Value's Duck <br>
-    (another picture of Value's duck)
+- Idea for the <a href="https://github.com/VTIvanov20/banka-ksd/wiki/Conclusion#-but-what-do-the-users-think">"Reviews"</a> section, originally implemented in <a href="https://github.com/ABPozharliev19/maze-project-2021">maze-project-2021</a> by <a href="https://github.com/ABPozharliev19">@ABPozharliev19</a>, <a href="https://github.com/BNSavov19">@BNSavov19</a>, <a href="https://github.com/KSChervenkov19">@KSChervenkov19</a> & <a href="https://github.com/IGVasilev19">@IGVasilev</a>
 
 <hr>
 
