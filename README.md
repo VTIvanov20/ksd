@@ -1,7 +1,8 @@
 # Team Banka KSD
 
 <p align="center">
-
+    <img src="res/img/banners/ksd-banner-light.jpg#gh-light-mode-only"/>
+    <img src="res/img/banners/ksd-banner-dark.jpg#gh-dark-mode-only"/>
 </p>
 
 <p align = "center">
