@@ -15,33 +15,55 @@
 #include "./components/NetworkController.hpp"
 #include "./components/BackgroundComponent.hpp"
 
+/**
+ * @brief Gets the contents of the .json file
+ * 
+ * @param path The path to the .json file
+ * 
+ * @return Returns a string with all the components on an entity
+ */
 std::string GetFileContents(const std::string path)
 {
     std::stringstream jsonStream;
 
     std::ifstream fJson;
 
+    /**
+     * @brief Open the file specified in the path param
+     */
     fJson.open(path, std::ios::in);
 
     if (!fJson.is_open())
         throw std::runtime_error("File \"" + path + "\" could not be opened");
     
+    /**
+     * @brief While there is still information on the file, extract it. When there is no more information, close the file
+     */
     std::string jsonLine;
     while (std::getline(fJson, jsonLine))
         jsonStream << jsonLine << '\n';
     
     fJson.close();
 
+    /**
+     * @brief Return the stringstream with the information on the file
+     */
     return jsonStream.str();
 }
 
 void InitSceneFromFile(const std::string fPath)
 {
+    /**
+     * @brief Gets the contents of the file in the fPath param with the GetFileContents() function
+     */
     std::string contents = GetFileContents(fPath);
     nlohmann::json sJson = nlohmann::json::parse(contents);
 
     assert(sJson.is_array() && "Invalid Scene JSON File!");
 
+    /**
+     * @brief Create an entity for every entity in the .json file, and give it its tag name if it doesn't already exist
+     */
     for (auto ent : sJson)
     {
         std::weak_ptr<Entity> entity;
@@ -64,6 +86,9 @@ void InitSceneFromFile(const std::string fPath)
             ent["DestroyOnReload"].get_to(entity.lock()->_destroyOnReload);
         } catch(const std::exception& e) {}
 
+        /**
+         * @brief For every component in the just created entity, create it and bind it to it
+         */
         for (auto [name, component] : ent["components"].items())
         {
             if (name == "MainMenu")

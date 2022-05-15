@@ -24,6 +24,11 @@ private:
         std::string scenePath;
     } state;
 
+    /**
+     * @brief Reinitializes the current scene
+     * 
+     * @note Meant to be used in the Update() function
+     */
     void ReinitializeScene();
 
     static GameManager* instance;
@@ -33,12 +38,19 @@ private:
     ~GameManager() = default;
 
 public:
-    // disallow cloning singleton
+    /**
+     * @brief Diallows cloning of the singleton
+     */
     GameManager(GameManager const&) = delete;
 
-    // disallow assignments to singleton
+    /**
+     * @brief Disallows assigning of the singleton
+     */
     void operator=(GameManager const&) = delete;
 
+    /**
+     * @brief Gets the instance of the singleton class GameManager
+     */
     static GameManager* GetInstance();
 
     /**
