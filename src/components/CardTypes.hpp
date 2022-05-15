@@ -1,6 +1,9 @@
 #pragma once
 #include <memory>
 
+/**
+ * @brief An enumerator class for all card types
+ */
 enum class CardType
 {
     STATE_0_1, STATE_1_0,
@@ -10,6 +13,9 @@ enum class CardType
     EMPTY
 };
 
+/**
+ * @brief An enumerator class for all vertical card position (up, initial binaries, down)
+ */
 enum class VerticalCardPos
 {
     TOP,
@@ -17,6 +23,9 @@ enum class VerticalCardPos
     BOTTOM
 };
 
+/**
+ * @brief A node representing a card
+ */
 template <typename T>
 struct Node
 {
@@ -24,6 +33,9 @@ struct Node
     T val;
 };
 
+/**
+ * @brief A beginning node representing an initial binary
+ */
 template <typename T>
 struct BeginningNode
 {
@@ -32,6 +44,9 @@ struct BeginningNode
     T val;
 };
 
+/**
+ * @brief An enumerator class for the current turn
+ */
 enum class Turn
 {
     PLAYER,

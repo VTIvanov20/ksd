@@ -6,6 +6,9 @@ bool DrawImageButton(CardType type)
 {
     std::string text;
 
+    /**
+     * @brief Draws the card image depending on its type
+     */
     switch(type)
     {
     case CardType::AND_0:
@@ -48,6 +51,9 @@ void GameHUD::OnUI()
     const char *opponentTurn = "Opponent";
     const char *playerTurn = "Player";
 
+    /**
+     * @brief Draw popup when clicked on a card
+     */
     ImGui::Begin("HUD");
         if (ImGui::BeginPopup("card_discard_popup"))
         {
@@ -66,6 +72,10 @@ void GameHUD::OnUI()
             
             ImGui::EndPopup();
         }
+
+        /**
+         * @brief Display the current turn, add the discard and leave game button
+         */
         ImGui::Text("Turn: %s", gameController->GetCurrentTurn() == Turn::OPPONENT ? opponentTurn : playerTurn);
         
         if (ImGui::Button("Discard"))

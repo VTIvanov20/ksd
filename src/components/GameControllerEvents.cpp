@@ -6,8 +6,14 @@
 
 #include <algorithm>
 
+/**
+ * @brief Called when the game controller component is created
+ */
 void GameController::OnCreate()
 {
+    /**
+     * @brief Gets a global state component and if it has a value initializes a game
+     */
     auto globalState = std::static_pointer_cast<Entity>(
         ObjectManager::GetInstance()->GetEntityFromTagName("global_state").lock());
     auto optMode = MGetComponentFrom(globalState, GlobalState)->GetValue("mode");
@@ -26,6 +32,9 @@ void GameController::OnCreate()
 
 void GameController::OnUpdate()
 {
+    /**
+     * @brief If the gamemode is multiplayer, gets the networkController component and sets the default vaues
+     */
     if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
     {
         auto networkControllerEntity =
@@ -41,9 +50,11 @@ void GameController::OnUpdate()
         if (!nState.gameStarted)
             GameManager::GetInstance()->ChangeScene("res/scenes/main_menu.json");
     }
+    /**
+     * @brief If the gamemode is singleplayer, the AI gets the opponent placeable positions and cards and thinks and then places
+     */
     else if (gameMode == GameMode::SINGLEPLAYER_WITHOUT_NOT)
     {
-        // use very smart AI
         auto placeablePositions = GetOpponentPlaceablePositions();
 
         if (currentTurn == Turn::OPPONENT && placeablePositions.size() != 0)
@@ -74,6 +85,9 @@ void GameController::OnUpdate()
 
             PlaceCard(chosenCard, pos);
 
+            /**
+             * @brief If the AI deck is empty, fill it
+             */
             if (opponentDeck.empty())
                 FillDeck(opponentDeck);
         }
