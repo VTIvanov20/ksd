@@ -48,6 +48,8 @@
     <a href="https://www.microsoft.com/en/microsoft-teams/group-chat-software"><img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width=46px /></a>
 </p>
 
+<hr>
+
 ## 📄 Documents
 ### QA Documentation
   - [Test Plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/mmmarinov20_codingburgas_bg/EeD7jO835_RCuwrzUUf1rR4BOu9SfPDFHS1_5PKnmHc0wA?e=CzQkOa)
@@ -60,7 +62,11 @@
 ### Presenting
   - [Presentation]()
 
+<hr>
+
 ## 📥 Installation
+
+<hr>
 
 ## 🧒 Our Team
 
@@ -69,9 +75,13 @@
 - <a href = "https://github.com/GGGeorgiev20"> Galin Georgiev </a> (Back-end Developer)
 - <a href = "https://github.com/MMMarinov20"> Maxim Marinov </a> (QA Engineer)
 
+<hr>
+
 ## Credits
 - powered by [8ball-engine](https://github.com/TheBrightSide/codename-8ball-engine) created by AEManov20
 - the rest of the components for the engine have been created by everyone
+
+<hr>
 
 ## Reviews
 If you're not sold on this game yet, just listen to what our fans have to say about it!
@@ -84,4 +94,4 @@ If you're not sold on this game yet, just listen to what our fans have to say ab
 
 <hr>
 
-## <p align="center">Thank you for checking out our repo, show us some ❤️ by giving our repo a ⭐️!</p>
+## <p align="center">Thanks for checking out our repo, show us some ❤️ by giving our repo a ⭐️!</p>
