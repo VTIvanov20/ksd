@@ -7,7 +7,8 @@ void BackgroundComponent::OnCreate()
      */
     // tex = ObjectManager::GetInstance()->CreateObject<TextureObject>();
     // bgTex.lock()->LoadFromFile("res/img/themes/wildwest/bg.png");
-    bgTex = LoadTexture("res/img/themes/wildwest/bg.png");
+    if (bgTex.id == 0)
+        bgTex = LoadTexture("res/img/themes/wildwest/bg.png");
 }
 
 void BackgroundComponent::OnUpdate()
