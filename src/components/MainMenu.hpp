@@ -11,7 +11,9 @@ enum class MainMenuState {
     MULTIPLAYER,
     MULTIPLAYER_HOST,
     MULTIPLAYER_JOIN,
-    WAITING_FOR_PLAYERS_MULTIPLAYER
+    WAITING_FOR_PLAYERS_MULTIPLAYER,
+    SETTINGS,
+    HELP
 };
 
 class MainMenu : public Component
@@ -21,10 +23,13 @@ public:
     ~MainMenu();
 
     void OnUI() override;
+    void OnUpdate() override;
     void OnCreate() override;
+    void OnDestroy() override;
 
 protected:
     MainMenuState state = MainMenuState::MAIN_MENU;
+    std::weak_ptr<TextureObject> logoImg;
     const ImVec2 windowSize {400, 200};
     char *multiplayerCodeBuf;
 };

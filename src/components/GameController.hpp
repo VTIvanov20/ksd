@@ -21,6 +21,7 @@ public:
 
     void OnCreate() override;
     void OnUpdate() override;
+    void OnDestroy() override;
 
     std::array<BeginningNode<CardType>, 6> GetCards();
     Turn GetCurrentTurn();
@@ -46,6 +47,8 @@ public:
     const std::string GetOverReason();
 
     CardType GetCard(Vec2i cardPos);
+
+    void LeaveGame();
 
 private:
     void InitSinglePlayerGame();

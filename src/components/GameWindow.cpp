@@ -12,6 +12,7 @@ void GameWindow::OnCreate()
     orOne = ObjectManager::GetInstance()->CreateObject<TextureObject>();
     xorZero = ObjectManager::GetInstance()->CreateObject<TextureObject>();
     xorOne = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    empty = ObjectManager::GetInstance()->CreateObject<TextureObject>();
 
     auto cards = MGetComponent(GameController)->GetCards();
 
@@ -27,6 +28,7 @@ void GameWindow::OnCreate()
     orOne.lock()->LoadFromFile("res/img/themes/cards/or_1.png");
     xorZero.lock()->LoadFromFile("res/img/themes/cards/xor_0.png");
     xorOne.lock()->LoadFromFile("res/img/themes/cards/xor_1.png");
+    empty.lock()->LoadFromFile("res/img/themes/cards/bg.png");
 }
 
 void GameWindow::OnUpdate()
@@ -35,7 +37,52 @@ void GameWindow::OnUpdate()
     
     if (gameController->IsGameOver())
         return;
+    
+    auto deckCards = gameController->GetDeck();
 
+    for (size_t i = 0; i < deckCards.size(); i++)
+    {
+        auto card = deckCards[i];
+        Texture *texture;
+
+        switch(card)
+        {
+        case CardType::AND_0:
+            texture = &andZero.lock()->GetTexture();
+            break;
+        case CardType::AND_1:
+            texture = &andOne.lock()->GetTexture();
+            break;
+        case CardType::OR_0:
+            texture = &orZero.lock()->GetTexture();
+            break;
+        case CardType::OR_1:
+            texture = &orOne.lock()->GetTexture();
+            break;
+        case CardType::XOR_0:
+            texture = &xorZero.lock()->GetTexture();
+            break;
+        case CardType::XOR_1:
+            texture = &xorOne.lock()->GetTexture();
+            break;
+        case CardType::STATE_1_0:
+            texture = &state.lock()->GetTexture();
+            break;
+        case CardType::STATE_0_1:
+            texture = &state.lock()->GetTexture();
+            break;
+        case CardType::EMPTY: {}
+        }
+
+        DrawTexturePro(*texture, {
+            0, 0,
+            (float)texture->width, (float)texture->height
+        }, {
+            10.f + (texture->width + 10.f) * i, GetScreenHeight() - texture->height - 10.f,
+            texture->width * 1.f, texture->height * 1.f
+        }, { 0, 0 }, 0.f, { 255, 255, 255, 191 });
+    }
+    
     renderTexture.lock()->BeginDrawingTo();
         auto cards = gameController->GetCards();
         for (size_t idx = 0; idx < cards.size(); idx++)
@@ -73,6 +120,7 @@ void GameWindow::OnDestroy()
     ObjectManager::GetInstance()->DestroyObjectFromID(orOne.lock()->GetID());
     ObjectManager::GetInstance()->DestroyObjectFromID(xorZero.lock()->GetID());
     ObjectManager::GetInstance()->DestroyObjectFromID(xorOne.lock()->GetID());
+    ObjectManager::GetInstance()->DestroyObjectFromID(empty.lock()->GetID());
 
     ObjectManager::GetInstance()->DestroyObjectFromID(renderTexture.lock()->GetID());
 }
@@ -167,15 +215,28 @@ void GameWindow::OnUI()
         
         if (ImGui::BeginPopup("card_select_popup"))
         {
-            const auto cards = gameController->GetDeck();
-            for (unsigned short i = 0; i < static_cast<unsigned short>(cards.size()); i++)
+            auto placeableCards = gameController->GetPlaceableCards(positionForPlacing);
+            auto playerDeck = gameController->GetDeck();
+            std::vector<CardType> deckSorted(playerDeck.size());
+            std::vector<CardType> crossSection;
+
+            std::sort(placeableCards.begin(), placeableCards.end());
+            std::partial_sort_copy(playerDeck.cbegin(), playerDeck.cend(),
+                deckSorted.begin(), deckSorted.end());
+
+            std::set_intersection(
+                placeableCards.begin(), placeableCards.end(),
+                deckSorted.begin(), deckSorted.end(), std::back_inserter(crossSection)
+            );
+            for (unsigned short i = 0; i < static_cast<unsigned short>(crossSection.size()); i++)
             {
-                auto type = cards[i];
+                auto type = crossSection[i];
 
                 ImGui::SameLine();
                 if (DrawImageButton(type))
                 {
-                    gameController->PlaceCardFromDeckIndex(i, positionForPlacing);
+                    gameController->PlaceCardFromDeckIndex(std::find(playerDeck.begin(), playerDeck.end(), type) - playerDeck.begin(),
+                        positionForPlacing);
                     ImGui::CloseCurrentPopup();
                     positionForPlacing = { 0, 0 };
                 }
@@ -230,11 +291,6 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
         index.y * scaleTo.y
     };
 
-    if (type == CardType::EMPTY)
-    {
-        DrawRectangleV(actualPos, const_cast<Vec2f&>(scaleTo), WHITE);
-    }
-
     Vec2i texRes {};
 
     switch(type)
@@ -263,7 +319,8 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
     case CardType::STATE_0_1:
         texRes = state.lock()->GetSize();
         break;
-    case CardType::EMPTY: {}
+    case CardType::EMPTY:
+        texRes = empty.lock()->GetSize();
     }
 
     Rectf dest = {
@@ -310,6 +367,7 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
     case CardType::STATE_0_1:
         state.lock()->Draw(source, dest, 180.f, origin);
         break;
-    case CardType::EMPTY: {}
+    case CardType::EMPTY:
+        empty.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
     }
 }

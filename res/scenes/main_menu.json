@@ -1,6 +1,13 @@
 [
     {
         "DestroyOnReload": false,
+        "TagName": "background_component",
+        "components": {
+            "BackgroundComponent": {}
+        }
+    },
+    {
+        "DestroyOnReload": false,
         "TagName": "global_state",
         "components": {
             "GlobalState": {}

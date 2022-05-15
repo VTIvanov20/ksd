@@ -29,6 +29,7 @@ private:
     std::weak_ptr<TextureObject> orOne;
     std::weak_ptr<TextureObject> xorZero;
     std::weak_ptr<TextureObject> xorOne;
+    std::weak_ptr<TextureObject> empty;
 
     std::weak_ptr<TextureObject> renderTexture;
     std::vector<Vec2i> clickablePositions {};

@@ -170,9 +170,9 @@ void NetworkController::OnUpdate()
     {
         if (delay % 1000 == 0)
         {
-            SendPacket(nlohmann::json{{
+            SendPacket(nlohmann::json({
                 {"t", "keep-alive"}
-            }});
+            }));
             delay = 0;
         }
 

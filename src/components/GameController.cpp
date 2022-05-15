@@ -12,6 +12,12 @@ const std::string GameController::GetOverReason()
     if (gameMode == GameMode::UNKNOWN)
         return "An unknown GameMode has been set";
 
+    if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
+    {
+        if (!networkController.lock()->IsActive())
+            return "Network isn't active";
+    }
+
     if (GetCard({ 0, static_cast<int>(cards.size()) - 1 }) != CardType::EMPTY) // opponent won
         return "Opponent won the game";
     
@@ -30,6 +36,12 @@ bool GameController::IsGameOver()
 {
     if (gameMode == GameMode::UNKNOWN)
         return true;
+
+    if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
+    {
+        if (!networkController.lock()->IsActive())
+            return true;
+    }
     
     bool topState, mostRightState;
 
@@ -40,6 +52,9 @@ bool GameController::IsGameOver()
             topState = static_cast<int>(state) % 2 != 0;
         }
         mostRightState = GetCard({ 0, 0 }) == CardType::STATE_0_1 ? true : false;
+
+        if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
+            networkController.lock()->LeaveRoom();
 
         if (topState == mostRightState) // opponent won
             return true;
@@ -54,6 +69,9 @@ bool GameController::IsGameOver()
         }
         mostRightState = GetCard({ (static_cast<int>(cards.size()) - 1), 0 }) == CardType::STATE_0_1 ? false : true;
         
+        if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
+            networkController.lock()->LeaveRoom();
+
         if (topState == mostRightState) // player won
             return true;
     }
@@ -497,4 +515,15 @@ std::vector<CardType> GameController::GetPlaceableCards(Vec2i cardPos)
     }
 
     return placeablePos;
+}
+
+void GameController::LeaveGame()
+{
+    GameManager::GetInstance()->ChangeScene("res/scenes/main_menu.json");
+}
+
+void GameController::OnDestroy()
+{
+    if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
+        networkController.lock()->LeaveRoom();
 }

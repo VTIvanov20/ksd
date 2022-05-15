@@ -13,6 +13,7 @@
 #include "./components/GameWindow.hpp"
 #include "./components/GameHUD.hpp"
 #include "./components/NetworkController.hpp"
+#include "./components/BackgroundComponent.hpp"
 
 std::string GetFileContents(const std::string path)
 {
@@ -120,6 +121,10 @@ void InitSceneFromFile(const std::string fPath)
                 component["WebSocketURI"].get_to(cmp->WsUri);
 
                 entity.lock()->BindComponent(cmp);
+            }
+            else if (name == "BackgroundComponent")
+            {
+                entity.lock()->BindComponent(ECS::CreateComponent<BackgroundComponent>());
             }
         }
     }

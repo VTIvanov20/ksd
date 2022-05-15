@@ -74,5 +74,10 @@ void GameHUD::OnUI()
             if (gameController->GetCurrentTurn() == Turn::PLAYER)
                 ImGui::OpenPopup("card_discard_popup");
         }
+
+        if (ImGui::Button("Leave Game"))
+        {
+            gameController->LeaveGame();
+        }
     ImGui::End();
 }

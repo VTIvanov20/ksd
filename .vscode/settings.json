@@ -62,6 +62,13 @@
         "fstream": "cpp",
         "iomanip": "cpp",
         "valarray": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "condition_variable": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "coroutine": "cpp",
+        "csignal": "cpp",
+        "source_location": "cpp",
+        "*.ipp": "cpp"
     }
 }
