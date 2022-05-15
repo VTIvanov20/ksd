@@ -56,7 +56,7 @@
   - [QA Documentation](https://github.com/VTIvanov20/banka-ksd/raw/main/docs/Banka%20KSD%20-%20QA%20Documentation.xlsx)
 
 ### Code & Team Documentation
-  - [Doxygen]()
+  - [Doxygen](https://vtivanov20.github.io/banka-ksd-doxygen/)
   - [Team Documentation](https://github.com/VTIvanov20/banka-ksd/raw/main/docs/Banka%20KSD%20-%20Documentation.docx)
 
 ### Presenting
@@ -66,6 +66,9 @@
 
 ## 📥 Installation
 
+If you want to install our application, you can navigate towards the "<a href="https://github.com/VTIvanov20/banka-ksd/releases">Releases</a>" tab and download the latest version. <br><br>
+Here's the link for you:
+<pre>https://github.com/VTIvanov20/banka-ksd/releases</pre>
 <hr>
 
 ## 🧒 Our Team
@@ -78,9 +81,10 @@
 <hr>
 
 ## 🤝 Credits
-- Powered by [8ball-engine](https://github.com/TheBrightSide/codename-8ball-engine), created by <a href="https://github.com/AEManov20">AEManov20</a>
-- Components for the engine have been created by everyone
-- Idea for the <a href="https://github.com/VTIvanov20/banka-ksd/wiki/Conclusion#-but-what-do-the-users-think">"Reviews"</a> section, originally implemented in <a href="https://github.com/ABPozharliev19/maze-project-2021">maze-project-2021</a> by <a href="https://github.com/ABPozharliev19">@ABPozharliev19</a>, <a href="https://github.com/BNSavov19">@BNSavov19</a>, <a href="https://github.com/KSChervenkov19">@KSChervenkov19</a> & <a href="https://github.com/IGVasilev19">@IGVasilev</a>
+- Powered by [8ball-engine](https://github.com/TheBrightSide/codename-8ball-engine), created by <a href="https://github.com/AEManov20">@AEManov20</a>.
+- The logo for the [8ball-engine](https://github.com/TheBrightSide/codename-8ball-engine) was made by <a href="https://github.com/VTIvanov20">@VTIvanov20</a>
+- Components for the engine have been created by everyone.
+- Idea for the <a href="https://github.com/VTIvanov20/banka-ksd/wiki/Conclusion#-but-what-do-the-users-think">"Reviews"</a> section, originally implemented in <a href="https://github.com/ABPozharliev19/maze-project-2021">maze-project-2021</a> by <a href="https://github.com/ABPozharliev19">@ABPozharliev19</a>, <a href="https://github.com/BNSavov19">@BNSavov19</a>, <a href="https://github.com/KSChervenkov19">@KSChervenkov19</a> & <a href="https://github.com/IGVasilev19">@IGVasilev</a>.
 
 <hr>
 
