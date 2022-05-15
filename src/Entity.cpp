@@ -31,13 +31,13 @@ void Entity::OnUpdateUIComponents()
     }
 }
 
-void Entity::OnEntityDestroy()
+void Entity::OnEntityDestroy(bool checkDestroyOnReload)
 {
     for (auto component : boundComponents)
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
         auto sharedComponent = component.second.lock();
-        if (sharedComponent->DestroyOnReload())
+        if (sharedComponent->DestroyOnReload() || !checkDestroyOnReload)
         {
             sharedComponent->OnDestroy();
             sharedComponent->IsUsed = false;
