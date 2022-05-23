@@ -2,6 +2,7 @@
 
 #include <list>
 #include <unordered_map>
+#include <map>
 #include <memory>
 #include <cstring>
 #include <cassert>
@@ -45,7 +46,7 @@ private:
     /**
      * @brief An unordered map for the object pool
      */
-    std::unordered_map<uint64_t, std::shared_ptr<Object>> objectTable {};
+    std::map<uint64_t, std::shared_ptr<Object>> objectTable {};
 
     static uint64_t currentId;
     static ObjectManager* instance;

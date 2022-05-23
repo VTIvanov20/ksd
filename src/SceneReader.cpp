@@ -14,6 +14,7 @@
 #include "./components/GameHUD.hpp"
 #include "./components/NetworkController.hpp"
 #include "./components/BackgroundComponent.hpp"
+#include "./components/Logo.hpp"
 
 /**
  * @brief Gets the contents of the .json file
@@ -115,14 +116,6 @@ void InitSceneFromFile(const std::string fPath)
 
                 entity.lock()->BindComponent(cmp);
             }
-            // else if (name == "BehaviouralComponent")
-            // {
-            //     auto cmp = ECS::CreateComponent<BehaviouralComponent>().lock();
-
-            //     component["Velocity"].get_to(cmp->Velocity);
-
-            //     entity.lock()->BindComponent(cmp);
-            // }
             else if (name == "GlobalState")
             {
                 entity.lock()->BindComponent(ECS::CreateComponent<GlobalState>().lock());
@@ -150,6 +143,14 @@ void InitSceneFromFile(const std::string fPath)
             else if (name == "BackgroundComponent")
             {
                 entity.lock()->BindComponent(ECS::CreateComponent<BackgroundComponent>());
+            }
+            else if (name == "Logo")
+            {
+                auto cmp = ECS::CreateComponent<Logo>().lock();
+
+                component["LogoPath"].get_to(cmp->LogoPath);
+
+                entity.lock()->BindComponent(cmp);
             }
         }
     }

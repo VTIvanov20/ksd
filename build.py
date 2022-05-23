@@ -23,15 +23,15 @@ err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -g -ggdb -fdiagno
 
 libs = ""
 if platform.system() == "Windows":
-    libs += "-LC:/msys64/mingw64/bin/../lib -lraylib -lopengl32 -lgdi32 -lwinmm"
+    libs += "-LC:/msys64/mingw64/bin/../lib -lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32 -lssl -lcrypto -mwindows -O3"
 else:
-    raise NotImplementedError()
+    libs += '-lraylib -lssl -lcrypto'
 
 out_ext = ""
 if platform.system() == "Windows":
-    out_ext = "exe"
+    out_ext = ".exe"
 else:
-    out_ext = "out"
+    out_ext = ""
 
 compiled_objects = []
 thread_pool = []
@@ -62,5 +62,9 @@ for [dir, subDirs, files] in os.walk(source_dir):
 for thread in thread_pool:
     thread.join()
 
+if platform.system() == "Windows":
+    call_shell("windres -i res/icon.rc -o obj/icon.o")
+    compiled_objects.append("obj/icon.o")
+
 print("INFO: Linking...")
-call_shell(f'{compiler} {cflags} {err_flags} -o bin/main.{out_ext} {" ".join(compiled_objects)} {libs}')
+call_shell(f'{compiler} {cflags} {err_flags} -o bin/main{out_ext} {" ".join(compiled_objects)} {libs}')

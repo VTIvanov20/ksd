@@ -32,26 +32,11 @@ void MainMenu::OnCreate()
 {
     multiplayerCodeBuf = new char[16];
     multiplayerCodeBuf[0] = '\0';
-    logoImg = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    logoImg.lock()->LoadFromFile("res/img/logo.png");
-}
-
-void MainMenu::OnDestroy()
-{
-    logoImg.lock()->Unload();
-    ObjectManager::GetInstance()->DestroyObjectFromID(logoImg.lock()->GetID());
 }
 
 MainMenu::~MainMenu()
 {
     delete[] multiplayerCodeBuf;
-}
-
-void MainMenu::OnUpdate()
-{
-    const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
-    auto logoImgRes = logoImg.lock()->GetSize();
-    logoImg.lock()->Draw({ displaySize.x / 2, displaySize.y / 4 }, { 1.f, 1.f }, 0.f, { logoImgRes.x / 2.f, logoImgRes.y / 2.f });
 }
 
 void MainMenu::OnUI()

@@ -26,5 +26,5 @@ private:
     /**
      * @brief The texture for the background 
      */
-    Texture bgTex;
+    Texture bgTex {};
 };

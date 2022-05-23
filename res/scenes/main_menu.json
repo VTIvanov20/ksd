@@ -1,5 +1,13 @@
 [
     {
+        "DestroyOnReload": true,
+        "components": {
+            "Logo": {
+                "LogoPath": "res/img/logo.png"
+            }
+        }
+    },
+    {
         "DestroyOnReload": false,
         "TagName": "background_component",
         "components": {

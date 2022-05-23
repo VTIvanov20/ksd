@@ -29,9 +29,7 @@ public:
     ~MainMenu();
 
     void OnUI() override;
-    void OnUpdate() override;
     void OnCreate() override;
-    void OnDestroy() override;
 
 protected:
     /**
@@ -39,11 +37,6 @@ protected:
      */
     MainMenuState state = MainMenuState::MAIN_MENU;
     
-    /**
-     * @brief The texture of the logo image
-     */
-    std::weak_ptr<TextureObject> logoImg;
-
     /**
      * @brief The windows size
      */

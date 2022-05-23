@@ -5,14 +5,14 @@ void GameWindow::OnCreate()
 {
     renderTexture = ObjectManager::GetInstance()->CreateObject<TextureObject>();
 
-    state = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    andZero = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    andOne = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    orZero = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    orOne = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    xorZero = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    xorOne = ObjectManager::GetInstance()->CreateObject<TextureObject>();
-    empty = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::STATE_0_1] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::AND_0] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::AND_1] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::OR_0] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::OR_1] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::XOR_0] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::XOR_1] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
+    cardTextures[CardType::EMPTY] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
 
     auto cards = MGetComponent(GameController)->GetCards();
 
@@ -21,14 +21,14 @@ void GameWindow::OnCreate()
         int(scaleTo.y * narrowness) * int(cards.size() * 2 - 1) + int(scaleTo.y * .30f)
     });
 
-    state.lock()->LoadFromFile("res/img/themes/cards/state-0-1.png");
-    andZero.lock()->LoadFromFile("res/img/themes/cards/and_0.png");
-    andOne.lock()->LoadFromFile("res/img/themes/cards/and_1.png");
-    orZero.lock()->LoadFromFile("res/img/themes/cards/or_0.png");
-    orOne.lock()->LoadFromFile("res/img/themes/cards/or_1.png");
-    xorZero.lock()->LoadFromFile("res/img/themes/cards/xor_0.png");
-    xorOne.lock()->LoadFromFile("res/img/themes/cards/xor_1.png");
-    empty.lock()->LoadFromFile("res/img/themes/cards/bg.png");
+    cardTextures[CardType::STATE_0_1].lock()->LoadFromFile("res/img/themes/cards/state-0-1.png");
+    cardTextures[CardType::AND_0].lock()->LoadFromFile("res/img/themes/cards/and_0.png");
+    cardTextures[CardType::AND_1].lock()->LoadFromFile("res/img/themes/cards/and_1.png");
+    cardTextures[CardType::OR_0].lock()->LoadFromFile("res/img/themes/cards/or_0.png");
+    cardTextures[CardType::OR_1].lock()->LoadFromFile("res/img/themes/cards/or_1.png");
+    cardTextures[CardType::XOR_0].lock()->LoadFromFile("res/img/themes/cards/xor_0.png");
+    cardTextures[CardType::XOR_1].lock()->LoadFromFile("res/img/themes/cards/xor_1.png");
+    cardTextures[CardType::EMPTY].lock()->LoadFromFile("res/img/themes/cards/bg.png");
 }
 
 void GameWindow::OnUpdate()
@@ -43,36 +43,7 @@ void GameWindow::OnUpdate()
     for (size_t i = 0; i < deckCards.size(); i++)
     {
         auto card = deckCards[i];
-        Texture *texture;
-
-        switch(card)
-        {
-        case CardType::AND_0:
-            texture = &andZero.lock()->GetTexture();
-            break;
-        case CardType::AND_1:
-            texture = &andOne.lock()->GetTexture();
-            break;
-        case CardType::OR_0:
-            texture = &orZero.lock()->GetTexture();
-            break;
-        case CardType::OR_1:
-            texture = &orOne.lock()->GetTexture();
-            break;
-        case CardType::XOR_0:
-            texture = &xorZero.lock()->GetTexture();
-            break;
-        case CardType::XOR_1:
-            texture = &xorOne.lock()->GetTexture();
-            break;
-        case CardType::STATE_1_0:
-            texture = &state.lock()->GetTexture();
-            break;
-        case CardType::STATE_0_1:
-            texture = &state.lock()->GetTexture();
-            break;
-        case CardType::EMPTY: {}
-        }
+        Texture *texture = &cardTextures[card].lock()->GetTexture();
 
         DrawTexturePro(*texture, {
             0, 0,
@@ -113,14 +84,8 @@ void GameWindow::OnUpdate()
 
 void GameWindow::OnDestroy()
 {
-    ObjectManager::GetInstance()->DestroyObjectFromID(state.lock()->GetID());
-    ObjectManager::GetInstance()->DestroyObjectFromID(andZero.lock()->GetID());
-    ObjectManager::GetInstance()->DestroyObjectFromID(andOne.lock()->GetID());
-    ObjectManager::GetInstance()->DestroyObjectFromID(orZero.lock()->GetID());
-    ObjectManager::GetInstance()->DestroyObjectFromID(orOne.lock()->GetID());
-    ObjectManager::GetInstance()->DestroyObjectFromID(xorZero.lock()->GetID());
-    ObjectManager::GetInstance()->DestroyObjectFromID(xorOne.lock()->GetID());
-    ObjectManager::GetInstance()->DestroyObjectFromID(empty.lock()->GetID());
+    for (auto tex : cardTextures)
+        ObjectManager::GetInstance()->DestroyObjectFromID(tex.second.lock()->GetID());
 
     ObjectManager::GetInstance()->DestroyObjectFromID(renderTexture.lock()->GetID());
 }
@@ -129,34 +94,7 @@ bool GameWindow::DrawImageButton(CardType type)
 {
     Texture *texture = nullptr;
 
-    switch(type)
-    {
-    case CardType::AND_0:
-        texture = &andZero.lock()->GetTexture();
-        break;
-    case CardType::AND_1:
-        texture = &andOne.lock()->GetTexture();
-        break;
-    case CardType::OR_0:
-        texture = &orZero.lock()->GetTexture();
-        break;
-    case CardType::OR_1:
-        texture = &orOne.lock()->GetTexture();
-        break;
-    case CardType::XOR_0:
-        texture = &xorZero.lock()->GetTexture();
-        break;
-    case CardType::XOR_1:
-        texture = &xorOne.lock()->GetTexture();
-        break;
-    case CardType::STATE_1_0:
-        texture = &state.lock()->GetTexture();
-        break;
-    case CardType::STATE_0_1:
-        texture = &state.lock()->GetTexture();
-        break;
-    case CardType::EMPTY: {}
-    }
+    texture = &cardTextures[type].lock()->GetTexture();
 
     if (texture == nullptr) return false;
 
@@ -291,37 +229,7 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
         index.y * scaleTo.y
     };
 
-    Vec2i texRes {};
-
-    switch(type)
-    {
-    case CardType::AND_0:
-        texRes = andZero.lock()->GetSize();
-        break;
-    case CardType::AND_1:
-        texRes = andOne.lock()->GetSize();
-        break;
-    case CardType::OR_0:
-        texRes = orZero.lock()->GetSize();
-        break;
-    case CardType::OR_1:
-        texRes = orOne.lock()->GetSize();
-        break;
-    case CardType::XOR_0:
-        texRes = xorZero.lock()->GetSize();
-        break;
-    case CardType::XOR_1:
-        texRes = xorOne.lock()->GetSize();
-        break;
-    case CardType::STATE_1_0:
-        texRes = state.lock()->GetSize();
-        break;
-    case CardType::STATE_0_1:
-        texRes = state.lock()->GetSize();
-        break;
-    case CardType::EMPTY:
-        texRes = empty.lock()->GetSize();
-    }
+    Vec2i texRes = cardTextures[type == CardType::STATE_1_0 ? CardType::STATE_0_1 : type].lock()->GetSize();
 
     Rectf dest = {
         actualPos.x + scaleTo.x / 2,
@@ -341,33 +249,9 @@ void GameWindow::DrawFromType(CardType type, Vec2f index, VerticalCardPos vertPo
         scaleTo.y / 2.f
     };
 
-    switch(type)
-    {
-    case CardType::AND_0:
-        andZero.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
-        break;
-    case CardType::AND_1:
-        andOne.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
-        break;
-    case CardType::OR_0:
-        orZero.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
-        break;
-    case CardType::OR_1:
-        orOne.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
-        break;
-    case CardType::XOR_0:
-        xorZero.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
-        break;
-    case CardType::XOR_1:
-        xorOne.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
-        break;
-    case CardType::STATE_1_0:
-        state.lock()->Draw(source, dest, 0.f, origin);
-        break;
-    case CardType::STATE_0_1:
-        state.lock()->Draw(source, dest, 180.f, origin);
-        break;
-    case CardType::EMPTY:
-        empty.lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
-    }
+    if (type == CardType::STATE_1_0)
+        cardTextures[CardType::STATE_0_1].lock()->Draw(source, dest, 0.f, origin);
+    else if (type == CardType::STATE_0_1)
+        cardTextures[type].lock()->Draw(source, dest, 180.f, origin);
+    else cardTextures[type].lock()->Draw(source, dest, vertPos == VerticalCardPos::TOP ? 180.f : 0.f, origin);
 }
