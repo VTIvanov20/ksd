@@ -25,7 +25,7 @@ libs = ""
 if platform.system() == "Windows":
     libs += "-LC:/msys64/mingw64/bin/../lib -lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32 -lssl -lcrypto -mwindows -O3"
 else:
-    libs += '-lraylib -lssl -lcrypto'
+    libs += '-lraylib -lssl -lcrypto -O3'
 
 out_ext = ""
 if platform.system() == "Windows":
