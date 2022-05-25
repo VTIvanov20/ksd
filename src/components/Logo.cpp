@@ -10,7 +10,8 @@ void Logo::OnUpdate()
 {
     const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
     auto logoTexRes = logoTex.lock()->GetSize();
-    logoTex.lock()->Draw({ displaySize.x / 2, displaySize.y / 4 }, { 1.f, 1.f }, 0.f, { logoTexRes.x / 2.f, logoTexRes.y / 2.f });
+    logoTex.lock()->Draw({ displaySize.x / 2, displaySize.y / 4 }, { 1.f, 1.f }, 0.f,
+        { static_cast<float>(logoTexRes.x) / 2.f, static_cast<float>(logoTexRes.y) / 2.f });
 }
 
 void Logo::OnDestroy()

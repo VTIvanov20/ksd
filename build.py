@@ -18,14 +18,14 @@ compile_pattern = ".*\.cpp$"
 
 cflags = f"-I{source_dir} -I{os.path.join(source_dir, 'util', 'dear_imgui')}"
 
-# err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -g -ggdb -fdiagnostics-color=always"
+# err_flags = "-Werror -Wall -Wunused-variable -Wextra -Wno-enum-compare -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -g -ggdb -fdiagnostics-color=always"
 err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -g -ggdb -fdiagnostics-color=always"
 
 libs = ""
 if platform.system() == "Windows":
     libs += "-LC:/msys64/mingw64/bin/../lib -lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32 -lssl -lcrypto -mwindows -O3"
 else:
-    libs += '-lraylib -lssl -lcrypto -O3'
+    libs += '-lraylib -lssl -lcrypto'
 
 out_ext = ""
 if platform.system() == "Windows":
@@ -51,13 +51,14 @@ def compile_file(file):
 
 for [dir, subDirs, files] in os.walk(source_dir):
     for file in files:
-        t = threading.Thread(target=compile_file, args=(file,))
-        t.start()
-        thread_pool.append(t)
+        compile_file(file)
+        # t = threading.Thread(target=compile_file, args=(file,))
+        # t.start()
+        # thread_pool.append(t)
 
-        if len(thread_pool) == 4:
-            for thread in thread_pool:
-                thread.join()
+        # if len(thread_pool) == 4:
+            # for thread in thread_pool:
+                # thread.join()
 
 for thread in thread_pool:
     thread.join()

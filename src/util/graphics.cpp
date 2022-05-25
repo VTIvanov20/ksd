@@ -5,7 +5,7 @@
 
 bool Graphics::InitWindow(Vec2f winDimensions, const char* title)
 {
-    ::InitWindow(winDimensions.x, winDimensions.y, title);
+    ::InitWindow(static_cast<int>(winDimensions.x), static_cast<int>(winDimensions.y), title);
     return true;
 }
 
@@ -39,7 +39,7 @@ void Graphics::EndDrawing()
 
 void Graphics::SetWindowPosition(Vec2f pos)
 {
-    ::SetWindowPosition(pos.x, pos.y);
+    ::SetWindowPosition(static_cast<int>(pos.x), static_cast<int>(pos.y));
 }
 
 // TODO!
@@ -74,14 +74,14 @@ void TextureObject::Draw(Recti Source, Rectf Destination, double Rotation, Vec2f
     if (renderTexture.id != 0)
         DrawTexturePro(renderTexture.texture,
             {
-                -(float)renderTexture.texture.width + Source.x,
-                (float)renderTexture.texture.height - Source.y,
-                (float)renderTexture.texture.width,
-                -(float)renderTexture.texture.height
+                -static_cast<float>(renderTexture.texture.width + Source.x),
+                static_cast<float>(renderTexture.texture.height - Source.y),
+                static_cast<float>(renderTexture.texture.width),
+                -static_cast<float>(renderTexture.texture.height)
             },
-            Destination, Origin, Rotation, WHITE);
+            Destination, Origin, static_cast<float>(Rotation), WHITE);
     if (texture.id != 0)
-        DrawTexturePro(texture, Source, Destination, Origin, Rotation, Color { 255, 255, 255, 255 });
+        DrawTexturePro(texture, Source, Destination, Origin, static_cast<float>(Rotation), Color { 255, 255, 255, 255 });
 }
 
 void TextureObject::Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Origin)
@@ -89,22 +89,22 @@ void TextureObject::Draw(Vec2f Position, Vec2f Scale, double Rotation, Vec2f Ori
     if (renderTexture.id != 0)
         DrawTexturePro(renderTexture.texture,
             {
-                -(float)renderTexture.texture.width,
-                (float)renderTexture.texture.height,
-                (float)renderTexture.texture.width,
-                -(float)renderTexture.texture.height
+                -static_cast<float>(renderTexture.texture.width),
+                static_cast<float>(renderTexture.texture.height),
+                static_cast<float>(renderTexture.texture.width),
+                -static_cast<float>(renderTexture.texture.height)
             },
             {
                 0, 0,
-                (float)renderTexture.texture.width * Scale.x,
-                (float)renderTexture.texture.height * Scale.y
+                static_cast<float>(renderTexture.texture.width) * Scale.x,
+                static_cast<float>(renderTexture.texture.height) * Scale.y
             },
-            Origin, Rotation, WHITE);
+            Origin, static_cast<float>(Rotation), WHITE);
     if (texture.id != 0)
         DrawTexturePro(texture,
-            { 0, 0, float(texture.width), float(texture.height) },
-            { Position.x, Position.y, Scale.x * texture.width, Scale.y * texture.height },
-            Origin, Rotation, WHITE);
+            { 0, 0, static_cast<float>(texture.width), static_cast<float>(texture.height) },
+            { Position.x, Position.y, Scale.x * static_cast<float>(texture.width), Scale.y * static_cast<float>(texture.height) },
+            Origin, static_cast<float>(Rotation), WHITE);
 }
 
 Vec2i TextureObject::GetSize()
@@ -160,13 +160,13 @@ bool Input::IsKeyUp(int key)
 Vec2i Input::GetMousePos()
 {
     Vec2f pos = GetMousePosition();
-    return { int(pos.x), int(pos.y) };
+    return { static_cast<int>(pos.x), static_cast<int>(pos.y) };
 }
 
 Vec2i Input::GetMouseDelta()
 {
     Vec2f delta = ::GetMouseDelta();
-    return { int(delta.x), int(delta.y) };
+    return { static_cast<int>(delta.x), static_cast<int>(delta.y) };
 }
 
 void Input::SetMousePos(Vec2i pos)

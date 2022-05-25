@@ -178,7 +178,7 @@ private:
     /**
      * @brief The array with fixed length of cards
      */
-    std::array<BeginningNode<CardType>, 6> cards;
+    std::array<BeginningNode<CardType>, 6> cards {};
 
     /**
      * @brief The string with the multiplayer code

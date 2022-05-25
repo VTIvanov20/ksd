@@ -32,7 +32,7 @@ void SpriteComponent::OnUpdate()
         auto texRes = shTexture->GetSize();
 
         shTexture->Draw(transform->Position, transform->Scale,
-            transform->Rotation, Vec2f { texRes.x / 2.f, texRes.y / 2.f });
+            transform->Rotation, Vec2f { static_cast<float>(texRes.x) / 2.f, static_cast<float>(texRes.y) / 2.f });
     }
 }
 

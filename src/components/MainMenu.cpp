@@ -244,7 +244,7 @@ order to have 4 cards at the end of your turn.
 If the deck runs out, the discarded cards get
 shuffled back into the newly-formed deck.
 )T";
-            ImGui::Text(help);
+            ImGui::Text("%s", help);
             if (ImGui::Button("Back"))
                 state = MainMenuState::SETTINGS;
         }

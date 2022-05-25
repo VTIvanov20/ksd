@@ -18,11 +18,11 @@ void BackgroundComponent::OnUpdate()
      */
     DrawTexturePro(bgTex, {
         0, 0,
-        (float)bgTex.width, (float)bgTex.height
+        static_cast<float>(bgTex.width), static_cast<float>(bgTex.height)
     }, {
         0.f, 0.f,
-        (float)GetScreenWidth(),
-        (float)GetScreenHeight()
+        static_cast<float>(GetScreenWidth()),
+        static_cast<float>(GetScreenHeight())
     }, {0.f, 0.f}, 0.f, { 255, 255, 255, 191 });
 }
 

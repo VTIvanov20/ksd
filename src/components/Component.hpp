@@ -37,7 +37,7 @@ public:
      * 
      * @param id The id of the object to which to bind the component
      */
-    void BindToEntity(uint64_t id);
+    void BindToEntity(unsigned long long _id);
 
     /**
      * @brief Get the component of an entity by name
@@ -52,14 +52,14 @@ protected:
  * @brief Define a component of a type
  */
 #define DEFINE_COMPONENT(TYPE) \
-    TYPE(uint64_t id) : Component(id) {}; \
+    TYPE(unsigned long long _id) : Component(_id) {}; \
     const char* ComponentName() override { return #TYPE; };
 
 /**
  * @brief Define a derived component of type and the type of the base component
  */
 #define DEFINE_DERIVED_COMPONENT(TYPE, BASETYPE) \
-    TYPE(uint64_t id) : BASETYPE(id) {}; \
+    TYPE(unsigned long long _id) : BASETYPE(_id) {}; \
     const char* ComponentName() override { return #TYPE; };
 
 /**

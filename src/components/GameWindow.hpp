@@ -9,7 +9,7 @@
 class GameWindow : public Component
 {
 public:
-    DEFINE_COMPONENT(GameWindow);
+    DEFINE_COMPONENT(GameWindow)
 
     void OnCreate() override;
     void OnUpdate() override;

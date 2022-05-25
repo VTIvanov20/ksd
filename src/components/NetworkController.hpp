@@ -21,7 +21,7 @@ public:
 class NetworkController : public Component
 {
 public:
-    DEFINE_COMPONENT(NetworkController);
+    DEFINE_COMPONENT(NetworkController)
 
     void OnCreate() override;
     void OnUpdate() override;

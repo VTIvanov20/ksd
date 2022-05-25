@@ -6,7 +6,7 @@
 class Logo : public Component
 {
 public:
-    DEFINE_COMPONENT(Logo);
+    DEFINE_COMPONENT(Logo)
     virtual ~Logo() = default;
 
     void OnCreate() override;

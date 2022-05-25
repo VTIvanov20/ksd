@@ -6,7 +6,7 @@
 /**
  * @brief The current id for the latest object in the object pool
  */
-uint64_t ObjectManager::currentId = 0;
+unsigned long long ObjectManager::currentId = 0;
 
 /**
  * @brief Creates a null pointer instance of the singleton class ObjectManager
@@ -32,7 +32,7 @@ void ObjectManager::CleanUnusedComponents()
     /**
      * @brief Creates a list with ids to destroy, checks if they are components and if they are unused adds them to it and then calls the OnDestroy() function
      */
-    std::list<uint64_t> idsForDestroying;
+    std::list<unsigned long long> idsForDestroying;
     for (auto object : objectTable)
     {
         if (CheckBaseName(object.second, "Component"))
@@ -69,7 +69,7 @@ int ObjectManager::GetObjectCount()
     /**
      * @brief Gets the size of the object pool map and returns it
      */
-    return objectTable.size();
+    return static_cast<int>(objectTable.size());
 }
 
 void ObjectManager::DestroyAllEntities(bool checkDestroyOnReload)
@@ -77,7 +77,7 @@ void ObjectManager::DestroyAllEntities(bool checkDestroyOnReload)
     /**
      * @brief Creates a list with ids to destroy, checks if they are entities and if they are adds them to it and then calls the OnEntityDestroy() function
      */
-    std::list<uint64_t> idsForDestroying;
+    std::list<unsigned long long> idsForDestroying;
 
     for (auto object : objectTable)
     {
@@ -98,7 +98,7 @@ void ObjectManager::DestroyAllEntities(bool checkDestroyOnReload)
         DestroyObjectFromID(id);
 }
 
-void ObjectManager::DestroyEntityFromID(uint64_t id)
+void ObjectManager::DestroyEntityFromID(unsigned long long id)
 {
     /**
      * @brief Goes through the object pool and if it finds the id we are looking for, destroys it
@@ -118,7 +118,7 @@ void ObjectManager::DestroyAllObjects()
     /**
      * @brief Creates a list with ids to destroy and then adds them to it
      */
-    std::list<uint64_t> idsForDestroying;
+    std::list<unsigned long long> idsForDestroying;
     
     for (auto object : objectTable)
     {
@@ -133,7 +133,7 @@ void ObjectManager::DestroyAllObjects()
         DestroyObjectFromID(id);
 }
 
-void ObjectManager::DestroyObjectFromID(uint64_t id)
+void ObjectManager::DestroyObjectFromID(unsigned long long id)
 {
     /**
      * @brief Destroys the object in the object pool by id
@@ -141,7 +141,7 @@ void ObjectManager::DestroyObjectFromID(uint64_t id)
     objectTable.erase(id);
 }
 
-std::weak_ptr<Object> ObjectManager::GetObjectFromID(uint64_t id)
+std::weak_ptr<Object> ObjectManager::GetObjectFromID(unsigned long long id)
 {
     /**
      * @brief Goes through the object pool and if it finds the id we are looking for, returns it. If not, returns empty

@@ -27,6 +27,14 @@
 *   SOFTWARE.
 *
 **********************************************************************************************/
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wold-style-cast"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+
 #include "rlImGui.h"
 
 #include "imgui.h"
@@ -469,3 +477,5 @@ void RLImGuiImageRect(const Texture* image, int destWidth, int destHeight, Recta
 
     ImGui::Image((ImTextureID)image, ImVec2(float(destWidth), float(destHeight)),uv0,uv1);
 }
+
+#pragma GCC diagnostic pop

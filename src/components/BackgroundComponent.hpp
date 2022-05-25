@@ -7,7 +7,7 @@ public:
     /**
      * @brief Define a new component of type BackgroundComponent
      */
-    DEFINE_COMPONENT(BackgroundComponent);
+    DEFINE_COMPONENT(BackgroundComponent)
 
     void OnCreate() override;
     void OnUpdate() override;

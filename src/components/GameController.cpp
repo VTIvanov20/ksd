@@ -7,6 +7,9 @@
 #include <random>
 #include <algorithm>
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+
 const std::string GameController::GetOverReason()
 {
     /**
@@ -139,7 +142,7 @@ void GameController::InitSinglePlayerGame()
      * @brief Sets the gamemode to singeplayer and randomizes the current turn
      */
     gameMode = GameMode::SINGLEPLAYER_WITHOUT_NOT;
-    currentTurn = (Turn)GetRandomValue(0, 1);    
+    currentTurn = static_cast<Turn>(GetRandomValue(0, 1));    
 
     /**
      * @brief Randomizes the initial binaries
@@ -670,3 +673,5 @@ void GameController::OnDestroy()
     if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
         networkController.lock()->LeaveRoom();
 }
+
+#pragma GCC diagnostic pop

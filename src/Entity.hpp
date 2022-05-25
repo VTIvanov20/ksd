@@ -22,7 +22,7 @@ public:
     /**
      * @brief Create a new object of type entity
      */
-    DEFINE_OBJECT(Entity);
+    DEFINE_OBJECT(Entity)
 
     virtual ~Entity() = default;
 

@@ -16,13 +16,13 @@ private:
     /**
      * @brief The id of the object
      */
-    uint64_t id;
+    unsigned long long id;
     
 public:
     /**
      * @brief Sets the id of the object when it's created
      */
-    Object(uint64_t id) : id(id) {};
+    Object(unsigned long long _id) : id(_id) {};
     virtual ~Object()
     {
         printf("Destroyed Object with id %lld\n", id);
@@ -30,14 +30,14 @@ public:
 
     virtual const char* ObjectBaseName() { return nullptr; }
     virtual bool DestroyOnReload() { return true; }
-    inline uint64_t GetID() { return id; }
+    inline unsigned long long GetID() { return id; }
 };
 
 /**
  * @brief Creates a new object and sets its id
  */
 #define DEFINE_OBJECT(TYPE) \
-    TYPE(uint64_t id) : Object(id) {}; \
+    TYPE(unsigned long long _id) : Object(_id) {}; \
     const char* ObjectBaseName() override { return #TYPE; };
 
 class ObjectManager
@@ -46,9 +46,9 @@ private:
     /**
      * @brief An unordered map for the object pool
      */
-    std::map<uint64_t, std::shared_ptr<Object>> objectTable {};
+    std::map<unsigned long long, std::shared_ptr<Object>> objectTable {};
 
-    static uint64_t currentId;
+    static unsigned long long currentId;
     static ObjectManager* instance;
 
     void CleanUnusedComponents();
@@ -116,7 +116,7 @@ public:
      * 
      * @param id The id of the entity we want to destroy
      */
-    void DestroyEntityFromID(uint64_t id);
+    void DestroyEntityFromID(unsigned long long id);
 
     /**
      * @brief Destroys all objects in the object pool
@@ -128,7 +128,7 @@ public:
      * 
      * @param id The id of the object we want to destroy
      */
-    void DestroyObjectFromID(uint64_t id);
+    void DestroyObjectFromID(unsigned long long id);
     
     /**
      * @brief Gets an object by id in the object pool and returns it
@@ -137,7 +137,7 @@ public:
      * 
      * @return Returns the object it gets from the id param
      */
-    std::weak_ptr<Object> GetObjectFromID(uint64_t id);
+    std::weak_ptr<Object> GetObjectFromID(unsigned long long id);
 
     /**
      * @brief Gets an object by name in the object pool and returns it

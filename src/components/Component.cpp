@@ -12,12 +12,12 @@ void Component::BindToEntity(std::weak_ptr<Object> object)
     boundEntity = object;
 }
 
-void Component::BindToEntity(uint64_t id)
+void Component::BindToEntity(unsigned long long _id)
 {
     /**
      * @brief Gets the entity by id and binds the component to it
      */
-    auto object = ObjectManager::GetInstance()->GetObjectFromID(id);
+    auto object = ObjectManager::GetInstance()->GetObjectFromID(_id);
     BindToEntity(object);
 }
 

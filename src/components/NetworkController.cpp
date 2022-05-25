@@ -40,7 +40,7 @@ static websocketpp::connection_hdl connHandle;
 static std::mutex stateMutex;
 static std::shared_ptr<NetworkState> networkState;
 
-void OnMessage(client* c, websocketpp::connection_hdl hdl, message_ptr msg)
+void OnMessage(client*, websocketpp::connection_hdl hdl, message_ptr msg)
 {
     websocketpp::lib::error_code ec;
     printf("INFO: -> %s\n", msg->get_payload().c_str());
@@ -96,7 +96,7 @@ void OnMessage(client* c, websocketpp::connection_hdl hdl, message_ptr msg)
                             jState["val"].get_to((*cState)->val);
                             jState = jState["next"];
                             cState = &(*cState)->next;
-                        } catch (std::exception) {
+                        } catch (std::exception const&) {
                             (*cState).reset();
                             break;
                         }
@@ -113,7 +113,7 @@ void OnMessage(client* c, websocketpp::connection_hdl hdl, message_ptr msg)
                             jState["val"].get_to((*cState)->val);
                             jState = jState["next"];
                             cState = &(*cState)->next;
-                        } catch (std::exception) {
+                        } catch (std::exception const&) {
                             (*cState).reset();
                             break;
                         }

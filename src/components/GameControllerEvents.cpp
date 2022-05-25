@@ -37,12 +37,12 @@ void GameController::OnUpdate()
      */
     if (gameMode == GameMode::MULTIPLAYER_WITHOUT_NOT)
     {
-        auto networkControllerEntity =
-        std::static_pointer_cast<Entity>(
-            ObjectManager::GetInstance()->GetEntityFromTagName("network_controller").lock());
-        auto networkController = MGetComponentFrom(networkControllerEntity, NetworkController);
+        // auto networkControllerEntity =
+        // std::static_pointer_cast<Entity>(
+            // ObjectManager::GetInstance()->GetEntityFromTagName("network_controller").lock());
+        // auto networkController = MGetComponentFrom(networkControllerEntity, NetworkController);
 
-        NetworkState nState = networkController->GetState();
+        NetworkState nState = networkController.lock()->GetState();
         cards = nState.cardState;
         currentTurn = nState.currentTurn;
         playerDeck = nState.playerDeck;
@@ -59,7 +59,7 @@ void GameController::OnUpdate()
 
         if (currentTurn == Turn::OPPONENT && placeablePositions.size() != 0)
         {
-            const auto pos = placeablePositions[GetRandomValue(0, placeablePositions.size() - 1)];
+            const auto pos = placeablePositions[static_cast<size_t>(GetRandomValue(0, static_cast<int>(placeablePositions.size()) - 1))];
             auto placeableCards = GetPlaceableCards(pos);
             std::vector<CardType> opponentDeckSorted(opponentDeck.size());
             std::vector<CardType> crossSection;
@@ -80,7 +80,7 @@ void GameController::OnUpdate()
                 return;
             }
 
-            auto chosenCard = crossSection.at(GetRandomValue(0, crossSection.size() - 1));
+            auto chosenCard = crossSection.at(static_cast<size_t>(GetRandomValue(0, static_cast<int>(crossSection.size()) - 1)));
             opponentDeck.erase(std::find(opponentDeck.begin(), opponentDeck.end(), chosenCard));
 
             PlaceCard(chosenCard, pos);
