@@ -73,7 +73,7 @@ void InitSceneFromFile(const std::string fPath)
             std::string tag;
             ent["TagName"].get_to(tag);
 
-            if (ObjectManager::GetInstance()->TagNameAlreadyExists(tag))
+            if (ObjectManager::GetInstance()->TagNameAlreadyExists(tag) && !tag.empty())
                 continue;
 
             entity = ECS::CreateEntity();
@@ -86,6 +86,9 @@ void InitSceneFromFile(const std::string fPath)
         try {
             ent["DestroyOnReload"].get_to(entity.lock()->_destroyOnReload);
         } catch(const std::exception& e) {}
+
+        if (!entity.lock()->DestroyOnReload() && entity.lock()->TagName.empty())
+            throw std::runtime_error("Cannot have global (DestroyOnReload = true) entities without tags");
 
         /**
          * @brief For every component in the just created entity, create it and bind it to it
