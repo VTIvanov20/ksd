@@ -23,7 +23,7 @@ err_flags = "-Wall -Wunused-variable -Wextra -Wno-enum-compare -g -ggdb -fdiagno
 
 libs = ""
 if platform.system() == "Windows":
-    libs += "-LC:/msys64/mingw64/bin/../lib -lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32 -lssl -lcrypto -mwindows -O3"
+    libs += "-LC:/msys64/mingw64/lib -lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32 -lssl -lcrypto -mwindows -O3"
 else:
     libs += '-lraylib -lssl -lcrypto'
 

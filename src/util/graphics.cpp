@@ -45,13 +45,25 @@ void Graphics::SetWindowPosition(Vec2f pos)
 // TODO!
 void TextureObject::LoadEmpty(Vec2i res)
 {
+    Unload();
+
     renderTexture = LoadRenderTexture(res.x, res.y);
     verticallyMirroredTexture = LoadRenderTexture(res.x, res.y);
+
+    BeginTextureMode(renderTexture);
+    ClearBackground(BLACK);
+    ClearBackground({});
+    EndTextureMode();
+
+    BeginTextureMode(verticallyMirroredTexture);
+    ClearBackground(BLACK);
+    ClearBackground({});
+    EndTextureMode();
 }
 
 void TextureObject::LoadFromFile(const char *path)
 {
-    if (texture.id != 0) Unload();
+    Unload();
 
     texture = LoadTexture(path);
 
