@@ -66,6 +66,7 @@ void TextureObject::LoadFromFile(const char *path)
     Unload();
 
     texture = LoadTexture(path);
+    SetTextureFilter(texture, TEXTURE_FILTER_BILINEAR);
 
     if (texture.id == 0)
     {
