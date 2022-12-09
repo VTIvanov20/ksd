@@ -401,6 +401,7 @@ void ReloadImGuiFonts()
 {
     ImGuiIO& io = ImGui::GetIO();
     unsigned char* pixels = nullptr;
+    io.Fonts->AddFontFromFileTTF("res/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf", 15.f);
 
     int width;
     int height;
