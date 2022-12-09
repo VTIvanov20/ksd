@@ -1,9 +1,18 @@
 [
     {
-        "DestroyOnReload": false,
-        "TagName": "global_state",
+        "DestroyOnReload": true,
+        "TagName": "nice_logo",
         "components": {
-            "GlobalState": {}
+            "Logo": {
+                "LogoPath": "res/img/logo.png"
+            }
+        }
+    },
+    {
+        "DestroyOnReload": true,
+        "TagName": "background_component",
+        "components": {
+            "BackgroundComponent": {}
         }
     },
     {

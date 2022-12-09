@@ -1,6 +1,7 @@
 [
     {
         "DestroyOnReload": true,
+        "TagName": "nice_logo",
         "components": {
             "Logo": {
                 "LogoPath": "res/img/logo.png"
@@ -8,7 +9,7 @@
         }
     },
     {
-        "DestroyOnReload": false,
+        "DestroyOnReload": true,
         "TagName": "background_component",
         "components": {
             "BackgroundComponent": {}
