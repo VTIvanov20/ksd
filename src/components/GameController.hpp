@@ -34,7 +34,7 @@ public:
      * 
      * @return Returns an array of BeginningNodes (initial binaries)
      */
-    std::array<BeginningNode<CardType>, 6> GetCards();
+    const std::array<BeginningNode<CardType>, 6>& GetCards();
 
     /**
      * @brief Gets the current turn
@@ -89,7 +89,7 @@ public:
      * 
      * @return Returns a vector of the current deck
      */
-    std::vector<CardType> GetDeck() const;
+    const std::vector<CardType>& GetDeck() const;
 
     /**
      * @brief Fills up the players deck

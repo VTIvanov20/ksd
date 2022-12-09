@@ -5,7 +5,7 @@ void Entity::OnEntityCreate()
     /**
      * @brief Gets every component in the component bool and calls the OnCreate() function
      */
-    for (auto component : boundComponents)
+    for (auto& component : boundComponents)
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
         component.second.lock()->OnCreate();
@@ -17,7 +17,7 @@ void Entity::OnUpdateComponents()
     /**
      * @brief Gets every component in the component bool and calls the OnUpdate() function if they're active
      */
-    for (auto component : boundComponents)
+    for (auto& component : boundComponents)
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
         auto sharedComponent = component.second.lock();
@@ -31,7 +31,7 @@ void Entity::OnUpdateUIComponents()
     /**
      * @brief Gets every component in the component bool and calls the OnUI() function if they're active
      */
-    for (auto component : boundComponents)
+    for (auto& component : boundComponents)
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
         auto sharedComponent = component.second.lock();
@@ -45,7 +45,7 @@ void Entity::OnEntityDestroy(bool checkDestroyOnReload)
     /**
      * @brief Gets every component in the component bool and calls the OnDestroy() function if it's destroyed
      */
-    for (auto component : boundComponents)
+    for (auto& component : boundComponents)
     {
         assert(!component.second.expired() && "An expired component is kept in the boundComponents array");
         auto sharedComponent = component.second.lock();

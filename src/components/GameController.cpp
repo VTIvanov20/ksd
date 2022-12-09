@@ -33,7 +33,7 @@ const std::string GameController::GetOverReason()
     return "";
 }
 
-std::vector<CardType> GameController::GetDeck() const
+const std::vector<CardType>& GameController::GetDeck() const
 {
     /**
      * @brief Returns the deck of the player
@@ -283,7 +283,7 @@ void GameController::InitMultiPlayerGame()
     networkController = MGetComponentFrom(networkControllerEntity, NetworkController);
 }
 
-std::array<BeginningNode<CardType>, 6> GameController::GetCards()
+const std::array<BeginningNode<CardType>, 6>& GameController::GetCards()
 {
     /**
      * @brief Returns the cards array 

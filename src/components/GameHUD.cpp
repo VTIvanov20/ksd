@@ -57,7 +57,7 @@ void GameHUD::OnUI()
     ImGui::Begin("HUD");
         if (ImGui::BeginPopup("card_discard_popup"))
         {
-            const auto cards = gameController->GetDeck();
+            const auto& cards = gameController->GetDeck();
             for (unsigned short i = 0; i < static_cast<unsigned short>(cards.size()); i++)
             {
                 auto type = cards[i];

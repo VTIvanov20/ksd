@@ -14,7 +14,7 @@ void GameWindow::OnCreate()
     cardTextures[CardType::XOR_1] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
     cardTextures[CardType::EMPTY] = ObjectManager::GetInstance()->CreateObject<TextureObject>();
 
-    auto cards = MGetComponent(GameController)->GetCards();
+    auto& cards = MGetComponent(GameController)->GetCards();
 
     renderTexture.lock()->LoadEmpty({
         int(scaleTo.x) * int(cards.size()),
@@ -38,7 +38,7 @@ void GameWindow::OnUpdate()
     if (gameController->IsGameOver())
         return;
     
-    auto deckCards = gameController->GetDeck();
+    auto& deckCards = gameController->GetDeck();
 
     for (size_t i = 0; i < deckCards.size(); i++)
     {
@@ -55,7 +55,7 @@ void GameWindow::OnUpdate()
     }
     
     renderTexture.lock()->BeginDrawingTo();
-        auto cards = gameController->GetCards();
+        auto& cards = gameController->GetCards();
         for (size_t idx = 0; idx < cards.size(); idx++)
         {
             auto card = cards[idx];
@@ -121,7 +121,7 @@ void GameWindow::OnUI()
     }
 
     Texture& texture = renderTexture.lock()->GetRenderTexture().texture;
-    auto cards = gameController->GetCards();
+    auto& cards = gameController->GetCards();
 
     const ImVec2 displaySize = ImGui::GetIO().DisplaySize;
     const ImVec2 windowPadding = ImGui::GetStyle().WindowPadding;
@@ -150,11 +150,25 @@ void GameWindow::OnUI()
             mousePosAbsolute.x - screenPosAbsolute.x,
             mousePosAbsolute.y - screenPosAbsolute.y
         };
+
+        for (const auto& pos : clickablePositions)
+        {
+            if (CheckCollisionPointRec({ mousePosRelative.x, mousePosRelative.y }, {
+                (pos.x + abs(pos.y) * narrowness / 1.5f) * scaleTo.x,
+                (float(abs(pos.y) + cards.size() - 1) * narrowness) * scaleTo.y,
+                scaleTo.x, scaleTo.y
+            }) && ImGui::IsMouseReleased(ImGuiMouseButton_Left)
+               && !ImGui::IsPopupOpen("card_select_popup"))
+            {
+                ImGui::OpenPopup("card_select_popup");
+                positionForPlacing = pos;
+            }
+        }
         
         if (ImGui::BeginPopup("card_select_popup"))
         {
             auto placeableCards = gameController->GetPlaceableCards(positionForPlacing);
-            auto playerDeck = gameController->GetDeck();
+            auto& playerDeck = gameController->GetDeck();
             std::vector<CardType> deckSorted(playerDeck.size());
             std::vector<CardType> crossSection;
 
@@ -166,10 +180,12 @@ void GameWindow::OnUI()
                 placeableCards.begin(), placeableCards.end(),
                 deckSorted.begin(), deckSorted.end(), std::back_inserter(crossSection)
             );
-            for (unsigned short i = 0; i < static_cast<unsigned short>(crossSection.size()); i++)
-            {
-                auto type = crossSection[i];
 
+            if (crossSection.empty())
+                ImGui::Text("No Options Available :P");
+
+            for (const auto& type : crossSection)
+            {
                 ImGui::SameLine();
                 if (DrawImageButton(type))
                 {
@@ -179,20 +195,8 @@ void GameWindow::OnUI()
                     positionForPlacing = { 0, 0 };
                 }
             }
+
             ImGui::EndPopup();
-        }
-        
-        for (auto pos : clickablePositions)
-        {
-            if (CheckCollisionPointRec({ mousePosRelative.x, mousePosRelative.y }, {
-                (pos.x + abs(pos.y) * narrowness / 1.5f) * scaleTo.x,
-                (float(abs(pos.y) + cards.size() - 1) * narrowness) * scaleTo.y,
-                scaleTo.x, scaleTo.y
-            }) && ImGui::IsMouseReleased(ImGuiMouseButton_Left))
-            {
-                ImGui::OpenPopup("card_select_popup");
-                positionForPlacing = pos;
-            }
         }
     ImGui::End();
     ImGui::PopStyleVar();
