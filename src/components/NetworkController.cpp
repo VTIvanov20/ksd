@@ -25,33 +25,32 @@ using message_ptr = websocketpp::config::asio_client::message_type::ptr;
 
 #include <memory>
 #include <thread>
-#include <atomic>
 #include <vector>
 #include <string>
 #include <mutex>
 #include <array>
 
-static std::atomic<client *> wsClient;
-static std::unique_ptr<std::thread> wsThread;
+std::shared_ptr<client> wsClient;
+std::unique_ptr<std::thread> wsThread;
 
-static std::mutex connHandleMutex;
-static websocketpp::connection_hdl connHandle;
+std::mutex connHandleMutex;
+websocketpp::connection_hdl connHandle;
 
-static std::mutex stateMutex;
-static std::shared_ptr<NetworkState> networkState;
+std::mutex stateMutex;
+std::shared_ptr<NetworkState> networkState;
 
-void OnMessage(client*, websocketpp::connection_hdl hdl, message_ptr msg)
+void OnMessage(std::shared_ptr<client>&, websocketpp::connection_hdl hdl, message_ptr msg)
 {
     websocketpp::lib::error_code ec;
     printf("INFO: -> %s\n", msg->get_payload().c_str());
 
     nlohmann::json obj = nlohmann::json::parse(msg->get_payload());
 
-    stateMutex.lock();
     std::string type{};
     obj["t"].get_to(type);
     try
     {
+        const std::lock_guard<std::mutex> lock(stateMutex);
         if (type == "create-room-success")
         {
             networkState->inGame = true;
@@ -128,11 +127,9 @@ void OnMessage(client*, websocketpp::connection_hdl hdl, message_ptr msg)
     {
         printf("WARN: Error parsing websocket packet %s\n", e.what());
     }
-    stateMutex.unlock();
     
-    connHandleMutex.lock();
+    std::lock_guard<std::mutex> lock(connHandleMutex);
     connHandle = hdl;
-    connHandleMutex.unlock();
 }
 
 void NetworkController::OnCreate()
@@ -141,24 +138,24 @@ void NetworkController::OnCreate()
         alreadyInit = true;
     else return;
 
-    wsClient.store(new client());
-    wsClient.load()->set_access_channels(websocketpp::log::alevel::none);
-    wsClient.load()->init_asio();
-    wsClient.load()->set_message_handler(bind(&OnMessage, wsClient.load(), ::_1, ::_2));
+    wsClient = std::make_unique<client>();
+    wsClient->set_access_channels(websocketpp::log::alevel::none);
+    wsClient->init_asio();
+    wsClient->set_message_handler(bind(&OnMessage, wsClient, ::_1, ::_2));
     networkState = std::make_unique<NetworkState>();
 
     websocketpp::lib::error_code err_code;
-    client::connection_ptr conn = wsClient.load()->get_connection(WsUri, err_code);
+    client::connection_ptr conn = wsClient->get_connection(WsUri, err_code);
 
     if (err_code) {
         printf("could not create connection because: %s\n", err_code.message().c_str());
     }
 
-    wsClient.load()->connect(conn);
+    wsClient->connect(conn);
 
     wsThread = std::make_unique<std::thread>([]() {
-        while (!wsClient.load()->stopped())
-            wsClient.load()->run_one();
+        while (!wsClient->stopped())
+            wsClient->run_one();
     });
 }
 
@@ -212,7 +209,7 @@ void NetworkController::SendPacket(nlohmann::json json)
     }
 
     websocketpp::lib::error_code ec;
-    wsClient.load()->send(connHandle, json.dump(), websocketpp::frame::opcode::value::BINARY, ec);
+    wsClient->send(connHandle, json.dump(), websocketpp::frame::opcode::value::BINARY, ec);
     connHandleMutex.unlock();
 
     printf("INFO: <- %s\n", json.dump().c_str());
@@ -220,24 +217,22 @@ void NetworkController::SendPacket(nlohmann::json json)
 
 void NetworkController::OnDestroy()
 {
-    wsClient.load()->stop();
+    wsClient->stop();
     wsThread->join();
 
-    delete wsClient.load();
-    wsClient.store(nullptr);
+    wsClient.reset();
     wsThread.reset();
 }
 
 NetworkState NetworkController::GetState()
 {
-    stateMutex.lock();
+    std::lock_guard<std::mutex> lock(stateMutex);
     NetworkState copy { *networkState };
-    stateMutex.unlock();
 
     return copy;
 }
 
 bool NetworkController::IsActive()
 {
-    return !wsClient.load()->stopped();
+    return !wsClient->stopped();
 }
